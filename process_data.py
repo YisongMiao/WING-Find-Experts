@@ -1,3 +1,4 @@
+import time
 from llm import qwen
 from tqdm import tqdm
 from parse_pub import parse_url
@@ -16,6 +17,8 @@ def build_author_profile(database: list[dict], args):
         for url in item["publication_urls"]:
             title, abstract = parse_url(url)
             list_of_publications.append({"title": title, "abstract": abstract})
+            # Less frequent parsing to avoid being blocked
+            time.sleep(3)
         # TODO: utilize `list_of_publications` to build author profile
         item["summary"] = summarize_publication(list_of_publications)
         if args.author_embedding == "aggregate":
