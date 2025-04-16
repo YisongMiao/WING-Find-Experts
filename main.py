@@ -27,7 +27,7 @@ def init_model(embedding_model_name_or_path: str, device: str):
 
 def read_jsonl(path: str):
     with open(path, "r") as f:
-        database = [json.load(line) for line in f]
+        database = [json.loads(line) for line in f]
     return database
 
 def build_query(query_dict: dict):
