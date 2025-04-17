@@ -39,6 +39,6 @@ You will obtain a `.txt` output file in the `--output_path` directory when code 
 ## TODO (Extensions)
 
 * Parse timestamp of publications to support decaying weights for older publications in embedding aggregation.
-* Support error handling in publication parsing and LLM API calling.
+* Support error handling in publication parsing.
 * Dynamic adaptation to new publications for authors.
 * Curve the score to distinguish fitness better.
