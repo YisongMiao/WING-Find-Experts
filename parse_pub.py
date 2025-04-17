@@ -3,29 +3,36 @@ import requests
 from bs4 import BeautifulSoup
 from xml.etree import ElementTree as ET
 
-def get_arxiv_metadata(url):
+def get_arxiv_metadata(url: str):
     """
-    通过arXiv API获取标题和摘要
-    参数：arxiv_url (str) - arXiv抽象页面URL，如：https://arxiv.org/abs/1706.03762
-    返回：字典包含标题、摘要和arXiv ID
+    This function requests paper title and abstract through arXiv API.
+    
+    Args:
+        url (str): arXiv abs page URL, such as https://arxiv.org/abs/1706.03762
+    
+    Returns:
+        paper_dict (dict[str, str]): A dict with the keys "title" and "abstract"
     """
-    # 提取arXiv ID
+    # Extract arXiv ID
     arxiv_id = re.search(r'arxiv\.org/abs/([\w\.-]+)', url).group(1)
     
-    # 构造API请求URL
+    # Construct the request URL for arXiv API
     api_url = f"http://export.arxiv.org/api/query?id_list={arxiv_id}"
     
+    # Request data
     response = requests.get(api_url, timeout=10)
     response.raise_for_status()
     
-    # 解析XML响应
+    # Parse XML response
     root = ET.fromstring(response.content)
     entry = root.find('{http://www.w3.org/2005/Atom}entry')
     
-    title = ' '.join(entry.find('{http://www.w3.org/2005/Atom}title').text.strip().split())
+    # Get title and abstract
+    title = entry.find('{http://www.w3.org/2005/Atom}title').text.strip()
     abstract = entry.find('{http://www.w3.org/2005/Atom}summary').text.strip()
     
-    # 清理换行和多余空格
+    # Re-format title and abstract
+    title = ' '.join(title.split())
     abstract = ' '.join(abstract.split())
     
     return {
@@ -34,20 +41,31 @@ def get_arxiv_metadata(url):
     }
 
 def get_openreview_metadata(url):
+    """
+    This function requests paper title and abstract by parsing an openreview webpage.
+    
+    Args:
+        url (str): openreview page URL, such as https://openreview.net/forum?id=BwR8t91yqh
+    
+    Returns:
+        paper_dict (dict[str, str]): A dict with the keys "title" and "abstract"
+    """
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
     }
     
+    # Request data
     response = requests.get(url, headers=headers)
-    response.raise_for_status()  # 检查请求是否成功
+    response.raise_for_status()
     
-    # 解析HTML
+    # Parse HTML
     soup = BeautifulSoup(response.text, 'html.parser')
+    
+    # Parse and re-format title and abstract
     title_meta = soup.find('meta', {'name': 'citation_title'})
     title = ' '.join(title_meta['content'].split()).strip()
     
     abstract_meta = soup.find('meta', {'name': 'citation_abstract'})
-    # 清理换行和多余空格
     abstract = ' '.join(abstract_meta['content'].split()).strip()
     
     return {
@@ -56,6 +74,15 @@ def get_openreview_metadata(url):
     }
     
 def get_neurips_metadata(url):
+    """
+    This function requests paper title and abstract by parsing a NeurIPS abstract webpage.
+    
+    Args:
+        url (str): NeurIPS abs page URL, such as https://proceedings.neurips.cc/paper_files/paper/2024/hash/84bad835faaf48f24d990072bb5b80ee-Abstract-Conference.html
+    
+    Returns:
+        paper_dict (dict[str, str]): A dict with the keys "title" and "abstract"
+    """
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
     }
@@ -63,38 +90,50 @@ def get_neurips_metadata(url):
     response = requests.get(url, headers=headers)
     response.raise_for_status()  # 检查请求是否成功
     
+    # Parse HTML and locate the container involving title and abstract
     soup = BeautifulSoup(response.text, 'html.parser')
-    container = soup.find('div', class_='col p-3')  # 定位主要内容容器
+    container = soup.find('div', class_='col p-3')
     
-    # 提取标题（第一个h4元素）
+    # Get the title (the first h4 element)
     title = ' '.join(container.find('h4').get_text(strip=True).split())
     
-    # 提取摘要（定位Abstract标题后的p标签）
+    # Get the abstract（through the <p> mark after the title `Abstract`）
     abstract = ""
     abstract_heading = container.find('h4', string='Abstract')
     abstract_p = abstract_heading.find_next_sibling('p')
     if abstract_p:
-        # 处理嵌套的p标签情况
         abstract = ' '.join(abstract_p.stripped_strings)
     
     return {
         'title': title,
-        'abstract': abstract or "摘要未找到"
+        'abstract': abstract or None
     }
 
-# TODO: parse paper url and extract title and abstract of each paper
 def parse_url(url: str):
+    """
+    This function wraps functions that request paper title and abstract on different websites.
+    If the provided website is not supported yet, this function will raise a `NotImplementedError`.
+    
+    Args:
+        url (str): paper URL
+    
+    Returns:
+        paper_dict (dict[str, str]): A dict with the keys "title" and "abstract"
+    """
+    # arXiv 
     if url.startswith("https://arxiv.org"):
         return get_arxiv_metadata(url)
+    # openreview
     elif url.startswith("https://openreview.net"):
         return get_openreview_metadata(url)
+    # NeurIPS
     elif url.startswith("https://proceedings.neurips.cc"):
         return get_neurips_metadata(url)
     else:
         raise NotImplementedError("Website not supported yet")
     
 if __name__ == "__main__":
-    # 使用示例
+    # Test example
     import json
     import time
     from tqdm import tqdm
