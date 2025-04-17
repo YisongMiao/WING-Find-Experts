@@ -141,7 +141,7 @@ if __name__ == "__main__":
     with open("./data/test_database.jsonl", "r") as f:
         database = [json.loads(line) for line in f]
     
-    with open('test.log', 'w') as f:
+    with open('log/test_parse.log', 'w') as f:
         for author_item in tqdm(database):
             f.write(author_item["name"] + "\n\n")
             for i, url in enumerate(author_item["publication_urls"]):

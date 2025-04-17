@@ -42,7 +42,7 @@ def build_author_profile(database: list[dict[str, Any]], args):
             # Less frequent parsing to avoid being blocked
             time.sleep(3)
         # Summarize the overall research directions of this author
-        item["summary"] = summarize_publication(list_of_publications)
+        item["summary"] = summarize_publication(list_of_publications, args)
         if args.author_embedding == "aggregate":
             item["content"] = list_of_publications
         elif args.author_embedding == "summarize":
