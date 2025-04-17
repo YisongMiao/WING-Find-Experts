@@ -1,7 +1,8 @@
 import os
+import time
 import openai
 
-def qwen(llm: str, system_prompt: str, user_prompt: str):
+def qwen(llm: str, system_prompt: str, user_prompt: str, max_retry: int = 10):
     """
     This function wraps the QWen API.
     
@@ -18,12 +19,24 @@ def qwen(llm: str, system_prompt: str, user_prompt: str):
         base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
         api_key=api_key
     )
-    response = engine.chat.completions.create(
-        model=llm,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        temperature=0.0,
-    )
-    return response.choices[0].message.content
+    error_cnt = 0
+    while error_cnt < max_retry:
+        # Break if a response from LLM is received
+        try:
+            response = engine.chat.completions.create(
+                model=llm,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=0.0,
+            )
+            return response.choices[0].message.content
+        # Break if an invalid request is reported
+        except openai.BadRequestError as e:
+            raise e
+        # Retry `max_retry` times if connection errors are catched
+        except openai.APIConnectionError as e:
+            error_cnt += 1
+            time.sleep(1)
+    raise e
