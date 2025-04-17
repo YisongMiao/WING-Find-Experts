@@ -31,7 +31,7 @@ def build_author_profile(database: list[dict[str, Any]], args):
         args (:class:`~argparse.Namespace`): A namespace of arguments. In this function we only require the `author_embedding` field to determine the way of aggregating publications for each author.
     
     Returns:
-        database (list[dict[str, Any]]): A list of authors. Each entry will be augmented with an extra `summary` and `content` field.
+        database (list[dict[str, Any]]): A list of authors. Each entry will be augmented with an extra `summary` and `list_of_pubs` field.
     """
     for item in tqdm(database):
         list_of_publications = []
@@ -42,11 +42,6 @@ def build_author_profile(database: list[dict[str, Any]], args):
             # Less frequent parsing to avoid being blocked
             time.sleep(3)
         # Summarize the overall research directions of this author
+        item["list_of_pubs"] = list_of_publications
         item["summary"] = summarize_publication(list_of_publications, args)
-        if args.author_embedding == "aggregate":
-            item["content"] = list_of_publications
-        elif args.author_embedding == "summarize":
-            item["content"] = item["summary"]
-        else:
-            raise NotImplementedError(f"Author aggregation: {args.author_embedding} method not implemented")
     return database

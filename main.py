@@ -21,7 +21,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data_path", type=str, default="./data/test_database.jsonl", help="Path to the database file")
     parser.add_argument("--query_path", type=str, default="./data/test_query.json", help="Path to the query file")
-    parser.add_argument("--output_path", type=str, default="./log/output.txt", help="Path to the output file")
+    parser.add_argument("--output_path", type=str, default="./log/", help="Path to the output file")
     parser.add_argument("--llm", type=str, default="qwen2.5-72b-instruct", help="LLM to generate justification of fitness score.")
     parser.add_argument("--embedding_model_name_or_path", type=str, default="all-MiniLM-L6-v2", help="Embedding model name or path.")
     parser.add_argument("--author_embedding", type=str, choices=["aggregate", "summarize"], default="summarize", help="Method to aggregate multiple publications for one author.")
@@ -88,9 +88,11 @@ def compute_fitness(model: SentenceTransformer, query: str, list_of_authors: lis
         low, high = np.cumsum([0] + n_pub_per_author[:-1]), np.cumsum(n_pub_per_author)
         # Stack all publications together and compute embedding only once
         stacked_pubs = sum(list_of_authors, [])
+        stacked_pubs = [f"Title: {pub['title']}\nAbstract: {pub['abstract']}" for pub in stacked_pubs]
         all_pub_embedding = model.encode(stacked_pubs, normalize_embeddings=True, convert_to_tensor=True).to(args.device)
         # Seperately aggregate the embedding of each author
-        corpus_embedding = torch.stack([torch.mean(all_pub_embedding[l:h]) for l, h in zip(low, high)], dim=0)
+        corpus_embedding = [torch.mean(all_pub_embedding[l:h], dim=0) for l, h in zip(low, high)]
+        corpus_embedding = torch.stack(corpus_embedding, dim=0)
     elif args.author_embedding == "summarize":
         corpus_embedding = model.encode(list_of_authors, normalize_embeddings=True, convert_to_tensor=True).to(args.device)
     else:
@@ -110,23 +112,24 @@ def main():
     os.makedirs("log", exist_ok=True)
     
     # If author profile has not been created before, create it
-    if not os.path.exists("log/author_profile.json"):
+    if not os.path.exists(f"log/author_profile.json"):
         database = read_jsonl(args.data_path)
         
         # Process the database so that each item provides more details of each author
         database = build_author_profile(database, args)
-        with open("log/author_profile.json", "w") as f:
-            json.dump(database, f)
+        with open(f"log/author_profile.json", "w") as f:
+            json.dump(database, f, indent=2)
     # Load author profile
     else:
-        with open("log/author_profile.json", "r") as f:
+        with open(f"log/author_profile.json", "r") as f:
             database = json.load(f)
     
     # Process the query so that the query can be more specific
     query = build_query(query_dict)
     
     # Compute fitness score in batch
-    list_of_authors = [item["content"] for item in database]
+    key = "summary" if args.author_embedding == "summarize" else "list_of_pubs"
+    list_of_authors = [item[key] for item in database]
     sorted_id_and_scores = compute_fitness(model, query, list_of_authors, args)
     
     # Generate justification for each reviewer
@@ -141,7 +144,7 @@ def main():
             "explanation": reason
         })
     
-    with open(args.output_path, "w") as f:
+    with open(os.path.join(args.output_path, f"output_{args.author_embedding}.txt"), "w") as f:
         for item in results:
             f.write(json.dumps(item) + "\n")
             
