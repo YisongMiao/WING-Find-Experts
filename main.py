@@ -107,6 +107,9 @@ def main():
     with open(args.query_path, "r") as f:
         query_dict = json.load(f)
     
+    os.makedirs("log", exist_ok=True)
+    
+    # If author profile has not been created before, create it
     if not os.path.exists("log/author_profile.json"):
         database = read_jsonl(args.data_path)
         
@@ -114,7 +117,7 @@ def main():
         database = build_author_profile(database, args)
         with open("log/author_profile.json", "w") as f:
             json.dump(database, f)
-    
+    # Load author profile
     else:
         with open("log/author_profile.json", "r") as f:
             database = json.load(f)
