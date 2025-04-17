@@ -134,7 +134,7 @@ def main():
     
     # Generate justification for each reviewer
     results = []
-    for item in tqdm(sorted_id_and_scores):
+    for item in tqdm(sorted_id_and_scores, desc="Generating Explanation:"):
         author_id, score = item["corpus_id"], item["score"]
         author_name = database[author_id]["name"]
         reason = generate_justification(query_dict, database[author_id]["summary"], round(score * 100), args)

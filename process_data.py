@@ -33,7 +33,7 @@ def build_author_profile(database: list[dict[str, Any]], args):
     Returns:
         database (list[dict[str, Any]]): A list of authors. Each entry will be augmented with an extra `summary` and `list_of_pubs` field.
     """
-    for item in tqdm(database):
+    for item in tqdm(database, desc="Creating Author Profiles:"):
         list_of_publications = []
         for url in item["publication_urls"]:
             # Parse the publication url
