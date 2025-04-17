@@ -1,5 +1,7 @@
 # WING-Trial-Task (Software Engineering)
 
+This repo contains the code for the paper-review matching trial task.
+
 ## Environment Setup
 
 Run the following to install critical dependencies:
@@ -34,7 +36,7 @@ I provide several parameters for `main.py`:
     + `aggregate` means computing embeddings for each publication from one author and taking the average.
 * `--device` specifies the device to store and run the embedding model.
 
-You will obtain a `.txt` output file in the `--output_path` directory when code execution is complete.
+You will obtain a `.txt` output file in the `--output_path` directory when code execution is complete. Sample outputs are shown as [`log/output_aggregate.txt`](log/output_aggregate.txt) and [`log/output_summarize.txt`](log/output_summarize.txt)
 
 ## TODO (Extensions)
 
