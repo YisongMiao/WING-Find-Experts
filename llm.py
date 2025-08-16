@@ -4,7 +4,7 @@ import openai
 
 def qwen(llm: str, system_prompt: str, user_prompt: str, max_retry: int = 10):
     """
-    This function wraps the QWen API.
+    This function wraps the OpenAI API.
     
     Args:
         llm (str): The name of LLM to use.
@@ -14,17 +14,15 @@ def qwen(llm: str, system_prompt: str, user_prompt: str, max_retry: int = 10):
     Returns:
         output (str): The textual response from the LLM.
     """
-    api_key = os.environ["QWEN_API_KEY"]
-    engine = openai.OpenAI(
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-        api_key=api_key
-    )
+    api_key = os.environ["OPENAI_API_KEY"]
+    client = openai.OpenAI(api_key=api_key)
+    
     error_cnt = 0
     while error_cnt < max_retry:
         # Break if a response from LLM is received
         try:
-            response = engine.chat.completions.create(
-                model=llm,
+            response = client.chat.completions.create(
+                model="gpt-4o-mini-2024-07-18",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
