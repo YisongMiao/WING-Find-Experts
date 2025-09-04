@@ -1,0 +1,20 @@
+{
+  "author": "Matteo Zavatteri",
+  "results": [
+    {
+      "title": "Iterative In-Context Learning to Enhance LLMs Abstract Reasoning: The Case-Study of Algebraic Tasks",
+      "abstract": "LLMs face significant challenges in systematic generalization, particularly when dealing with reasoning tasks requiring compositional rules and handling out-of-distribution examples. To address these challenges, we introduce an in-context learning methodology that improves the generalization capabilities of general purpose LLMs. Our approach employs an iterative example selection strategy, which incrementally constructs a tailored set of few-shot examples optimized to enhance model's performance on a given task. As a proof of concept, we apply this methodology to the resolution of algebraic expressions involving non-standard simplification rules, according to which the priority of addition and multiplication is changed. Our findings indicate that LLMs exhibit limited proficiency in these mathematical tasks. We further demonstrate that LLMs reasoning benefits from our iterative shot selection prompting strategy integrated with explicit reasoning instructions. Crucially, our experiments reveal that some LLMs achieve better generalization performances when prompted with simpler few-shot examples rather than complex ones following the test data distribution. △ Less",
+      "url": "https://arxiv.org/abs/2509.01267"
+    },
+    {
+      "title": "Security Constraints in Temporal Role-Based Access-Controlled Workflows (Extended Version)",
+      "abstract": "Workflows and role-based access control models need to be suitably merged, in order to allow users to perform processes in a correct way, according to the given data access policies and the temporal constraints. Given a mapping between workflow models and simple temporal networks with uncertainty, we discuss a mapping between role temporalities and simple temporal networks, and how to connect the two resulting networks to make explicit who can do what, when. If the connected network is still executable, we show how to compute the set of authorized users for each task. Finally, we define security constraints (to prevent users from doing unauthorized actions) and security constraint propagation rules (to propagate security constraints at runtime). We also provide an algorithm to check whether a set of propagation rules is safe, and we extend an existing execution algorithm to take into account these new security aspects. △ Less",
+      "url": "https://arxiv.org/abs/1512.06404"
+    },
+    {
+      "title": "Non-collaborative Attackers and How and Where to Defend Flawed Security Protocols (Extended Version)",
+      "abstract": "Security protocols are often found to be flawed after their deployment. We present an approach that aims at the neutralization or mitigation of the attacks to flawed protocols: it avoids the complete dismissal of the interested protocol and allows honest agents to continue to use it until a corrected version is released. Our approach is based on the knowledge of the network topology, which we model as a graph, and on the consequent possibility of creating an interference to an ongoing attack of a Dolev-Yao attacker, by means of non-collaboration actuated by ad-hoc benign attackers that play the role of network guardians. Such guardians, positioned in strategical points of the network, have the task of monitoring the messages in transit and discovering at runtime, through particular types of inference, whether an attack is ongoing, interrupting the run of the protocol in the positive case. We study not only how but also where we can attempt to defend flawed security protocols: we investigate the different network topologies that make security protocol defense feasible and illustrate our approach by means of concrete examples. △ Less",
+      "url": "https://arxiv.org/abs/1405.6912"
+    }
+  ]
+}

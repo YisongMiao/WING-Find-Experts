@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;33 of 33 results for author: <span class="mathjax">Rafael Penaloza</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Rafael Penaloza">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Rafael+Penaloza&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Rafael Penaloza">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2506.23630">arXiv:2506.23630</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2506.23630">pdf</a>, <a href="https://arxiv.org/ps/2506.23630">ps</a>, <a href="https://arxiv.org/format/2506.23630">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Blending Concepts with Text-to-Image Diffusion Models
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Olearo%2C+L">Lorenzo Olearo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Longari%2C+G">Giorgio Longari</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Raganato%2C+A">Alessandro Raganato</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Melzi%2C+S">Simone Melzi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2506.23630v1-abstract-short" style="display: inline;">
+        Diffusion models have dramatically advanced text-to-image generation in recent years, translating abstract concepts into high-fidelity images with remarkable ease. In this work, we examine whether they can also blend distinct concepts, ranging from concrete objects to intangible ideas, into coherent new visual entities under a zero-shot framework. Specifically, concept blending merges the key attr&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2506.23630v1-abstract-full').style.display = 'inline'; document.getElementById('2506.23630v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2506.23630v1-abstract-full" style="display: none;">
+        Diffusion models have dramatically advanced text-to-image generation in recent years, translating abstract concepts into high-fidelity images with remarkable ease. In this work, we examine whether they can also blend distinct concepts, ranging from concrete objects to intangible ideas, into coherent new visual entities under a zero-shot framework. Specifically, concept blending merges the key attributes of multiple concepts (expressed as textual prompts) into a single, novel image that captures the essence of each concept. We investigate four blending methods, each exploiting different aspects of the diffusion pipeline (e.g., prompt scheduling, embedding interpolation, or layer-wise conditioning). Through systematic experimentation across diverse concept categories, such as merging concrete concepts, synthesizing compound words, transferring artistic styles, and blending architectural landmarks, we show that modern diffusion models indeed exhibit creative blending capabilities without further training or fine-tuning. Our extensive user study, involving 100 participants, reveals that no single approach dominates in all scenarios: each blending technique excels under certain conditions, with factors like prompt ordering, conceptual distance, and random seed affecting the outcome. These findings highlight the remarkable compositional potential of diffusion models while exposing their sensitivity to seemingly minor input variations.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2506.23630v1-abstract-full').style.display = 'none'; document.getElementById('2506.23630v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 June, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Currently under review</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2505.00776">arXiv:2505.00776</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2505.00776">pdf</a>, <a href="https://arxiv.org/ps/2505.00776">ps</a>, <a href="https://arxiv.org/format/2505.00776">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Reasoning Capabilities and Invariability of Large Language Models
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Raganato%2C+A">Alessandro Raganato</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Viviani%2C+M">Marco Viviani</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pasi%2C+G">Gabriella Pasi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2505.00776v1-abstract-short" style="display: inline;">
+        Large Language Models (LLMs) have shown remarkable capabilities in manipulating natural language across multiple applications, but their ability to handle simple reasoning tasks is often questioned. In this work, we aim to provide a comprehensive analysis of LLMs&#39; reasoning competence, specifically focusing on their prompt dependency. In particular, we introduce a new benchmark dataset with a seri&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.00776v1-abstract-full').style.display = 'inline'; document.getElementById('2505.00776v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2505.00776v1-abstract-full" style="display: none;">
+        Large Language Models (LLMs) have shown remarkable capabilities in manipulating natural language across multiple applications, but their ability to handle simple reasoning tasks is often questioned. In this work, we aim to provide a comprehensive analysis of LLMs&#39; reasoning competence, specifically focusing on their prompt dependency. In particular, we introduce a new benchmark dataset with a series of simple reasoning questions demanding shallow logical reasoning. Aligned with cognitive psychology standards, the questions are confined to a basic domain revolving around geometric figures, ensuring that responses are independent of any pre-existing intuition about the world and rely solely on deduction. An empirical analysis involving zero-shot and few-shot prompting across 24 LLMs of different sizes reveals that, while LLMs with over 70 billion parameters perform better in the zero-shot setting, there is still a large room for improvement. An additional test with chain-of-thought prompting over 22 LLMs shows that this additional prompt can aid or damage the performance of models, depending on whether the rationale is required before or after the answer.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.00776v1-abstract-full').style.display = 'none'; document.getElementById('2505.00776v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 1 May, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted for publication in the Proceedings of the 23rd IEEE/WIC International Conference on Web Intelligence and Intelligent Agent Technology (WI-IAT 2024)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2501.12728">arXiv:2501.12728</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2501.12728">pdf</a>, <a href="https://arxiv.org/format/2501.12728">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Software Engineering">cs.SE</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Digital Libraries">cs.DL</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Call for Critically Rethinking and Reforming Data Analysis in Empirical Software Engineering
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Esposito%2C+M">Matteo Esposito</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Robredo%2C+M">Mikel Robredo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sridharan%2C+M">Murali Sridharan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Travassos%2C+G+H">Guilherme Horta Travassos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lenarduzzi%2C+V">Valentina Lenarduzzi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2501.12728v1-abstract-short" style="display: inline;">
+        Context: Empirical Software Engineering (ESE) drives innovation in SE through qualitative and quantitative studies. However, concerns about the correct application of empirical methodologies have existed since the 2006 Dagstuhl seminar on SE. Objective: To analyze three decades of SE research, identify mistakes in statistical methods, and evaluate experts&#39; ability to detect and address these issue&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2501.12728v1-abstract-full').style.display = 'inline'; document.getElementById('2501.12728v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2501.12728v1-abstract-full" style="display: none;">
+        Context: Empirical Software Engineering (ESE) drives innovation in SE through qualitative and quantitative studies. However, concerns about the correct application of empirical methodologies have existed since the 2006 Dagstuhl seminar on SE. Objective: To analyze three decades of SE research, identify mistakes in statistical methods, and evaluate experts&#39; ability to detect and address these issues. Methods: We conducted a literature survey of ~27,000 empirical studies, using LLMs to classify statistical methodologies as adequate or inadequate. Additionally, we selected 30 primary studies and held a workshop with 33 ESE experts to assess their ability to identify and resolve statistical issues. Results: Significant statistical issues were found in the primary studies, and experts showed limited ability to detect and correct these methodological problems, raising concerns about the broader ESE community&#39;s proficiency in this area. Conclusions. Despite our study&#39;s eventual limitations, its results shed light on recurring issues from promoting information copy-and-paste from past authors&#39; works and the continuous publication of inadequate approaches that promote dubious results and jeopardize the spread of the correct statistical strategies among researchers. Besides, it justifies further investigation into empirical rigor in software engineering to expose these recurring issues and establish a framework for reassessing our field&#39;s foundation of statistical methodology application. Therefore, this work calls for critically rethinking and reforming data analysis in empirical software engineering, paving the way for our work soon.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2501.12728v1-abstract-full').style.display = 'none'; document.getElementById('2501.12728v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 January, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2409.09485">arXiv:2409.09485</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2409.09485">pdf</a>, <a href="https://arxiv.org/format/2409.09485">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Enumerating Minimal Unsatisfiable Cores of LTLf formulas
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Ielo%2C+A">Antonio Ielo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mazzotta%2C+G">Giuseppe Mazzotta</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ricca%2C+F">Francesco Ricca</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2409.09485v1-abstract-short" style="display: inline;">
+        Linear Temporal Logic over finite traces ($\text{LTL}_f$) is a widely used formalism with applications in AI, process mining, model checking, and more. The primary reasoning task for $\text{LTL}_f$ is satisfiability checking; yet, the recent focus on explainable AI has increased interest in analyzing inconsistent formulas, making the enumeration of minimal explanations for infeasibility a relevant&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2409.09485v1-abstract-full').style.display = 'inline'; document.getElementById('2409.09485v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2409.09485v1-abstract-full" style="display: none;">
+        Linear Temporal Logic over finite traces ($\text{LTL}_f$) is a widely used formalism with applications in AI, process mining, model checking, and more. The primary reasoning task for $\text{LTL}_f$ is satisfiability checking; yet, the recent focus on explainable AI has increased interest in analyzing inconsistent formulas, making the enumeration of minimal explanations for infeasibility a relevant task also for $\text{LTL}_f$. This paper introduces a novel technique for enumerating minimal unsatisfiable cores (MUCs) of an $\text{LTL}_f$ specification. The main idea is to encode a $\text{LTL}_f$ formula into an Answer Set Programming (ASP) specification, such that the minimal unsatisfiable subsets (MUSes) of the ASP program directly correspond to the MUCs of the original $\text{LTL}_f$ specification. Leveraging recent advancements in ASP solving yields a MUC enumerator achieving good performance in experiments conducted on established benchmarks from the literature.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2409.09485v1-abstract-full').style.display = 'none'; document.getElementById('2409.09485v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 September, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2408.08095">arXiv:2408.08095</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2408.08095">pdf</a>, <a href="https://arxiv.org/ps/2408.08095">ps</a>, <a href="https://arxiv.org/format/2408.08095">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Software Engineering">cs.SE</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Evaluating Time-Dependent Methods and Seasonal Effects in Code Technical Debt Prediction
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Robredo%2C+M">Mikel Robredo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Saarimaki%2C+N">Nyyti Saarimaki</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Esposito%2C+M">Matteo Esposito</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Taibi%2C+D">Davide Taibi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Penaloza%2C+R">Rafael Penaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lenarduzzi%2C+V">Valentina Lenarduzzi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2408.08095v2-abstract-short" style="display: inline;">
+        Background. Code Technical Debt (Code TD) prediction has gained significant attention in recent software engineering research. However, no standardized approach to Code TD prediction fully captures the factors influencing its evolution. Objective. Our study aims to assess the impact of time-dependent models and seasonal effects on Code TD prediction. It evaluates such models against widely used Ma&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2408.08095v2-abstract-full').style.display = 'inline'; document.getElementById('2408.08095v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2408.08095v2-abstract-full" style="display: none;">
+        Background. Code Technical Debt (Code TD) prediction has gained significant attention in recent software engineering research. However, no standardized approach to Code TD prediction fully captures the factors influencing its evolution. Objective. Our study aims to assess the impact of time-dependent models and seasonal effects on Code TD prediction. It evaluates such models against widely used Machine Learning models, also considering the influence of seasonality on prediction performance. Methods. We trained 11 prediction models with 31 Java open-source projects. To assess their performance, we predicted future observations of the SQALE index. To evaluate the practical usability of our TD forecasting model and its impact on practitioners, we surveyed 23 software engineering professionals. Results. Our study confirms the benefits of time-dependent techniques, with the ARIMAX model outperforming the others. Seasonal effects improved predictive performance, though the impact remained modest. \ReviewerA{ARIMAX/SARIMAX models demonstrated to provide well-balanced long-term forecasts. The survey highlighted strong industry interest in short- to medium-term TD forecasts. Conclusions. Our findings support using techniques that capture time dependence in historical software metric data, particularly for Code TD. Effectively addressing this evidence requires adopting methods that account for temporal patterns.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2408.08095v2-abstract-full').style.display = 'none'; document.getElementById('2408.08095v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 June, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 15 August, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2407.18169">arXiv:2407.18169</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2407.18169">pdf</a>, <a href="https://arxiv.org/format/2407.18169">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Software Engineering">cs.SE</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        In Search of Metrics to Guide Developer-Based Refactoring Recommendations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Robredo%2C+M">Mikel Robredo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Esposito%2C+M">Matteo Esposito</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Palomba%2C+F">Fabio Palomba</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lenarduzzi%2C+V">Valentina Lenarduzzi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2407.18169v1-abstract-short" style="display: inline;">
+        Context. Source code refactoring is a well-established approach to improving source code quality without compromising its external behavior. Motivation. The literature described the benefits of refactoring, yet its application in practice is threatened by the high cost of time, resource allocation, and effort required to perform it continuously. Providing refactoring recommendations closer to what&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.18169v1-abstract-full').style.display = 'inline'; document.getElementById('2407.18169v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2407.18169v1-abstract-full" style="display: none;">
+        Context. Source code refactoring is a well-established approach to improving source code quality without compromising its external behavior. Motivation. The literature described the benefits of refactoring, yet its application in practice is threatened by the high cost of time, resource allocation, and effort required to perform it continuously. Providing refactoring recommendations closer to what developers perceive as relevant may support the broader application of refactoring in practice and drive prioritization efforts. Aim. In this paper, we aim to foster the design of a developer-based refactoring recommender, proposing an empirical study into the metrics that study the developer&#39;s willingness to apply refactoring operations. We build upon previous work describing the developer&#39;s motivations for refactoring and investigate how product and process metrics may grasp those motivations. Expected Results. We will quantify the value of product and process metrics in grasping developers&#39; motivations to perform refactoring, thus providing a catalog of metrics for developer-based refactoring recommenders to use.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.18169v1-abstract-full').style.display = 'none'; document.getElementById('2407.18169v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 25 July, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2407.14280">arXiv:2407.14280</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2407.14280">pdf</a>, <a href="https://arxiv.org/format/2407.14280">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        How to Blend Concepts in Diffusion Models
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Olearo%2C+L">Lorenzo Olearo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Longari%2C+G">Giorgio Longari</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Melzi%2C+S">Simone Melzi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Raganato%2C+A">Alessandro Raganato</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2407.14280v2-abstract-short" style="display: inline;">
+        For the last decade, there has been a push to use multi-dimensional (latent) spaces to represent concepts; and yet how to manipulate these concepts or reason with them remains largely unclear. Some recent methods exploit multiple latent representations and their connection, making this research question even more entangled. Our goal is to understand how operations in the latent space affect the un&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.14280v2-abstract-full').style.display = 'inline'; document.getElementById('2407.14280v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2407.14280v2-abstract-full" style="display: none;">
+        For the last decade, there has been a push to use multi-dimensional (latent) spaces to represent concepts; and yet how to manipulate these concepts or reason with them remains largely unclear. Some recent methods exploit multiple latent representations and their connection, making this research question even more entangled. Our goal is to understand how operations in the latent space affect the underlying concepts. To that end, we explore the task of concept blending through diffusion models. Diffusion models are based on a connection between a latent representation of textual prompts and a latent space that enables image reconstruction and generation. This task allows us to try different text-based combination strategies, and evaluate easily through a visual analysis. Our conclusion is that concept blending through space manipulation is possible, although the best strategy depends on the context of the blend.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.14280v2-abstract-full').style.display = 'none'; document.getElementById('2407.14280v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 September, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 19 July, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2311.03114">arXiv:2311.03114</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2311.03114">pdf</a>, <a href="https://arxiv.org/format/2311.03114">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Software Engineering">cs.SE</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Ignoring Time Dependence in Software Engineering Data. A Mistake
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Robredo%2C+M">Mikel Robredo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Saarimaki%2C+N">Nyyti Saarimaki</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Penaloza%2C+R">Rafael Penaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lenarduzzi%2C+V">Valentina Lenarduzzi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2311.03114v2-abstract-short" style="display: inline;">
+        Researchers often delve into the connections between different factors derived from the historical data of software projects. For example, scholars have devoted their endeavors to the exploration of associations among these factors. However, a significant portion of these studies has failed to consider the limitations posed by the temporal interdependencies among these variables and the potential&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2311.03114v2-abstract-full').style.display = 'inline'; document.getElementById('2311.03114v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2311.03114v2-abstract-full" style="display: none;">
+        Researchers often delve into the connections between different factors derived from the historical data of software projects. For example, scholars have devoted their endeavors to the exploration of associations among these factors. However, a significant portion of these studies has failed to consider the limitations posed by the temporal interdependencies among these variables and the potential risks associated with the use of statistical methods ill-suited for analyzing data with temporal connections. Our goal is to highlight the consequences of neglecting time dependence during data analysis in current research. We pinpointed out certain potential problems that arise when disregarding the temporal aspect in the data, and support our argument with both theoretical and real examples.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2311.03114v2-abstract-full').style.display = 'none'; document.getElementById('2311.03114v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 12 November, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 6 November, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2310.16472">arXiv:2310.16472</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2310.16472">pdf</a>, <a href="https://arxiv.org/ps/2310.16472">ps</a>, <a href="https://arxiv.org/format/2310.16472">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Databases">cs.DB</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Semiring Provenance for Lightweight Description Logics
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bourgaux%2C+C">Camille Bourgaux</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ozaki%2C+A">Ana Ozaki</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2310.16472v3-abstract-short" style="display: inline;">
+        We investigate semiring provenance--a successful framework originally defined in the relational database setting--for description logics. In this context, the ontology axioms are annotated with elements of a commutative semiring and these annotations are propagated to the ontology consequences in a way that reflects how they are derived. We define a provenance semantics for a language that encompa&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2310.16472v3-abstract-full').style.display = 'inline'; document.getElementById('2310.16472v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2310.16472v3-abstract-full" style="display: none;">
+        We investigate semiring provenance--a successful framework originally defined in the relational database setting--for description logics. In this context, the ontology axioms are annotated with elements of a commutative semiring and these annotations are propagated to the ontology consequences in a way that reflects how they are derived. We define a provenance semantics for a language that encompasses several lightweight description logics and show its relationships with semantics that have been defined for ontologies annotated with a specific kind of annotation (such as fuzzy degrees). We show that under some restrictions on the semiring, the semantics satisfies desirable properties (such as extending the semiring provenance defined for databases). We then focus on the well-known why-provenance, for which we study the complexity of problems related to the provenance of an assertion or a conjunctive query answer. Finally, we consider two more restricted cases which correspond to the so-called positive Boolean provenance and lineage in the database setting. For these cases, we exhibit relationships with well-known notions related to explanations in description logics and complete our complexity analysis. As a side contribution, we provide conditions on an $\mathcal{ELHI}_\bot$ ontology that guarantee tractable reasoning.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2310.16472v3-abstract-full').style.display = 'none'; document.getElementById('2310.16472v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 March, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 25 October, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Paper currently under review. 133 pages</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2306.02036">arXiv:2306.02036</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2306.02036">pdf</a>, <a href="https://arxiv.org/format/2306.02036">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Software Engineering">cs.SE</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        On the Empirical Evidence of Microservice Logical Coupling. A Registered Report
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Aragona%2C+D+A+d">Dario Amoroso d Aragona</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pascarella%2C+L">Luca Pascarella</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Janes%2C+A">Andrea Janes</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lenarduzzi%2C+V">Valentina Lenarduzzi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Penaloza%2C+R">Rafael Penaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Taibi%2C+D">Davide Taibi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2306.02036v1-abstract-short" style="display: inline;">
+        [Context] Coupling is a widely discussed metric by software engineers while developing complex software systems, often referred to as a crucial factor and symptom of a poor or good design. Nevertheless, measuring the logical coupling among microservices and analyzing the interactions between services is non-trivial because it demands runtime information in the form of log files, which are not alwa&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.02036v1-abstract-full').style.display = 'inline'; document.getElementById('2306.02036v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2306.02036v1-abstract-full" style="display: none;">
+        [Context] Coupling is a widely discussed metric by software engineers while developing complex software systems, often referred to as a crucial factor and symptom of a poor or good design. Nevertheless, measuring the logical coupling among microservices and analyzing the interactions between services is non-trivial because it demands runtime information in the form of log files, which are not always accessible. [Objective and Method] In this work, we propose the design of a study aimed at empirically validating the Microservice Logical Coupling (MLC) metric presented in our previous study. In particular, we plan to empirically study Open Source Systems (OSS) built using a microservice architecture. [Results] The result of this work aims at corroborating the effectiveness and validity of the MLC metric. Thus, we will gather empirical evidence and develop a methodology to analyze and support the claims regarding the MLC metric. Furthermore, we establish its usefulness in evaluating and understanding the logical coupling among microservices.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.02036v1-abstract-full').style.display = 'none'; document.getElementById('2306.02036v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 June, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2305.00760">arXiv:2305.00760</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2305.00760">pdf</a>, <a href="https://arxiv.org/format/2305.00760">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Software Engineering">cs.SE</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Breaks and Code Quality: Investigating the Impact of Forgetting on Software Development. A Registered Report
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=d%27Aragona%2C+D+A">Dario Amoroso d&#39;Aragona</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pascarella%2C+L">Luca Pascarella</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Janes%2C+A">Andrea Janes</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lenarduzzi%2C+V">Valentina Lenarduzzi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Penaloza%2C+R">Rafael Penaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Taibi%2C+D">Davide Taibi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2305.00760v3-abstract-short" style="display: inline;">
+        Developers interrupting their participation in a project might slowly forget critical information about the code, such as its intended purpose, structure, the impact of external dependencies, and the approach used for implementation. Forgetting the implementation details can have detrimental effects on software maintenance, comprehension, knowledge sharing, and developer productivity, resulting in&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2305.00760v3-abstract-full').style.display = 'inline'; document.getElementById('2305.00760v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2305.00760v3-abstract-full" style="display: none;">
+        Developers interrupting their participation in a project might slowly forget critical information about the code, such as its intended purpose, structure, the impact of external dependencies, and the approach used for implementation. Forgetting the implementation details can have detrimental effects on software maintenance, comprehension, knowledge sharing, and developer productivity, resulting in bugs, and other issues that can negatively influence the software development process. Therefore, it is crucial to ensure that developers have a clear understanding of the codebase and can work efficiently and effectively even after long interruptions. This registered report proposes an empirical study aimed at investigating the impact of the developer&#39;s activity breaks duration and different code quality properties. In particular, we aim at understanding if the amount of activity in a project impact the code quality, and if developers with different activity profiles show different impacts on code quality. The results might be useful to understand if it is beneficial to promote the practice of developing multiple projects in parallel, or if it is more beneficial to reduce the number of projects each developer contributes.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2305.00760v3-abstract-full').style.display = 'none'; document.getElementById('2305.00760v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 28 August, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 1 May, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2111.11779">arXiv:2111.11779</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2111.11779">pdf</a>, <a href="https://arxiv.org/format/2111.11779">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Answering Fuzzy Queries over Fuzzy DL-Lite Ontologies
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pasi%2C+G">Gabriella Pasi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2111.11779v1-abstract-short" style="display: inline;">
+        A prominent problem in knowledge representation is how to answer queries taking into account also the implicit consequences of an ontology representing domain knowledge. While this problem has been widely studied within the realm of description logic ontologies, it has been surprisingly neglected within the context of vague or imprecise knowledge, particularly from the point of view of mathematica&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2111.11779v1-abstract-full').style.display = 'inline'; document.getElementById('2111.11779v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2111.11779v1-abstract-full" style="display: none;">
+        A prominent problem in knowledge representation is how to answer queries taking into account also the implicit consequences of an ontology representing domain knowledge. While this problem has been widely studied within the realm of description logic ontologies, it has been surprisingly neglected within the context of vague or imprecise knowledge, particularly from the point of view of mathematical fuzzy logic. In this paper we study the problem of answering conjunctive queries and threshold queries w.r.t. ontologies in fuzzy DL-Lite. Specifically, we show through a rewriting approach that threshold query answering w.r.t. consistent ontologies remains in $AC_0$ in data complexity, but that conjunctive query answering is highly dependent on the selected triangular norm, which has an impact on the underlying semantics. For the idempodent Gödel t-norm, we provide an effective method based on a reduction to the classical case. This paper is under consideration in Theory and Practice of Logic Programming (TPLP).
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2111.11779v1-abstract-full').style.display = 'none'; document.getElementById('2111.11779v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 23 November, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Under consideration in Theory and Practice of Logic Programming (TPLP)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2109.11216">arXiv:2109.11216</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2109.11216">pdf</a>, <a href="https://arxiv.org/format/2109.11216">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Union and Intersection of all Justifications
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Chen%2C+J">Jieying Chen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ma%2C+Y">Yue Ma</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yang%2C+H">Hui Yang</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2109.11216v1-abstract-short" style="display: inline;">
+        We present new algorithm for computing the union and intersection of all justifications for a given ontological consequence without first computing the set of all justifications. Through an empirical evaluation, we show that our approach works well in practice for expressive DLs. In particular, the union of all justifications can be computed much faster than with existing justification-enumeration&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.11216v1-abstract-full').style.display = 'inline'; document.getElementById('2109.11216v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2109.11216v1-abstract-full" style="display: none;">
+        We present new algorithm for computing the union and intersection of all justifications for a given ontological consequence without first computing the set of all justifications. Through an empirical evaluation, we show that our approach works well in practice for expressive DLs. In particular, the union of all justifications can be computed much faster than with existing justification-enumeration approaches. We further discuss how to use these results to repair ontologies efficiently.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.11216v1-abstract-full').style.display = 'none'; document.getElementById('2109.11216v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 23 September, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2021.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2108.12774">arXiv:2108.12774</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2108.12774">pdf</a>, <a href="https://arxiv.org/format/2108.12774">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        An Upper Bound for Provenance in ELHr
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2108.12774v1-abstract-short" style="display: inline;">
+        We investigate the entailment problem in ELHr ontologies annotated with provenance information. In more detail, we show that subsumption entailment is in NP if provenance is represented with polynomials from the Trio semiring and in PTime if the semiring is not commutative. The proof is based on the construction of a weighted tree automaton which recognises a language that matches with the corresp&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2108.12774v1-abstract-full').style.display = 'inline'; document.getElementById('2108.12774v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2108.12774v1-abstract-full" style="display: none;">
+        We investigate the entailment problem in ELHr ontologies annotated with provenance information. In more detail, we show that subsumption entailment is in NP if provenance is represented with polynomials from the Trio semiring and in PTime if the semiring is not commutative. The proof is based on the construction of a weighted tree automaton which recognises a language that matches with the corresponding provenance polynomial.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2108.12774v1-abstract-full').style.display = 'none'; document.getElementById('2108.12774v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 29 August, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Full version of paper appearing in the Description Logic Workshop 2021</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2107.03997">arXiv:2107.03997</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2107.03997">pdf</a>, <a href="https://arxiv.org/format/2107.03997">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Databases">cs.DB</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Probabilistic Trace Alignment
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bergami%2C+G">Giacomo Bergami</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Maggi%2C+F+M">Fabrizio Maria Maggi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Montali%2C+M">Marco Montali</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2107.03997v1-abstract-short" style="display: inline;">
+        Alignments provide sophisticated diagnostics that pinpoint deviations in a trace with respect to a process model and their severity. However, approaches based on trace alignments use crisp process models as reference and recent probabilistic conformance checking approaches check the degree of conformance of an event log with respect to a stochastic process model instead of finding trace alignments&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2107.03997v1-abstract-full').style.display = 'inline'; document.getElementById('2107.03997v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2107.03997v1-abstract-full" style="display: none;">
+        Alignments provide sophisticated diagnostics that pinpoint deviations in a trace with respect to a process model and their severity. However, approaches based on trace alignments use crisp process models as reference and recent probabilistic conformance checking approaches check the degree of conformance of an event log with respect to a stochastic process model instead of finding trace alignments. In this paper, for the first time, we provide a conformance checking approach based on trace alignments using stochastic Workflow nets. Conceptually, this requires to handle the two possibly contrasting forces of the cost of the alignment on the one hand and the likelihood of the model trace with respect to which the alignment is computed on the other.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2107.03997v1-abstract-full').style.display = 'none'; document.getElementById('2107.03997v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 July, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2021.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2009.13407">arXiv:2009.13407</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2009.13407">pdf</a>, <a href="https://arxiv.org/format/2009.13407">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Probabilistic Description Logic $\mathcal{BALC}$
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Botha%2C+L">Leonard Botha</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Meyer%2C+T">Thomas Meyer</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2009.13407v1-abstract-short" style="display: inline;">
+        Description logics (DLs) are well-known knowledge representation formalisms focused on the representation of terminological knowledge. Due to their first-order semantics, these languages (in their classical form) are not suitable for representing and handling uncertainty. A probabilistic extension of a light-weight DL was recently proposed for dealing with certain knowledge occurring in uncertain&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2009.13407v1-abstract-full').style.display = 'inline'; document.getElementById('2009.13407v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2009.13407v1-abstract-full" style="display: none;">
+        Description logics (DLs) are well-known knowledge representation formalisms focused on the representation of terminological knowledge. Due to their first-order semantics, these languages (in their classical form) are not suitable for representing and handling uncertainty. A probabilistic extension of a light-weight DL was recently proposed for dealing with certain knowledge occurring in uncertain contexts. In this paper, we continue that line of research by introducing the Bayesian extension \BALC of the propositionally closed DL \ALC. We present a tableau-based procedure for deciding consistency, and adapt it to solve other probabilistic, contextual, and general inferences in this logic. We also show that all these problems remain \ExpTime-complete, the same as reasoning in the underlying classical \ALC.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2009.13407v1-abstract-full').style.display = 'none'; document.getElementById('2009.13407v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 28 September, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2020.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Under consideration in Theory and Practice of Logic Programming (TPLP)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2007.00571">arXiv:2007.00571</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2007.00571">pdf</a>, <a href="https://arxiv.org/format/2007.00571">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Reasoning with Contextual Knowledge and Influence Diagrams
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Acar%2C+E">Erman Acar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2007.00571v1-abstract-short" style="display: inline;">
+        Influence diagrams (IDs) are well-known formalisms extending Bayesian networks to model decision situations under uncertainty. Although they are convenient as a decision theoretic tool, their knowledge representation ability is limited in capturing other crucial notions such as logical consistency. We complement IDs with the light-weight description logic (DL) EL to overcome such limitations. We c&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2007.00571v1-abstract-full').style.display = 'inline'; document.getElementById('2007.00571v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2007.00571v1-abstract-full" style="display: none;">
+        Influence diagrams (IDs) are well-known formalisms extending Bayesian networks to model decision situations under uncertainty. Although they are convenient as a decision theoretic tool, their knowledge representation ability is limited in capturing other crucial notions such as logical consistency. We complement IDs with the light-weight description logic (DL) EL to overcome such limitations. We consider a setup where DL axioms hold in some contexts, yet the actual context is uncertain. The framework benefits from the convenience of using DL as a domain knowledge representation language and the modelling strength of IDs to deal with decisions over contexts in the presence of contextual uncertainty. We define related reasoning problems and study their computational complexity.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2007.00571v1-abstract-full').style.display = 'none'; document.getElementById('2007.00571v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 1 July, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2003.08298">arXiv:2003.08298</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2003.08298">pdf</a>, <a href="https://arxiv.org/format/2003.08298">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Axiom Pinpointing
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2003.08298v1-abstract-short" style="display: inline;">
+        Axiom pinpointing refers to the task of finding the specific axioms in an ontology which are responsible for a consequence to follow. This task has been studied, under different names, in many research areas, leading to a reformulation and reinvention of techniques. In this work, we present a general overview to axiom pinpointing, providing the basic notions, different approaches for solving it, a&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2003.08298v1-abstract-full').style.display = 'inline'; document.getElementById('2003.08298v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2003.08298v1-abstract-full" style="display: none;">
+        Axiom pinpointing refers to the task of finding the specific axioms in an ontology which are responsible for a consequence to follow. This task has been studied, under different names, in many research areas, leading to a reformulation and reinvention of techniques. In this work, we present a general overview to axiom pinpointing, providing the basic notions, different approaches for solving it, and some variations and applications which have been considered in the literature. This should serve as a starting point for researchers interested in related problems, with an ample bibliography for delving deeper into the details.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2003.08298v1-abstract-full').style.display = 'none'; document.getElementById('2003.08298v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 March, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2001.07541">arXiv:2001.07541</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2001.07541">pdf</a>, <a href="https://arxiv.org/ps/2001.07541">ps</a>, <a href="https://arxiv.org/format/2001.07541">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Provenance for the Description Logic ELHr
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bourgaux%2C+C">Camille Bourgaux</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ozaki%2C+A">Ana Ozaki</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Predoiu%2C+L">Livia Predoiu</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2001.07541v3-abstract-short" style="display: inline;">
+        We address the problem of handling provenance information in ELHr ontologies. We consider a setting recently introduced for ontology-based data access, based on semirings and extending classical data provenance, in which ontology axioms are annotated with provenance tokens. A consequence inherits the provenance of the axioms involved in deriving it, yielding a provenance polynomial as an annotatio&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2001.07541v3-abstract-full').style.display = 'inline'; document.getElementById('2001.07541v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2001.07541v3-abstract-full" style="display: none;">
+        We address the problem of handling provenance information in ELHr ontologies. We consider a setting recently introduced for ontology-based data access, based on semirings and extending classical data provenance, in which ontology axioms are annotated with provenance tokens. A consequence inherits the provenance of the axioms involved in deriving it, yielding a provenance polynomial as an annotation. We analyse the semantics for the ELHr case and show that the presence of conjunctions poses various difficulties for handling provenance, some of which are mitigated by assuming multiplicative idempotency of the semiring. Under this assumption, we study three problems: ontology completion with provenance, computing the set of relevant axioms for a consequence, and query answering.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2001.07541v3-abstract-full').style.display = 'none'; document.getElementById('2001.07541v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 October, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 21 January, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2020.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">This is the long version of an IJCAI 2020 paper (23 pages) - v3 fixes glitches in proof of lemma 27 and in claim 30</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">MSC Class:</span>
+          16Y60
+        
+
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1906.00179">arXiv:1906.00179</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1906.00179">pdf</a>, <a href="https://arxiv.org/ps/1906.00179">ps</a>, <a href="https://arxiv.org/format/1906.00179">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Databases">cs.DB</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Enriching Ontology-based Data Access with Provenance (Extended Version)
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Calvanese%2C+D">Diego Calvanese</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lanti%2C+D">Davide Lanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ozaki%2C+A">Ana Ozaki</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Penaloza%2C+R">Rafael Penaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Xiao%2C+G">Guohui Xiao</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1906.00179v1-abstract-short" style="display: inline;">
+        Ontology-based data access (OBDA) is a popular paradigm for querying heterogeneous data sources by connecting them through mappings to an ontology. In OBDA, it is often difficult to reconstruct why a tuple occurs in the answer of a query. We address this challenge by enriching OBDA with provenance semirings, taking inspiration from database theory. In particular, we investigate the problems of (i)&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1906.00179v1-abstract-full').style.display = 'inline'; document.getElementById('1906.00179v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1906.00179v1-abstract-full" style="display: none;">
+        Ontology-based data access (OBDA) is a popular paradigm for querying heterogeneous data sources by connecting them through mappings to an ontology. In OBDA, it is often difficult to reconstruct why a tuple occurs in the answer of a query. We address this challenge by enriching OBDA with provenance semirings, taking inspiration from database theory. In particular, we investigate the problems of (i) deciding whether a provenance annotated OBDA instance entails a provenance annotated conjunctive query, and (ii) computing a polynomial representing the provenance of a query entailed by a provenance annotated OBDA instance. Differently from pure databases, in our case these polynomials may be infinite. To regain finiteness, we consider idempotent semirings, and study the complexity in the case of DL-Lite ontologies. We implement Task (ii) in a state-of-the-art OBDA system and show the practical feasibility of the approach through an extensive evaluation against two popular benchmarks.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1906.00179v1-abstract-full').style.display = 'none'; document.getElementById('1906.00179v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 1 June, 2019; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2019.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1903.04940">arXiv:1903.04940</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1903.04940">pdf</a>, <a href="https://arxiv.org/format/1903.04940">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Temporal Logics Over Finite Traces with Uncertainty (Technical Report)
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Maggi%2C+F+M">Fabrizio M. Maggi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Montali%2C+M">Marco Montali</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1903.04940v2-abstract-short" style="display: inline;">
+        Temporal logics over finite traces have recently seen wide application in a number of areas, from business process modelling, monitoring, and mining to planning and decision making. However, real-life dynamic systems contain a degree of uncertainty which cannot be handled with classical logics. We thus propose a new probabilistic temporal logic over finite traces using superposition semantics, whe&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.04940v2-abstract-full').style.display = 'inline'; document.getElementById('1903.04940v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1903.04940v2-abstract-full" style="display: none;">
+        Temporal logics over finite traces have recently seen wide application in a number of areas, from business process modelling, monitoring, and mining to planning and decision making. However, real-life dynamic systems contain a degree of uncertainty which cannot be handled with classical logics. We thus propose a new probabilistic temporal logic over finite traces using superposition semantics, where all possible evolutions are possible, until observed. We study the properties of the logic and provide automata-based mechanisms for deriving probabilistic inferences from its formulas. We then study a fragment of the logic with better computational properties. Notably, formulas in this fragment can be discovered from event log data using off-the-shelf existing declarative process discovery techniques.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.04940v2-abstract-full').style.display = 'none'; document.getElementById('1903.04940v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 November, 2019; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 12 March, 2019;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Extended version of paper accepted at AAAI 2020</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1810.01516">arXiv:1810.01516</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1810.01516">pdf</a>, <a href="https://arxiv.org/ps/1810.01516">ps</a>, <a href="https://arxiv.org/format/1810.01516">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Cutting Diamonds: Temporal DLs with Probabilistic Distributions over Data
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Kovtunova%2C+A">Alisa Kovtunova</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1810.01516v1-abstract-short" style="display: inline;">
+        Recent work has studied a probabilistic extension of the temporal logic LTL that refines the eventuality (or diamond) constructor with a probability distribution on when will this eventuality be satisfied. In this paper, we adapt this notion to a well established temporal extension of DL-Lite, allowing the new probabilistic constructor only in the ABox assertions. We investigate the satisfiability&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1810.01516v1-abstract-full').style.display = 'inline'; document.getElementById('1810.01516v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1810.01516v1-abstract-full" style="display: none;">
+        Recent work has studied a probabilistic extension of the temporal logic LTL that refines the eventuality (or diamond) constructor with a probability distribution on when will this eventuality be satisfied. In this paper, we adapt this notion to a well established temporal extension of DL-Lite, allowing the new probabilistic constructor only in the ABox assertions. We investigate the satisfiability problem of this new temporal DL over equiparametric geometric distributions.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1810.01516v1-abstract-full').style.display = 'none'; document.getElementById('1810.01516v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 October, 2018; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2018.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Full version of the paper accepted for 31st International Workshop on Description Logics</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1808.01877">arXiv:1808.01877</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1808.01877">pdf</a>, <a href="https://arxiv.org/ps/1808.01877">ps</a>, <a href="https://arxiv.org/format/1808.01877">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Query Answering for Rough EL Ontologies (Extended Technical Report)
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Thost%2C+V">Veronika Thost</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Turhan%2C+A">Anni-Yasmin Turhan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1808.01877v1-abstract-short" style="display: inline;">
+        Querying large datasets with incomplete and vague data is still a challenge. Ontology-based query answering extends standard database query answering by background knowledge from an ontology to augment incomplete data. We focus on ontologies written in rough description logics (DLs), which allow to represent vague knowledge by partitioning the domain of discourse into classes of indiscernible elem&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1808.01877v1-abstract-full').style.display = 'inline'; document.getElementById('1808.01877v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1808.01877v1-abstract-full" style="display: none;">
+        Querying large datasets with incomplete and vague data is still a challenge. Ontology-based query answering extends standard database query answering by background knowledge from an ontology to augment incomplete data. We focus on ontologies written in rough description logics (DLs), which allow to represent vague knowledge by partitioning the domain of discourse into classes of indiscernible elements.
+  In this paper, we extend the combined approach for ontology-based query answering to a variant of the DL EL augmented with rough concept constructors. We show that this extension preserves the good computational properties of classical EL and can be implemented by standard database systems.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1808.01877v1-abstract-full').style.display = 'none'; document.getElementById('1808.01877v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 6 August, 2018; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2018.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Extended version of a paper accepted at KR 2018</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1808.00248">arXiv:1808.00248</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1808.00248">pdf</a>, <a href="https://arxiv.org/ps/1808.00248">ps</a>, <a href="https://arxiv.org/format/1808.00248">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Repairing Description Logic Ontologies by Weakening Axioms
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Baader%2C+F">Franz Baader</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kriegel%2C+F">Francesco Kriegel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nuradiansyah%2C+A">Adrian Nuradiansyah</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1808.00248v1-abstract-short" style="display: inline;">
+        The classical approach for repairing a Description Logic ontology O in the sense of removing an unwanted consequence $α$ is to delete a minimal number of axioms from O such that the resulting ontology O&#39; does not have the consequence $α$. However, the complete deletion of axioms may be too rough, in the sense that it may also remove consequences that are actually wanted. To alleviate this problem,&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1808.00248v1-abstract-full').style.display = 'inline'; document.getElementById('1808.00248v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1808.00248v1-abstract-full" style="display: none;">
+        The classical approach for repairing a Description Logic ontology O in the sense of removing an unwanted consequence $α$ is to delete a minimal number of axioms from O such that the resulting ontology O&#39; does not have the consequence $α$. However, the complete deletion of axioms may be too rough, in the sense that it may also remove consequences that are actually wanted. To alleviate this problem, we propose a more gentle way of repair in which axioms are not necessarily deleted, but only weakened. On the one hand, we investigate general properties of this gentle repair method. On the other hand, we propose and analyze concrete approaches for weakening axioms expressed in the Description Logic EL.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1808.00248v1-abstract-full').style.display = 'none'; document.getElementById('1808.00248v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 1 August, 2018; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2018.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Extended version of the paper &#34;Making Repairs in Description Logics More Gentle&#34; accepted at KR 2018</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+          <span class="has-text-black-bis has-text-weight-semibold">Report number:</span>
+          18-01
+        
+
+        
+
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1805.10250">arXiv:1805.10250</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1805.10250">pdf</a>, <a href="https://arxiv.org/ps/1805.10250">ps</a>, <a href="https://arxiv.org/format/1805.10250">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Consequence-Based Axiom Pinpointing
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Ozaki%2C+A">Ana Ozaki</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1805.10250v1-abstract-short" style="display: inline;">
+        Axiom pinpointing refers to the problem of finding the axioms in an ontology that are relevant for understanding a given entailment or consequence. One approach for axiom pinpointing, known as glass-box, is to modify a classical decision procedure for the entailments into a method that computes the solutions for the pinpointing problem. Recently, consequence-based decision procedures have been pro&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1805.10250v1-abstract-full').style.display = 'inline'; document.getElementById('1805.10250v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1805.10250v1-abstract-full" style="display: none;">
+        Axiom pinpointing refers to the problem of finding the axioms in an ontology that are relevant for understanding a given entailment or consequence. One approach for axiom pinpointing, known as glass-box, is to modify a classical decision procedure for the entailments into a method that computes the solutions for the pinpointing problem. Recently, consequence-based decision procedures have been proposed as a promising alternative for tableaux-based reasoners for standard ontology languages. In this work, we present a general framework to extend consequence-based algorithms with axiom pinpointing.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1805.10250v1-abstract-full').style.display = 'none'; document.getElementById('1805.10250v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 25 May, 2018; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2018.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Technical Report</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1711.03430">arXiv:1711.03430</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1711.03430">pdf</a>, <a href="https://arxiv.org/ps/1711.03430">ps</a>, <a href="https://arxiv.org/format/1711.03430">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Repairing Ontologies via Axiom Weakening
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Troquard%2C+N">Nicolas Troquard</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Confalonieri%2C+R">Roberto Confalonieri</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Galliani%2C+P">Pietro Galliani</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Penaloza%2C+R">Rafael Penaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Porello%2C+D">Daniele Porello</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kutz%2C+O">Oliver Kutz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1711.03430v1-abstract-short" style="display: inline;">
+        Ontology engineering is a hard and error-prone task, in which small changes may lead to errors, or even produce an inconsistent ontology. As ontologies grow in size, the need for automated methods for repairing inconsistencies while preserving as much of the original knowledge as possible increases. Most previous approaches to this task are based on removing a few axioms from the ontology to regai&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1711.03430v1-abstract-full').style.display = 'inline'; document.getElementById('1711.03430v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1711.03430v1-abstract-full" style="display: none;">
+        Ontology engineering is a hard and error-prone task, in which small changes may lead to errors, or even produce an inconsistent ontology. As ontologies grow in size, the need for automated methods for repairing inconsistencies while preserving as much of the original knowledge as possible increases. Most previous approaches to this task are based on removing a few axioms from the ontology to regain consistency. We propose a new method based on weakening these axioms to make them less restrictive, employing the use of refinement operators. We introduce the theoretical framework for weakening DL ontologies, propose algorithms to repair ontologies based on the framework, and provide an analysis of the computational complexity. Through an empirical analysis made over real-life ontologies, we show that our approach preserves significantly more of the original knowledge of the ontology than removing axioms.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1711.03430v1-abstract-full').style.display = 'none'; document.getElementById('1711.03430v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 9 November, 2017; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2017.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To appear AAAI 2018</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1707.08468">arXiv:1707.08468</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1707.08468">pdf</a>, <a href="https://arxiv.org/ps/1707.08468">ps</a>, <a href="https://arxiv.org/format/1707.08468">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Decidable Very Expressive Description Logic for Databases (Extended Version)
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Artale%2C+A">Alessandro Artale</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Franconi%2C+E">Enrico Franconi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sportelli%2C+F">Francesco Sportelli</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1707.08468v1-abstract-short" style="display: inline;">
+        We introduce $\mathcal{DLR}^+$, an extension of the n-ary propositionally closed description logic $\mathcal{DLR}$ to deal with attribute-labelled tuples (generalising the positional notation), projections of relations, and global and local objectification of relations, able to express inclusion, functional, key, and external uniqueness dependencies. The logic is equipped with both TBox and ABox a&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1707.08468v1-abstract-full').style.display = 'inline'; document.getElementById('1707.08468v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1707.08468v1-abstract-full" style="display: none;">
+        We introduce $\mathcal{DLR}^+$, an extension of the n-ary propositionally closed description logic $\mathcal{DLR}$ to deal with attribute-labelled tuples (generalising the positional notation), projections of relations, and global and local objectification of relations, able to express inclusion, functional, key, and external uniqueness dependencies. The logic is equipped with both TBox and ABox axioms. We show how a simple syntactic restriction on the appearance of projections sharing common attributes in a $\mathcal{DLR}^+$ knowledge base makes reasoning in the language decidable with the same computational complexity as $\mathcal{DLR}$. The obtained $\mathcal{DLR}^\pm$ n-ary description logic is able to encode more thoroughly conceptual data models such as EER, UML, and ORM.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1707.08468v1-abstract-full').style.display = 'none'; document.getElementById('1707.08468v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 25 July, 2017; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2017.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">20 pages. Extended version of paper appearing in the International Semantic Web Conference (ISWC 2017). arXiv admin note: text overlap with arXiv:1604.00799</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1706.03207">arXiv:1706.03207</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1706.03207">pdf</a>, <a href="https://arxiv.org/ps/1706.03207">ps</a>, <a href="https://arxiv.org/format/1706.03207">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Towards Statistical Reasoning in Description Logics over Finite Domains (Full Version)
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Potyka%2C+N">Nico Potyka</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1706.03207v1-abstract-short" style="display: inline;">
+        We present a probabilistic extension of the description logic $\mathcal{ALC}$ for reasoning about statistical knowledge. We consider conditional statements over proportions of the domain and are interested in the probabilistic-logical consequences of these proportions. After introducing some general reasoning problems and analyzing their properties, we present first algorithms and complexity resul&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1706.03207v1-abstract-full').style.display = 'inline'; document.getElementById('1706.03207v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1706.03207v1-abstract-full" style="display: none;">
+        We present a probabilistic extension of the description logic $\mathcal{ALC}$ for reasoning about statistical knowledge. We consider conditional statements over proportions of the domain and are interested in the probabilistic-logical consequences of these proportions. After introducing some general reasoning problems and analyzing their properties, we present first algorithms and complexity results for reasoning in some fragments of Statistical $\mathcal{ALC}$.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1706.03207v1-abstract-full').style.display = 'none'; document.getElementById('1706.03207v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 June, 2017; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2017.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">16 pages. Extended version of &#34;Towards Statistical Reasoning in Description Logics over Finite Domains&#34; published at the 11th International Conference on Scalable Uncertainty Management (SUM 2017)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1606.09521">arXiv:1606.09521</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1606.09521">pdf</a>, <a href="https://arxiv.org/ps/1606.09521">ps</a>, <a href="https://arxiv.org/format/1606.09521">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Probabilistic Reasoning in the Description Logic ALCP with the Principle of Maximum Entropy (Full Version)
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Potyka%2C+N">Nico Potyka</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1606.09521v1-abstract-short" style="display: inline;">
+        A central question for knowledge representation is how to encode and handle uncertain knowledge adequately. We introduce the probabilistic description logic ALCP that is designed for representing context-dependent knowledge, where the actual context taking place is uncertain. ALCP allows the expression of logical dependencies on the domain and probabilistic dependencies on the possible contexts. I&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1606.09521v1-abstract-full').style.display = 'inline'; document.getElementById('1606.09521v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1606.09521v1-abstract-full" style="display: none;">
+        A central question for knowledge representation is how to encode and handle uncertain knowledge adequately. We introduce the probabilistic description logic ALCP that is designed for representing context-dependent knowledge, where the actual context taking place is uncertain. ALCP allows the expression of logical dependencies on the domain and probabilistic dependencies on the possible contexts. In order to draw probabilistic conclusions, we employ the principle of maximum entropy. We provide reasoning algorithms for this logic, and show that it satisfies several desirable properties of probabilistic logics.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1606.09521v1-abstract-full').style.display = 'none'; document.getElementById('1606.09521v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 June, 2016; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2016.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Full version of paper accepted at the Tenth International Conference on Scalable Uncertainty Management (SUM 2016)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1509.08761">arXiv:1509.08761</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1509.08761">pdf</a>, <a href="https://arxiv.org/ps/1509.08761">ps</a>, <a href="https://arxiv.org/format/1509.08761">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Reasoning in Infinitely Valued G-IALCQ
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Borgwardt%2C+S">Stefan Borgwardt</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1509.08761v1-abstract-short" style="display: inline;">
+        Fuzzy Description Logics (FDLs) are logic-based formalisms used to represent and reason with vague or imprecise knowledge. It has been recently shown that reasoning in most FDLs using truth values from the interval [0,1] becomes undecidable in the presence of a negation constructor and general concept inclusion axioms. One exception to this negative result are FDLs whose semantics is based on the&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1509.08761v1-abstract-full').style.display = 'inline'; document.getElementById('1509.08761v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1509.08761v1-abstract-full" style="display: none;">
+        Fuzzy Description Logics (FDLs) are logic-based formalisms used to represent and reason with vague or imprecise knowledge. It has been recently shown that reasoning in most FDLs using truth values from the interval [0,1] becomes undecidable in the presence of a negation constructor and general concept inclusion axioms. One exception to this negative result are FDLs whose semantics is based on the infinitely valued Gödel t-norm (G). In this paper, we extend previous decidability results for G-IALC to deal also with qualified number restrictions. Our novel approach is based on a combination of the known crispification technique for finitely valued FDLs and the automata-based procedure originally developed for reasoning in G-IALC. The proposed approach combines the advantages of these two methods, while removing their respective drawbacks.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1509.08761v1-abstract-full').style.display = 'none'; document.getElementById('1509.08761v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 29 September, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Workshop on Weighted Logics for Artificial Intelligence, 2015</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1508.02626">arXiv:1508.02626</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1508.02626">pdf</a>, <a href="https://arxiv.org/format/1508.02626">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Answering Fuzzy Conjunctive Queries over Finitely Valued Fuzzy Ontologies
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Borgwardt%2C+S">Stefan Borgwardt</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mailis%2C+T">Theofilos Mailis</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Turhan%2C+A">Anni-Yasmin Turhan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1508.02626v2-abstract-short" style="display: inline;">
+        Fuzzy Description Logics (DLs) provide a means for representing vague knowledge about an application domain. In this paper, we study fuzzy extensions of conjunctive queries (CQs) over the DL $\mathcal{SROIQ}$ based on finite chains of degrees of truth. To answer such queries, we extend a well-known technique that reduces the fuzzy ontology to a classical one, and use classical DL reasoners as a bl&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1508.02626v2-abstract-full').style.display = 'inline'; document.getElementById('1508.02626v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1508.02626v2-abstract-full" style="display: none;">
+        Fuzzy Description Logics (DLs) provide a means for representing vague knowledge about an application domain. In this paper, we study fuzzy extensions of conjunctive queries (CQs) over the DL $\mathcal{SROIQ}$ based on finite chains of degrees of truth. To answer such queries, we extend a well-known technique that reduces the fuzzy ontology to a classical one, and use classical DL reasoners as a black box. We improve the complexity of previous reduction techniques for finitely valued fuzzy DLs, which allows us to prove tight complexity results for answering certain kinds of fuzzy CQs. We conclude with an experimental evaluation of a prototype implementation, showing the feasibility of our approach.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1508.02626v2-abstract-full').style.display = 'none'; document.getElementById('1508.02626v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 October, 2015; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 11 August, 2015;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">submitted to the Journal on Data Semantics, v1: 19 pages, v2: 20 pages, improved evaluation section</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1507.03920">arXiv:1507.03920</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1507.03920">pdf</a>, <a href="https://arxiv.org/ps/1507.03920">ps</a>, <a href="https://arxiv.org/format/1507.03920">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1017/S1471068415000241">10.1017/S1471068415000241 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Fuzzy Answer Set Computation via Satisfiability Modulo Theories
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Alviano%2C+M">Mario Alviano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Penaloza%2C+R">Rafael Penaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1507.03920v1-abstract-short" style="display: inline;">
+        Fuzzy answer set programming (FASP) combines two declarative frameworks, answer set programming and fuzzy logic, in order to model reasoning by default over imprecise information. Several connectives are available to combine different expressions; in particular the \Godel and \Luka fuzzy connectives are usually considered, due to their properties. Although the \Godel conjunction can be easily elim&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1507.03920v1-abstract-full').style.display = 'inline'; document.getElementById('1507.03920v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1507.03920v1-abstract-full" style="display: none;">
+        Fuzzy answer set programming (FASP) combines two declarative frameworks, answer set programming and fuzzy logic, in order to model reasoning by default over imprecise information. Several connectives are available to combine different expressions; in particular the \Godel and \Luka fuzzy connectives are usually considered, due to their properties. Although the \Godel conjunction can be easily eliminated from rule heads, we show through complexity arguments that such a simplification is infeasible in general for all other connectives. %, even if bodies are restricted to \Luka or \Godel conjunctions. The paper analyzes a translation of FASP programs into satisfiability modulo theories~(SMT), which in general produces quantified formulas because of the minimality of the semantics. Structural properties of many FASP programs allow to eliminate the quantification, or to sensibly reduce the number of quantified variables. Indeed, integrality constraints can replace recursive rules commonly used to force Boolean interpretations, and completion subformulas can guarantee minimality for acyclic programs with atomic heads. Moreover, head cycle free rules can be replaced by shifted subprograms, whose structure depends on the eliminated head connective, so that ordered completion may replace the minimality check if also \Luka disjunction in rule bodies is acyclic. The paper also presents and evaluates a prototype system implementing these translations.
+  To appear in Theory and Practice of Logic Programming (TPLP), Proceedings of ICLP 2015.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1507.03920v1-abstract-full').style.display = 'none'; document.getElementById('1507.03920v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 July, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2015.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2
+        
+      </p>
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Theory and Practice of Logic Programming 15 (2015) 588-603
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1506.08030">arXiv:1506.08030</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1506.08030">pdf</a>, <a href="https://arxiv.org/format/1506.08030">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Dynamic Bayesian Ontology Languages
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Ceylan%2C+%C4%B0+%C4%B0">İsmail İlkan Ceylan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pe%C3%B1aloza%2C+R">Rafael Peñaloza</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1506.08030v1-abstract-short" style="display: inline;">
+        Many formalisms combining ontology languages with uncertainty, usually in the form of probabilities, have been studied over the years. Most of these formalisms, however, assume that the probabilistic structure of the knowledge remains static over time. We present a general approach for extending ontology languages to handle time-evolving uncertainty represented by a dynamic Bayesian network. We sh&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1506.08030v1-abstract-full').style.display = 'inline'; document.getElementById('1506.08030v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1506.08030v1-abstract-full" style="display: none;">
+        Many formalisms combining ontology languages with uncertainty, usually in the form of probabilities, have been studied over the years. Most of these formalisms, however, assume that the probabilistic structure of the knowledge remains static over time. We present a general approach for extending ontology languages to handle time-evolving uncertainty represented by a dynamic Bayesian network. We show how reasoning in the original language and dynamic Bayesian inferences can be exploited for effective reasoning in our framework.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1506.08030v1-abstract-full').style.display = 'none'; document.getElementById('1506.08030v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 June, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Fifth International Workshop on Statistical Relational AI (StarAI&#39;2015)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

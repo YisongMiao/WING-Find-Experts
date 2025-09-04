@@ -1,0 +1,35 @@
+{
+  "author": "Gilles Pesant",
+  "results": [
+    {
+      "title": "Improving tracking with a tracklet associator",
+      "abstract": "Multiple object tracking (MOT) is a task in computer vision that aims to detect the position of various objects in videos and to associate them to a unique identity. We propose an approach based on Constraint Programming (CP) whose goal is to be grafted to any existing tracker in order to improve its object association results. We developed a modular algorithm divided into three independent phases. The first phase consists in recovering the tracklets provided by a base tracker and to cut them at the places where uncertain associations are spotted, for example, when tracklets overlap, which may cause identity switches. In the second phase, we associate the previously constructed tracklets using a Belief Propagation Constraint Programming algorithm, where we propose various constraints that assign scores to each of the tracklets based on multiple characteristics, such as their dynamics or the distance between them in time and space. Finally, the third phase is a rudimentary interpolation model to fill in the remaining holes in the trajectories we built. Experiments show that our model leads to improvements in the results for all three of the state-of-the-art trackers on which we tested it (3 to 4 points gained on HOTA and IDF1). △ Less",
+      "url": "https://arxiv.org/abs/2204.10677"
+    },
+    {
+      "title": "Fairness over time in dynamic resource allocation with an application in Healthcare",
+      "abstract": "Decision making problems are typically concerned with maximizing efficiency. In contrast, we address problems where there are multiple stakeholders and a centralized decision maker who is obliged to decide in a fair manner. Different decisions give different utility to each stakeholder. In cases where these decisions are made repeatedly, we provide efficient mathematical programming formulations to identify both the maximum fairness possible and the decisions that improve fairness over time, for reasonable metrics of fairness. We apply this framework to the problem of ambulance allocation, where decisions in consecutive rounds are constrained. With this additional complexity, we prove structural results on identifying fair feasible allocation policies and provide a hybrid algorithm with column generation and constraint programming-based solution techniques for this class of problems. Computational experiments show that our method can solve these problems orders of magnitude faster than a naive approach. △ Less",
+      "url": "https://arxiv.org/abs/2101.03716"
+    },
+    {
+      "title": "Tracking Road Users using Constraint Programming",
+      "abstract": "In this paper, we aim at improving the tracking of road users in urban scenes. We present a constraint programming (CP) approach for the data association phase found in the tracking-by-detection paradigm of the multiple object tracking (MOT) problem. Such an approach can solve the data association problem more efficiently than graph-based methods and can handle better the combinatorial explosion occurring when multiple frames are analyzed. Because our focus is on the data association problem, our MOT method only uses simple image features, which are the center position and color of detections for each frame. Constraints are defined on these two features and on the general MOT problem. For example, we enforce color appearance preservation over trajectories and constrain the extent of motion between frames. Filtering layers are used in order to eliminate detection candidates before using CP and to remove dummy trajectories produced by the CP solver. Our proposed method was tested on a motorized vehicles tracking dataset and produces results that outperform the top methods of the UA-DETRAC benchmark. △ Less",
+      "url": "https://arxiv.org/abs/2003.04468"
+    },
+    {
+      "title": "Compiling Stochastic Constraint Programs to And-Or Decision Diagrams",
+      "abstract": "Factored stochastic constraint programming (FSCP) is a formalism to represent multi-stage decision making problems under uncertainty. FSCP models support factorized probabilistic models and involve constraints over decision and random variables. These models have many applications in real-world problems. However, solving these problems requires evaluating the best course of action for each possible outcome of the random variables and hence is computationally challenging. FSCP problems often involve repeated subproblems which ideally should be solved once. In this paper we show how identifying and exploiting these identical subproblems can simplify solving them and leads to a compact representation of the solution. We compile an And-Or search tree to a compact decision diagram. Preliminary experiments show that our proposed method significantly improves the search efficiency by reducing the size of the problem and outperforms the existing methods. △ Less",
+      "url": "https://arxiv.org/abs/1909.10622"
+    },
+    {
+      "title": "Counting-Based Search: Branching Heuristics for Constraint Satisfaction Problems",
+      "abstract": "Designing a search heuristic for constraint programming that is reliable across problem domains has been an important research topic in recent years. This paper concentrates on one family of candidates: counting-based search. Such heuristics seek to make branching decisions that preserve most of the solutions by determining what proportion of solutions to each individual constraint agree with that decision. Whereas most generic search heuristics in constraint programming rely on local information at the level of the individual variable, our search heuristics are based on more global information at the constraint level. We design several algorithms that are used to count the number of solutions to specific families of constraints and propose some search heuristics exploiting such information. The experimental part of the paper considers eight problem domains ranging from well-established benchmark puzzles to rostering and sport scheduling. An initial empirical analysis identifies heuristic maxSD as a robust candidate among our proposals.eWe then evaluate the latter against the state of the art, including the latest generic search heuristics, restarts, and discrepancy-based tree traversals. Experimental results show that counting-based search generally outperforms other generic heuristics. △ Less",
+      "url": "https://arxiv.org/abs/1401.4601"
+    },
+    {
+      "title": "On Global Warming (Softening Global Constraints)",
+      "abstract": "We describe soft versions of the global cardinality constraint and the regular constraint, with efficient filtering algorithms maintaining domain consistency. For both constraints, the softening is achieved by augmenting the underlying graph. The softened constraints can be used to extend the meta-constraint framework for over-constrained problems proposed by Petit, Regin and Bessiere. △ Less",
+      "url": "https://arxiv.org/abs/cs/0408023"
+    }
+  ]
+}

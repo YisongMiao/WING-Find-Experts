@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;20 of 20 results for author: <span class="mathjax">Giuseppe Lisanti</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Giuseppe Lisanti">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Giuseppe+Lisanti&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Giuseppe Lisanti">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2506.21549">arXiv:2506.21549</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2506.21549">pdf</a>, <a href="https://arxiv.org/ps/2506.21549">ps</a>, <a href="https://arxiv.org/format/2506.21549">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        SiM3D: Single-instance Multiview Multimodal and Multisetup 3D Anomaly Detection Benchmark
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Costanzino%2C+A">Alex Costanzino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ramirez%2C+P+Z">Pierluigi Zama Ramirez</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lella%2C+L">Luigi Lella</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ragaglia%2C+M">Matteo Ragaglia</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oliva%2C+A">Alessandro Oliva</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Di+Stefano%2C+L">Luigi Di Stefano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2506.21549v2-abstract-short" style="display: inline;">
+        We propose SiM3D, the first benchmark considering the integration of multiview and multimodal information for comprehensive 3D anomaly detection and segmentation (ADS), where the task is to produce a voxel-based Anomaly Volume. Moreover, SiM3D focuses on a scenario of high interest in manufacturing: single-instance anomaly detection, where only one object, either real or synthetic, is available fo&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2506.21549v2-abstract-full').style.display = 'inline'; document.getElementById('2506.21549v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2506.21549v2-abstract-full" style="display: none;">
+        We propose SiM3D, the first benchmark considering the integration of multiview and multimodal information for comprehensive 3D anomaly detection and segmentation (ADS), where the task is to produce a voxel-based Anomaly Volume. Moreover, SiM3D focuses on a scenario of high interest in manufacturing: single-instance anomaly detection, where only one object, either real or synthetic, is available for training. In this respect, SiM3D stands out as the first ADS benchmark that addresses the challenge of generalising from synthetic training data to real test data. SiM3D includes a novel multimodal multiview dataset acquired using top-tier industrial sensors and robots. The dataset features multiview high-resolution images (12 Mpx) and point clouds (7M points) for 333 instances of eight types of objects, alongside a CAD model for each type. We also provide manually annotated 3D segmentation GTs for anomalous test samples. To establish reference baselines for the proposed multiview 3D ADS task, we adapt prominent singleview methods and assess their performance using novel metrics that operate on Anomaly Volumes.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2506.21549v2-abstract-full').style.display = 'none'; document.getElementById('2506.21549v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 1 August, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 26 June, 2025;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted at ICCV 2025. Project page: https://alex-costanzino.github.io/SiM3D/</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2505.22486">arXiv:2505.22486</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2505.22486">pdf</a>, <a href="https://arxiv.org/format/2505.22486">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Understanding Adversarial Training with Energy-based Models
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mirza%2C+M+H">Mujtaba Hussain Mirza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Briglia%2C+M+R">Maria Rosaria Briglia</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bartolucci%2C+F">Filippo Bartolucci</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Beadini%2C+S">Senad Beadini</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Masi%2C+I">Iacopo Masi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2505.22486v1-abstract-short" style="display: inline;">
+        We aim at using Energy-based Model (EBM) framework to better understand adversarial training (AT) in classifiers, and additionally to analyze the intrinsic generative capabilities of robust classifiers. By viewing standard classifiers through an energy lens, we begin by analyzing how the energies of adversarial examples, generated by various attacks, differ from those of the natural samples. The c&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.22486v1-abstract-full').style.display = 'inline'; document.getElementById('2505.22486v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2505.22486v1-abstract-full" style="display: none;">
+        We aim at using Energy-based Model (EBM) framework to better understand adversarial training (AT) in classifiers, and additionally to analyze the intrinsic generative capabilities of robust classifiers. By viewing standard classifiers through an energy lens, we begin by analyzing how the energies of adversarial examples, generated by various attacks, differ from those of the natural samples. The central focus of our work is to understand the critical phenomena of Catastrophic Overfitting (CO) and Robust Overfitting (RO) in AT from an energy perspective. We analyze the impact of existing AT approaches on the energy of samples during training and observe that the behavior of the ``delta energy&#39; -- change in energy between original sample and its adversarial counterpart -- diverges significantly when CO or RO occurs. After a thorough analysis of these energy dynamics and their relationship with overfitting, we propose a novel regularizer, the Delta Energy Regularizer (DER), designed to smoothen the energy landscape during training. We demonstrate that DER is effective in mitigating both CO and RO across multiple benchmarks. We further show that robust classifiers, when being used as generative models, have limits in handling trade-off between image quality and variability. We propose an improved technique based on a local class-wise principal component analysis (PCA) and energy-based guidance for better class-specific initialization and adaptive stopping, enhancing sample diversity and generation quality. Considering that we do not explicitly train for generative modeling, we achieve a competitive Inception Score (IS) and Fréchet inception distance (FID) compared to hybrid discriminative-generative models.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.22486v1-abstract-full').style.display = 'none'; document.getElementById('2505.22486v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 28 May, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Under review for TPAMI</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2505.21742">arXiv:2505.21742</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2505.21742">pdf</a>, <a href="https://arxiv.org/ps/2505.21742">ps</a>, <a href="https://arxiv.org/format/2505.21742">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        What is Adversarial Training for Diffusion Models?
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Rosaria%2C+B+M">Briglia Maria Rosaria</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mirza%2C+M+H">Mujtaba Hussain Mirza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Masi%2C+I">Iacopo Masi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2505.21742v1-abstract-short" style="display: inline;">
+        We answer the question in the title, showing that adversarial training (AT) for diffusion models (DMs) fundamentally differs from classifiers: while AT in classifiers enforces output invariance, AT in DMs requires equivariance to keep the diffusion process aligned with the data distribution. AT is a way to enforce smoothness in the diffusion flow, improving robustness to outliers and corrupted dat&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.21742v1-abstract-full').style.display = 'inline'; document.getElementById('2505.21742v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2505.21742v1-abstract-full" style="display: none;">
+        We answer the question in the title, showing that adversarial training (AT) for diffusion models (DMs) fundamentally differs from classifiers: while AT in classifiers enforces output invariance, AT in DMs requires equivariance to keep the diffusion process aligned with the data distribution. AT is a way to enforce smoothness in the diffusion flow, improving robustness to outliers and corrupted data. Unlike prior art, our method makes no assumptions about the noise model and integrates seamlessly into diffusion training by adding random noise, similar to randomized smoothing, or adversarial noise, akin to AT. This enables intrinsic capabilities such as handling noisy data, dealing with extreme variability such as outliers, preventing memorization, and improving robustness. We rigorously evaluate our approach with proof-of-concept datasets with known distributions in low- and high-dimensional space, thereby taking a perfect measure of errors; we further evaluate on standard benchmarks such as CIFAR-10, CelebA and LSUN Bedroom, showing strong performance under severe noise, data corruption, and iterative adversarial attacks.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.21742v1-abstract-full').style.display = 'none'; document.getElementById('2505.21742v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 27 May, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">40 pages</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2504.13995">arXiv:2504.13995</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2504.13995">pdf</a>, <a href="https://arxiv.org/format/2504.13995">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Scaling LLaNA: Advancing NeRF-Language Understanding Through Large-Scale Training
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Amaduzzi%2C+A">Andrea Amaduzzi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ramirez%2C+P+Z">Pierluigi Zama Ramirez</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Salti%2C+S">Samuele Salti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Di+Stefano%2C+L">Luigi Di Stefano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2504.13995v1-abstract-short" style="display: inline;">
+        Recent advances in Multimodal Large Language Models (MLLMs) have shown remarkable capabilities in understanding both images and 3D data, yet these modalities face inherent limitations in comprehensively representing object geometry and appearance. Neural Radiance Fields (NeRFs) have emerged as a promising alternative, encoding both geometric and photorealistic properties within the weights of a si&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.13995v1-abstract-full').style.display = 'inline'; document.getElementById('2504.13995v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2504.13995v1-abstract-full" style="display: none;">
+        Recent advances in Multimodal Large Language Models (MLLMs) have shown remarkable capabilities in understanding both images and 3D data, yet these modalities face inherent limitations in comprehensively representing object geometry and appearance. Neural Radiance Fields (NeRFs) have emerged as a promising alternative, encoding both geometric and photorealistic properties within the weights of a simple Multi-Layer Perceptron (MLP). This work investigates the feasibility and effectiveness of ingesting NeRFs into an MLLM. We introduce LLaNA, the first MLLM able to perform new tasks such as NeRF captioning and Q\&amp;A, by directly processing the weights of a NeRF&#39;s MLP. Notably, LLaNA is able to extract information about the represented objects without the need to render images or materialize 3D data structures. In addition, we build the first large-scale NeRF-language dataset, composed by more than 300K NeRFs trained on ShapeNet and Objaverse, with paired textual annotations that enable various NeRF-language tasks. Based on this dataset, we develop a benchmark to evaluate the NeRF understanding capability of our method. Results show that directly processing NeRF weights leads to better performance on NeRF-Language tasks compared to approaches that rely on either 2D or 3D representations derived from NeRFs.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.13995v1-abstract-full').style.display = 'none'; document.getElementById('2504.13995v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 April, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Under submission. Project page at https://andreamaduzzi.github.io/llana/</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2409.17941">arXiv:2409.17941</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2409.17941">pdf</a>, <a href="https://arxiv.org/format/2409.17941">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Perturb, Attend, Detect and Localize (PADL): Robust Proactive Image Defense
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bartolucci%2C+F">Filippo Bartolucci</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Masi%2C+I">Iacopo Masi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2409.17941v1-abstract-short" style="display: inline;">
+        Image manipulation detection and localization have received considerable attention from the research community given the blooming of Generative Models (GMs). Detection methods that follow a passive approach may overfit to specific GMs, limiting their application in real-world scenarios, due to the growing diversity of generative models. Recently, approaches based on a proactive framework have show&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2409.17941v1-abstract-full').style.display = 'inline'; document.getElementById('2409.17941v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2409.17941v1-abstract-full" style="display: none;">
+        Image manipulation detection and localization have received considerable attention from the research community given the blooming of Generative Models (GMs). Detection methods that follow a passive approach may overfit to specific GMs, limiting their application in real-world scenarios, due to the growing diversity of generative models. Recently, approaches based on a proactive framework have shown the possibility of dealing with this limitation. However, these methods suffer from two main limitations, which raises concerns about potential vulnerabilities: i) the manipulation detector is not robust to noise and hence can be easily fooled; ii) the fact that they rely on fixed perturbations for image protection offers a predictable exploit for malicious attackers, enabling them to reverse-engineer and evade detection. To overcome this issue we propose PADL, a new solution able to generate image-specific perturbations using a symmetric scheme of encoding and decoding based on cross-attention, which drastically reduces the possibility of reverse engineering, even when evaluated with adaptive attack [31]. Additionally, PADL is able to pinpoint manipulated areas, facilitating the identification of specific regions that have undergone alterations, and has more generalization power than prior art on held-out generative models. Indeed, although being trained only on an attribute manipulation GAN model [15], our method generalizes to a range of unseen models with diverse architectural designs, such as StarGANv2, BlendGAN, DiffAE, StableDiffusion and StableDiffusionXL. Additionally, we introduce a novel evaluation protocol, which offers a fair evaluation of localisation performance in function of detection accuracy and better captures real-world scenarios.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2409.17941v1-abstract-full').style.display = 'none'; document.getElementById('2409.17941v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 September, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2407.04092">arXiv:2407.04092</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2407.04092">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1109/ACCESS.2025.3582900">10.1109/ACCESS.2025.3582900 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Learning to Be a Transformer to Pinpoint Anomalies
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Costanzino%2C+A">Alex Costanzino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ramirez%2C+P+Z">Pierluigi Zama Ramirez</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Di+Stefano%2C+L">Luigi Di Stefano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2407.04092v3-abstract-short" style="display: inline;">
+        To efficiently deploy strong, often pre-trained feature extractors, recent Industrial Anomaly Detection and Segmentation (IADS) methods process low-resolution images, e.g., 224x224 pixels, obtained by downsampling the original input images. However, while numerous industrial applications demand the identification of both large and small defects, downsampling the input image to a low resolution may&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.04092v3-abstract-full').style.display = 'inline'; document.getElementById('2407.04092v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2407.04092v3-abstract-full" style="display: none;">
+        To efficiently deploy strong, often pre-trained feature extractors, recent Industrial Anomaly Detection and Segmentation (IADS) methods process low-resolution images, e.g., 224x224 pixels, obtained by downsampling the original input images. However, while numerous industrial applications demand the identification of both large and small defects, downsampling the input image to a low resolution may hinder a method&#39;s ability to pinpoint tiny anomalies. We propose a novel Teacher--Student paradigm to leverage strong pre-trained features while processing high-resolution input images very efficiently. The core idea concerns training two shallow MLPs (the Students) by nominal images so as to mimic the mappings between the patch embeddings induced by the self-attention layers of a frozen vision Transformer (the Teacher). Indeed, learning these mappings sets forth a challenging pretext task that small-capacity models are unlikely to accomplish on out-of-distribution data such as anomalous images. Our method can spot anomalies from high-resolution images and runs way faster than competitors, achieving state-of-the-art performance on MVTec AD and the best segmentation results on VisA. We also propose novel evaluation metrics to capture robustness to defect size, i.e., the ability to preserve good localisation from large anomalies to tiny ones. Evaluating our method also by these metrics reveals its neatly superior performance.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.04092v3-abstract-full').style.display = 'none'; document.getElementById('2407.04092v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 June, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 4 July, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted at IEEE Access</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2406.11840">arXiv:2406.11840</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2406.11840">pdf</a>, <a href="https://arxiv.org/format/2406.11840">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        LLaNA: Large Language and NeRF Assistant
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Amaduzzi%2C+A">Andrea Amaduzzi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ramirez%2C+P+Z">Pierluigi Zama Ramirez</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Salti%2C+S">Samuele Salti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Di+Stefano%2C+L">Luigi Di Stefano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2406.11840v2-abstract-short" style="display: inline;">
+        Multimodal Large Language Models (MLLMs) have demonstrated an excellent understanding of images and 3D data. However, both modalities have shortcomings in holistically capturing the appearance and geometry of objects. Meanwhile, Neural Radiance Fields (NeRFs), which encode information within the weights of a simple Multi-Layer Perceptron (MLP), have emerged as an increasingly widespread modality t&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2406.11840v2-abstract-full').style.display = 'inline'; document.getElementById('2406.11840v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2406.11840v2-abstract-full" style="display: none;">
+        Multimodal Large Language Models (MLLMs) have demonstrated an excellent understanding of images and 3D data. However, both modalities have shortcomings in holistically capturing the appearance and geometry of objects. Meanwhile, Neural Radiance Fields (NeRFs), which encode information within the weights of a simple Multi-Layer Perceptron (MLP), have emerged as an increasingly widespread modality that simultaneously encodes the geometry and photorealistic appearance of objects. This paper investigates the feasibility and effectiveness of ingesting NeRF into MLLM. We create LLaNA, the first general-purpose NeRF-language assistant capable of performing new tasks such as NeRF captioning and Q\&amp;A. Notably, our method directly processes the weights of the NeRF&#39;s MLP to extract information about the represented objects without the need to render images or materialize 3D data structures. Moreover, we build a dataset of NeRFs with text annotations for various NeRF-language tasks with no human intervention. Based on this dataset, we develop a benchmark to evaluate the NeRF understanding capability of our method. Results show that processing NeRF weights performs favourably against extracting 2D or 3D representations from NeRFs.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2406.11840v2-abstract-full').style.display = 'none'; document.getElementById('2406.11840v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 November, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 17 June, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Under review. Project page: https://andreamaduzzi.github.io/llana/</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2404.03743">arXiv:2404.03743</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2404.03743">pdf</a>, <a href="https://arxiv.org/format/2404.03743">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Test Time Training for Industrial Anomaly Segmentation
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Costanzino%2C+A">Alex Costanzino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ramirez%2C+P+Z">Pierluigi Zama Ramirez</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Del+Moro%2C+M">Mirko Del Moro</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Aiezzo%2C+A">Agostino Aiezzo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Salti%2C+S">Samuele Salti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Di+Stefano%2C+L">Luigi Di Stefano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2404.03743v1-abstract-short" style="display: inline;">
+        Anomaly Detection and Segmentation (AD&amp;S) is crucial for industrial quality control. While existing methods excel in generating anomaly scores for each pixel, practical applications require producing a binary segmentation to identify anomalies. Due to the absence of labeled anomalies in many real scenarios, standard practices binarize these maps based on some statistics derived from a validation s&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.03743v1-abstract-full').style.display = 'inline'; document.getElementById('2404.03743v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2404.03743v1-abstract-full" style="display: none;">
+        Anomaly Detection and Segmentation (AD&amp;S) is crucial for industrial quality control. While existing methods excel in generating anomaly scores for each pixel, practical applications require producing a binary segmentation to identify anomalies. Due to the absence of labeled anomalies in many real scenarios, standard practices binarize these maps based on some statistics derived from a validation set containing only nominal samples, resulting in poor segmentation performance. This paper addresses this problem by proposing a test time training strategy to improve the segmentation performance. Indeed, at test time, we can extract rich features directly from anomalous samples to train a classifier that can discriminate defects effectively. Our general approach can work downstream to any AD&amp;S method that provides an anomaly score map as output, even in multimodal settings. We demonstrate the effectiveness of our approach over baselines through extensive experimentation and evaluation on MVTec AD and MVTec 3D-AD.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.03743v1-abstract-full').style.display = 'none'; document.getElementById('2404.03743v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 4 April, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted at VAND 2.0, CVPRW 2024</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2312.04521">arXiv:2312.04521</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2312.04521">pdf</a>, <a href="https://arxiv.org/format/2312.04521">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Multimodal Industrial Anomaly Detection by Crossmodal Feature Mapping
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Costanzino%2C+A">Alex Costanzino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ramirez%2C+P+Z">Pierluigi Zama Ramirez</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Di+Stefano%2C+L">Luigi Di Stefano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2312.04521v2-abstract-short" style="display: inline;">
+        The paper explores the industrial multimodal Anomaly Detection (AD) task, which exploits point clouds and RGB images to localize anomalies. We introduce a novel light and fast framework that learns to map features from one modality to the other on nominal samples. At test time, anomalies are detected by pinpointing inconsistencies between observed and mapped features. Extensive experiments show th&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2312.04521v2-abstract-full').style.display = 'inline'; document.getElementById('2312.04521v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2312.04521v2-abstract-full" style="display: none;">
+        The paper explores the industrial multimodal Anomaly Detection (AD) task, which exploits point clouds and RGB images to localize anomalies. We introduce a novel light and fast framework that learns to map features from one modality to the other on nominal samples. At test time, anomalies are detected by pinpointing inconsistencies between observed and mapped features. Extensive experiments show that our approach achieves state-of-the-art detection and segmentation performance in both the standard and few-shot settings on the MVTec 3D-AD dataset while achieving faster inference and occupying less memory than previous multimodal AD methods. Moreover, we propose a layer-pruning technique to improve memory and time efficiency with a marginal sacrifice in performance.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2312.04521v2-abstract-full').style.display = 'none'; document.getElementById('2312.04521v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 July, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 7 December, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted at CVPR 2024</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2309.07917">arXiv:2309.07917</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2309.07917">pdf</a>, <a href="https://arxiv.org/format/2309.07917">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Looking at words and points with attention: a benchmark for text-to-shape coherence
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Amaduzzi%2C+A">Andrea Amaduzzi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Salti%2C+S">Samuele Salti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Di+Stefano%2C+L">Luigi Di Stefano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2309.07917v1-abstract-short" style="display: inline;">
+        While text-conditional 3D object generation and manipulation have seen rapid progress, the evaluation of coherence between generated 3D shapes and input textual descriptions lacks a clear benchmark. The reason is twofold: a) the low quality of the textual descriptions in the only publicly available dataset of text-shape pairs; b) the limited effectiveness of the metrics used to quantitatively asse&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2309.07917v1-abstract-full').style.display = 'inline'; document.getElementById('2309.07917v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2309.07917v1-abstract-full" style="display: none;">
+        While text-conditional 3D object generation and manipulation have seen rapid progress, the evaluation of coherence between generated 3D shapes and input textual descriptions lacks a clear benchmark. The reason is twofold: a) the low quality of the textual descriptions in the only publicly available dataset of text-shape pairs; b) the limited effectiveness of the metrics used to quantitatively assess such coherence. In this paper, we propose a comprehensive solution that addresses both weaknesses. Firstly, we employ large language models to automatically refine textual descriptions associated with shapes. Secondly, we propose a quantitative metric to assess text-to-shape coherence, through cross-attention mechanisms. To validate our approach, we conduct a user study and compare quantitatively our metric with existing ones. The refined dataset, the new metric and a set of text-shape pairs validated by the user study comprise a novel, fine-grained benchmark that we publicly release to foster research on text-to-shape coherence of text-conditioned 3D generative models. Benchmark available at https://cvlab-unibo.github.io/CrossCoherence-Web/.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2309.07917v1-abstract-full').style.display = 'none'; document.getElementById('2309.07917v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 September, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">ICCV 2023 Workshop &#34;AI for 3D Content Creation&#34;, Project page: https://cvlab-unibo.github.io/CrossCoherence-Web/, 26 pages</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2308.16071">arXiv:2308.16071</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2308.16071">pdf</a>, <a href="https://arxiv.org/format/2308.16071">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1109/ACCESS.2025.3529216">10.1109/ACCESS.2025.3529216 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Semantic Image Synthesis via Class-Adaptive Cross-Attention
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Fontanini%2C+T">Tomaso Fontanini</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ferrari%2C+C">Claudio Ferrari</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bertozzi%2C+M">Massimo Bertozzi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Prati%2C+A">Andrea Prati</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2308.16071v3-abstract-short" style="display: inline;">
+        In semantic image synthesis the state of the art is dominated by methods that use customized variants of the SPatially-Adaptive DE-normalization (SPADE) layers, which allow for good visual generation quality and editing versatility. By design, such layers learn pixel-wise modulation parameters to de-normalize the generator activations based on the semantic class each pixel belongs to. Thus, they t&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2308.16071v3-abstract-full').style.display = 'inline'; document.getElementById('2308.16071v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2308.16071v3-abstract-full" style="display: none;">
+        In semantic image synthesis the state of the art is dominated by methods that use customized variants of the SPatially-Adaptive DE-normalization (SPADE) layers, which allow for good visual generation quality and editing versatility. By design, such layers learn pixel-wise modulation parameters to de-normalize the generator activations based on the semantic class each pixel belongs to. Thus, they tend to overlook global image statistics, ultimately leading to unconvincing local style editing and causing global inconsistencies such as color or illumination distribution shifts. Also, SPADE layers require the semantic segmentation mask for mapping styles in the generator, preventing shape manipulations without manual intervention. In response, we designed a novel architecture where cross-attention layers are used in place of SPADE for learning shape-style correlations and so conditioning the image generation process. Our model inherits the versatility of SPADE, at the same time obtaining state-of-the-art generation quality, as well as improved global and local style transfer. Code and models available at https://github.com/TFonta/CA2SIS.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2308.16071v3-abstract-full').style.display = 'none'; document.getElementById('2308.16071v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 July, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 30 August, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Code and models available at https://github.com/TFonta/CA2SIS The paper is under consideration at Computer Vision and Image Understanding</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2306.00914">arXiv:2306.00914</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2306.00914">pdf</a>, <a href="https://arxiv.org/format/2306.00914">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Conditioning Diffusion Models via Attributes and Semantic Masks for Face Generation
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Giambi%2C+N">Nico Giambi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2306.00914v3-abstract-short" style="display: inline;">
+        Deep generative models have shown impressive results in generating realistic images of faces. GANs managed to generate high-quality, high-fidelity images when conditioned on semantic masks, but they still lack the ability to diversify their output. Diffusion models partially solve this problem and are able to generate diverse samples given the same condition. In this paper, we propose a multi-cond&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.00914v3-abstract-full').style.display = 'inline'; document.getElementById('2306.00914v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2306.00914v3-abstract-full" style="display: none;">
+        Deep generative models have shown impressive results in generating realistic images of faces. GANs managed to generate high-quality, high-fidelity images when conditioned on semantic masks, but they still lack the ability to diversify their output. Diffusion models partially solve this problem and are able to generate diverse samples given the same condition. In this paper, we propose a multi-conditioning approach for diffusion models via cross-attention exploiting both attributes and semantic masks to generate high-quality and controllable face images. We also studied the impact of applying perceptual-focused loss weighting into the latent space instead of the pixel space. Our method extends the previous approaches by introducing conditioning on more than one set of features, guaranteeing a more fine-grained control over the generated face images. We evaluate our approach on the CelebA-HQ dataset, and we show that it can generate realistic and diverse samples while allowing for fine-grained control over multiple attributes and semantic regions. Additionally, we perform an ablation study to evaluate the impact of different conditioning strategies on the quality and diversity of the generated images.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.00914v3-abstract-full').style.display = 'none'; document.getElementById('2306.00914v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 27 September, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 1 June, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">The paper is under consideration at Computer Vision and Image Understanding</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2301.07502">arXiv:2301.07502</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2301.07502">pdf</a>, <a href="https://arxiv.org/format/2301.07502">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1109/ICPR48806.2021.9413208">10.1109/ICPR48806.2021.9413208 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Multimodal Side-Tuning for Document Classification
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Zingaro%2C+S+P">Stefano Pio Zingaro</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gabbrielli%2C+M">Maurizio Gabbrielli</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2301.07502v2-abstract-short" style="display: inline;">
+        In this paper, we propose to exploit the side-tuning framework for multimodal document classification. Side-tuning is a methodology for network adaptation recently introduced to solve some of the problems related to previous approaches. Thanks to this technique it is actually possible to overcome model rigidity and catastrophic forgetting of transfer learning by fine-tuning. The proposed solution&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2301.07502v2-abstract-full').style.display = 'inline'; document.getElementById('2301.07502v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2301.07502v2-abstract-full" style="display: none;">
+        In this paper, we propose to exploit the side-tuning framework for multimodal document classification. Side-tuning is a methodology for network adaptation recently introduced to solve some of the problems related to previous approaches. Thanks to this technique it is actually possible to overcome model rigidity and catastrophic forgetting of transfer learning by fine-tuning. The proposed solution uses off-the-shelf deep learning architectures leveraging the side-tuning framework to combine a base model with a tandem of two side networks. We show that side-tuning can be successfully employed also when different data sources are considered, e.g. text and images in document classification. The experimental results show that this approach pushes further the limit for document classification accuracy with respect to the state of the art.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2301.07502v2-abstract-full').style.display = 'none'; document.getElementById('2301.07502v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 23 January, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 16 January, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">2020 25th International Conference on Pattern Recognition (ICPR)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2012.01955">arXiv:2012.01955</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2012.01955">pdf</a>, <a href="https://arxiv.org/format/2012.01955">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Multimedia">cs.MM</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1145/3507918">10.1145/3507918 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        IMAGO: A family photo album dataset for a socio-historical analysis of the twentieth century
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Stacchio%2C+L">Lorenzo Stacchio</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Angeli%2C+A">Alessia Angeli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Calanca%2C+D">Daniela Calanca</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Marfia%2C+G">Gustavo Marfia</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2012.01955v1-abstract-short" style="display: inline;">
+        Although one of the most popular practices in photography since the end of the 19th century, an increase in scholarly interest in family photo albums dates back to the early 1980s. Such collections of photos may reveal sociological and historical insights regarding specific cultures and times. They are, however, in most cases scattered among private homes and only available on paper or photographi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.01955v1-abstract-full').style.display = 'inline'; document.getElementById('2012.01955v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2012.01955v1-abstract-full" style="display: none;">
+        Although one of the most popular practices in photography since the end of the 19th century, an increase in scholarly interest in family photo albums dates back to the early 1980s. Such collections of photos may reveal sociological and historical insights regarding specific cultures and times. They are, however, in most cases scattered among private homes and only available on paper or photographic film, thus making their analysis by academics such as historians, social-cultural anthropologists and cultural theorists very cumbersome. In this paper, we analyze the IMAGO dataset including photos belonging to family albums assembled at the University of Bologna&#39;s Rimini campus since 2004. Following a deep learning-based approach, the IMAGO dataset has offered the opportunity of experimenting with photos taken between year 1845 and year 2009, with the goals of assessing the dates and the socio-historical contexts of the images, without use of any other sources of information. Exceeding our initial expectations, such analysis has revealed its merit not only in terms of the performance of the approach adopted in this work, but also in terms of the foreseeable implications and use for the benefit of socio-historical research. To the best of our knowledge, this is the first work that moves along this path in literature.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.01955v1-abstract-full').style.display = 'none'; document.getElementById('2012.01955v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 December, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1707.09173">arXiv:1707.09173</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1707.09173">pdf</a>, <a href="https://arxiv.org/format/1707.09173">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Group Re-Identification via Unsupervised Transfer of Sparse Features Encoding
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Martinel%2C+N">Niki Martinel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Del+Bimbo%2C+A">Alberto Del Bimbo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Foresti%2C+G+L">Gian Luca Foresti</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1707.09173v1-abstract-short" style="display: inline;">
+        Person re-identification is best known as the problem of associating a single person that is observed from one or more disjoint cameras. The existing literature has mainly addressed such an issue, neglecting the fact that people usually move in groups, like in crowded scenarios. We believe that the additional information carried by neighboring individuals provides a relevant visual context that ca&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1707.09173v1-abstract-full').style.display = 'inline'; document.getElementById('1707.09173v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1707.09173v1-abstract-full" style="display: none;">
+        Person re-identification is best known as the problem of associating a single person that is observed from one or more disjoint cameras. The existing literature has mainly addressed such an issue, neglecting the fact that people usually move in groups, like in crowded scenarios. We believe that the additional information carried by neighboring individuals provides a relevant visual context that can be exploited to obtain a more robust match of single persons within the group. Despite this, re-identifying groups of people compound the common single person re-identification problems by introducing changes in the relative position of persons within the group and severe self-occlusions. In this paper, we propose a solution for group re-identification that grounds on transferring knowledge from single person re-identification to group re-identification by exploiting sparse dictionary learning. First, a dictionary of sparse atoms is learned using patches extracted from single person images. Then, the learned dictionary is exploited to obtain a sparsity-driven residual group representation, which is finally matched to perform the re-identification. Extensive experiments on the i-LIDS groups and two newly collected datasets show that the proposed solution outperforms state-of-the-art approaches.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1707.09173v1-abstract-full').style.display = 'none'; document.getElementById('1707.09173v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 28 July, 2017; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2017.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">This paper has been accepted for publication at ICCV 2017</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1705.02503">arXiv:1705.02503</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1705.02503">pdf</a>, <a href="https://arxiv.org/format/1705.02503">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Context-Aware Trajectory Prediction
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bartoli%2C+F">Federico Bartoli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ballan%2C+L">Lamberto Ballan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Del+Bimbo%2C+A">Alberto Del Bimbo</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1705.02503v1-abstract-short" style="display: inline;">
+        Human motion and behaviour in crowded spaces is influenced by several factors, such as the dynamics of other moving agents in the scene, as well as the static elements that might be perceived as points of attraction or obstacles. In this work, we present a new model for human trajectory prediction which is able to take advantage of both human-human and human-space interactions. The future trajecto&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1705.02503v1-abstract-full').style.display = 'inline'; document.getElementById('1705.02503v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1705.02503v1-abstract-full" style="display: none;">
+        Human motion and behaviour in crowded spaces is influenced by several factors, such as the dynamics of other moving agents in the scene, as well as the static elements that might be perceived as points of attraction or obstacles. In this work, we present a new model for human trajectory prediction which is able to take advantage of both human-human and human-space interactions. The future trajectory of humans, are generated by observing their past positions and interactions with the surroundings. To this end, we propose a &#34;context-aware&#34; recurrent neural network LSTM model, which can learn and predict human motion in crowded spaces such as a sidewalk, a museum or a shopping mall. We evaluate our model on a public pedestrian datasets, and we contribute a new challenging dataset that collects videos of humans that navigate in a (real) crowded space such as a big museum. Results show that our approach can predict human trajectories better when compared to previous state-of-the-art forecasting models.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1705.02503v1-abstract-full').style.display = 'none'; document.getElementById('1705.02503v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 6 May, 2017; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2017.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Submitted to BMVC 2017</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1608.08632">arXiv:1608.08632</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1608.08632">pdf</a>, <a href="https://arxiv.org/format/1608.08632">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="High Energy Physics - Phenomenology">hep-ph</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Cosmology and Nongalactic Astrophysics">astro-ph.CO</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="High Energy Physics - Experiment">hep-ex</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Nuclear Experiment">nucl-ex</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Dark Sectors 2016 Workshop: Community Report
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Alexander%2C+J">Jim Alexander</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Battaglieri%2C+M">Marco Battaglieri</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Echenard%2C+B">Bertrand Echenard</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Essig%2C+R">Rouven Essig</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Graham%2C+M">Matthew Graham</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Izaguirre%2C+E">Eder Izaguirre</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Jaros%2C+J">John Jaros</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Krnjaic%2C+G">Gordan Krnjaic</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mardon%2C+J">Jeremy Mardon</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Morrissey%2C+D">David Morrissey</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nelson%2C+T">Tim Nelson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perelstein%2C+M">Maxim Perelstein</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pyle%2C+M">Matt Pyle</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ritz%2C+A">Adam Ritz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Schuster%2C+P">Philip Schuster</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shuve%2C+B">Brian Shuve</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Toro%2C+N">Natalia Toro</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Van+De+Water%2C+R+G">Richard G Van De Water</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Akerib%2C+D">Daniel Akerib</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=An%2C+H">Haipeng An</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Aniol%2C+K">Konrad Aniol</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Arnquist%2C+I+J">Isaac J. Arnquist</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Asner%2C+D+M">David M. Asner</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Back%2C+H+O">Henning O. Back</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Baker%2C+K">Keith Baker</a>
+      , et al. (179 additional authors not shown)
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1608.08632v1-abstract-short" style="display: inline;">
+        This report, based on the Dark Sectors workshop at SLAC in April 2016, summarizes the scientific importance of searches for dark sector dark matter and forces at masses beneath the weak-scale, the status of this broad international field, the important milestones motivating future exploration, and promising experimental opportunities to reach these milestones over the next 5-10 years.
+        
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1608.08632v1-abstract-full" style="display: none;">
+        This report, based on the Dark Sectors workshop at SLAC in April 2016, summarizes the scientific importance of searches for dark sector dark matter and forces at masses beneath the weak-scale, the status of this broad international field, the important milestones motivating future exploration, and promising experimental opportunities to reach these milestones over the next 5-10 years.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1608.08632v1-abstract-full').style.display = 'none'; document.getElementById('1608.08632v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 August, 2016; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2016.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">66 pages, 15 figures, 3 tables. Workshop website and agenda: http://www-conf.slac.stanford.edu/darksectors2016/ https://indico.cern.ch/event/507783/ Editors: J. Alexander, M. Battaglieri, B. Echenard, R. Essig, M. Graham, E. Izaguirre, J. Jaros, G. Krnjaic, J. Mardon, D. Morrissey, T. Nelson, M. Perelstein, M. Pyle, A. Ritz, P. Schuster, B. Shuve, N. Toro, R. Van De Water</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1607.02204">arXiv:1607.02204</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1607.02204">pdf</a>, <a href="https://arxiv.org/format/1607.02204">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1145/3038916">10.1145/3038916 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Multi Channel-Kernel Canonical Correlation Analysis for Cross-View Person Re-Identification
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Karaman%2C+S">Svebor Karaman</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Masi%2C+I">Iacopo Masi</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1607.02204v2-abstract-short" style="display: inline;">
+        In this paper we introduce a method to overcome one of the main challenges of person re-identification in multi-camera networks, namely cross-view appearance changes. The proposed solution addresses the extreme variability of person appearance in different camera views by exploiting multiple feature representations. For each feature, Kernel Canonical Correlation Analysis (KCCA) with different kern&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1607.02204v2-abstract-full').style.display = 'inline'; document.getElementById('1607.02204v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1607.02204v2-abstract-full" style="display: none;">
+        In this paper we introduce a method to overcome one of the main challenges of person re-identification in multi-camera networks, namely cross-view appearance changes. The proposed solution addresses the extreme variability of person appearance in different camera views by exploiting multiple feature representations. For each feature, Kernel Canonical Correlation Analysis (KCCA) with different kernels is exploited to learn several projection spaces in which the appearance correlation between samples of the same person observed from different cameras is maximized. An iterative logistic regression is finally used to select and weigh the contributions of each feature projections and perform the matching between the two views. Experimental evaluation shows that the proposed solution obtains comparable performance on VIPeR and PRID 450s datasets and improves on PRID and CUHK01 datasets with respect to the state of the art.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1607.02204v2-abstract-full').style.display = 'none'; document.getElementById('1607.02204v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 March, 2017; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 7 July, 2016;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2016.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">The latest/updated version of the manuscript with more experiments can be found at https://doi.org/10.1145/3038916. Please cite the paper using https://doi.org/10.1145/3038916</span>
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        ACM Transactions on Multimedia Computing, Communications, and Applications (TOMM), Volume 13 Issue 2, March 2017
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1507.07815">arXiv:1507.07815</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1507.07815">pdf</a>, <a href="https://arxiv.org/format/1507.07815">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Multi-Camera Image Processing and Visualization System for Train Safety Assessment
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Karaman%2C+S">Svebor Karaman</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pezzatini%2C+D">Daniele Pezzatini</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Del+Bimbo%2C+A">Alberto Del Bimbo</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1507.07815v1-abstract-short" style="display: inline;">
+        In this paper we present a machine vision system to efficiently monitor, analyze and present visual data acquired with a railway overhead gantry equipped with multiple cameras. This solution aims to improve the safety of daily life railway transportation in a two- fold manner: (1) by providing automatic algorithms that can process large imagery of trains (2) by helping train operators to keep atte&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1507.07815v1-abstract-full').style.display = 'inline'; document.getElementById('1507.07815v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1507.07815v1-abstract-full" style="display: none;">
+        In this paper we present a machine vision system to efficiently monitor, analyze and present visual data acquired with a railway overhead gantry equipped with multiple cameras. This solution aims to improve the safety of daily life railway transportation in a two- fold manner: (1) by providing automatic algorithms that can process large imagery of trains (2) by helping train operators to keep attention on any possible malfunction. The system is designed with the latest cutting edge, high-rate visible and thermal cameras that ob- serve a train passing under an railway overhead gantry. The machine vision system is composed of three principal modules: (1) an automatic wagon identification system, recognizing the wagon ID according to the UIC classification of railway coaches; (2) a temperature monitoring system; (3) a system for the detection, localization and visualization of the pantograph of the train. These three machine vision modules process batch trains sequences and their resulting analysis are presented to an operator using a multitouch user interface. We detail all technical aspects of our multi-camera portal: the hardware requirements, the software developed to deal with the high-frame rate cameras and ensure reliable acquisition, the algorithms proposed to solve each computer vision task, and the multitouch interaction and visualization interface. We evaluate each component of our system on a dataset recorded in an ad-hoc railway test-bed, showing the potential of our proposed portal for train safety assessment.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1507.07815v1-abstract-full').style.display = 'none'; document.getElementById('1507.07815v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 28 July, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">11 pages</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1401.6606">arXiv:1401.6606</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1401.6606">pdf</a>, <a href="https://arxiv.org/format/1401.6606">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Continuous Localization and Mapping of a Pan Tilt Zoom Camera for Wide Area Tracking
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lisanti%2C+G">Giuseppe Lisanti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Masi%2C+I">Iacopo Masi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pernici%2C+F">Federico Pernici</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Del+Bimbo%2C+A">Alberto Del Bimbo</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1401.6606v2-abstract-short" style="display: inline;">
+        Pan-tilt-zoom (PTZ) cameras are powerful to support object identification and recognition in far-field scenes. However, the effective use of PTZ cameras in real contexts is complicated by the fact that a continuous on-line camera calibration is needed and the absolute pan, tilt and zoom positional values provided by the camera actuators cannot be used because are not synchronized with the video st&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1401.6606v2-abstract-full').style.display = 'inline'; document.getElementById('1401.6606v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1401.6606v2-abstract-full" style="display: none;">
+        Pan-tilt-zoom (PTZ) cameras are powerful to support object identification and recognition in far-field scenes. However, the effective use of PTZ cameras in real contexts is complicated by the fact that a continuous on-line camera calibration is needed and the absolute pan, tilt and zoom positional values provided by the camera actuators cannot be used because are not synchronized with the video stream. So, accurate calibration must be directly extracted from the visual content of the frames. Moreover, the large and abrupt scale changes, the scene background changes due to the camera operation and the need of camera motion compensation make target tracking with these cameras extremely challenging. In this paper, we present a solution that provides continuous on-line calibration of PTZ cameras which is robust to rapid camera motion, changes of the environment due to illumination or moving objects and scales beyond thousands of landmarks. The method directly derives the relationship between the position of a target in the 3D world plane and the corresponding scale and position in the 2D image, and allows real-time tracking of multiple targets with high and stable degree of accuracy even at far distances and any zooming level.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1401.6606v2-abstract-full').style.display = 'none'; document.getElementById('1401.6606v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 23 March, 2015; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 25 January, 2014;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2014.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

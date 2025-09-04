@@ -1,0 +1,10 @@
+{
+  "author": "Wendy Mackay",
+  "results": [
+    {
+      "title": "Argus: Interactive a priori Power Analysis",
+      "abstract": "A key challenge HCI researchers face when designing a controlled experiment is choosing the appropriate number of participants, or sample size. A prior power analysis examines the relationships among multiple parameters, including the complexity associated with human participants, e.g., order and fatigue effects, to calculate the statistical power of a given experiment design. We created Argus, a tool that supports interactive exploration of statistical power: Researchers specify experiment design scenarios with varying confounds and effect sizes. Argus then simulates data and visualizes statistical power across these scenarios, which lets researchers interactively weigh various trade-offs and make informed decisions about sample size. We describe the design and implementation of Argus, a usage scenario designing a visualization experiment, and a think-aloud study. △ Less",
+      "url": "https://arxiv.org/abs/2009.07564"
+    }
+  ]
+}

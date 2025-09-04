@@ -1,0 +1,165 @@
+{
+  "author": "Laura Giordano",
+  "results": [
+    {
+      "title": "A deep dive down the broad-line region: permitted OI, CaII and FeII emission in an AGN Little Red Dot at z=5.3",
+      "abstract": "We present a spectroscopic analysis of a broad-line active galactic nucleus (AGN) selected as little red dot at $z = 5.3$ behind the Bullet cluster (Bz5.3), based on JWST/NIRCam and NIRSpec data. The detection of strong FeII, OI, and CaII triplet emission lines, along with the evidence of broad Balmer lines, provides unambiguous evidence of a broad-line region (BLR) and an accreting supermassive black hole. Notably, we report the first detection of the $\\lambda1304$ bump (i.e., blend of OI$λ$1304 and SiII) at high redshift, a feature commonly seen in local AGNs but not yet reported in the early Universe. The OI$λ$1304/$\\lambda8446$ photon ratio is highly suppressed (0.1-0.3), implying significant internal dust extinction, with estimated dust attenuation $A_V \\sim 0.4$-$1.0$. We identify Ly$β$ fluorescence as the dominant excitation mechanism of the low-ionization lines, with additional contributions from collisional excitation. High OI$λ$8446 equivalent width and weak OI$λ$7774 support this interpretation. The detection of iron emission, whether from broad permitted or narrow forbidden lines, supports the presence of a stratified BLR, as also recently proposed in local LRDs. Photoionization modeling of OI$λ$8446 and CaII further suggests the coexistence of multiple gas phases with distinct densities and ionization states, highlighting the complexity of the BLR. Bz5.3 thus offers a rare window into early AGN activity and BLR physics at early times. △ Less",
+      "url": "https://arxiv.org/abs/2507.20684"
+    },
+    {
+      "title": "A framework for Conditional Reasoning in Answer Set Programming",
+      "abstract": "In this paper we introduce a Conditional Answer Set Programming framework (Conditional ASP) for the definition of conditional extensions of Answer Set Programming (ASP). The approach builds on a conditional logic with typicality, and on the combination of a conditional knowledge base with an ASP program, and allows for conditional reasoning over the answer sets of the program. The formalism relies on a multi-preferential semantics (and on the KLM preferential semantics, as a special case) to provide an interpretation of conditionals. △ Less",
+      "url": "https://arxiv.org/abs/2506.03997"
+    },
+    {
+      "title": "Search for lepton-flavor-violating $τ^- \\to \\ell^- K_s^0$ decays at Belle and Belle II",
+      "abstract": "We present the results of a search for charged-lepton-flavor violating decays $τ^{-} \\rightarrow \\ell^{-}K_{S}^{0}$, where $\\ell^{-}$ is either an electron or a muon. We combine $e^+e^-$ data samples recorded by the Belle II experiment at the SuperKEKB collider (428 fb$^{-1}$) with samples recorded by the Belle experiment at the KEKB collider (980 fb$^{-1}$) to obtain a sample of 1.3 billion $e^+e^-\\toτ^+τ^-$ events. We observe 0 and 1 events and set $90\\%$ confidence level upper limits of $0.8 \\times 10^{-8}$ and $1.2 \\times 10^{-8}$ on the branching fractions of the decay modes $τ^{-} \\rightarrow e^{-}K_{S}^{0}$ and $τ^{-} \\rightarrow μ^{-}K_{S}^{0}$, respectively. These are the most stringent upper limits to date. △ Less",
+      "url": "https://arxiv.org/abs/2504.15745"
+    },
+    {
+      "title": "Temporal Many-valued Conditional Logics: a Preliminary Report",
+      "abstract": "In this paper we propose a many-valued temporal conditional logic. We start from a many-valued logic with typicality, and extend it with the temporal operators of the Linear Time Temporal Logic (LTL), thus providing a formalism which is able to capture the dynamics of a system, trough strict and defeasible temporal properties. We also consider an instantiation of the formalism for gradual argumentation. △ Less",
+      "url": "https://arxiv.org/abs/2409.09069"
+    },
+    {
+      "title": "Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context",
+      "abstract": "In this report, we introduce the Gemini 1.5 family of models, representing the next generation of highly compute-efficient multimodal models capable of recalling and reasoning over fine-grained information from millions of tokens of context, including multiple long documents and hours of video and audio. The family includes two new models: (1) an updated Gemini 1.5 Pro, which exceeds the February version on the great majority of capabilities and benchmarks; (2) Gemini 1.5 Flash, a more lightweight variant designed for efficiency with minimal regression in quality. Gemini 1.5 models achieve near-perfect recall on long-context retrieval tasks across modalities, improve the state-of-the-art in long-document QA, long-video QA and long-context ASR, and match or surpass Gemini 1.0 Ultra's state-of-the-art performance across a broad set of benchmarks. Studying the limits of Gemini 1.5's long-context ability, we find continued improvement in next-token prediction and near-perfect retrieval (>99%) up to at least 10M tokens, a generational leap over existing models such as Claude 3.0 (200k) and GPT-4 Turbo (128k). Finally, we highlight real-world use cases, such as Gemini 1.5 collaborating with professionals on completing their tasks achieving 26 to 75% time savings across 10 different job categories, as well as surprising new capabilities of large language models at the frontier; when given a grammar manual for Kalamang, a language with fewer than 200 speakers worldwide, the model learns to translate English to Kalamang at a similar level to a person who learned from the same content. △ Less",
+      "url": "https://arxiv.org/abs/2403.05530"
+    },
+    {
+      "title": "Search for lepton-flavor-violating $τ^- \\to \\ell^-φ$ decays in 2019-2021 Belle II data",
+      "abstract": "We report a search for lepton-flavor-violating decays $τ^- \\to \\ell^- φ$ ($\\ell^- =e^-,μ^-$) at the Belle II experiment, using a sample of electron-positron data produced at the SuperKEKB collider in 2019-2021 and corresponding to an integrated luminosity of 190 fb$^{-1}$. We use a new untagged selection for $e^+e^- \\to τ^+τ^-$ events, where the signal $τ$ is searched for as a neutrinoless final state of a single charged lepton and a $φ$ meson and the other $τ$ is not reconstructed in any specific decay mode, in contrast to previous measurements by the BaBar and Belle experiments. We find no evidence for $τ^- \\to \\ell^- φ$ decays and obtain upper limits on the branching fractions at 90% confidence level of 23 $\\times 10^{-8}$ and 9.7$\\times 10^{-8}$ for $τ^- \\rightarrow e^-φ$ and $τ^- \\rightarrow μ^-φ$, respectively △ Less",
+      "url": "https://arxiv.org/abs/2305.04759"
+    },
+    {
+      "title": "A preferential interpretation of MultiLayer Perceptrons in a conditional logic with typicality",
+      "abstract": "In this paper we investigate the relationships between a multipreferential semantics for defeasible reasoning in knowledge representation and a multilayer neural network model. Weighted knowledge bases for a simple description logic with typicality are considered under a (many-valued) ``concept-wise\" multipreference semantics. The semantics is used to provide a preferential interpretation of MultiLayer Perceptrons (MLPs). A model checking and an entailment based approach are exploited in the verification of conditional properties of MLPs. △ Less",
+      "url": "https://arxiv.org/abs/2305.00304"
+    },
+    {
+      "title": "Complexity and scalability of defeasible reasoning in many-valued weighted knowledge bases with typicality",
+      "abstract": "Weighted knowledge bases for description logics with typicality under a \"concept-wise\" multi-preferential semantics provide a logical interpretation of MultiLayer Perceptrons. In this context, Answer Set Programming (ASP) has been shown to be suitable for addressing defeasible reasoning in the finitely many-valued case, providing a $Π^p_2$ upper bound on the complexity of the problem, nonetheless leaving unknown the exact complexity and only providing a proof-of-concept implementation. This paper fulfils the lack by providing a $P^{NP[log]}$-completeness result and new ASP encodings that deal with weighted knowledge bases with large search spaces. △ Less",
+      "url": "https://arxiv.org/abs/2303.04534"
+    },
+    {
+      "title": "Many-valued Argumentation, Conditionals and a Probabilistic Semantics for Gradual Argumentation",
+      "abstract": "In this paper we propose a general approach to define a many-valued preferential interpretation of gradual argumentation semantics. The approach allows for conditional reasoning over arguments and boolean combination of arguments, with respect to a class of gradual semantics, through the verification of graded (strict or defeasible) implications over a preferential interpretation. As a proof of concept, in the finitely-valued case, an Answer set Programming approach is proposed for conditional reasoning in a many-valued argumentation semantics of weighted argumentation graphs. The paper also develops and discusses a probabilistic semantics for gradual argumentation, which builds on the many-valued conditional semantics. △ Less",
+      "url": "https://arxiv.org/abs/2212.07523"
+    },
+    {
+      "title": "An ASP approach for reasoning on neural networks under a finitely many-valued semantics for weighted conditional knowledge bases",
+      "abstract": "Weighted knowledge bases for description logics with typicality have been recently considered under a \"concept-wise\" multipreference semantics (in both the two-valued and fuzzy case), as the basis of a logical semantics of MultiLayer Perceptrons (MLPs). In this paper we consider weighted conditional ALC knowledge bases with typicality in the finitely many-valued case, through three different semantic constructions. For the boolean fragment LC of ALC we exploit ASP and \"asprin\" for reasoning with the concept-wise multipreference entailment under a phi-coherent semantics, suitable to characterize the stationary states of MLPs. As a proof of concept, we experiment the proposed approach for checking properties of trained MLPs. The paper is under consideration for acceptance in TPLP. △ Less",
+      "url": "https://arxiv.org/abs/2202.01123"
+    },
+    {
+      "title": "From Weighted Conditionals of Multilayer Perceptrons to Gradual Argumentation and Back",
+      "abstract": "A fuzzy multipreference semantics has been recently proposed for weighted conditional knowledge bases, and used to develop a logical semantics for Multilayer Perceptrons, by regarding a deep neural network (after training) as a weighted conditional knowledge base. This semantics, in its different variants, suggests some gradual argumentation semantics, which are related to the family of the gradual semantics studied by Amgoud and Doder. The relationships between weighted conditional knowledge bases and MLPs extend to the proposed gradual semantics to capture the stationary states of MPs, in agreement with previous results on the relationship between argumentation frameworks and neural networks. The paper also suggests a simple way to extend the proposed semantics to deal attacks/supports by a boolean combination of arguments, based on the fuzzy semantics of weighted conditionals, as well as an approach for defeasible reasoning over a weighted argumentation graph, building on the proposed gradual semantics. △ Less",
+      "url": "https://arxiv.org/abs/2110.03643"
+    },
+    {
+      "title": "Weighted Conditional EL{^}bot Knowledge Bases with Integer Weights: an ASP Approach",
+      "abstract": "Weighted knowledge bases for description logics with typicality have been recently considered under a \"concept-wise\" multipreference semantics (in both the two-valued and fuzzy case), as the basis of a logical semantics of Multilayer Perceptrons. In this paper we consider weighted conditional EL^bot knowledge bases in the two-valued case, and exploit ASP and asprin for encoding concept-wise multipreference entailment for weighted KBs with integer weights. △ Less",
+      "url": "https://arxiv.org/abs/2109.08286"
+    },
+    {
+      "title": "Reasoning about actions with EL ontologies with temporal answer sets",
+      "abstract": "We propose an approach based on Answer Set Programming for reasoning about actions with domain descriptions including ontological knowledge, expressed in the lightweight description logic EL^\\bot. We consider a temporal action theory, which allows for non-deterministic actions and causal rules to deal with ramifications, and whose extensions are defined by temporal answer sets. We provide conditions under which action consistency can be guaranteed with respect to an ontology, by a polynomial encoding of an action theory extended with an EL^\\bot knowledge base (in normal form) into a temporal action theory. △ Less",
+      "url": "https://arxiv.org/abs/2107.08403"
+    },
+    {
+      "title": "From Common Sense Reasoning to Neural Network Models through Multiple Preferences: an overview",
+      "abstract": "In this paper we discuss the relationships between conditional and preferential logics and neural network models, based on a multi-preferential semantics. We propose a concept-wise multipreference semantics, recently introduced for defeasible description logics to take into account preferences with respect to different concepts, as a tool for providing a semantic interpretation to neural network models. This approach has been explored both for unsupervised neural network models (Self-Organising Maps) and for supervised ones (Multilayer Perceptrons), and we expect that the same approach might be extended to other neural network models. It allows for logical properties of the network to be checked (by model checking) over an interpretation capturing the input-output behavior of the network. For Multilayer Perceptrons, the deep network itself can be regarded as a conditional knowledge base, in which synaptic connections correspond to weighted conditionals. The paper describes the general approach, through the cases of Self-Organising Maps and Multilayer Perceptrons, and discusses some open issues and perspectives. △ Less",
+      "url": "https://arxiv.org/abs/2107.04870"
+    },
+    {
+      "title": "On the KLM properties of a fuzzy DL with Typicality",
+      "abstract": "The paper investigates the properties of a fuzzy logic of typicality. The extension of fuzzy logic with a typicality operator was proposed in recent work to define a fuzzy multipreference semantics for Multilayer Perceptrons, by regarding the deep neural network as a conditional knowledge base. In this paper, we study its properties. First, a monotonic extension of a fuzzy ALC with typicality is considered (called ALC^FT) and a reformulation the KLM properties of a preferential consequence relation for this logic is devised. Most of the properties are satisfied, depending on the reformulation and on the fuzzy combination functions considered. We then strengthen ALC^FT with a closure construction by introducing a notion of faithful model of a weighted knowledge base, which generalizes the notion of coherent model of a conditional knowledge base previously introduced, and we study its properties. △ Less",
+      "url": "https://arxiv.org/abs/2106.00390"
+    },
+    {
+      "title": "A conditional, a fuzzy and a probabilistic interpretation of self-organising maps",
+      "abstract": "In this paper we establish a link between fuzzy and preferential semantics for description logics and Self-Organising Maps, which have been proposed as possible candidates to explain the psychological mechanisms underlying category generalisation. In particular, we show that the input/output behavior of a Self-Organising Map after training can be described by a fuzzy description logic interpretation as well as by a preferential interpretation, based on a concept-wise multipreference semantics, which takes into account preferences with respect to different concepts and has been recently proposed for ranked and for weighted defeasible description logics. Properties of the network can be proven by model checking on the fuzzy or on the preferential interpretation. Starting from the fuzzy interpretation, we also provide a probabilistic account for this neural network model. △ Less",
+      "url": "https://arxiv.org/abs/2103.06854"
+    },
+    {
+      "title": "Weighted defeasible knowledge bases and a multipreference semantics for a deep neural network model",
+      "abstract": "In this paper we investigate the relationships between a multipreferential semantics for defeasible reasoning in knowledge representation and a deep neural network model. Weighted knowledge bases for description logics are considered under a \"concept-wise\" multipreference semantics. The semantics is further extended to fuzzy interpretations and exploited to provide a preferential interpretation of Multilayer Perceptrons. △ Less",
+      "url": "https://arxiv.org/abs/2012.13421"
+    },
+    {
+      "title": "A framework for a modular multi-concept lexicographic closure semantics",
+      "abstract": "We define a modular multi-concept extension of the lexicographic closure semantics for defeasible description logics with typicality. The idea is that of distributing the defeasible properties of concepts into different modules, according to their subject, and of defining a notion of preference for each module based on the lexicographic closure semantics. The preferential semantics of the knowledge base can then be defined as a combination of the preferences of the single modules. The range of possibilities, from fine grained to coarse grained modules, provides a spectrum of alternative semantics. △ Less",
+      "url": "https://arxiv.org/abs/2009.00964"
+    },
+    {
+      "title": "On a plausible concept-wise multipreference semantics and its relations with self-organising maps",
+      "abstract": "Inthispaperwedescribeaconcept-wisemulti-preferencesemantics for description logic which has its root in the preferential approach for modeling defeasible reasoning in knowledge representation. We argue that this proposal, beside satisfying some desired properties, such as KLM postulates, and avoiding the drowning problem, also defines a plausible notion of semantics. We motivate the plausibility of the concept-wise multi-preference semantics by developing a logical semantics of self-organising maps, which have been proposed as possible candidates to explain the psychological mechanisms underlying category generalisation, in terms of multi-preference interpretations. △ Less",
+      "url": "https://arxiv.org/abs/2008.13278"
+    },
+    {
+      "title": "An ASP approach for reasoning in a concept-aware multipreferential lightweight DL",
+      "abstract": "In this paper we develop a concept aware multi-preferential semantics for dealing with typicality in description logics, where preferences are associated with concepts, starting from a collection of ranked TBoxes containing defeasible concept inclusions. Preferences are combined to define a preferential interpretation in which defeasible inclusions can be evaluated. The construction of the concept-aware multipreference semantics is related to Brewka's framework for qualitative preferences. We exploit Answer Set Programming (in particular, asprin) to achieve defeasible reasoning under the multipreference approach for the lightweight description logic EL+bot. The paper is under consideration for acceptance in TPLP. △ Less",
+      "url": "https://arxiv.org/abs/2006.04387"
+    },
+    {
+      "title": "Reasoning about Typicality and Probabilities in Preferential Description Logics",
+      "abstract": "In this work we describe preferential Description Logics of typicality, a nonmonotonic extension of standard Description Logics by means of a typicality operator T allowing to extend a knowledge base with inclusions of the form T(C) v D, whose intuitive meaning is that normally/typically Cs are also Ds. This extension is based on a minimal model semantics corresponding to a notion of rational closure, built upon preferential models. We recall the basic concepts underlying preferential Description Logics. We also present two extensions of the preferential semantics: on the one hand, we consider probabilistic extensions, based on a distributed semantics that is suitable for tackling the problem of commonsense concept combination, on the other hand, we consider other strengthening of the rational closure semantics and construction to avoid the so-called blocking of property inheritance problem. △ Less",
+      "url": "https://arxiv.org/abs/2004.09507"
+    },
+    {
+      "title": "Probing Majorana neutrinos with double-$β$ decay",
+      "abstract": "A discovery that neutrinos are not the usual Dirac but Majorana fermions, i.e. identical to their antiparticles, would be a manifestation of new physics with profound implications for particle physics and cosmology. Majorana neutrinos would generate neutrinoless double-$β$ ($0νββ$) decay, a matter-creating process without the balancing emission of antimatter. So far, 0$νββ$ decay has eluded detection. The GERDA collaboration searches for the $0νββ$ decay of $^{76}$Ge by operating bare germanium detectors in an active liquid argon shield. With a total exposure of 82.4 kg$\\cdot$yr, we observe no signal and derive a lower half-life limit of T$_{1/2}$ > 0.9$\\cdot$10$^{26}$ yr (90% C.L.). Our T$_{1/2}$ sensitivity assuming no signal is 1.1$\\cdot$10$^{26}$ yr. Combining the latter with those from other $0νββ$ decay searches yields a sensitivity to the effective Majorana neutrino mass of 0.07 - 0.16 eV, with corresponding sensitivities to the absolute mass scale in $β$ decay of 0.15 - 0.44 eV, and to the cosmological relevant sum of neutrino masses of 0.46 - 1.3 eV. △ Less",
+      "url": "https://arxiv.org/abs/1909.02726"
+    },
+    {
+      "title": "A reconstruction of the multipreference closure",
+      "abstract": "The paper describes a preferential approach for dealing with exceptions in KLM preferential logics, based on the rational closure. It is well known that the rational closure does not allow an independent handling of the inheritance of different defeasible properties of concepts. Several solutions have been proposed to face this problem and the lexicographic closure is the most notable one. In this work, we consider an alternative closure construction, called the Multi Preference closure (MP-closure), that has been first considered for reasoning with exceptions in DLs. Here, we reconstruct the notion of MP-closure in the propositional case and we show that it is a natural variant of Lehmann's lexicographic closure. Abandoning Maximal Entropy (an alternative route already considered but not explored by Lehmann) leads to a construction which exploits a different lexicographic ordering w.r.t. the lexicographic closure, and determines a preferential consequence relation rather than a rational consequence relation. We show that, building on the MP-closure semantics, rationality can be recovered, at least from the semantic point of view, resulting in a rational consequence relation which is stronger than the rational closure, but incomparable with the lexicographic closure. We also show that the MP-closure is stronger than the Relevant Closure. △ Less",
+      "url": "https://arxiv.org/abs/1905.03855"
+    },
+    {
+      "title": "Adding the Power-Set to Description Logics",
+      "abstract": "We explore the relationships between Description Logics and Set Theory. The study is carried on using, on the set-theoretic side, a very rudimentary axiomatic set theory Omega, consisting of only four axioms characterizing binary union, set difference, inclusion, and the power-set. An extension of ALC, ALC^Omega, is then defined in which concepts are naturally interpreted as sets living in Omega-models. In ALC^Omega not only membership between concepts is allowed---even admitting circularity---but also the power-set construct is exploited to add metamodeling capabilities. We investigate translations of ALC^Omega into standard description logics as well as a set-theoretic translation. A polynomial encoding of ALC^Omega in ALCIO proves the validity of the finite model property as well as an ExpTime upper bound on the complexity of concept satisfiability. We develop a set-theoretic translation of ALC^Omega in the theory Omega, exploiting a technique originally proposed for translating normal modal and polymodal logics into Omega. Finally, we show that the fragment LC^Omega of ALC^Omega, which does not admit roles and individual names, is as expressive as ALC^Omega. △ Less",
+      "url": "https://arxiv.org/abs/1902.09844"
+    },
+    {
+      "title": "Reasoning about exceptions in ontologies: from the lexicographic closure to the skeptical closure",
+      "abstract": "Reasoning about exceptions in ontologies is nowadays one of the challenges the description logics community is facing. The paper describes a preferential approach for dealing with exceptions in Description Logics, based on the rational closure. The rational closure has the merit of providing a simple and efficient approach for reasoning with exceptions, but it does not allow independent handling of the inheritance of different defeasible properties of concepts. In this work we outline a possible solution to this problem by introducing a variant of the lexicographical closure, that we call skeptical closure, which requires to construct a single base. We develop a bi-preference semantics semantics for defining a characterization of the skeptical closure. △ Less",
+      "url": "https://arxiv.org/abs/1807.02879"
+    },
+    {
+      "title": "Defeasible Reasoning in SROEL: from Rational Entailment to Rational Closure",
+      "abstract": "In this work we study a rational extension $SROEL^R T$ of the low complexity description logic SROEL, which underlies the OWL EL ontology language. The extension involves a typicality operator T, whose semantics is based on Lehmann and Magidor's ranked models and allows for the definition of defeasible inclusions. We consider both rational entailment and minimal entailment. We show that deciding instance checking under minimal entailment is in general $Π^P_2$-hard, while, under rational entailment, instance checking can be computed in polynomial time. We develop a Datalog calculus for instance checking under rational entailment and exploit it, with stratified negation, for computing the rational closure of simple KBs in polynomial time. △ Less",
+      "url": "https://arxiv.org/abs/1803.08885"
+    },
+    {
+      "title": "Reasoning about multiple aspects in DLs: Semantics and Closure Construction",
+      "abstract": "Starting from the observation that rational closure has the undesirable property of being an \"all or nothing\" mechanism, we here propose a multipreferential semantics, which enriches the preferential semantics underlying rational closure in order to separately deal with the inheritance of different properties in an ontology with exceptions. We provide a multipreference closure mechanism which is sound with respect to the multipreference semantics. △ Less",
+      "url": "https://arxiv.org/abs/1801.07161"
+    },
+    {
+      "title": "ASP for Minimal Entailment in a Rational Extension of SROEL",
+      "abstract": "In this paper we exploit Answer Set Programming (ASP) for reasoning in a rational extension SROEL-R-T of the low complexity description logic SROEL, which underlies the OWL EL ontology language. In the extended language, a typicality operator T is allowed to define concepts T(C) (typical C's) under a rational semantics. It has been proven that instance checking under rational entailment has a polynomial complexity. To strengthen rational entailment, in this paper we consider a minimal model semantics. We show that, for arbitrary SROEL-R-T knowledge bases, instance checking under minimal entailment is Π^P_2-complete. Relying on a Small Model result, where models correspond to answer sets of a suitable ASP encoding, we exploit Answer Set Preferences (and, in particular, the asprin framework) for reasoning under minimal entailment. The paper is under consideration for acceptance in Theory and Practice of Logic Programming. △ Less",
+      "url": "https://arxiv.org/abs/1608.02450"
+    },
+    {
+      "title": "Rational Closure in SHIQ",
+      "abstract": "We define a notion of rational closure for the logic SHIQ, which does not enjoys the finite model property, building on the notion of rational closure introduced by Lehmann and Magidor in [23]. We provide a semantic characterization of rational closure in SHIQ in terms of a preferential semantics, based on a finite rank characterization of minimal models. We show that the rational closure of a TBox can be computed in EXPTIME using entailment in SHIQ. △ Less",
+      "url": "https://arxiv.org/abs/1406.2023"
+    },
+    {
+      "title": "On Rational Closure in Description Logics of Typicality",
+      "abstract": "We define the notion of rational closure in the context of Description Logics extended with a tipicality operator. We start from ALC+T, an extension of ALC with a typicality operator T: intuitively allowing to express concepts of the form T(C), meant to select the \"most normal\" instances of a concept C. The semantics we consider is based on rational model. But we further restrict the semantics to minimal models, that is to say, to models that minimise the rank of domain elements. We show that this semantics captures exactly a notion of rational closure which is a natural extension to Description Logics of Lehmann and Magidor's original one. We also extend the notion of rational closure to the Abox component. We provide an ExpTime algorithm for computing the rational closure of an Abox and we show that it is sound and complete with respect to the minimal model semantics. △ Less",
+      "url": "https://arxiv.org/abs/1305.1060"
+    },
+    {
+      "title": "Reasoning about Actions with Temporal Answer Sets",
+      "abstract": "In this paper we combine Answer Set Programming (ASP) with Dynamic Linear Time Temporal Logic (DLTL) to define a temporal logic programming language for reasoning about complex actions and infinite computations. DLTL extends propositional temporal logic of linear time with regular programs of propositional dynamic logic, which are used for indexing temporal modalities. The action language allows general DLTL formulas to be included in domain descriptions to constrain the space of possible extensions. We introduce a notion of Temporal Answer Set for domain descriptions, based on the usual notion of Answer Set. Also, we provide a translation of domain descriptions into standard ASP and we use Bounded Model Checking techniques for the verification of DLTL constraints. △ Less",
+      "url": "https://arxiv.org/abs/1110.3672"
+    },
+    {
+      "title": "Analytic Tableaux Calculi for KLM Logics of Nonmonotonic Reasoning",
+      "abstract": "We present tableau calculi for some logics of nonmonotonic reasoning, as defined by Kraus, Lehmann and Magidor. We give a tableau proof procedure for all KLM logics, namely preferential, loop-cumulative, cumulative and rational logics. Our calculi are obtained by introducing suitable modalities to interpret conditional assertions. We provide a decision procedure for the logics considered, and we study their complexity. △ Less",
+      "url": "https://arxiv.org/abs/cs/0611046"
+    }
+  ]
+}

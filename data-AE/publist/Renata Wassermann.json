@@ -1,0 +1,20 @@
+{
+  "author": "Renata Wassermann",
+  "results": [
+    {
+      "title": "Some new Steiner designs $S(2,6,91)$",
+      "abstract": "The Kramer-Mesner method for constructing designs with a prescribed automorphism group $G$ has proven effective many times. In the special case of Steiner designs, the task reduces to solving an exact cover problem, with the advantage that fast backtracking solvers like Donald Knuth's dancing links and dancing cells can be used. We find ways to encode the inherent symmetry of the problem space, induced by the action of the normalizer of $G$, into a single instance of the exact cover problem. This eliminates redundant computations of certain isomorphic search branches, while preventing the overhead caused by repeatedly restarting the solver. Our improved approach is applied to the parameters $S(2,6,91)$. Previously, only four such Steiner designs were known, all of which had been constructed as cyclic designs over four decades ago. We find $23$ new designs, each with full automorphism group of order $84$. △ Less",
+      "url": "https://arxiv.org/abs/2504.04293"
+    },
+    {
+      "title": "On the Link between Partial Meet, Kernel, and Infra Contraction and its Application to Horn Logic",
+      "abstract": "Standard belief change assumes an underlying logic containing full classical propositional logic. However, there are good reasons for considering belief change in less expressive logics as well. In this paper we build on recent investigations by Delgrande on contraction for Horn logic. We show that the standard basic form of contraction, partial meet, is too strong in the Horn case. This result stands in contrast to Delgrande's conjecture that orderly maxichoice is the appropriate form of contraction for Horn logic. We then define a more appropriate notion of basic contraction for the Horn case, influenced by the convexity property holding for full propositional logic and which we refer to as infra contraction. The main contribution of this work is a result which shows that the construction method for Horn contraction for belief sets based on our infra remainder sets corresponds exactly to Hansson's classical kernel contraction for belief sets, when restricted to Horn logic. This result is obtained via a detour through contraction for belief bases. We prove that kernel contraction for belief bases produces precisely the same results as the belief base version of infra contraction. The use of belief bases to obtain this result provides evidence for the conjecture that Horn belief change is best viewed as a hybrid version of belief set change and belief base change. One of the consequences of the link with base contraction is the provision of a representation result for Horn contraction for belief sets in which a version of the Core-retainment postulate features. △ Less",
+      "url": "https://arxiv.org/abs/1401.3902"
+    },
+    {
+      "title": "Local Diagnosis",
+      "abstract": "In an earlier work, we have presented operations of belief change which only affect the relevant part of a belief base. In this paper, we propose the application of the same strategy to the problem of model-based diangosis. We first isolate the subset of the system description which is relevant for a given observation and then solve the diagnosis problem for this subset. △ Less",
+      "url": "https://arxiv.org/abs/cs/0003051"
+    }
+  ]
+}

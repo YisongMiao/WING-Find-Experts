@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;21 of 21 results for author: <span class="mathjax">Sanmay Das</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Sanmay Das">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Sanmay+Das&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Sanmay Das">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2508.08573">arXiv:2508.08573</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2508.08573">pdf</a>, <a href="https://arxiv.org/ps/2508.08573">ps</a>, <a href="https://arxiv.org/format/2508.08573">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Who Pays the RENT? Implications of Spatial Inequality for Prediction-Based Allocation Policies
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mashiat%2C+T">Tasfia Mashiat</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fowler%2C+P+J">Patrick J. Fowler</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2508.08573v2-abstract-short" style="display: inline;">
+        AI-powered scarce resource allocation policies rely on predictions to target either specific individuals (e.g., high-risk) or settings (e.g., neighborhoods). Recent research on individual-level targeting demonstrates conflicting results; some models show that targeting is not useful when inequality is high, while other work demonstrates potential benefits. To study and reconcile this apparent disc&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2508.08573v2-abstract-full').style.display = 'inline'; document.getElementById('2508.08573v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2508.08573v2-abstract-full" style="display: none;">
+        AI-powered scarce resource allocation policies rely on predictions to target either specific individuals (e.g., high-risk) or settings (e.g., neighborhoods). Recent research on individual-level targeting demonstrates conflicting results; some models show that targeting is not useful when inequality is high, while other work demonstrates potential benefits. To study and reconcile this apparent discrepancy, we develop a stylized framework based on the Mallows model to understand how the spatial distribution of inequality affects the effectiveness of door-to-door outreach policies. We introduce the RENT (Relative Efficiency of Non-Targeting) metric, which we use to assess the effectiveness of targeting approaches compared with neighborhood-based approaches in preventing tenant eviction when high-risk households are more versus less spatially concentrated. We then calibrate the model parameters to eviction court records collected in a medium-sized city in the USA. Results demonstrate considerable gains in the number of high-risk households canvassed through individually targeted policies, even in a highly segregated metro area with concentrated risks of eviction. We conclude that apparent discrepancies in the prior literature can be reconciled by considering 1) the source of deployment costs and 2) the observed versus modeled concentrations of risk. Our results inform the deployment of AI-based solutions in social service provision that account for particular applications and geographies.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2508.08573v2-abstract-full').style.display = 'none'; document.getElementById('2508.08573v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 16 August, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 11 August, 2025;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">This work has been accepted for publication as a full paper at the AAAI/ACM Conference on AI, Ethics, and Society (AIES 2025)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2508.08193">arXiv:2508.08193</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2508.08193">pdf</a>, <a href="https://arxiv.org/ps/2508.08193">ps</a>, <a href="https://arxiv.org/format/2508.08193">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Street-Level AI: Are Large Language Models Ready for Real-World Judgments?
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pokharel%2C+G">Gaurab Pokharel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Farabi%2C+S">Shafkat Farabi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fowler%2C+P+J">Patrick J. Fowler</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2508.08193v1-abstract-short" style="display: inline;">
+        A surge of recent work explores the ethical and societal implications of large-scale AI models that make &#34;moral&#34; judgments. Much of this literature focuses either on alignment with human judgments through various thought experiments or on the group fairness implications of AI judgments. However, the most immediate and likely use of AI is to help or fully replace the so-called street-level bureaucr&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2508.08193v1-abstract-full').style.display = 'inline'; document.getElementById('2508.08193v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2508.08193v1-abstract-full" style="display: none;">
+        A surge of recent work explores the ethical and societal implications of large-scale AI models that make &#34;moral&#34; judgments. Much of this literature focuses either on alignment with human judgments through various thought experiments or on the group fairness implications of AI judgments. However, the most immediate and likely use of AI is to help or fully replace the so-called street-level bureaucrats, the individuals deciding to allocate scarce social resources or approve benefits. There is a rich history underlying how principles of local justice determine how society decides on prioritization mechanisms in such domains. In this paper, we examine how well LLM judgments align with human judgments, as well as with socially and politically determined vulnerability scoring systems currently used in the domain of homelessness resource allocation. Crucially, we use real data on those needing services (maintaining strict confidentiality by only using local large models) to perform our analyses. We find that LLM prioritizations are extremely inconsistent in several ways: internally on different runs, between different LLMs, and between LLMs and the vulnerability scoring systems. At the same time, LLMs demonstrate qualitative consistency with lay human judgments in pairwise testing. Findings call into question the readiness of current generation AI systems for naive integration in high-stakes societal decision-making.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2508.08193v1-abstract-full').style.display = 'none'; document.getElementById('2508.08193v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 11 August, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">This work has been accepted for publication as a full paper at the AAAI/ACM Conference on AI, Ethics, and Society (AIES 2025)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2412.17854">arXiv:2412.17854</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2412.17854">pdf</a>, <a href="https://arxiv.org/format/2412.17854">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Active Geospatial Search for Efficient Tenant Eviction Outreach
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Sarkar%2C+A">Anindya Sarkar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=DiChristofano%2C+A">Alex DiChristofano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fowler%2C+P+J">Patrick J. Fowler</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Jacobs%2C+N">Nathan Jacobs</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vorobeychik%2C+Y">Yevgeniy Vorobeychik</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2412.17854v1-abstract-short" style="display: inline;">
+        Tenant evictions threaten housing stability and are a major concern for many cities. An open question concerns whether data-driven methods enhance outreach programs that target at-risk tenants to mitigate their risk of eviction. We propose a novel active geospatial search (AGS) modeling framework for this problem. AGS integrates property-level information in a search policy that identifies a seque&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2412.17854v1-abstract-full').style.display = 'inline'; document.getElementById('2412.17854v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2412.17854v1-abstract-full" style="display: none;">
+        Tenant evictions threaten housing stability and are a major concern for many cities. An open question concerns whether data-driven methods enhance outreach programs that target at-risk tenants to mitigate their risk of eviction. We propose a novel active geospatial search (AGS) modeling framework for this problem. AGS integrates property-level information in a search policy that identifies a sequence of rental units to canvas to both determine their eviction risk and provide support if needed. We propose a hierarchical reinforcement learning approach to learn a search policy for AGS that scales to large urban areas containing thousands of parcels, balancing exploration and exploitation and accounting for travel costs and a budget constraint. Crucially, the search policy adapts online to newly discovered information about evictions. Evaluation using eviction data for a large urban area demonstrates that the proposed framework and algorithmic approach are considerably more effective at sequentially identifying eviction cases than baseline methods.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2412.17854v1-abstract-full').style.display = 'none'; document.getElementById('2412.17854v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 December, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted to AAAI 2025 (AI for Social Impact Track)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2401.16440">arXiv:2401.16440</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2401.16440">pdf</a>, <a href="https://arxiv.org/format/2401.16440">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Beyond Eviction Prediction: Leveraging Local Spatiotemporal Public Records to Inform Action
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mashiat%2C+T">Tasfia Mashiat</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=DiChristofano%2C+A">Alex DiChristofano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fowler%2C+P+J">Patrick J. Fowler</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2401.16440v1-abstract-short" style="display: inline;">
+        There has been considerable recent interest in scoring properties on the basis of eviction risk. The success of methods for eviction prediction is typically evaluated using different measures of predictive accuracy. However, the underlying goal of such prediction is to direct appropriate assistance to households that may be at greater risk so they remain stably housed. Thus, we must ask the questi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2401.16440v1-abstract-full').style.display = 'inline'; document.getElementById('2401.16440v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2401.16440v1-abstract-full" style="display: none;">
+        There has been considerable recent interest in scoring properties on the basis of eviction risk. The success of methods for eviction prediction is typically evaluated using different measures of predictive accuracy. However, the underlying goal of such prediction is to direct appropriate assistance to households that may be at greater risk so they remain stably housed. Thus, we must ask the question of how useful such predictions are in targeting outreach efforts - informing action. In this paper, we investigate this question using a novel dataset that matches information on properties, evictions, and owners. We perform an eviction prediction task to produce risk scores and then use these risk scores to plan targeted outreach policies. We show that the risk scores are, in fact, useful, enabling a theoretical team of caseworkers to reach more eviction-prone properties in the same amount of time, compared to outreach policies that are either neighborhood-based or focus on buildings with a recent history of evictions. We also discuss the importance of neighborhood and ownership features in both risk prediction and targeted outreach.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2401.16440v1-abstract-full').style.display = 'none'; document.getElementById('2401.16440v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 27 January, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2312.10694">arXiv:2312.10694</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2312.10694">pdf</a>, <a href="https://arxiv.org/format/2312.10694">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Discretionary Trees: Understanding Street-Level Bureaucracy via Machine Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pokharel%2C+G">Gaurab Pokharel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fowler%2C+P+J">Patrick J. Fowler</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2312.10694v1-abstract-short" style="display: inline;">
+        Street-level bureaucrats interact directly with people on behalf of government agencies to perform a wide range of functions, including, for example, administering social services and policing. A key feature of street-level bureaucracy is that the civil servants, while tasked with implementing agency policy, are also granted significant discretion in how they choose to apply that policy in individ&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2312.10694v1-abstract-full').style.display = 'inline'; document.getElementById('2312.10694v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2312.10694v1-abstract-full" style="display: none;">
+        Street-level bureaucrats interact directly with people on behalf of government agencies to perform a wide range of functions, including, for example, administering social services and policing. A key feature of street-level bureaucracy is that the civil servants, while tasked with implementing agency policy, are also granted significant discretion in how they choose to apply that policy in individual cases. Using that discretion could be beneficial, as it allows for exceptions to policies based on human interactions and evaluations, but it could also allow biases and inequities to seep into important domains of societal resource allocation. In this paper, we use machine learning techniques to understand street-level bureaucrats&#39; behavior. We leverage a rich dataset that combines demographic and other information on households with information on which homelessness interventions they were assigned during a period when assignments were not formulaic. We find that caseworker decisions in this time are highly predictable overall, and some, but not all of this predictivity can be captured by simple decision rules. We theorize that the decisions not captured by the simple decision rules can be considered applications of caseworker discretion. These discretionary decisions are far from random in both the characteristics of such households and in terms of the outcomes of the decisions. Caseworkers typically only apply discretion to households that would be considered less vulnerable. When they do apply discretion to assign households to more intensive interventions, the marginal benefits to those households are significantly higher than would be expected if the households were chosen at random; there is no similar reduction in marginal benefit to households that are discretionarily allocated less intensive interventions, suggesting that caseworkers are improving outcomes using their knowledge.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2312.10694v1-abstract-full').style.display = 'none'; document.getElementById('2312.10694v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 17 December, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted to AAAI2024 AISI track</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2312.03742">arXiv:2312.03742</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2312.03742">pdf</a>, <a href="https://arxiv.org/format/2312.03742">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Clinical Risk Prediction Using Language Models: Benefits And Considerations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Acharya%2C+A">Angeela Acharya</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shrestha%2C+S">Sulabh Shrestha</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chen%2C+A">Anyi Chen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Conte%2C+J">Joseph Conte</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Avramovic%2C+S">Sanja Avramovic</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sikdar%2C+S">Siddhartha Sikdar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Anastasopoulos%2C+A">Antonios Anastasopoulos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2312.03742v1-abstract-short" style="display: inline;">
+        The utilization of Electronic Health Records (EHRs) for clinical risk prediction is on the rise. However, strict privacy regulations limit access to comprehensive health records, making it challenging to apply standard machine learning algorithms in practical real-world scenarios. Previous research has addressed this data limitation by incorporating medical ontologies and employing transfer learni&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2312.03742v1-abstract-full').style.display = 'inline'; document.getElementById('2312.03742v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2312.03742v1-abstract-full" style="display: none;">
+        The utilization of Electronic Health Records (EHRs) for clinical risk prediction is on the rise. However, strict privacy regulations limit access to comprehensive health records, making it challenging to apply standard machine learning algorithms in practical real-world scenarios. Previous research has addressed this data limitation by incorporating medical ontologies and employing transfer learning methods. In this study, we investigate the potential of leveraging language models (LMs) as a means to incorporate supplementary domain knowledge for improving the performance of various EHR-based risk prediction tasks. Unlike applying LMs to unstructured EHR data such as clinical notes, this study focuses on using textual descriptions within structured EHR to make predictions exclusively based on that information. We extensively compare against previous approaches across various data types and sizes. We find that employing LMs to represent structured EHRs, such as diagnostic histories, leads to improved or at least comparable performance in diverse risk prediction tasks. Furthermore, LM-based approaches offer numerous advantages, including few-shot learning, the capability to handle previously unseen medical concepts, and adaptability to various medical vocabularies. Nevertheless, we underscore, through various experiments, the importance of being cautious when employing such models, as concerns regarding the reliability of LMs persist.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2312.03742v1-abstract-full').style.display = 'none'; document.getElementById('2312.03742v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 28 November, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">12 pages, 6 figures, 4 tables</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2302.06176">arXiv:2302.06176</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2302.06176">pdf</a>, <a href="https://arxiv.org/ps/2302.06176">ps</a>, <a href="https://arxiv.org/format/2302.06176">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Converging to Stability in Two-Sided Bandits: The Case of Unknown Preferences on Both Sides of a Matching Market
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pokharel%2C+G">Gaurab Pokharel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2302.06176v4-abstract-short" style="display: inline;">
+        We study the problem of repeated two-sided matching with uncertain preferences (two-sided bandits), and no explicit communication between agents. Recent work has developed algorithms that converge to stable matchings when one side (the proposers or agents) must learn their preferences, but the preferences of the other side (the proposees or arms) are common knowledge, and the matching mechanism us&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2302.06176v4-abstract-full').style.display = 'inline'; document.getElementById('2302.06176v4-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2302.06176v4-abstract-full" style="display: none;">
+        We study the problem of repeated two-sided matching with uncertain preferences (two-sided bandits), and no explicit communication between agents. Recent work has developed algorithms that converge to stable matchings when one side (the proposers or agents) must learn their preferences, but the preferences of the other side (the proposees or arms) are common knowledge, and the matching mechanism uses simultaneous proposals at each round. We develop new algorithms that provably converge to stable matchings for two more challenging settings: one where the arm preferences are no longer common knowledge, and a second, more general one where the arms are also uncertain about their preferences. In our algorithms, agents start with optimistic beliefs about arms&#39; preferences and update these preferences over time. The key insight is in how to combine these beliefs about arm preferences with beliefs about the value of matching with an arm conditional on one&#39;s proposal being accepted when choosing whom to propose to.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2302.06176v4-abstract-full').style.display = 'none'; document.getElementById('2302.06176v4-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 11 August, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 13 February, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2212.05975">arXiv:2212.05975</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2212.05975">pdf</a>, <a href="https://arxiv.org/format/2212.05975">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Engineering, Finance, and Science">cs.CE</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        GenSyn: A Multi-stage Framework for Generating Synthetic Microdata using Macro Data Sources
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Acharya%2C+A">Angeela Acharya</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sikdar%2C+S">Siddhartha Sikdar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rangwala%2C+H">Huzefa Rangwala</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2212.05975v1-abstract-short" style="display: inline;">
+        Individual-level data (microdata) that characterizes a population, is essential for studying many real-world problems. However, acquiring such data is not straightforward due to cost and privacy constraints, and access is often limited to aggregated data (macro data) sources. In this study, we examine synthetic data generation as a tool to extrapolate difficult-to-obtain high-resolution data by co&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2212.05975v1-abstract-full').style.display = 'inline'; document.getElementById('2212.05975v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2212.05975v1-abstract-full" style="display: none;">
+        Individual-level data (microdata) that characterizes a population, is essential for studying many real-world problems. However, acquiring such data is not straightforward due to cost and privacy constraints, and access is often limited to aggregated data (macro data) sources. In this study, we examine synthetic data generation as a tool to extrapolate difficult-to-obtain high-resolution data by combining information from multiple easier-to-obtain lower-resolution data sources. In particular, we introduce a framework that uses a combination of univariate and multivariate frequency tables from a given target geographical location in combination with frequency tables from other auxiliary locations to generate synthetic microdata for individuals in the target location. Our method combines the estimation of a dependency graph and conditional probabilities from the target location with the use of a Gaussian copula to leverage the available information from the auxiliary locations. We perform extensive testing on two real-world datasets and demonstrate that our approach outperforms prior approaches in preserving the overall dependency structure of the data while also satisfying the constraints defined on the different variables.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2212.05975v1-abstract-full').style.display = 'none'; document.getElementById('2212.05975v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 7 December, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2022.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">10 pages, 6 figures, Accepted for the 2022 IEEE International Conference on Big Data</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2202.12334">arXiv:2202.12334</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2202.12334">pdf</a>, <a href="https://arxiv.org/format/2202.12334">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Trade-offs between Group Fairness Metrics in Societal Resource Allocation
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mashiat%2C+T">Tasfia Mashiat</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gitiaux%2C+X">Xavier Gitiaux</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rangwala%2C+H">Huzefa Rangwala</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fowler%2C+P+J">Patrick J. Fowler</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2202.12334v1-abstract-short" style="display: inline;">
+        We consider social resource allocations that deliver an array of scarce supports to a diverse population. Such allocations pervade social service delivery, such as provision of homeless services, assignment of refugees to cities, among others. At issue is whether allocations are fair across sociodemographic groups and intersectional identities. Our paper shows that necessary trade-offs exist for f&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2202.12334v1-abstract-full').style.display = 'inline'; document.getElementById('2202.12334v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2202.12334v1-abstract-full" style="display: none;">
+        We consider social resource allocations that deliver an array of scarce supports to a diverse population. Such allocations pervade social service delivery, such as provision of homeless services, assignment of refugees to cities, among others. At issue is whether allocations are fair across sociodemographic groups and intersectional identities. Our paper shows that necessary trade-offs exist for fairness in the context of scarcity; many reasonable definitions of equitable outcomes cannot hold simultaneously except under stringent conditions. For example, defining fairness in terms of improvement over a baseline inherently conflicts with defining fairness in terms of loss compared with the best possible outcome. Moreover, we demonstrate that the fairness trade-offs stem from heterogeneity across groups in intervention responses. Administrative records on homeless service delivery offer a real-world example. Building on prior work, we measure utilities for each household as the probability of reentry into homeless services if given three homeless services. Heterogeneity in utility distributions (conditional on received services) for several sociodemographic groups (e.g. single women with children versus without children) generates divergence across fairness metrics. We argue that such heterogeneity, and thus, fairness trade-offs pervade many social policy contexts.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2202.12334v1-abstract-full').style.display = 'none'; document.getElementById('2202.12334v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 February, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2112.02746">arXiv:2112.02746</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2112.02746">pdf</a>, <a href="https://arxiv.org/format/2112.02746">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Unfairness Despite Awareness: Group-Fair Classification with Strategic Agents
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Estornell%2C+A">Andrew Estornell</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Liu%2C+Y">Yang Liu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vorobeychik%2C+Y">Yevgeniy Vorobeychik</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2112.02746v1-abstract-short" style="display: inline;">
+        The use of algorithmic decision making systems in domains which impact the financial, social, and political well-being of people has created a demand for these decision making systems to be &#34;fair&#34; under some accepted notion of equity. This demand has in turn inspired a large body of work focused on the development of fair learning algorithms which are then used in lieu of their conventional counte&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.02746v1-abstract-full').style.display = 'inline'; document.getElementById('2112.02746v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2112.02746v1-abstract-full" style="display: none;">
+        The use of algorithmic decision making systems in domains which impact the financial, social, and political well-being of people has created a demand for these decision making systems to be &#34;fair&#34; under some accepted notion of equity. This demand has in turn inspired a large body of work focused on the development of fair learning algorithms which are then used in lieu of their conventional counterparts. Most analysis of such fair algorithms proceeds from the assumption that the people affected by the algorithmic decisions are represented as immutable feature vectors. However, strategic agents may possess both the ability and the incentive to manipulate this observed feature vector in order to attain a more favorable outcome. We explore the impact that strategic agent behavior could have on fair classifiers and derive conditions under which this behavior leads to fair classifiers becoming less fair than their conventional counterparts under the same measure of fairness that the fair classifier takes into account. These conditions are related to the the way in which the fair classifier remedies unfairness on the original unmanipulated data: fair classifiers which remedy unfairness by becoming more selective than their conventional counterparts are the ones that become less fair than their counterparts when agents are strategic. We further demonstrate that both the increased selectiveness of the fair classifier, and consequently the loss of fairness, arises when performing fair learning on domains in which the advantaged group is overrepresented in the region near (and on the beneficial side of) the decision boundary of conventional classifiers. Finally, we observe experimentally, using several datasets and learning methods, that this fairness reversal is common, and that our theoretical characterization of the fairness reversal conditions indeed holds in most such cases.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.02746v1-abstract-full').style.display = 'none'; document.getElementById('2112.02746v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 5 December, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2021.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2112.01236">arXiv:2112.01236</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2112.01236">pdf</a>, <a href="https://arxiv.org/ps/2112.01236">ps</a>, <a href="https://arxiv.org/format/2112.01236">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Local Justice and the Algorithmic Allocation of Societal Resources
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2112.01236v1-abstract-short" style="display: inline;">
+        AI is increasingly used to aid decision-making about the allocation of scarce societal resources, for example housing for homeless people, organs for transplantation, and food donations. Recently, there have been several proposals for how to design objectives for these systems that attempt to achieve some combination of fairness, efficiency, incentive compatibility, and satisfactory aggregation of&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.01236v1-abstract-full').style.display = 'inline'; document.getElementById('2112.01236v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2112.01236v1-abstract-full" style="display: none;">
+        AI is increasingly used to aid decision-making about the allocation of scarce societal resources, for example housing for homeless people, organs for transplantation, and food donations. Recently, there have been several proposals for how to design objectives for these systems that attempt to achieve some combination of fairness, efficiency, incentive compatibility, and satisfactory aggregation of stakeholder preferences. This paper lays out possible roles and opportunities for AI in this domain, arguing for a closer engagement with the political philosophy literature on local justice, which provides a framework for thinking about how societies have over time framed objectives for such allocation problems. It also discusses how we may be able to integrate into this framework the opportunities and risks opened up by the ubiquity of data and the availability of algorithms that can use them to make accurate predictions about the future.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.01236v1-abstract-full').style.display = 'none'; document.getElementById('2112.01236v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 November, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To appear in AAAI 2022 (Senior Member Track, Blue Sky paper)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2012.09147">arXiv:2012.09147</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2012.09147">pdf</a>, <a href="https://arxiv.org/ps/2012.09147">ps</a>, <a href="https://arxiv.org/format/2012.09147">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Incentivizing Truthfulness Through Audits in Strategic Classification
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Estornell%2C+A">Andrew Estornell</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vorobeychik%2C+Y">Yevgeniy Vorobeychik</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2012.09147v1-abstract-short" style="display: inline;">
+        In many societal resource allocation domains, machine learning methods are increasingly used to either score or rank agents in order to decide which ones should receive either resources (e.g., homeless services) or scrutiny (e.g., child welfare investigations) from social services agencies. An agency&#39;s scoring function typically operates on a feature vector that contains a combination of self-repo&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.09147v1-abstract-full').style.display = 'inline'; document.getElementById('2012.09147v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2012.09147v1-abstract-full" style="display: none;">
+        In many societal resource allocation domains, machine learning methods are increasingly used to either score or rank agents in order to decide which ones should receive either resources (e.g., homeless services) or scrutiny (e.g., child welfare investigations) from social services agencies. An agency&#39;s scoring function typically operates on a feature vector that contains a combination of self-reported features and information available to the agency about individuals or households.This can create incentives for agents to misrepresent their self-reported features in order to receive resources or avoid scrutiny, but agencies may be able to selectively audit agents to verify the veracity of their reports.
+  We study the problem of optimal auditing of agents in such settings. When decisions are made using a threshold on an agent&#39;s score, the optimal audit policy has a surprisingly simple structure, uniformly auditing all agents who could benefit from lying. While this policy can, in general, be hard to compute because of the difficulty of identifying the set of agents who could benefit from lying given a complete set of reported types, we also present necessary and sufficient conditions under which it is tractable. We show that the scarce resource setting is more difficult, and exhibit an approximately optimal audit policy in this case. In addition, we show that in either setting verifying whether it is possible to incentivize exact truthfulness is hard even to approximate. However, we also exhibit sufficient conditions for solving this problem optimally, and for obtaining good approximations.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.09147v1-abstract-full').style.display = 'none'; document.getElementById('2012.09147v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 16 December, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2020.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To be published in AAAI 2021</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2007.09786">arXiv:2007.09786</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2007.09786">pdf</a>, <a href="https://arxiv.org/ps/2007.09786">ps</a>, <a href="https://arxiv.org/format/2007.09786">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Election Control by Manipulating Issue Significance
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Estornell%2C+A">Andrew Estornell</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Elkind%2C+E">Edith Elkind</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vorobeychik%2C+Y">Yevgeniy Vorobeychik</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2007.09786v1-abstract-short" style="display: inline;">
+        Integrity of elections is vital to democratic systems, but it is frequently threatened by malicious actors. The study of algorithmic complexity of the problem of manipulating election outcomes by changing its structural features is known as election control. One means of election control that has been proposed is to select a subset of issues that determine voter preferences over candidates. We stu&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2007.09786v1-abstract-full').style.display = 'inline'; document.getElementById('2007.09786v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2007.09786v1-abstract-full" style="display: none;">
+        Integrity of elections is vital to democratic systems, but it is frequently threatened by malicious actors. The study of algorithmic complexity of the problem of manipulating election outcomes by changing its structural features is known as election control. One means of election control that has been proposed is to select a subset of issues that determine voter preferences over candidates. We study a variation of this model in which voters have judgments about relative importance of issues, and a malicious actor can manipulate these judgments. We show that computing effective manipulations in this model is NP-hard even with two candidates or binary issues. However, we demonstrate that the problem is tractable with a constant number of voters or issues. Additionally, while it remains intractable when voters can vote stochastically, we exhibit an important special case in which stochastic voting enables tractable manipulation.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2007.09786v1-abstract-full').style.display = 'none'; document.getElementById('2007.09786v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 July, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2020.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        UAI. 2020
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1911.05885">arXiv:1911.05885</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1911.05885">pdf</a>, <a href="https://arxiv.org/format/1911.05885">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Deception through Half-Truths
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Estornell%2C+A">Andrew Estornell</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vorobeychik%2C+Y">Yevgeniy Vorobeychik</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1911.05885v1-abstract-short" style="display: inline;">
+        Deception is a fundamental issue across a diverse array of settings, from cybersecurity, where decoys (e.g., honeypots) are an important tool, to politics that can feature politically motivated &#34;leaks&#34; and fake news about candidates.Typical considerations of deception view it as providing false information.However, just as important but less frequently studied is a more tacit form where informatio&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1911.05885v1-abstract-full').style.display = 'inline'; document.getElementById('1911.05885v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1911.05885v1-abstract-full" style="display: none;">
+        Deception is a fundamental issue across a diverse array of settings, from cybersecurity, where decoys (e.g., honeypots) are an important tool, to politics that can feature politically motivated &#34;leaks&#34; and fake news about candidates.Typical considerations of deception view it as providing false information.However, just as important but less frequently studied is a more tacit form where information is strategically hidden or leaked.We consider the problem of how much an adversary can affect a principal&#39;s decision by &#34;half-truths&#34;, that is, by masking or hiding bits of information, when the principal is oblivious to the presence of the adversary. The principal&#39;s problem can be modeled as one of predicting future states of variables in a dynamic Bayes network, and we show that, while theoretically the principal&#39;s decisions can be made arbitrarily bad, the optimal attack is NP-hard to approximate, even under strong assumptions favoring the attacker. However, we also describe an important special case where the dependency of future states on past states is additive, in which we can efficiently compute an approximately optimal attack. Moreover, in networks with a linear transition function we can solve the problem optimally in polynomial time.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1911.05885v1-abstract-full').style.display = 'none'; document.getElementById('1911.05885v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 13 November, 2019; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2019.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1502.03491">arXiv:1502.03491</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1502.03491">pdf</a>, <a href="https://arxiv.org/ps/1502.03491">ps</a>, <a href="https://arxiv.org/format/1502.03491">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        How to show a probabilistic model is better
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Chakraborty%2C+M">Mithun Chakraborty</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lavoie%2C+A">Allen Lavoie</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1502.03491v1-abstract-short" style="display: inline;">
+        We present a simple theoretical framework, and corresponding practical procedures, for comparing probabilistic models on real data in a traditional machine learning setting. This framework is based on the theory of proper scoring rules, but requires only basic algebra and probability theory to understand and verify. The theoretical concepts presented are well-studied, primarily in the statistics l&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1502.03491v1-abstract-full').style.display = 'inline'; document.getElementById('1502.03491v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1502.03491v1-abstract-full" style="display: none;">
+        We present a simple theoretical framework, and corresponding practical procedures, for comparing probabilistic models on real data in a traditional machine learning setting. This framework is based on the theory of proper scoring rules, but requires only basic algebra and probability theory to understand and verify. The theoretical concepts presented are well-studied, primarily in the statistics literature. The goal of this paper is to advocate their wider adoption for performance evaluation in empirical machine learning.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1502.03491v1-abstract-full').style.display = 'none'; document.getElementById('1502.03491v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 11 February, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2015.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1407.7015">arXiv:1407.7015</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1407.7015">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        On Manipulation in Prediction Markets When Participants Influence Outcomes Directly
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Chakraborty%2C+M">Mithun Chakraborty</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1407.7015v1-abstract-short" style="display: inline;">
+        Prediction markets are often used as mechanisms to aggregate information about a future event, for example, whether a candidate will win an election. The event is typically assumed to be exogenous. In reality, participants may influence the outcome, and therefore (1) running the prediction market could change the incentives of participants in the process that creates the outcome (for example, agen&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1407.7015v1-abstract-full').style.display = 'inline'; document.getElementById('1407.7015v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1407.7015v1-abstract-full" style="display: none;">
+        Prediction markets are often used as mechanisms to aggregate information about a future event, for example, whether a candidate will win an election. The event is typically assumed to be exogenous. In reality, participants may influence the outcome, and therefore (1) running the prediction market could change the incentives of participants in the process that creates the outcome (for example, agents may want to change their vote in an election), and (2) simple results such as the myopic incentive compatibility of proper scoring rules no longer hold in the prediction market itself. We introduce a model of games of this kind, where agents first trade in a prediction market and then take an action that influences the market outcome. Our two-stage two-player model, despite its simplicity, captures two aspects of real-world prediction markets: (1) agents may directly influence the outcome, (2) some of the agents instrumental in deciding the outcome may not take part in the prediction market. We show that this game has two different types of perfect Bayesian equilibria, which we term LPP and HPP, depending on the values of the belief parameters: in the LPP domain, equilibrium prices reveal expected market outcomes conditional on the participants&#39; private information, whereas HPP equilibria are collusive -- participants effectively coordinate in an uninformative and untruthful way.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1407.7015v1-abstract-full').style.display = 'none'; document.getElementById('1407.7015v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 1 July, 2014; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2014.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+          <span class="has-text-black-bis has-text-weight-semibold">Report number:</span>
+          ci-2014/76
+        
+
+        
+
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1406.7738">arXiv:1406.7738</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1406.7738">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Social and Information Networks">cs.SI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Physics and Society">physics.soc-ph</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Home Is Where the Up-Votes Are: Behavior Changes in Response to Feedback in Social Media
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lavoie%2C+A">Allen Lavoie</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1406.7738v1-abstract-short" style="display: inline;">
+        Recent research shows that humans are heavily influenced by online social interactions: We are more likely to perform actions which, in the past, have led to positive social feedback. We introduce a quantitative model of behavior changes in response to such feedback, drawing on inverse reinforcement learning and studies of human game playing. The model allows us to make predictions, particularly i&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1406.7738v1-abstract-full').style.display = 'inline'; document.getElementById('1406.7738v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1406.7738v1-abstract-full" style="display: none;">
+        Recent research shows that humans are heavily influenced by online social interactions: We are more likely to perform actions which, in the past, have led to positive social feedback. We introduce a quantitative model of behavior changes in response to such feedback, drawing on inverse reinforcement learning and studies of human game playing. The model allows us to make predictions, particularly in the context of social media, about which community a user will select, and to quantify how future selections change based on the feedback a user receives. We show that our model predicts real-world changes in behavior on a dataset gathered from reddit. We also explore how this relatively simple model of individual behavior can lead to complex collective dynamics when there is a population of users, each individual learning in response to feedback and in turn providing feedback to others.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1406.7738v1-abstract-full').style.display = 'none'; document.getElementById('1406.7738v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 June, 2014; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2014.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+          <span class="has-text-black-bis has-text-weight-semibold">Report number:</span>
+          ci-2014/93
+        
+
+        
+
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1202.3704">arXiv:1202.3704</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1202.3704">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Near-Optimal Target Learning With Stochastic Binary Signals
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Chakraborty%2C+M">Mithun Chakraborty</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Magdon-Ismail%2C+M">Malik Magdon-Ismail</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1202.3704v1-abstract-short" style="display: inline;">
+        We study learning in a noisy bisection model: specifically, Bayesian algorithms to learn a target value V given access only to noisy realizations of whether V is less than or greater than a threshold theta. At step t = 0, 1, 2, ..., the learner sets threshold theta t and observes a noisy realization of sign(V - theta t). After T steps, the goal is to output an estimate V^ which is within an eta-to&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1202.3704v1-abstract-full').style.display = 'inline'; document.getElementById('1202.3704v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1202.3704v1-abstract-full" style="display: none;">
+        We study learning in a noisy bisection model: specifically, Bayesian algorithms to learn a target value V given access only to noisy realizations of whether V is less than or greater than a threshold theta. At step t = 0, 1, 2, ..., the learner sets threshold theta t and observes a noisy realization of sign(V - theta t). After T steps, the goal is to output an estimate V^ which is within an eta-tolerance of V . This problem has been studied, predominantly in environments with a fixed error probability q &lt; 1/2 for the noisy realization of sign(V - theta t). In practice, it is often the case that q can approach 1/2, especially as theta -&gt; V, and there is little known when this happens. We give a pseudo-Bayesian algorithm which provably converges to V. When the true prior matches our algorithm&#39;s Gaussian prior, we show near-optimal expected performance. Our methods extend to the general multiple-threshold setting where the observation noisily indicates which of k &gt;= 2 regions V belongs to.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1202.3704v1-abstract-full').style.display = 'none'; document.getElementById('1202.3704v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 February, 2012; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2012.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+          <span class="has-text-black-bis has-text-weight-semibold">Report number:</span>
+          UAI-P-2011-PG-69-76
+        
+
+        
+
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1111.2092">arXiv:1111.2092</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1111.2092">pdf</a>, <a href="https://arxiv.org/format/1111.2092">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Social and Information Networks">cs.SI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Pushing Your Point of View: Behavioral Measures of Manipulation in Wikipedia
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lavoie%2C+A">Allen Lavoie</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Magdon-Ismail%2C+M">Malik Magdon-Ismail</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1111.2092v1-abstract-short" style="display: inline;">
+        As a major source for information on virtually any topic, Wikipedia serves an important role in public dissemination and consumption of knowledge. As a result, it presents tremendous potential for people to promulgate their own points of view; such efforts may be more subtle than typical vandalism. In this paper, we introduce new behavioral metrics to quantify the level of controversy associated w&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1111.2092v1-abstract-full').style.display = 'inline'; document.getElementById('1111.2092v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1111.2092v1-abstract-full" style="display: none;">
+        As a major source for information on virtually any topic, Wikipedia serves an important role in public dissemination and consumption of knowledge. As a result, it presents tremendous potential for people to promulgate their own points of view; such efforts may be more subtle than typical vandalism. In this paper, we introduce new behavioral metrics to quantify the level of controversy associated with a particular user: a Controversy Score (C-Score) based on the amount of attention the user focuses on controversial pages, and a Clustered Controversy Score (CC-Score) that also takes into account topical clustering. We show that both these measures are useful for identifying people who try to &#34;push&#34; their points of view, by showing that they are good predictors of which editors get blocked. The metrics can be used to triage potential POV pushers. We apply this idea to a dataset of users who requested promotion to administrator status and easily identify some editors who significantly changed their behavior upon becoming administrators. At the same time, such behavior is not rampant. Those who are promoted to administrator status tend to have more stable behavior than comparable groups of prolific editors. This suggests that the Adminship process works well, and that the Wikipedia community is not overwhelmed by users who become administrators to promote their own points of view.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1111.2092v1-abstract-full').style.display = 'none'; document.getElementById('1111.2092v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 November, 2011; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2011.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1009.1446">arXiv:1009.1446</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1009.1446">pdf</a>, <a href="https://arxiv.org/format/1009.1446">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Trading and Market Microstructure">q-fin.TR</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Engineering, Finance, and Science">cs.CE</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Comparing Prediction Market Structures, With an Application to Market Making
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Brahma%2C+A">Aseem Brahma</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Magdon-Ismail%2C+M">Malik Magdon-Ismail</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1009.1446v1-abstract-short" style="display: inline;">
+        Ensuring sufficient liquidity is one of the key challenges for designers of prediction markets. Various market making algorithms have been proposed in the literature and deployed in practice, but there has been little effort to evaluate their benefits and disadvantages in a systematic manner. We introduce a novel experimental design for comparing market structures in live trading that ensures fair&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1009.1446v1-abstract-full').style.display = 'inline'; document.getElementById('1009.1446v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1009.1446v1-abstract-full" style="display: none;">
+        Ensuring sufficient liquidity is one of the key challenges for designers of prediction markets. Various market making algorithms have been proposed in the literature and deployed in practice, but there has been little effort to evaluate their benefits and disadvantages in a systematic manner. We introduce a novel experimental design for comparing market structures in live trading that ensures fair comparison between two different microstructures with the same trading population. Participants trade on outcomes related to a two-dimensional random walk that they observe on their computer screens. They can simultaneously trade in two markets, corresponding to the independent horizontal and vertical random walks. We use this experimental design to compare the popular inventory-based logarithmic market scoring rule (LMSR) market maker and a new information based Bayesian market maker (BMM). Our experiments reveal that BMM can offer significant benefits in terms of price stability and expected loss when controlling for liquidity; the caveat is that, unlike LMSR, BMM does not guarantee bounded loss. Our investigation also elucidates some general properties of market makers in prediction markets. In particular, there is an inherent tradeoff between adaptability to market shocks and convergence during market equilibrium.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1009.1446v1-abstract-full').style.display = 'none'; document.getElementById('1009.1446v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 7 September, 2010; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2010.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          J.4
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1007.4523">arXiv:1007.4523</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1007.4523">pdf</a>, <a href="https://arxiv.org/format/1007.4523">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Other Quantitative Biology">q-bio.OT</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Hybrid Model for Disease Spread and an Application to the SARS Pandemic
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Yoneyama%2C+T">Teruhiko Yoneyama</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Das%2C+S">Sanmay Das</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Krishnamoorthy%2C+M">Mukkai Krishnamoorthy</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1007.4523v1-abstract-short" style="display: inline;">
+        Pandemics can cause immense disruption and damage to communities and societies. Thus far, modeling of pandemics has focused on either large-scale difference equation models like the SIR and the SEIR models, or detailed micro-level simulations, which are harder to apply at a global scale. This paper introduces a hybrid model for pandemics considering both global and local spread of infections. We h&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1007.4523v1-abstract-full').style.display = 'inline'; document.getElementById('1007.4523v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1007.4523v1-abstract-full" style="display: none;">
+        Pandemics can cause immense disruption and damage to communities and societies. Thus far, modeling of pandemics has focused on either large-scale difference equation models like the SIR and the SEIR models, or detailed micro-level simulations, which are harder to apply at a global scale. This paper introduces a hybrid model for pandemics considering both global and local spread of infections. We hypothesize that the spread of an infectious disease between regions is significantly influenced by global traffic patterns and the spread within a region is influenced by local conditions. Thus we model the spread of pandemics considering the connections between regions for the global spread of infection and population density based on the SEIR model for the local spread of infection. We validate our hybrid model by carrying out a simulation study for the spread of SARS pandemic of 2002-2003 using available data on population, population density, and traffic networks between different regions. While it is well-known that international relationships and global traffic patterns significantly influence the spread of pandemics, our results show that integrating these factors into relatively simple models can greatly improve the results of modeling disease spread.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1007.4523v1-abstract-full').style.display = 'none'; document.getElementById('1007.4523v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 July, 2010; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2010.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;17 of 17 results for author: <span class="mathjax">Michela Milano</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Michela Milano">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Michela+Milano&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Michela Milano">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2503.12080">arXiv:2503.12080</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2503.12080">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Human-Computer Interaction">cs.HC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Comparing Human Expertise and Large Language Models Embeddings in Content Validity Assessment of Personality Tests
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+N">Nicola Milano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ponticorvo%2C+M">Michela Ponticorvo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Marocco%2C+D">Davide Marocco</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2503.12080v1-abstract-short" style="display: inline;">
+        In this article we explore the application of Large Language Models (LLMs) in assessing the content validity of psychometric instruments, focusing on the Big Five Questionnaire (BFQ) and Big Five Inventory (BFI). Content validity, a cornerstone of test construction, ensures that psychological measures adequately cover their intended constructs. Using both human expert evaluations and advanced LLMs&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.12080v1-abstract-full').style.display = 'inline'; document.getElementById('2503.12080v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2503.12080v1-abstract-full" style="display: none;">
+        In this article we explore the application of Large Language Models (LLMs) in assessing the content validity of psychometric instruments, focusing on the Big Five Questionnaire (BFQ) and Big Five Inventory (BFI). Content validity, a cornerstone of test construction, ensures that psychological measures adequately cover their intended constructs. Using both human expert evaluations and advanced LLMs, we compared the accuracy of semantic item-construct alignment. Graduate psychology students employed the Content Validity Ratio (CVR) to rate test items, forming the human baseline. In parallel, state-of-the-art LLMs, including multilingual and fine-tuned models, analyzed item embeddings to predict construct mappings. The results reveal distinct strengths and limitations of human and AI approaches. Human validators excelled in aligning the behaviorally rich BFQ items, while LLMs performed better with the linguistically concise BFI items. Training strategies significantly influenced LLM performance, with models tailored for lexical relationships outperforming general-purpose LLMs. Here we highlights the complementary potential of hybrid validation systems that integrate human expertise and AI precision. The findings underscore the transformative role of LLMs in psychological assessment, paving the way for scalable, objective, and robust test development methodologies.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.12080v1-abstract-full').style.display = 'none'; document.getElementById('2503.12080v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 March, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2210.14030">arXiv:2210.14030</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2210.14030">pdf</a>, <a href="https://arxiv.org/format/2210.14030">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Optimization and Control">math.OC</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        UNIFY: a Unified Policy Designing Framework for Solving Constrained Optimization Problems with Machine Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Silvestri%2C+M">Mattia Silvestri</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=De+Filippo%2C+A">Allegra De Filippo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lombardi%2C+M">Michele Lombardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2210.14030v1-abstract-short" style="display: inline;">
+        The interplay between Machine Learning (ML) and Constrained Optimization (CO) has recently been the subject of increasing interest, leading to a new and prolific research area covering (e.g.) Decision Focused Learning and Constrained Reinforcement Learning. Such approaches strive to tackle complex decision problems under uncertainty over multiple stages, involving both explicit (cost function, con&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2210.14030v1-abstract-full').style.display = 'inline'; document.getElementById('2210.14030v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2210.14030v1-abstract-full" style="display: none;">
+        The interplay between Machine Learning (ML) and Constrained Optimization (CO) has recently been the subject of increasing interest, leading to a new and prolific research area covering (e.g.) Decision Focused Learning and Constrained Reinforcement Learning. Such approaches strive to tackle complex decision problems under uncertainty over multiple stages, involving both explicit (cost function, constraints) and implicit knowledge (from data), and possibly subject to execution time restrictions. While a good degree of success has been achieved, the existing methods still have limitations in terms of both applicability and effectiveness. For problems in this class, we propose UNIFY, a unified framework to design a solution policy for complex decision-making problems. Our approach relies on a clever decomposition of the policy in two stages, namely an unconstrained ML model and a CO problem, to take advantage of the strength of each approach while compensating for its weaknesses. With a little design effort, UNIFY can generalize several existing approaches, thus extending their applicability. We demonstrate the method effectiveness on two practical problems, namely an Energy Management System and the Set Multi-cover with stochastic coverage requirements. Finally, we highlight some current challenges of our method and future research directions that can benefit from the cross-fertilization of the two fields.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2210.14030v1-abstract-full').style.display = 'none'; document.getElementById('2210.14030v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 25 October, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2103.02346">arXiv:2103.02346</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2103.02346">pdf</a>, <a href="https://arxiv.org/ps/2103.02346">ps</a>, <a href="https://arxiv.org/format/2103.02346">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Deep Learning for Virus-Spreading Forecasting: a Brief Survey
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Baldo%2C+F">Federico Baldo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Dall%27Olio%2C+L">Lorenzo Dall&#39;Olio</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ceccarelli%2C+M">Mattia Ceccarelli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Scheda%2C+R">Riccardo Scheda</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lombardi%2C+M">Michele Lombardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Borghesi%2C+A">Andrea Borghesi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Diciotti%2C+S">Stefano Diciotti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2103.02346v1-abstract-short" style="display: inline;">
+        The advent of the coronavirus pandemic has sparked the interest in predictive models capable of forecasting virus-spreading, especially for boosting and supporting decision-making processes. In this paper, we will outline the main Deep Learning approaches aimed at predicting the spreading of a disease in space and time. The aim is to show the emerging trends in this area of research and provide a&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2103.02346v1-abstract-full').style.display = 'inline'; document.getElementById('2103.02346v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2103.02346v1-abstract-full" style="display: none;">
+        The advent of the coronavirus pandemic has sparked the interest in predictive models capable of forecasting virus-spreading, especially for boosting and supporting decision-making processes. In this paper, we will outline the main Deep Learning approaches aimed at predicting the spreading of a disease in space and time. The aim is to show the emerging trends in this area of research and provide a general perspective on the possible strategies to approach this problem. In doing so, we will mainly focus on two macro-categories: classical Deep Learning approaches and Hybrid models. Finally, we will discuss the main advantages and disadvantages of different models, and underline the most promising development directions to improve these approaches.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2103.02346v1-abstract-full').style.display = 'none'; document.getElementById('2103.02346v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 March, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2021.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2005.10691">arXiv:2005.10691</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2005.10691">pdf</a>, <a href="https://arxiv.org/ps/2005.10691">ps</a>, <a href="https://arxiv.org/format/2005.10691">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Improving Deep Learning Models via Constraint-Based Domain Knowledge: a Brief Survey
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Borghesi%2C+A">Andrea Borghesi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Baldo%2C+F">Federico Baldo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2005.10691v1-abstract-short" style="display: inline;">
+        Deep Learning (DL) models proved themselves to perform extremely well on a wide variety of learning tasks, as they can learn useful patterns from large data sets. However, purely data-driven models might struggle when very difficult functions need to be learned or when there is not enough available training data. Fortunately, in many domains prior information can be retrieved and used to boost the&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2005.10691v1-abstract-full').style.display = 'inline'; document.getElementById('2005.10691v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2005.10691v1-abstract-full" style="display: none;">
+        Deep Learning (DL) models proved themselves to perform extremely well on a wide variety of learning tasks, as they can learn useful patterns from large data sets. However, purely data-driven models might struggle when very difficult functions need to be learned or when there is not enough available training data. Fortunately, in many domains prior information can be retrieved and used to boost the performance of DL models. This paper presents a first survey of the approaches devised to integrate domain knowledge, expressed in the form of constraints, in DL learning models to improve their performance, in particular targeting deep neural networks. We identify five (non-mutually exclusive) categories that encompass the main approaches to inject domain knowledge: 1) acting on the features space, 2) modifications to the hypothesis space, 3) data augmentation, 4) regularization schemes, 5) constrained learning.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2005.10691v1-abstract-full').style.display = 'none'; document.getElementById('2005.10691v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 May, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2005.10674">arXiv:2005.10674</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2005.10674">pdf</a>, <a href="https://arxiv.org/ps/2005.10674">ps</a>, <a href="https://arxiv.org/format/2005.10674">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        An Analysis of Regularized Approaches for Constrained Machine Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lombardi%2C+M">Michele Lombardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Baldo%2C+F">Federico Baldo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Borghesi%2C+A">Andrea Borghesi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2005.10674v1-abstract-short" style="display: inline;">
+        Regularization-based approaches for injecting constraints in Machine Learning (ML) were introduced to improve a predictive model via expert knowledge. We tackle the issue of finding the right balance between the loss (the accuracy of the learner) and the regularization term (the degree of constraint satisfaction). The key results of this paper is the formal demonstration that this type of approach&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2005.10674v1-abstract-full').style.display = 'inline'; document.getElementById('2005.10674v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2005.10674v1-abstract-full" style="display: none;">
+        Regularization-based approaches for injecting constraints in Machine Learning (ML) were introduced to improve a predictive model via expert knowledge. We tackle the issue of finding the right balance between the loss (the accuracy of the learner) and the regularization term (the degree of constraint satisfaction). The key results of this paper is the formal demonstration that this type of approach cannot guarantee to find all optimal solutions. In particular, in the non-convex case there might be optima for the constrained problem that do not correspond to any multiplier value.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2005.10674v1-abstract-full').style.display = 'none'; document.getElementById('2005.10674v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 20 May, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2002.10890">arXiv:2002.10890</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2002.10890">pdf</a>, <a href="https://arxiv.org/format/2002.10890">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Distributed, Parallel, and Cluster Computing">cs.DC</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1145/3387902.3392615">10.1145/3387902.3392615 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Combining Learning and Optimization for Transprecision Computing
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Borghesi%2C+A">Andrea Borghesi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Tagliavini%2C+G">Giuseppe Tagliavini</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lombardi%2C+M">Michele Lombardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Benini%2C+L">Luca Benini</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2002.10890v1-abstract-short" style="display: inline;">
+        The growing demands of the worldwide IT infrastructure stress the need for reduced power consumption, which is addressed in so-called transprecision computing by improving energy efficiency at the expense of precision. For example, reducing the number of bits for some floating-point operations leads to higher efficiency, but also to a non-linear decrease of the computation accuracy. Depending on t&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2002.10890v1-abstract-full').style.display = 'inline'; document.getElementById('2002.10890v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2002.10890v1-abstract-full" style="display: none;">
+        The growing demands of the worldwide IT infrastructure stress the need for reduced power consumption, which is addressed in so-called transprecision computing by improving energy efficiency at the expense of precision. For example, reducing the number of bits for some floating-point operations leads to higher efficiency, but also to a non-linear decrease of the computation accuracy. Depending on the application, small errors can be tolerated, thus allowing to fine-tune the precision of the computation. Finding the optimal precision for all variables in respect of an error bound is a complex task, which is tackled in the literature via heuristics. In this paper, we report on a first attempt to address the problem by combining a Mathematical Programming (MP) model and a Machine Learning (ML) model, following the Empirical Model Learning methodology. The ML model learns the relation between variables precision and the output error; this information is then embedded in the MP focused on minimizing the number of bits. An additional refinement phase is then added to improve the quality of the solution. The experimental results demonstrate an average speedup of 6.5\% and a 3\% increase in solution quality compared to the state-of-the-art. In addition, experiments on a hardware platform capable of mixed-precision arithmetic (PULPissimo) show the benefits of the proposed approach, with energy savings of around 40\% compared to fixed-precision.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2002.10890v1-abstract-full').style.display = 'none'; document.getElementById('2002.10890v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 February, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2020.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Proceedings of the 17th ACM International Conference on Computing Frontiers, May 2020, Pages 10-18
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2002.10766">arXiv:2002.10766</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2002.10766">pdf</a>, <a href="https://arxiv.org/format/2002.10766">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Teaching the Old Dog New Tricks: Supervised Learning with Constraints
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Detassis%2C+F">Fabrizio Detassis</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lombardi%2C+M">Michele Lombardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2002.10766v2-abstract-short" style="display: inline;">
+        Adding constraint support in Machine Learning has the potential to address outstanding issues in data-driven AI systems, such as safety and fairness. Existing approaches typically apply constrained optimization techniques to ML training, enforce constraint satisfaction by adjusting the model design, or use constraints to correct the output. Here, we investigate a different, complementary, strategy&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2002.10766v2-abstract-full').style.display = 'inline'; document.getElementById('2002.10766v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2002.10766v2-abstract-full" style="display: none;">
+        Adding constraint support in Machine Learning has the potential to address outstanding issues in data-driven AI systems, such as safety and fairness. Existing approaches typically apply constrained optimization techniques to ML training, enforce constraint satisfaction by adjusting the model design, or use constraints to correct the output. Here, we investigate a different, complementary, strategy based on &#34;teaching&#34; constraint satisfaction to a supervised ML method via the direct use of a state-of-the-art constraint solver: this enables taking advantage of decades of research on constrained optimization with limited effort. In practice, we use a decomposition scheme alternating master steps (in charge of enforcing the constraints) and learner steps (where any supervised ML model and training algorithm can be employed). The process leads to approximate constraint satisfaction in general, and convergence properties are difficult to establish; despite this fact, we found empirically that even a naïve setup of our approach performs well on ML tasks with fairness constraints, and on classical datasets with synthetic constraints.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2002.10766v2-abstract-full').style.display = 'none'; document.getElementById('2002.10766v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 February, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 25 February, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2002.10742">arXiv:2002.10742</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2002.10742">pdf</a>, <a href="https://arxiv.org/format/2002.10742">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Injecting Domain Knowledge in Neural Networks: a Controlled Experiment on a Constrained Problem
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Silvestri%2C+M">Mattia Silvestri</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lombardi%2C+M">Michele Lombardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2002.10742v1-abstract-short" style="display: inline;">
+        Given enough data, Deep Neural Networks (DNNs) are capable of learning complex input-output relations with high accuracy. In several domains, however, data is scarce or expensive to retrieve, while a substantial amount of expert knowledge is available. It seems reasonable that if we can inject this additional information in the DNN, we could ease the learning process. One such case is that of Cons&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2002.10742v1-abstract-full').style.display = 'inline'; document.getElementById('2002.10742v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2002.10742v1-abstract-full" style="display: none;">
+        Given enough data, Deep Neural Networks (DNNs) are capable of learning complex input-output relations with high accuracy. In several domains, however, data is scarce or expensive to retrieve, while a substantial amount of expert knowledge is available. It seems reasonable that if we can inject this additional information in the DNN, we could ease the learning process. One such case is that of Constraint Problems, for which declarative approaches exists and pure ML solutions have obtained mixed success. Using a classical constrained problem as a case study, we perform controlled experiments to probe the impact of progressively adding domain and empirical knowledge in the DNN. Our results are very encouraging, showing that (at least in our setup) embedding domain knowledge at training time can have a considerable effect and that a small amount of empirical knowledge is sufficient to obtain practically useful results.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2002.10742v1-abstract-full').style.display = 'none'; document.getElementById('2002.10742v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 25 February, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2002.10214">arXiv:2002.10214</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2002.10214">pdf</a>, <a href="https://arxiv.org/format/2002.10214">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1007/978-3-030-64583-0_52">10.1007/978-3-030-64583-0_52 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Injective Domain Knowledge in Neural Networks for Transprecision Computing
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Borghesi%2C+A">Andrea Borghesi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Baldo%2C+F">Federico Baldo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lombardi%2C+M">Michele Lombardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2002.10214v1-abstract-short" style="display: inline;">
+        Machine Learning (ML) models are very effective in many learning tasks, due to the capability to extract meaningful information from large data sets. Nevertheless, there are learning problems that cannot be easily solved relying on pure data, e.g. scarce data or very complex functions to be approximated. Fortunately, in many contexts domain knowledge is explicitly available and can be used to trai&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2002.10214v1-abstract-full').style.display = 'inline'; document.getElementById('2002.10214v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2002.10214v1-abstract-full" style="display: none;">
+        Machine Learning (ML) models are very effective in many learning tasks, due to the capability to extract meaningful information from large data sets. Nevertheless, there are learning problems that cannot be easily solved relying on pure data, e.g. scarce data or very complex functions to be approximated. Fortunately, in many contexts domain knowledge is explicitly available and can be used to train better ML models. This paper studies the improvements that can be obtained by integrating prior knowledge when dealing with a non-trivial learning task, namely precision tuning of transprecision computing applications. The domain information is injected in the ML models in different ways: I) additional features, II) ad-hoc graph-based network topology, III) regularization schemes. The results clearly show that ML models exploiting problem-specific information outperform the purely data-driven ones, with an average accuracy improvement around 38%.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2002.10214v1-abstract-full').style.display = 'none'; document.getElementById('2002.10214v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 February, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2020.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Nicosia G. et al. (eds) Machine Learning, Optimization, and Data Science. LOD 2020. Lecture Notes in Computer Science, vol 12565. Springer, Cham
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1811.05269">arXiv:1811.05269</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1811.05269">pdf</a>, <a href="https://arxiv.org/format/1811.05269">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1609/aaai.v33i01.33019428">10.1609/aaai.v33i01.33019428 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Anomaly Detection using Autoencoders in High Performance Computing Systems
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Borghesi%2C+A">Andrea Borghesi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bartolini%2C+A">Andrea Bartolini</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lombardi%2C+M">Michele Lombardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Benini%2C+L">Luca Benini</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1811.05269v1-abstract-short" style="display: inline;">
+        Anomaly detection in supercomputers is a very difficult problem due to the big scale of the systems and the high number of components. The current state of the art for automated anomaly detection employs Machine Learning methods or statistical regression models in a supervised fashion, meaning that the detection tool is trained to distinguish among a fixed set of behaviour classes (healthy and unh&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1811.05269v1-abstract-full').style.display = 'inline'; document.getElementById('1811.05269v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1811.05269v1-abstract-full" style="display: none;">
+        Anomaly detection in supercomputers is a very difficult problem due to the big scale of the systems and the high number of components. The current state of the art for automated anomaly detection employs Machine Learning methods or statistical regression models in a supervised fashion, meaning that the detection tool is trained to distinguish among a fixed set of behaviour classes (healthy and unhealthy states).
+  We propose a novel approach for anomaly detection in High Performance Computing systems based on a Machine (Deep) Learning technique, namely a type of neural network called autoencoder. The key idea is to train a set of autoencoders to learn the normal (healthy) behaviour of the supercomputer nodes and, after training, use them to identify abnormal conditions. This is different from previous approaches which where based on learning the abnormal condition, for which there are much smaller datasets (since it is very hard to identify them to begin with).
+  We test our approach on a real supercomputer equipped with a fine-grained, scalable monitoring infrastructure that can provide large amount of data to characterize the system behaviour. The results are extremely promising: after the training phase to learn the normal system behaviour, our method is capable of detecting anomalies that have never been seen before with a very good accuracy (values ranging between 88% and 96%).
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1811.05269v1-abstract-full').style.display = 'none'; document.getElementById('1811.05269v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 13 November, 2018; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2018.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">9 pages, 3 figures</span>
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Proceedings of the AAAI Conference on Artificial Intelligence, Vol. 33, pages 9428-9433, 2019
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1807.05517">arXiv:1807.05517</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1807.05517">pdf</a>, <a href="https://arxiv.org/ps/1807.05517">ps</a>, <a href="https://arxiv.org/format/1807.05517">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.24963/ijcai.2018/177">10.24963/ijcai.2018/177 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Boosting Combinatorial Problem Modeling with Machine Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lombardi%2C+M">Michele Lombardi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1807.05517v1-abstract-short" style="display: inline;">
+        In the past few years, the area of Machine Learning (ML) has witnessed tremendous advancements, becoming a pervasive technology in a wide range of applications. One area that can significantly benefit from the use of ML is Combinatorial Optimization. The three pillars of constraint satisfaction and optimization problem solving, i.e., modeling, search, and optimization, can exploit ML techniques to&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1807.05517v1-abstract-full').style.display = 'inline'; document.getElementById('1807.05517v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1807.05517v1-abstract-full" style="display: none;">
+        In the past few years, the area of Machine Learning (ML) has witnessed tremendous advancements, becoming a pervasive technology in a wide range of applications. One area that can significantly benefit from the use of ML is Combinatorial Optimization. The three pillars of constraint satisfaction and optimization problem solving, i.e., modeling, search, and optimization, can exploit ML techniques to boost their accuracy, efficiency and effectiveness. In this survey we focus on the modeling component, whose effectiveness is crucial for solving the problem. The modeling activity has been traditionally shaped by optimization and domain experts, interacting to provide realistic results. Machine Learning techniques can tremendously ease the process, and exploit the available data to either create models or refine expert-designed ones. In this survey we cover approaches that have been recently proposed to enhance the modeling process by learning either single constraints, objective functions, or the whole model. We highlight common themes to multiple approaches and draw connections with related fields of research.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1807.05517v1-abstract-full').style.display = 'none'; document.getElementById('1807.05517v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 July, 2018; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2018.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Originally submitted to IJCAI2018</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1806.05135">arXiv:1806.05135</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1806.05135">pdf</a>, <a href="https://arxiv.org/format/1806.05135">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Distributed, Parallel, and Cluster Computing">cs.DC</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1177/1094342018814593">10.1177/1094342018814593 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Pricing Schemes for Energy-Efficient HPC Systems: Design and Exploration
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Borghesi%2C+A">Andrea Borghesi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bartolini%2C+A">Andrea Bartolini</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Benini%2C+L">Luca Benini</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1806.05135v1-abstract-short" style="display: inline;">
+        Energy efficiency is of paramount importance for the sustainability of HPC systems. Energy consumption limits the peak performance of supercomputers and accounts for a large share of total cost of ownership. Consequently, system owners and final users have started exploring mechanisms to trade off performance for power consumption, for example through frequency and voltage scaling.
+  However, only&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1806.05135v1-abstract-full').style.display = 'inline'; document.getElementById('1806.05135v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1806.05135v1-abstract-full" style="display: none;">
+        Energy efficiency is of paramount importance for the sustainability of HPC systems. Energy consumption limits the peak performance of supercomputers and accounts for a large share of total cost of ownership. Consequently, system owners and final users have started exploring mechanisms to trade off performance for power consumption, for example through frequency and voltage scaling.
+  However, only a limited number of studies have been devoted to explore the economic viability of performance scaling solutions and to devise pricing mechanisms fostering a more energy-conscious usage of resources, without adversely impacting return-of-investment on the HPC facility. We present a parametrized model to analyze the impact of frequency scaling on energy and to assess the potential total cost benefits for the HPC facility and the user. We evaluate four pricing schemes, considering both facility manager and the user perspectives. We then perform a design space exploration considering current and near-future HPC systems and technologies.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1806.05135v1-abstract-full').style.display = 'none'; document.getElementById('1806.05135v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 13 June, 2018; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2018.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        The International Journal of High Performance Computing Applications. Volume: 33 issue: 4, page(s): 716-734 , 2019
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1405.3824">arXiv:1405.3824</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1405.3824">pdf</a>, <a href="https://arxiv.org/format/1405.3824">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Multi-Criteria Optimal Planning for Energy Policies in CLP
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Gavanelli%2C+M">Marco Gavanelli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bragaglia%2C+S">Stefano Bragaglia</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chesani%2C+F">Federico Chesani</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Marengo%2C+E">Elisa Marengo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Cagnoli%2C+P">Paolo Cagnoli</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1405.3824v1-abstract-short" style="display: inline;">
+        In the policy making process a number of disparate and diverse issues such as economic development, environmental aspects, as well as the social acceptance of the policy, need to be considered. A single person might not have all the required expertises, and decision support systems featuring optimization components can help to assess policies. Leveraging on previous work on Strategic Environmental&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1405.3824v1-abstract-full').style.display = 'inline'; document.getElementById('1405.3824v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1405.3824v1-abstract-full" style="display: none;">
+        In the policy making process a number of disparate and diverse issues such as economic development, environmental aspects, as well as the social acceptance of the policy, need to be considered. A single person might not have all the required expertises, and decision support systems featuring optimization components can help to assess policies. Leveraging on previous work on Strategic Environmental Assessment, we developed a fully-fledged system that is able to provide optimal plans with respect to a given objective, to perform multi-objective optimization and provide sets of Pareto optimal plans, and to visually compare them. Each plan is environmentally assessed and its footprint is evaluated. The heart of the system is an application developed in a popular Constraint Logic Programming system on the Reals sort. It has been equipped with a web service module that can be queried through standard interfaces, and an intuitive graphic user interface.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1405.3824v1-abstract-full').style.display = 'none'; document.getElementById('1405.3824v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 May, 2014; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2014.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted at ICLP2014 Conference as Technical Communication, due to appear in Theory and Practice of Logic Programming (TPLP)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1101.6009">arXiv:1101.6009</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1101.6009">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Neural and Evolutionary Computing">cs.NE</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Cellular Automata and Lattice Gases">nlin.CG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Solving the Satisfiability Problem Through Boolean Networks
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Roli%2C+A">Andrea Roli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1101.6009v1-abstract-short" style="display: inline;">
+        In this paper we present a new approach to solve the satisfiability problem (SAT), based on boolean networks (BN). We define a mapping between a SAT instance and a BN, and we solve SAT problem by simulating the BN dynamics. We prove that BN fixed points correspond to the SAT solutions. The mapping presented allows to develop a new class of algorithms to solve SAT. Moreover, this new approach sugge&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1101.6009v1-abstract-full').style.display = 'inline'; document.getElementById('1101.6009v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1101.6009v1-abstract-full" style="display: none;">
+        In this paper we present a new approach to solve the satisfiability problem (SAT), based on boolean networks (BN). We define a mapping between a SAT instance and a BN, and we solve SAT problem by simulating the BN dynamics. We prove that BN fixed points correspond to the SAT solutions. The mapping presented allows to develop a new class of algorithms to solve SAT. Moreover, this new approach suggests new ways to combine symbolic and connectionist computation and provides a general framework for local search algorithms.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1101.6009v1-abstract-full').style.display = 'none'; document.getElementById('1101.6009v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 31 January, 2011; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2011.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">12 pages, 6 figures, 2 tables</span>
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        In Evelina Lamma and Paola Mello (eds.), AI*IA99: Advances in Artificial Intelligence, LNAI series, vol. 1792, pp. 72-83, Springer, 2000
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1007.3159">arXiv:1007.3159</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1007.3159">pdf</a>, <a href="https://arxiv.org/ps/1007.3159">ps</a>, <a href="https://arxiv.org/format/1007.3159">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1017/S1471068410000335">10.1017/S1471068410000335 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Logic-Based Decision Support for Strategic Environmental Assessment
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Gavanelli%2C+M">Marco Gavanelli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Riguzzi%2C+F">Fabrizio Riguzzi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Cagnoli%2C+P">Paolo Cagnoli</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1007.3159v1-abstract-short" style="display: inline;">
+        Strategic Environmental Assessment is a procedure aimed at introducing systematic assessment of the environmental effects of plans and programs. This procedure is based on the so-called coaxial matrices that define dependencies between plan activities (infrastructures, plants, resource extractions, buildings, etc.) and positive and negative environmental impacts, and dependencies between these imp&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1007.3159v1-abstract-full').style.display = 'inline'; document.getElementById('1007.3159v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1007.3159v1-abstract-full" style="display: none;">
+        Strategic Environmental Assessment is a procedure aimed at introducing systematic assessment of the environmental effects of plans and programs. This procedure is based on the so-called coaxial matrices that define dependencies between plan activities (infrastructures, plants, resource extractions, buildings, etc.) and positive and negative environmental impacts, and dependencies between these impacts and environmental receptors. Up to now, this procedure is manually implemented by environmental experts for checking the environmental effects of a given plan or program, but it is never applied during the plan/program construction. A decision support system, based on a clear logic semantics, would be an invaluable tool not only in assessing a single, already defined plan, but also during the planning process in order to produce an optimized, environmentally assessed plan and to study possible alternative scenarios. We propose two logic-based approaches to the problem, one based on Constraint Logic Programming and one on Probabilistic Logic Programming that could be, in the future, conveniently merged to exploit the advantages of both. We test the proposed approaches on a real energy plan and we discuss their limitations and advantages.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1007.3159v1-abstract-full').style.display = 'none'; document.getElementById('1007.3159v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 July, 2010; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2010.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">17 pages, 1 figure, 26th Int&#39;l. Conference on Logic Programming (ICLP&#39;10)</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          J.2; I.2.1; I.2.4; I.2.5
+        
+      </p>
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Theory and Practice of Logic Programming, 26th Int&#39;l. Conference on Logic Programming (ICLP&#39;10) Special Issue, 10(4-6), 643-658, 2010
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/cs/0408056">arXiv:cs/0408056</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/cs/0408056">pdf</a>, <a href="https://arxiv.org/ps/cs/0408056">ps</a>, <a href="https://arxiv.org/format/cs/0408056">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A CHR-based Implementation of Known Arc-Consistency
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Alberti%2C+M">Marco Alberti</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gavanelli%2C+M">Marco Gavanelli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lamma%2C+E">Evelina Lamma</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mello%2C+P">Paola Mello</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="cs/0408056v1-abstract-short" style="display: inline;">
+        In classical CLP(FD) systems, domains of variables are completely known at the beginning of the constraint propagation process. However, in systems interacting with an external environment, acquiring the whole domains of variables before the beginning of constraint propagation may cause waste of computation time, or even obsolescence of the acquired data at the time of use.
+  For such cases, the&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('cs/0408056v1-abstract-full').style.display = 'inline'; document.getElementById('cs/0408056v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="cs/0408056v1-abstract-full" style="display: none;">
+          In classical CLP(FD) systems, domains of variables are completely known at the beginning of the constraint propagation process. However, in systems interacting with an external environment, acquiring the whole domains of variables before the beginning of constraint propagation may cause waste of computation time, or even obsolescence of the acquired data at the time of use.
+  For such cases, the Interactive Constraint Satisfaction Problem (ICSP) model has been proposed as an extension of the CSP model, to make it possible to start constraint propagation even when domains are not fully known, performing acquisition of domain elements only when necessary, and without the need for restarting the propagation after every acquisition.
+  In this paper, we show how a solver for the two sorted CLP language, defined in previous work, to express ICSPs, has been implemented in the Constraint Handling Rules (CHR) language, a declarative language particularly suitable for high level implementation of constraint solvers.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('cs/0408056v1-abstract-full').style.display = 'none'; document.getElementById('cs/0408056v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 August, 2004; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2004.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">22 pages, 2 figures, 1 table To appear in Theory and Practice of Logic Programming (TPLP)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/cs/0407042">arXiv:cs/0407042</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/cs/0407042">pdf</a>, <a href="https://arxiv.org/ps/cs/0407042">ps</a>, <a href="https://arxiv.org/format/cs/0407042">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Postponing Branching Decisions
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=van+Hoeve%2C+W+J">Willem Jan van Hoeve</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Milano%2C+M">Michela Milano</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="cs/0407042v1-abstract-short" style="display: inline;">
+        Solution techniques for Constraint Satisfaction and Optimisation Problems often make use of backtrack search methods, exploiting variable and value ordering heuristics. In this paper, we propose and analyse a very simple method to apply in case the value ordering heuristic produces ties: postponing the branching decision. To this end, we group together values in a tie, branch on this sub-domain,&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('cs/0407042v1-abstract-full').style.display = 'inline'; document.getElementById('cs/0407042v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="cs/0407042v1-abstract-full" style="display: none;">
+          Solution techniques for Constraint Satisfaction and Optimisation Problems often make use of backtrack search methods, exploiting variable and value ordering heuristics. In this paper, we propose and analyse a very simple method to apply in case the value ordering heuristic produces ties: postponing the branching decision. To this end, we group together values in a tie, branch on this sub-domain, and defer the decision among them to lower levels of the search tree. We show theoretically and experimentally that this simple modification can dramatically improve the efficiency of the search strategy. Although in practise similar methods may have been applied already, to our knowledge, no empirical or theoretical study has been proposed in the literature to identify when and to what extent this strategy should be used.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('cs/0407042v1-abstract-full').style.display = 'none'; document.getElementById('cs/0407042v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 16 July, 2004; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2004.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">11 pages, 3 figures</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.8; D.3.3
+        
+      </p>
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

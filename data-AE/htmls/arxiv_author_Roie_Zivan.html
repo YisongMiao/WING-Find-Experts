@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;7 of 7 results for author: <span class="mathjax">Roie Zivan</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Roie Zivan">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Roie+Zivan&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Roie Zivan">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2505.22753">arXiv:2505.22753</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2505.22753">pdf</a>, <a href="https://arxiv.org/ps/2505.22753">ps</a>, <a href="https://arxiv.org/format/2505.22753">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Robotics">cs.RO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Enhancing Lifelong Multi-Agent Path-finding by Using Artificial Potential Fields
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pertzovsky%2C+A">Arseniy Pertzovsky</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Stern%2C+R">Roni Stern</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Felner%2C+A">Ariel Felner</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zivan%2C+R">Roie Zivan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2505.22753v1-abstract-short" style="display: inline;">
+        We explore the use of Artificial Potential Fields (APFs) to solve Multi-Agent Path Finding (MAPF) and Lifelong MAPF (LMAPF) problems. In MAPF, a team of agents must move to their goal locations without collisions, whereas in LMAPF, new goals are generated upon arrival. We propose methods for incorporating APFs in a range of MAPF algorithms, including Prioritized Planning, MAPF-LNS2, and Priority I&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.22753v1-abstract-full').style.display = 'inline'; document.getElementById('2505.22753v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2505.22753v1-abstract-full" style="display: none;">
+        We explore the use of Artificial Potential Fields (APFs) to solve Multi-Agent Path Finding (MAPF) and Lifelong MAPF (LMAPF) problems. In MAPF, a team of agents must move to their goal locations without collisions, whereas in LMAPF, new goals are generated upon arrival. We propose methods for incorporating APFs in a range of MAPF algorithms, including Prioritized Planning, MAPF-LNS2, and Priority Inheritance with Backtracking (PIBT). Experimental results show that using APF is not beneficial for MAPF but yields up to a 7-fold increase in overall system throughput for LMAPF.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.22753v1-abstract-full').style.display = 'none'; document.getElementById('2505.22753v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 28 May, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2504.08737">arXiv:2504.08737</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2504.08737">pdf</a>, <a href="https://arxiv.org/format/2504.08737">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Distributed, Parallel, and Cluster Computing">cs.DC</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.4230/LIPIcs.CP.2024.24">10.4230/LIPIcs.CP.2024.24 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Latency-Aware 2-Opt Monotonic Local Search for Distributed Constraint Optimization
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Rachmut%2C+B">Ben Rachmut</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zivan%2C+R">Roie Zivan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yeoh%2C+W">William Yeoh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2504.08737v1-abstract-short" style="display: inline;">
+        Researchers recently extended Distributed Constraint Optimization Problems (DCOPs) to Communication-Aware DCOPs so that they are applicable in scenarios in which messages can be arbitrarily delayed. Distributed asynchronous local search and inference algorithms designed for CA-DCOPs are less vulnerable to message latency than their counterparts for regular DCOPs. However, unlike local search algor&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.08737v1-abstract-full').style.display = 'inline'; document.getElementById('2504.08737v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2504.08737v1-abstract-full" style="display: none;">
+        Researchers recently extended Distributed Constraint Optimization Problems (DCOPs) to Communication-Aware DCOPs so that they are applicable in scenarios in which messages can be arbitrarily delayed. Distributed asynchronous local search and inference algorithms designed for CA-DCOPs are less vulnerable to message latency than their counterparts for regular DCOPs. However, unlike local search algorithms for (regular) DCOPs that converge to k-opt solutions (with k &gt; 1), that is, they converge to solutions that cannot be improved by a group of k agents), local search CA-DCOP algorithms are limited to 1-opt solutions only. In this paper, we introduce Latency-Aware Monotonic Distributed Local Search-2 (LAMDLS-2), where agents form pairs and coordinate bilateral assignment replacements. LAMDLS-2 is monotonic, converges to a 2-opt solution, and is also robust to message latency, making it suitable for CA-DCOPs. Our results indicate that LAMDLS-2 converges faster than MGM-2, a benchmark algorithm, to a similar 2-opt solution, in various message latency scenarios.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.08737v1-abstract-full').style.display = 'none'; document.getElementById('2504.08737v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 February, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2025.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        In 30th International Conference on Principles and Practice of Constraint Programming (CP 2024) (pp. 24-1)
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2502.14102">arXiv:2502.14102</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2502.14102">pdf</a>, <a href="https://arxiv.org/format/2502.14102">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Explainable Distributed Constraint Optimization Problems
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Rachmut%2C+B">Ben Rachmut</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vasileiou%2C+S+L">Stylianos Loukas Vasileiou</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Weinstein%2C+N+M">Nimrod Meir Weinstein</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zivan%2C+R">Roie Zivan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yeoh%2C+W">William Yeoh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2502.14102v1-abstract-short" style="display: inline;">
+        The Distributed Constraint Optimization Problem (DCOP) formulation is a powerful tool to model cooperative multi-agent problems that need to be solved distributively. A core assumption of existing approaches is that DCOP solutions can be easily understood, accepted, and adopted, which may not hold, as evidenced by the large body of literature on Explainable AI. In this paper, we propose the Explai&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.14102v1-abstract-full').style.display = 'inline'; document.getElementById('2502.14102v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2502.14102v1-abstract-full" style="display: none;">
+        The Distributed Constraint Optimization Problem (DCOP) formulation is a powerful tool to model cooperative multi-agent problems that need to be solved distributively. A core assumption of existing approaches is that DCOP solutions can be easily understood, accepted, and adopted, which may not hold, as evidenced by the large body of literature on Explainable AI. In this paper, we propose the Explainable DCOP (X-DCOP) model, which extends a DCOP to include its solution and a contrastive query for that solution. We formally define some key properties that contrastive explanations must satisfy for them to be considered as valid solutions to X-DCOPs as well as theoretical results on the existence of such valid explanations. To solve X-DCOPs, we propose a distributed framework as well as several optimizations and suboptimal variants to find valid explanations. We also include a human user study that showed that users, not surprisingly, prefer shorter explanations over longer ones. Our empirical evaluations showed that our approach can scale to large problems, and the different variants provide different options for trading off explanation lengths for smaller runtimes. Thus, our model and algorithmic contributions extend the state of the art by reducing the barrier for users to understand DCOP solutions, facilitating their adoption in more real-world applications.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.14102v1-abstract-full').style.display = 'none'; document.getElementById('2502.14102v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 February, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2410.12397">arXiv:2410.12397</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2410.12397">pdf</a>, <a href="https://arxiv.org/format/2410.12397">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Multi-Agent Corridor Generating Algorithm
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Pertzovsky%2C+A">Arseniy Pertzovsky</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Stern%2C+R">Roni Stern</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zivan%2C+R">Roie Zivan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Felner%2C+A">Ariel Felner</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2410.12397v2-abstract-short" style="display: inline;">
+        In this paper, we propose the Multi-Agent Corridor Generating Algorithm (MACGA) for solving the Multi-agent Pathfinding (MAPF) problem, where a group of agents need to find non-colliding paths to their target locations. Existing approaches struggle to solve dense MAPF instances. In MACGA, the agents build \emph{corridors}, which are sequences of connected vertices, from current locations towards a&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.12397v2-abstract-full').style.display = 'inline'; document.getElementById('2410.12397v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2410.12397v2-abstract-full" style="display: none;">
+        In this paper, we propose the Multi-Agent Corridor Generating Algorithm (MACGA) for solving the Multi-agent Pathfinding (MAPF) problem, where a group of agents need to find non-colliding paths to their target locations. Existing approaches struggle to solve dense MAPF instances. In MACGA, the agents build \emph{corridors}, which are sequences of connected vertices, from current locations towards agents&#39; goals, and evacuate other agents out of the corridors to avoid collisions and deadlocks. We also present the MACGA+PIBT algorithm, which integrates the well-known rule-based PIBT algorithm into MACGA to improve runtime and solution quality. The proposed algorithms run in polynomial time and have a reachability property, i.e., every agent is guaranteed to reach its goal location at some point. We demonstrate experimentally that MACGA and MACGA+PIBT outperform baseline algorithms in terms of success rate, runtime, and makespan across diverse MAPF benchmark grids.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.12397v2-abstract-full').style.display = 'none'; document.getElementById('2410.12397v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 May, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 16 October, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1702.06915">arXiv:1702.06915</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1702.06915">pdf</a>, <a href="https://arxiv.org/format/1702.06915">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Solving DCOPs with Distributed Large Neighborhood Search
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Fioretto%2C+F">Ferdinando Fioretto</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Dovier%2C+A">Agostino Dovier</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pontelli%2C+E">Enrico Pontelli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yeoh%2C+W">William Yeoh</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zivan%2C+R">Roie Zivan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1702.06915v2-abstract-short" style="display: inline;">
+        The field of Distributed Constraint Optimization has gained momentum in recent years, thanks to its ability to address various applications related to multi-agent cooperation. Nevertheless, solving Distributed Constraint Optimization Problems (DCOPs) optimally is NP-hard. Therefore, in large-scale, complex applications, incomplete DCOP algorithms are necessary. Current incomplete DCOP algorithms s&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1702.06915v2-abstract-full').style.display = 'inline'; document.getElementById('1702.06915v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1702.06915v2-abstract-full" style="display: none;">
+        The field of Distributed Constraint Optimization has gained momentum in recent years, thanks to its ability to address various applications related to multi-agent cooperation. Nevertheless, solving Distributed Constraint Optimization Problems (DCOPs) optimally is NP-hard. Therefore, in large-scale, complex applications, incomplete DCOP algorithms are necessary. Current incomplete DCOP algorithms suffer of one or more of the following limitations: they (a) find local minima without providing quality guarantees; (b) provide loose quality assessment; or (c) are unable to benefit from the structure of the problem, such as domain-dependent knowledge and hard constraints. Therefore, capitalizing on strategies from the centralized constraint solving community, we propose a Distributed Large Neighborhood Search (D-LNS) framework to solve DCOPs. The proposed framework (with its novel repair phase) provides guarantees on solution quality, refining upper and lower bounds during the iterative process, and can exploit domain-dependent structures. Our experimental results show that D-LNS outperforms other incomplete DCOP algorithms on both structured and unstructured problem instances.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1702.06915v2-abstract-full').style.display = 'none'; document.getElementById('1702.06915v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 February, 2017; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 22 February, 2017;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2017.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1402.0587">arXiv:1402.0587</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1402.0587">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1613/jair.3945">10.1613/jair.3945 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Asymmetric Distributed Constraint Optimization Problems
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Grinshpoun%2C+T">Tal Grinshpoun</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Grubshtein%2C+A">Alon Grubshtein</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zivan%2C+R">Roie Zivan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Netzer%2C+A">Arnon Netzer</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Meisels%2C+A">Amnon Meisels</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1402.0587v1-abstract-short" style="display: inline;">
+        Distributed Constraint Optimization (DCOP) is a powerful framework for representing and solving distributed combinatorial problems, where the variables of the problem are owned by different agents. Many multi-agent problems include constraints that produce different gains (or costs) for the participating agents. Asymmetric gains of constrained agents cannot be naturally represented by the standard&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1402.0587v1-abstract-full').style.display = 'inline'; document.getElementById('1402.0587v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1402.0587v1-abstract-full" style="display: none;">
+        Distributed Constraint Optimization (DCOP) is a powerful framework for representing and solving distributed combinatorial problems, where the variables of the problem are owned by different agents. Many multi-agent problems include constraints that produce different gains (or costs) for the participating agents. Asymmetric gains of constrained agents cannot be naturally represented by the standard DCOP model.
+The present paper proposes a general framework for Asymmetric DCOPs (ADCOPs). In ADCOPs different agents may have different valuations for constraints that they are involved in. The new framework bridges the gap between multi-agent problems which tend to have asymmetric structure and the standard symmetric DCOP model. The benefits of the proposed model over previous attempts to generalize the DCOP model are discussed and evaluated.
+Innovative algorithms that apply to the special properties of the proposed ADCOP model are presented in detail. These include complete algorithms that have a substantial advantage in terms of runtime and network load over existing algorithms (for standard DCOPs) which use alternative representations.  Moreover, standard incomplete algorithms (i.e., local search algorithms) are inapplicable to the existing DCOP representations of asymmetric constraints and when they are applied to the new ADCOP framework they often fail to converge to a local optimum and yield poor results. The local search algorithms proposed in the present paper converge to high quality solutions. The experimental evidence that is presented reveals that the proposed local search algorithms for ADCOPs achieve high quality solutions while preserving a high level of privacy.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1402.0587v1-abstract-full').style.display = 'none'; document.getElementById('1402.0587v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 February, 2014; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2014.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Journal Of Artificial Intelligence Research, Volume 47, pages 613-647, 2013
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1401.3442">arXiv:1401.3442</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1401.3442">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1613/jair.2591">10.1613/jair.2591 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Asynchronous Forward Bounding for Distributed COPs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Gershman%2C+A">Amir Gershman</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Meisels%2C+A">Amnon Meisels</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zivan%2C+R">Roie Zivan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1401.3442v1-abstract-short" style="display: inline;">
+        A new search algorithm for solving distributed constraint optimization problems (DisCOPs) is presented. Agents assign variables sequentially and compute bounds on partial assignments asynchronously. The asynchronous bounds computation is based on the propagation of partial assignments. The asynchronous forward-bounding algorithm (AFB) is a distributed optimization search algorithm that keeps one c&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1401.3442v1-abstract-full').style.display = 'inline'; document.getElementById('1401.3442v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1401.3442v1-abstract-full" style="display: none;">
+        A new search algorithm for solving distributed constraint optimization problems (DisCOPs) is presented. Agents assign variables sequentially and compute bounds on partial assignments asynchronously. The asynchronous bounds computation is based on the propagation of partial assignments. The asynchronous forward-bounding algorithm (AFB) is a distributed optimization search algorithm that keeps one consistent partial assignment at all times. The algorithm is described in detail and its correctness proven. Experimental evaluation shows that AFB outperforms synchronous branch and bound by many orders of magnitude, and produces a phase transition as the tightness of the problem increases. This is an analogous effect to the phase transition that has been observed when local consistency maintenance is applied to MaxCSPs. The AFB algorithm is further enhanced by the addition of a backjumping mechanism, resulting in the AFB-BJ algorithm.  Distributed backjumping is based on accumulated information on bounds of all values and on processing concurrently a queue of candidate goals for the next move back. The AFB-BJ algorithm is compared experimentally to other DisCOP algorithms (ADOPT, DPOP, OptAPO) and is shown to be a very efficient algorithm for DisCOPs.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1401.3442v1-abstract-full').style.display = 'none'; document.getElementById('1401.3442v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 January, 2014; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2014.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Journal Of Artificial Intelligence Research, Volume 34, pages 61-88, 2009
+      </p>
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

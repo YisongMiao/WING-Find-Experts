@@ -1,0 +1,2710 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;35 of 35 results for author: <span class="mathjax">Maria Perez-Ortiz</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Maria Perez-Ortiz">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Maria+Perez-Ortiz&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Maria Perez-Ortiz">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2504.12777">arXiv:2504.12777</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2504.12777">pdf</a>, <a href="https://arxiv.org/format/2504.12777">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Multi-Agent Reinforcement Learning Simulation for Environmental Policy Synthesis
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Rudd-Jones%2C+J">James Rudd-Jones</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Musolesi%2C+M">Mirco Musolesi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2504.12777v2-abstract-short" style="display: inline;">
+        Climate policy development faces significant challenges due to deep uncertainty, complex system dynamics, and competing stakeholder interests. Climate simulation methods, such as Earth System Models, have become valuable tools for policy exploration. However, their typical use is for evaluating potential polices, rather than directly synthesizing them. The problem can be inverted to optimize for p&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.12777v2-abstract-full').style.display = 'inline'; document.getElementById('2504.12777v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2504.12777v2-abstract-full" style="display: none;">
+        Climate policy development faces significant challenges due to deep uncertainty, complex system dynamics, and competing stakeholder interests. Climate simulation methods, such as Earth System Models, have become valuable tools for policy exploration. However, their typical use is for evaluating potential polices, rather than directly synthesizing them. The problem can be inverted to optimize for policy pathways, but the traditional optimization approaches often struggle with non-linear dynamics, heterogeneous agents, and comprehensive uncertainty quantification. We propose a framework for augmenting climate simulations with Multi-Agent Reinforcement Learning (MARL) to address these limitations. We identify key challenges at the interface between climate simulations and the application of MARL in the context of policy synthesis, including reward definition, scalability with increasing agents and state spaces, uncertainty propagation across linked systems, and solution validation. Additionally, we discuss challenges in making MARL-derived solutions interpretable and useful for policy-makers. Our framework provides a foundation for more sophisticated climate policy exploration while acknowledging important limitations and areas for future research.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.12777v2-abstract-full').style.display = 'none'; document.getElementById('2504.12777v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 May, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 17 April, 2025;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Published in AAMAS&#39;25 Blue Sky Ideas Track</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2503.13445">arXiv:2503.13445</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2503.13445">pdf</a>, <a href="https://arxiv.org/format/2503.13445">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Faithfulness of LLM Self-Explanations for Commonsense Tasks: Larger Is Better, and Instruction-Tuning Allows Trade-Offs but Not Pareto Dominance
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Siegel%2C+N+Y">Noah Y. Siegel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Heess%2C+N">Nicolas Heess</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Camburu%2C+O">Oana-Maria Camburu</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2503.13445v1-abstract-short" style="display: inline;">
+        As large language models (LLMs) become increasingly capable, ensuring that their self-generated explanations are faithful to their internal decision-making process is critical for safety and oversight. In this work, we conduct a comprehensive counterfactual faithfulness analysis across 62 models from 8 families, encompassing both pretrained and instruction-tuned variants and significantly extendin&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.13445v1-abstract-full').style.display = 'inline'; document.getElementById('2503.13445v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2503.13445v1-abstract-full" style="display: none;">
+        As large language models (LLMs) become increasingly capable, ensuring that their self-generated explanations are faithful to their internal decision-making process is critical for safety and oversight. In this work, we conduct a comprehensive counterfactual faithfulness analysis across 62 models from 8 families, encompassing both pretrained and instruction-tuned variants and significantly extending prior studies of counterfactual tests. We introduce phi-CCT, a simplified variant of the Correlational Counterfactual Test, which avoids the need for token probabilities while explaining most of the variance of the original test. Our findings reveal clear scaling trends: larger models are consistently more faithful on our metrics. However, when comparing instruction-tuned and human-imitated explanations, we find that observed differences in faithfulness can often be attributed to explanation verbosity, leading to shifts along the true-positive/false-positive Pareto frontier. While instruction-tuning and prompting can influence this trade-off, we find limited evidence that they fundamentally expand the frontier of explanatory faithfulness beyond what is achievable with pretrained models of comparable size. Our analysis highlights the nuanced relationship between instruction-tuning, verbosity, and the faithful representation of model decision processes.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.13445v1-abstract-full').style.display = 'none'; document.getElementById('2503.13445v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 17 March, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">38 pages, 9 figures</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.7
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2502.20231">arXiv:2502.20231</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2502.20231">pdf</a>, <a href="https://arxiv.org/format/2502.20231">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        AI Will Always Love You: Studying Implicit Biases in Romantic AI Companions
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Grogan%2C+C">Clare Grogan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kay%2C+J">Jackie Kay</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2502.20231v1-abstract-short" style="display: inline;">
+        While existing studies have recognised explicit biases in generative models, including occupational gender biases, the nuances of gender stereotypes and expectations of relationships between users and AI companions remain underexplored. In the meantime, AI companions have become increasingly popular as friends or gendered romantic partners to their users. This study bridges the gap by devising thr&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.20231v1-abstract-full').style.display = 'inline'; document.getElementById('2502.20231v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2502.20231v1-abstract-full" style="display: none;">
+        While existing studies have recognised explicit biases in generative models, including occupational gender biases, the nuances of gender stereotypes and expectations of relationships between users and AI companions remain underexplored. In the meantime, AI companions have become increasingly popular as friends or gendered romantic partners to their users. This study bridges the gap by devising three experiments tailored for romantic, gender-assigned AI companions and their users, effectively evaluating implicit biases across various-sized LLMs. Each experiment looks at a different dimension: implicit associations, emotion responses, and sycophancy. This study aims to measure and compare biases manifested in different companion systems by quantitatively analysing persona-assigned model responses to a baseline through newly devised metrics. The results are noteworthy: they show that assigning gendered, relationship personas to Large Language Models significantly alters the responses of these models, and in certain situations in a biased, stereotypical way.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.20231v1-abstract-full').style.display = 'none'; document.getElementById('2502.20231v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 27 February, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2502.10411">arXiv:2502.10411</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2502.10411">pdf</a>, <a href="https://arxiv.org/format/2502.10411">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        TrueReason: An Exemplar Personalised Learning System Integrating Reasoning with Foundational Models
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Van+Niekerk%2C+D">Daniel Van Niekerk</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shipton%2C+J">Jarrod Shipton</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rosman%2C+B">Benjamin Rosman</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2502.10411v1-abstract-short" style="display: inline;">
+        Personalised education is one of the domains that can greatly benefit from the most recent advances in Artificial Intelligence (AI) and Large Language Models (LLM). However, it is also one of the most challenging applications due to the cognitive complexity of teaching effectively while personalising the learning experience to suit independent learners. We hypothesise that one promising approach t&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.10411v1-abstract-full').style.display = 'inline'; document.getElementById('2502.10411v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2502.10411v1-abstract-full" style="display: none;">
+        Personalised education is one of the domains that can greatly benefit from the most recent advances in Artificial Intelligence (AI) and Large Language Models (LLM). However, it is also one of the most challenging applications due to the cognitive complexity of teaching effectively while personalising the learning experience to suit independent learners. We hypothesise that one promising approach to excelling in such demanding use cases is using a \emph{society of minds}. In this chapter, we present TrueReason, an exemplar personalised learning system that integrates a multitude of specialised AI models that can mimic micro skills that are composed together by a LLM to operationalise planning and reasoning. The architecture of the initial prototype is presented while describing two micro skills that have been incorporated in the prototype. The proposed system demonstrates the first step in building sophisticated AI systems that can take up very complex cognitive tasks that are demanded by domains such as education.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.10411v1-abstract-full').style.display = 'none'; document.getElementById('2502.10411v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 23 January, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To be published as a book chapter</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.4; I.2.7; H.3.3; I.2.6; K.3.1
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2410.16574">arXiv:2410.16574</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2410.16574">pdf</a>, <a href="https://arxiv.org/format/2410.16574">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        How Can We Diagnose and Treat Bias in Large Language Models for Clinical Decision-Making?
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Benkirane%2C+K">Kenza Benkirane</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kay%2C+J">Jackie Kay</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2410.16574v1-abstract-short" style="display: inline;">
+        Recent advancements in Large Language Models (LLMs) have positioned them as powerful tools for clinical decision-making, with rapidly expanding applications in healthcare. However, concerns about bias remain a significant challenge in the clinical implementation of LLMs, particularly regarding gender and ethnicity. This research investigates the evaluation and mitigation of bias in LLMs applied to&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.16574v1-abstract-full').style.display = 'inline'; document.getElementById('2410.16574v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2410.16574v1-abstract-full" style="display: none;">
+        Recent advancements in Large Language Models (LLMs) have positioned them as powerful tools for clinical decision-making, with rapidly expanding applications in healthcare. However, concerns about bias remain a significant challenge in the clinical implementation of LLMs, particularly regarding gender and ethnicity. This research investigates the evaluation and mitigation of bias in LLMs applied to complex clinical cases, focusing on gender and ethnicity biases. We introduce a novel Counterfactual Patient Variations (CPV) dataset derived from the JAMA Clinical Challenge. Using this dataset, we built a framework for bias evaluation, employing both Multiple Choice Questions (MCQs) and corresponding explanations. We explore prompting with eight LLMs and fine-tuning as debiasing methods. Our findings reveal that addressing social biases in LLMs requires a multidimensional approach as mitigating gender bias can occur while introducing ethnicity biases, and that gender bias in LLM embeddings varies significantly across medical specialities. We demonstrate that evaluating both MCQ response and explanation processes is crucial, as correct responses can be based on biased \textit{reasoning}. We provide a framework for evaluating LLM bias in real-world clinical cases, offer insights into the complex nature of bias in these models, and present strategies for bias mitigation.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.16574v1-abstract-full').style.display = 'none'; document.getElementById('2410.16574v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 October, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2410.07287">arXiv:2410.07287</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2410.07287">pdf</a>, <a href="https://arxiv.org/format/2410.07287">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Physics and Society">physics.soc-ph</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Crafting desirable climate trajectories with RL explored socio-environmental simulations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Rudd-Jones%2C+J">James Rudd-Jones</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Thendean%2C+F">Fiona Thendean</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2410.07287v1-abstract-short" style="display: inline;">
+        Climate change poses an existential threat, necessitating effective climate policies to enact impactful change. Decisions in this domain are incredibly complex, involving conflicting entities and evidence. In the last decades, policymakers increasingly use simulations and computational methods to guide some of their decisions. Integrated Assessment Models (IAMs) are one of such methods, which comb&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.07287v1-abstract-full').style.display = 'inline'; document.getElementById('2410.07287v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2410.07287v1-abstract-full" style="display: none;">
+        Climate change poses an existential threat, necessitating effective climate policies to enact impactful change. Decisions in this domain are incredibly complex, involving conflicting entities and evidence. In the last decades, policymakers increasingly use simulations and computational methods to guide some of their decisions. Integrated Assessment Models (IAMs) are one of such methods, which combine social, economic, and environmental simulations to forecast potential policy effects. For example, the UN uses outputs of IAMs for their recent Intergovernmental Panel on Climate Change (IPCC) reports. Traditionally these have been solved using recursive equation solvers, but have several shortcomings, e.g. struggling at decision making under uncertainty. Recent preliminary work using Reinforcement Learning (RL) to replace the traditional solvers shows promising results in decision making in uncertain and noisy scenarios. We extend on this work by introducing multiple interacting RL agents as a preliminary analysis on modelling the complex interplay of socio-interactions between various stakeholders or nations that drives much of the current climate crisis. Our findings show that cooperative agents in this framework can consistently chart pathways towards more desirable futures in terms of reduced carbon emissions and improved economy. However, upon introducing competition between agents, for instance by using opposing reward functions, desirable climate futures are rarely reached. Modelling competition is key to increased realism in these simulations, as such we employ policy interpretation by visualising what states lead to more uncertain behaviour, to understand algorithm failure. Finally, we highlight the current limitations and avenues for further work to ensure future technology uptake for policy derivation.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.07287v1-abstract-full').style.display = 'none'; document.getElementById('2410.07287v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 9 October, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">23 pages, 13 Figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2407.04467">arXiv:2407.04467</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2407.04467">pdf</a>, <a href="https://arxiv.org/format/2407.04467">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Are Large Language Models Strategic Decision Makers? A Study of Performance and Bias in Two-Player Non-Zero-Sum Games
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Herr%2C+N">Nathan Herr</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Acero%2C+F">Fernando Acero</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Raileanu%2C+R">Roberta Raileanu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Li%2C+Z">Zhibin Li</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2407.04467v3-abstract-short" style="display: inline;">
+        Large Language Models (LLMs) have been increasingly used in real-world settings, yet their strategic decision-making abilities remain largely unexplored. To fully benefit from the potential of LLMs, it&#39;s essential to understand their ability to function in complex social scenarios. Game theory, which is already used to understand real-world interactions, provides a good framework for assessing the&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.04467v3-abstract-full').style.display = 'inline'; document.getElementById('2407.04467v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2407.04467v3-abstract-full" style="display: none;">
+        Large Language Models (LLMs) have been increasingly used in real-world settings, yet their strategic decision-making abilities remain largely unexplored. To fully benefit from the potential of LLMs, it&#39;s essential to understand their ability to function in complex social scenarios. Game theory, which is already used to understand real-world interactions, provides a good framework for assessing these abilities. This work investigates the performance and merits of LLMs in canonical game-theoretic two-player non-zero-sum games, Stag Hunt and Prisoner Dilemma. Our structured evaluation of GPT-3.5, GPT-4-Turbo, GPT-4o, and Llama-3-8B shows that these models, when making decisions in these games, are affected by at least one of the following systematic biases: positional bias, payoff bias, or behavioural bias. This indicates that LLMs do not fully rely on logical reasoning when making these strategic decisions. As a result, it was found that the LLMs&#39; performance drops when the game configuration is misaligned with the affecting biases. When misaligned, GPT-3.5, GPT-4-Turbo, GPT-4o, and Llama-3-8B show an average performance drop of 32\%, 25\%, 34\%, and 29\% respectively in Stag Hunt, and 28\%, 16\%, 34\%, and 24\% respectively in Prisoner&#39;s Dilemma. Surprisingly, GPT-4o (a top-performing LLM across standard benchmarks) suffers the most substantial performance drop, suggesting that newer models are not addressing these issues. Interestingly, we found that a commonly used method of improving the reasoning capabilities of LLMs, chain-of-thought (CoT) prompting, reduces the biases in GPT-3.5, GPT-4o, and Llama-3-8B but increases the effect of the bias in GPT-4-Turbo, indicating that CoT alone cannot fully serve as a robust solution to this problem. We perform several additional experiments, which provide further insight into these observed behaviours.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.04467v3-abstract-full').style.display = 'none'; document.getElementById('2407.04467v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 October, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 5 July, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2407.01270">arXiv:2407.01270</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2407.01270">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The African Woman is Rhythmic and Soulful: An Investigation of Implicit Biases in LLM Open-ended Text Generation
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lim%2C+S">Serene Lim</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2407.01270v2-abstract-short" style="display: inline;">
+        This paper investigates the subtle and often concealed biases present in Large Language Models (LLMs), focusing on implicit biases that may remain despite passing explicit bias tests. Implicit biases are significant because they influence the decisions made by these systems, potentially perpetuating stereotypes and discrimination, even when LLMs appear to function fairly. Traditionally, explicit b&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.01270v2-abstract-full').style.display = 'inline'; document.getElementById('2407.01270v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2407.01270v2-abstract-full" style="display: none;">
+        This paper investigates the subtle and often concealed biases present in Large Language Models (LLMs), focusing on implicit biases that may remain despite passing explicit bias tests. Implicit biases are significant because they influence the decisions made by these systems, potentially perpetuating stereotypes and discrimination, even when LLMs appear to function fairly. Traditionally, explicit bias tests or embedding-based methods are employed to detect bias, but these approaches can overlook more nuanced, implicit forms of bias. To address this, we introduce two novel psychological-inspired methodologies: the LLM Implicit Association Test (IAT) Bias and the LLM Decision Bias, designed to reveal and measure implicit biases through prompt-based and decision-making tasks. Additionally, open-ended generation tasks with thematic analysis of word generations and storytelling provide qualitative insights into the model&#39;s behavior. Our findings demonstrate that the LLM IAT Bias correlates with traditional methods and more effectively predicts downstream behaviors, as measured by the LLM Decision Bias, offering a more comprehensive framework for detecting subtle biases in AI systems. This research advances the field of AI ethics by proposing new methods to continually assess and mitigate biases in LLMs, highlighting the importance of qualitative and decision-focused evaluations to address challenges that previous approaches have not fully captured.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2407.01270v2-abstract-full').style.display = 'none'; document.getElementById('2407.01270v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 September, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 1 July, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2406.15484">arXiv:2406.15484</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2406.15484">pdf</a>, <a href="https://arxiv.org/format/2406.15484">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.18653/v1/2024.findings-emnlp.184">10.18653/v1/2024.findings-emnlp.184 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        JobFair: A Framework for Benchmarking Gender Hiring Bias in Large Language Models
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Wang%2C+Z">Ze Wang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wu%2C+Z">Zekun Wu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Guan%2C+X">Xin Guan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Thaler%2C+M">Michael Thaler</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Koshiyama%2C+A">Adriano Koshiyama</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lu%2C+S">Skylar Lu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Beepath%2C+S">Sachin Beepath</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Ertekin%2C+E">Ediz Ertekin Jr.</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2406.15484v2-abstract-short" style="display: inline;">
+        The use of Large Language Models (LLMs) in hiring has led to legislative actions to protect vulnerable demographic groups. This paper presents a novel framework for benchmarking hierarchical gender hiring bias in Large Language Models (LLMs) for resume scoring, revealing significant issues of reverse gender hiring bias and overdebiasing. Our contributions are fourfold: Firstly, we introduce a new&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2406.15484v2-abstract-full').style.display = 'inline'; document.getElementById('2406.15484v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2406.15484v2-abstract-full" style="display: none;">
+        The use of Large Language Models (LLMs) in hiring has led to legislative actions to protect vulnerable demographic groups. This paper presents a novel framework for benchmarking hierarchical gender hiring bias in Large Language Models (LLMs) for resume scoring, revealing significant issues of reverse gender hiring bias and overdebiasing. Our contributions are fourfold: Firstly, we introduce a new construct grounded in labour economics, legal principles, and critiques of current bias benchmarks: hiring bias can be categorized into two types: Level bias (difference in the average outcomes between demographic counterfactual groups) and Spread bias (difference in the variance of outcomes between demographic counterfactual groups); Level bias can be further subdivided into statistical bias (i.e. changing with non-demographic content) and taste-based bias (i.e. consistent regardless of non-demographic content). Secondly, the framework includes rigorous statistical and computational hiring bias metrics, such as Rank After Scoring (RAS), Rank-based Impact Ratio, Permutation Test, and Fixed Effects Model. Thirdly, we analyze gender hiring biases in ten state-of-the-art LLMs. Seven out of ten LLMs show significant biases against males in at least one industry. An industry-effect regression reveals that the healthcare industry is the most biased against males. Moreover, we found that the bias performance remains invariant with resume content for eight out of ten LLMs. This indicates that the bias performance measured in this paper might apply to other resume datasets with different resume qualities. Fourthly, we provide a user-friendly demo and resume dataset to support the adoption and practical use of the framework, which can be generalized to other social traits and tasks.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2406.15484v2-abstract-full').style.display = 'none'; document.getElementById('2406.15484v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 September, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 17 June, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">EMNLP 2024 Findings Paper</span>
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Findings of the Association for Computational Linguistics EMNLP 2024, 3227-3246 (2024)
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2405.05348">arXiv:2405.05348</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2405.05348">pdf</a>, <a href="https://arxiv.org/format/2405.05348">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Effect of Model Size on LLM Post-hoc Explainability via LIME
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Heyen%2C+H">Henning Heyen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Widdicombe%2C+A">Amy Widdicombe</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Siegel%2C+N+Y">Noah Y. Siegel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Treleaven%2C+P">Philip Treleaven</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2405.05348v1-abstract-short" style="display: inline;">
+        Large language models (LLMs) are becoming bigger to boost performance. However, little is known about how explainability is affected by this trend. This work explores LIME explanations for DeBERTaV3 models of four different sizes on natural language inference (NLI) and zero-shot classification (ZSC) tasks. We evaluate the explanations based on their faithfulness to the models&#39; internal decision pr&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2405.05348v1-abstract-full').style.display = 'inline'; document.getElementById('2405.05348v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2405.05348v1-abstract-full" style="display: none;">
+        Large language models (LLMs) are becoming bigger to boost performance. However, little is known about how explainability is affected by this trend. This work explores LIME explanations for DeBERTaV3 models of four different sizes on natural language inference (NLI) and zero-shot classification (ZSC) tasks. We evaluate the explanations based on their faithfulness to the models&#39; internal decision processes and their plausibility, i.e. their agreement with human explanations. The key finding is that increased model size does not correlate with plausibility despite improved model performance, suggesting a misalignment between the LIME explanations and the models&#39; internal processes as model size increases. Our results further suggest limitations regarding faithfulness metrics in NLI contexts.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2405.05348v1-abstract-full').style.display = 'none'; document.getElementById('2405.05348v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 May, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Published at ICLR 2024 Workshop on Secure and Trustworthy Large Language Models</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2404.03189">arXiv:2404.03189</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2404.03189">pdf</a>, <a href="https://arxiv.org/format/2404.03189">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Probabilities Also Matter: A More Faithful Metric for Faithfulness of Free-Text Explanations in Large Language Models
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Siegel%2C+N+Y">Noah Y. Siegel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Camburu%2C+O">Oana-Maria Camburu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Heess%2C+N">Nicolas Heess</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2404.03189v2-abstract-short" style="display: inline;">
+        In order to oversee advanced AI systems, it is important to understand their underlying decision-making process. When prompted, large language models (LLMs) can provide natural language explanations or reasoning traces that sound plausible and receive high ratings from human annotators. However, it is unclear to what extent these explanations are faithful, i.e., truly capture the factors responsib&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.03189v2-abstract-full').style.display = 'inline'; document.getElementById('2404.03189v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2404.03189v2-abstract-full" style="display: none;">
+        In order to oversee advanced AI systems, it is important to understand their underlying decision-making process. When prompted, large language models (LLMs) can provide natural language explanations or reasoning traces that sound plausible and receive high ratings from human annotators. However, it is unclear to what extent these explanations are faithful, i.e., truly capture the factors responsible for the model&#39;s predictions. In this work, we introduce Correlational Explanatory Faithfulness (CEF), a metric that can be used in faithfulness tests based on input interventions. Previous metrics used in such tests take into account only binary changes in the predictions. Our metric accounts for the total shift in the model&#39;s predicted label distribution, more accurately reflecting the explanations&#39; faithfulness. We then introduce the Correlational Counterfactual Test (CCT) by instantiating CEF on the Counterfactual Test (CT) from Atanasova et al. (2023). We evaluate the faithfulness of free-text explanations generated by few-shot-prompted LLMs from the Llama2 family on three NLP tasks. We find that our metric measures aspects of faithfulness which the CT misses.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.03189v2-abstract-full').style.display = 'none'; document.getElementById('2404.03189v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 7 June, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 4 April, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To be published in ACL 2024. 19 pages, 2 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2404.01768">arXiv:2404.01768</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2404.01768">pdf</a>, <a href="https://arxiv.org/format/2404.01768">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Stereotype Detection in LLMs: A Multiclass, Explainable, and Benchmark-Driven Approach
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Wu%2C+Z">Zekun Wu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Koshiyama%2C+A+S">Adriano Soares Koshiyama</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2404.01768v2-abstract-short" style="display: inline;">
+        Stereotype detection is a challenging and subjective task, as certain statements, such as &#34;Black people like to play basketball,&#34; may not appear overtly toxic but still reinforce racial stereotypes. With the increasing prevalence of large language models (LLMs) in human-facing artificial intelligence (AI) applications, detecting these types of biases is essential. However, LLMs risk perpetuating a&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.01768v2-abstract-full').style.display = 'inline'; document.getElementById('2404.01768v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2404.01768v2-abstract-full" style="display: none;">
+        Stereotype detection is a challenging and subjective task, as certain statements, such as &#34;Black people like to play basketball,&#34; may not appear overtly toxic but still reinforce racial stereotypes. With the increasing prevalence of large language models (LLMs) in human-facing artificial intelligence (AI) applications, detecting these types of biases is essential. However, LLMs risk perpetuating and amplifying stereotypical outputs derived from their training data. A reliable stereotype detector is crucial for benchmarking bias, monitoring model input and output, filtering training data, and ensuring fairer model behavior in downstream applications. This paper introduces the Multi-Grain Stereotype (MGS) dataset, consisting of 51,867 instances across gender, race, profession, religion, and other stereotypes, curated from multiple existing datasets. We evaluate various machine learning approaches to establish baselines and fine-tune language models of different architectures and sizes, presenting a suite of stereotype multiclass classifiers trained on the MGS dataset. Given the subjectivity of stereotypes, explainability is essential to align model learning with human understanding of stereotypes. We employ explainable AI (XAI) tools, including SHAP, LIME, and BertViz, to assess whether the model&#39;s learned patterns align with human intuitions about stereotypes.Additionally, we develop stereotype elicitation prompts and benchmark the presence of stereotypes in text generation tasks using popular LLMs, employing the best-performing stereotype classifiers.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.01768v2-abstract-full').style.display = 'none'; document.getElementById('2404.01768v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 November, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 2 April, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Under review as a conference paper at ARR October 2024</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2401.05424">arXiv:2401.05424</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2401.05424">pdf</a>, <a href="https://arxiv.org/format/2401.05424">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Applications">stat.AP</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Toolbox for Modelling Engagement with Educational Videos
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Qiu%2C+Y">Yuxiang Qiu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Djemili%2C+K">Karim Djemili</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Elezi%2C+D">Denis Elezi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shalman%2C+A">Aaneel Shalman</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yilmaz%2C+E">Emine Yilmaz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2401.05424v1-abstract-short" style="display: inline;">
+        With the advancement and utility of Artificial Intelligence (AI), personalising education to a global population could be a cornerstone of new educational systems in the future. This work presents the PEEKC dataset and the TrueLearn Python library, which contains a dataset and a series of online learner state models that are essential to facilitate research on learner engagement modelling.TrueLear&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2401.05424v1-abstract-full').style.display = 'inline'; document.getElementById('2401.05424v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2401.05424v1-abstract-full" style="display: none;">
+        With the advancement and utility of Artificial Intelligence (AI), personalising education to a global population could be a cornerstone of new educational systems in the future. This work presents the PEEKC dataset and the TrueLearn Python library, which contains a dataset and a series of online learner state models that are essential to facilitate research on learner engagement modelling.TrueLearn family of models was designed following the &#34;open learner&#34; concept, using humanly-intuitive user representations. This family of scalable, online models also help end-users visualise the learner models, which may in the future facilitate user interaction with their models/recommenders. The extensive documentation and coding examples make the library highly accessible to both machine learning developers and educational data mining and learning analytics practitioners. The experiments show the utility of both the dataset and the library with predictive performance significantly exceeding comparative baseline models. The dataset contains a large amount of AI-related educational videos, which are of interest for building and validating AI-specific educational recommenders.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2401.05424v1-abstract-full').style.display = 'none'; document.getElementById('2401.05424v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 December, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">In Proceedings of AAAI Conference on Artificial Intelligence 2024. arXiv admin note: text overlap with arXiv:2309.11527</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          H.3.3; J.1; I.2.0
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2312.06527">arXiv:2312.06527</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2312.06527">pdf</a>, <a href="https://arxiv.org/format/2312.06527">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Engineering, Finance, and Science">cs.CE</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Can Reinforcement Learning support policy makers? A preliminary study with Integrated Assessment Models
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Wolf%2C+T">Theodore Wolf</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nardelli%2C+N">Nantas Nardelli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2312.06527v1-abstract-short" style="display: inline;">
+        Governments around the world aspire to ground decision-making on evidence. Many of the foundations of policy making - e.g. sensing patterns that relate to societal needs, developing evidence-based programs, forecasting potential outcomes of policy changes, and monitoring effectiveness of policy programs - have the potential to benefit from the use of large-scale datasets or simulations together wi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2312.06527v1-abstract-full').style.display = 'inline'; document.getElementById('2312.06527v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2312.06527v1-abstract-full" style="display: none;">
+        Governments around the world aspire to ground decision-making on evidence. Many of the foundations of policy making - e.g. sensing patterns that relate to societal needs, developing evidence-based programs, forecasting potential outcomes of policy changes, and monitoring effectiveness of policy programs - have the potential to benefit from the use of large-scale datasets or simulations together with intelligent algorithms. These could, if designed and deployed in a way that is well grounded on scientific evidence, enable a more comprehensive, faster, and rigorous approach to policy making. Integrated Assessment Models (IAM) is a broad umbrella covering scientific models that attempt to link main features of society and economy with the biosphere into one modelling framework. At present, these systems are probed by policy makers and advisory groups in a hypothesis-driven manner. In this paper, we empirically demonstrate that modern Reinforcement Learning can be used to probe IAMs and explore the space of solutions in a more principled manner. While the implication of our results are modest since the environment is simplistic, we believe that this is a stepping stone towards more ambitious use cases, which could allow for effective exploration of policies and understanding of their consequences and limitations.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2312.06527v1-abstract-full').style.display = 'none'; document.getElementById('2312.06527v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 11 December, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Published at NeurIPS&#39;23 Workshop on Tackling Climate Change with Machine Learning</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2309.11527">arXiv:2309.11527</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2309.11527">pdf</a>, <a href="https://arxiv.org/format/2309.11527">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        TrueLearn: A Python Library for Personalised Informational Recommendations with (Implicit) Feedback
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Qiu%2C+Y">Yuxiang Qiu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Djemili%2C+K">Karim Djemili</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Elezi%2C+D">Denis Elezi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shalman%2C+A">Aaneel Shalman</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2309.11527v1-abstract-short" style="display: inline;">
+        This work describes the TrueLearn Python library, which contains a family of online learning Bayesian models for building educational (or more generally, informational) recommendation systems. This family of models was designed following the &#34;open learner&#34; concept, using humanly-intuitive user representations. For the sake of interpretability and putting the user in control, the TrueLearn library&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2309.11527v1-abstract-full').style.display = 'inline'; document.getElementById('2309.11527v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2309.11527v1-abstract-full" style="display: none;">
+        This work describes the TrueLearn Python library, which contains a family of online learning Bayesian models for building educational (or more generally, informational) recommendation systems. This family of models was designed following the &#34;open learner&#34; concept, using humanly-intuitive user representations. For the sake of interpretability and putting the user in control, the TrueLearn library also contains different representations to help end-users visualise the learner models, which may in the future facilitate user interaction with their own models. Together with the library, we include a previously publicly released implicit feedback educational dataset with evaluation metrics to measure the performance of the models. The extensive documentation and coding examples make the library highly accessible to both machine learning developers and educational data mining and learning analytic practitioners. The library and the support documentation with examples are available at https://truelearn.readthedocs.io/en/latest.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2309.11527v1-abstract-full').style.display = 'none'; document.getElementById('2309.11527v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 20 September, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To be presented at the ORSUM workshop at RecSys 2023</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          H.3.3; J.1; I.2.0
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2210.04554">arXiv:2210.04554</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2210.04554">pdf</a>, <a href="https://arxiv.org/format/2210.04554">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Comparing the carbon costs and benefits of low-resource solar nowcasting
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Dixon%2C+B">Ben Dixon</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bieker%2C+J">Jacob Bieker</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2210.04554v1-abstract-short" style="display: inline;">
+        Solar PV yield nowcasting is used to help anticipate peaks and troughs in demand to support grid integration. This paper compares multiple low-resource approaches to nowcasting solar PV yield, using a dataset of UK satellite imagery and solar PV energy readings over a 1 to 4-hour time range. The paper also estimates the carbon emissions generated and averted by deploying models, and finds that eve&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2210.04554v1-abstract-full').style.display = 'inline'; document.getElementById('2210.04554v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2210.04554v1-abstract-full" style="display: none;">
+        Solar PV yield nowcasting is used to help anticipate peaks and troughs in demand to support grid integration. This paper compares multiple low-resource approaches to nowcasting solar PV yield, using a dataset of UK satellite imagery and solar PV energy readings over a 1 to 4-hour time range. The paper also estimates the carbon emissions generated and averted by deploying models, and finds that even small models that could be deployable in low-resource settings may have a benefit several orders of magnitude greater than its carbon cost. The paper also examines prediction errors and the activations in a CNN.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2210.04554v1-abstract-full').style.display = 'none'; document.getElementById('2210.04554v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 October, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2207.01504">arXiv:2207.01504</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2207.01504">pdf</a>, <a href="https://arxiv.org/format/2207.01504">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Digital Libraries">cs.DL</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Applications">stat.AP</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Can Population-based Engagement Improve Personalisation? A Novel Dataset and Experiments
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Verma%2C+M">Meghana Verma</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yilmaz%2C+E">Emine Yilmaz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2207.01504v1-abstract-short" style="display: inline;">
+        This work explores how population-based engagement prediction can address cold-start at scale in large learning resource collections. The paper introduces i) VLE, a novel dataset that consists of content and video based features extracted from publicly available scientific video lectures coupled with implicit and explicit signals related to learner engagement, ii) two standard tasks related to pre&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2207.01504v1-abstract-full').style.display = 'inline'; document.getElementById('2207.01504v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2207.01504v1-abstract-full" style="display: none;">
+        This work explores how population-based engagement prediction can address cold-start at scale in large learning resource collections. The paper introduces i) VLE, a novel dataset that consists of content and video based features extracted from publicly available scientific video lectures coupled with implicit and explicit signals related to learner engagement, ii) two standard tasks related to predicting and ranking context-agnostic engagement in video lectures with preliminary baselines and iii) a set of experiments that validate the usefulness of the proposed dataset. Our experimental results indicate that the newly proposed VLE dataset leads to building context-agnostic engagement prediction models that are significantly performant than ones based on previous datasets, mainly attributing to the increase of training examples. VLE dataset&#39;s suitability in building models towards Computer Science/ Artificial Intelligence education focused on e-learning/ MOOC use-cases is also evidenced. Further experiments in combining the built model with a personalising algorithm show promising improvements in addressing the cold-start problem encountered in educational recommenders. This is the largest and most diverse publicly available dataset to our knowledge that deals with learner engagement prediction tasks. The dataset, helper tools, descriptive statistics and example code snippets are available publicly.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2207.01504v1-abstract-full').style.display = 'none'; document.getElementById('2207.01504v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 June, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2022.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To be presented at International Conference for Educational Data Mining 2022</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          H.3.3; J.1; I.2.0
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2201.03408">arXiv:2201.03408</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2201.03408">pdf</a>, <a href="https://arxiv.org/format/2201.03408">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Human-Computer Interaction">cs.HC</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Watch Less and Uncover More: Could Navigation Tools Help Users Search and Explore Videos?
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Dormann%2C+C">Claire Dormann</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Verma%2C+M">Meghana Verma</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kreitmayer%2C+S">Stefan Kreitmayer</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Noss%2C+R">Richard Noss</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rogers%2C+Y">Yvonne Rogers</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yilmaz%2C+E">Emine Yilmaz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2201.03408v1-abstract-short" style="display: inline;">
+        Prior research has shown how &#39;content preview tools&#39; improve speed and accuracy of user relevance judgements across different information retrieval tasks. This paper describes a novel user interface tool, the Content Flow Bar, designed to allow users to quickly identify relevant fragments within informational videos to facilitate browsing, through a cognitively augmented form of navigation. It ach&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2201.03408v1-abstract-full').style.display = 'inline'; document.getElementById('2201.03408v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2201.03408v1-abstract-full" style="display: none;">
+        Prior research has shown how &#39;content preview tools&#39; improve speed and accuracy of user relevance judgements across different information retrieval tasks. This paper describes a novel user interface tool, the Content Flow Bar, designed to allow users to quickly identify relevant fragments within informational videos to facilitate browsing, through a cognitively augmented form of navigation. It achieves this by providing semantic &#34;snippets&#34; that enable the user to rapidly scan through video content. The tool provides visually-appealing pop-ups that appear in a time series bar at the bottom of each video, allowing to see in advance and at a glance how topics evolve in the content. We conducted a user study to evaluate how the tool changes the users search experience in video retrieval, as well as how it supports exploration and information seeking. The user questionnaire revealed that participants found the Content Flow Bar helpful and enjoyable for finding relevant information in videos. The interaction logs of the user study, where participants interacted with the tool for completing two informational tasks, showed that it holds promise for enhancing discoverability of content both across and within videos. This discovered potential could leverage a new generation of navigation tools in search and information retrieval.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2201.03408v1-abstract-full').style.display = 'none'; document.getElementById('2201.03408v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 January, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2022.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Published at the ACM SIGIR Conference on Human Information Interaction and Retrieval (CHIIR&#39;22)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2112.04368">arXiv:2112.04368</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2112.04368">pdf</a>, <a href="https://arxiv.org/format/2112.04368">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Applications">stat.AP</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Semantic TrueLearn: Using Semantic Knowledge Graphs in Recommendation Systems
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yilmaz%2C+E">Emine Yilmaz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2112.04368v1-abstract-short" style="display: inline;">
+        In informational recommenders, many challenges arise from the need to handle the semantic and hierarchical structure between knowledge areas. This work aims to advance towards building a state-aware educational recommendation system that incorporates semantic relatedness between knowledge topics, propagating latent information across semantically related topics. We introduce a novel learner model&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.04368v1-abstract-full').style.display = 'inline'; document.getElementById('2112.04368v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2112.04368v1-abstract-full" style="display: none;">
+        In informational recommenders, many challenges arise from the need to handle the semantic and hierarchical structure between knowledge areas. This work aims to advance towards building a state-aware educational recommendation system that incorporates semantic relatedness between knowledge topics, propagating latent information across semantically related topics. We introduce a novel learner model that exploits this semantic relatedness between knowledge components in learning resources using the Wikipedia link graph, with the aim to better predict learner engagement and latent knowledge in a lifelong learning scenario. In this sense, Semantic TrueLearn builds a humanly intuitive knowledge representation while leveraging Bayesian machine learning to improve the predictive performance of the educational engagement. Our experiments with a large dataset demonstrate that this new semantic version of TrueLearn algorithm achieves statistically significant improvements in terms of predictive performance with a simple extension that adds semantic awareness to the model.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.04368v1-abstract-full').style.display = 'none'; document.getElementById('2112.04368v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 December, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Presented at the First International Workshop on Joint Use of Probabilistic Graphical Models and Ontology at Conference on Knowledge Graph and Semantic Web 2021</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          H.3.3; J.1; I.2.0
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2112.02034">arXiv:2112.02034</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2112.02034">pdf</a>, <a href="https://arxiv.org/ps/2112.02034">ps</a>, <a href="https://arxiv.org/format/2112.02034">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Could AI Democratise Education? Socio-Technical Imaginaries of an EdTech Revolution
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Holloway%2C+C">Catherine Holloway</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2112.02034v1-abstract-short" style="display: inline;">
+        Artificial Intelligence (AI) in Education has been said to have the potential for building more personalised curricula, as well as democratising education worldwide and creating a Renaissance of new ways of teaching and learning. Millions of students are already starting to benefit from the use of these technologies, but millions more around the world are not. If this trend continues, the first de&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.02034v1-abstract-full').style.display = 'inline'; document.getElementById('2112.02034v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2112.02034v1-abstract-full" style="display: none;">
+        Artificial Intelligence (AI) in Education has been said to have the potential for building more personalised curricula, as well as democratising education worldwide and creating a Renaissance of new ways of teaching and learning. Millions of students are already starting to benefit from the use of these technologies, but millions more around the world are not. If this trend continues, the first delivery of AI in Education could be greater educational inequality, along with a global misallocation of educational resources motivated by the current technological determinism narrative. In this paper, we focus on speculating and posing questions around the future of AI in Education, with the aim of starting the pressing conversation that would set the right foundations for the new generation of education that is permeated by technology. This paper starts by synthesising how AI might change how we learn and teach, focusing specifically on the case of personalised learning companions, and then move to discuss some socio-technical features that will be crucial for avoiding the perils of these AI systems worldwide (and perhaps ensuring their success). This paper also discusses the potential of using AI together with free, participatory and democratic resources, such as Wikipedia, Open Educational Resources and open-source tools. We also emphasise the need for collectively designing human-centered, transparent, interactive and collaborative AI-based algorithms that empower and give complete agency to stakeholders, as well as support new emerging pedagogies. Finally, we ask what would it take for this educational revolution to provide egalitarian and empowering access to education, beyond any political, cultural, language, geographical and learning ability barriers.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.02034v1-abstract-full').style.display = 'none'; document.getElementById('2112.02034v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 December, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To be presented at Workshop on Machine Learning for the Developing World (ML4D) at the Conference on Neural Information Processing Systems 2021</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          K.3.1
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2112.01242">arXiv:2112.01242</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2112.01242">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        An AI-based Learning Companion Promoting Lifelong Learning Opportunities for All
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Novak%2C+E">Erik Novak</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2112.01242v1-abstract-short" style="display: inline;">
+        Artifical Intelligence (AI) in Education has great potential for building more personalised curricula, as well as democratising education worldwide and creating a Renaissance of new ways of teaching and learning. We believe this is a crucial moment for setting the foundations of AI in education in the beginning of this Fourth Industrial Revolution. This report aims to synthesize how AI might chang&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.01242v1-abstract-full').style.display = 'inline'; document.getElementById('2112.01242v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2112.01242v1-abstract-full" style="display: none;">
+        Artifical Intelligence (AI) in Education has great potential for building more personalised curricula, as well as democratising education worldwide and creating a Renaissance of new ways of teaching and learning. We believe this is a crucial moment for setting the foundations of AI in education in the beginning of this Fourth Industrial Revolution. This report aims to synthesize how AI might change (and is already changing) how we learn, as well as what technological features are crucial for these AI systems in education, with the end goal of starting this pressing dialogue of how the future of AI in education should unfold, engaging policy makers, engineers, researchers and obviously, teachers and learners. This report also presents the advances within the X5GON project, a European H2020 project aimed at building and deploying a cross-modal, cross-lingual, cross-cultural, cross-domain and cross-site personalised learning platform for Open Educational Resources (OER).
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2112.01242v1-abstract-full').style.display = 'none'; document.getElementById('2112.01242v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 16 November, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Published as an Opinion Report from the International Research Centre on Artificial Intelligence under the auspices of UNESCO</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2111.07737">arXiv:2111.07737</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2111.07737">pdf</a>, <a href="https://arxiv.org/format/2111.07737">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Progress in Self-Certified Neural Networks
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rivasplata%2C+O">Omar Rivasplata</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Parrado-Hernandez%2C+E">Emilio Parrado-Hernandez</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Guedj%2C+B">Benjamin Guedj</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2111.07737v3-abstract-short" style="display: inline;">
+        A learning method is self-certified if it uses all available data to simultaneously learn a predictor and certify its quality with a tight statistical certificate that is valid on unseen data. Recent work has shown that neural network models trained by optimising PAC-Bayes bounds lead not only to accurate predictors, but also to tight risk certificates, bearing promise towards achieving self-certi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2111.07737v3-abstract-full').style.display = 'inline'; document.getElementById('2111.07737v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2111.07737v3-abstract-full" style="display: none;">
+        A learning method is self-certified if it uses all available data to simultaneously learn a predictor and certify its quality with a tight statistical certificate that is valid on unseen data. Recent work has shown that neural network models trained by optimising PAC-Bayes bounds lead not only to accurate predictors, but also to tight risk certificates, bearing promise towards achieving self-certified learning. In this context, learning and certification strategies based on PAC-Bayes bounds are especially attractive due to their ability to leverage all data to learn a posterior and simultaneously certify its risk with a tight numerical certificate. In this paper, we assess the progress towards self-certification in probabilistic neural networks learnt by PAC-Bayes inspired objectives. We empirically compare (on 4 classification datasets) classical test set bounds for deterministic predictors and a PAC-Bayes bound for randomised self-certified predictors. We first show that both of these generalisation bounds are not too far from out-of-sample test set errors. We then show that in data starvation regimes, holding out data for the test set bounds adversely affects generalisation performance, while self-certified strategies based on PAC-Bayes bounds do not suffer from this drawback, proving that they might be a suitable choice for the small data regime. We also find that probabilistic neural networks learnt by PAC-Bayes inspired objectives lead to certificates that can be surprisingly competitive with commonly used test set bounds.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2111.07737v3-abstract-full').style.display = 'none'; document.getElementById('2111.07737v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 December, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 15 November, 2021;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2021.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Published at NeurIPS 2021 workshop: Bayesian Deep Learning
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2109.10304">arXiv:2109.10304</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2109.10304">pdf</a>, <a href="https://arxiv.org/format/2109.10304">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Learning PAC-Bayes Priors for Probabilistic Neural Networks
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rivasplata%2C+O">Omar Rivasplata</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Guedj%2C+B">Benjamin Guedj</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gleeson%2C+M">Matthew Gleeson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zhang%2C+J">Jingyu Zhang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bober%2C+M">Miroslaw Bober</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kittler%2C+J">Josef Kittler</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2109.10304v1-abstract-short" style="display: inline;">
+        Recent works have investigated deep learning models trained by optimising PAC-Bayes bounds, with priors that are learnt on subsets of the data. This combination has been shown to lead not only to accurate classifiers, but also to remarkably tight risk certificates, bearing promise towards self-certified learning (i.e. use all the data to learn a predictor and certify its quality). In this work, we&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.10304v1-abstract-full').style.display = 'inline'; document.getElementById('2109.10304v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2109.10304v1-abstract-full" style="display: none;">
+        Recent works have investigated deep learning models trained by optimising PAC-Bayes bounds, with priors that are learnt on subsets of the data. This combination has been shown to lead not only to accurate classifiers, but also to remarkably tight risk certificates, bearing promise towards self-certified learning (i.e. use all the data to learn a predictor and certify its quality). In this work, we empirically investigate the role of the prior. We experiment on 6 datasets with different strategies and amounts of data to learn data-dependent PAC-Bayes priors, and we compare them in terms of their effect on test performance of the learnt predictors and tightness of their risk certificate. We ask what is the optimal amount of data which should be allocated for building the prior and show that the optimum may be dataset dependent. We demonstrate that using a small percentage of the prior-building data for validation of the prior leads to promising results. We include a comparison of underparameterised and overparameterised models, along with an empirical study of different training objectives and regularisation strategies to learn the prior distribution.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.10304v1-abstract-full').style.display = 'none'; document.getElementById('2109.10304v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 September, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2021.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2109.03154">arXiv:2109.03154</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2109.03154">pdf</a>, <a href="https://arxiv.org/format/2109.03154">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        PEEK: A Large Dataset of Learner Engagement with Educational Videos
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Novak%2C+E">Erik Novak</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yilmaz%2C+E">Emine Yilmaz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2109.03154v2-abstract-short" style="display: inline;">
+        Educational recommenders have received much less attention in comparison to e-commerce and entertainment-related recommenders, even though efficient intelligent tutors have great potential to improve learning gains. One of the main challenges in advancing this research direction is the scarcity of large, publicly available datasets. In this work, we release a large, novel dataset of learners engag&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.03154v2-abstract-full').style.display = 'inline'; document.getElementById('2109.03154v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2109.03154v2-abstract-full" style="display: none;">
+        Educational recommenders have received much less attention in comparison to e-commerce and entertainment-related recommenders, even though efficient intelligent tutors have great potential to improve learning gains. One of the main challenges in advancing this research direction is the scarcity of large, publicly available datasets. In this work, we release a large, novel dataset of learners engaging with educational videos in-the-wild. The dataset, named Personalised Educational Engagement with Knowledge Topics PEEK, is the first publicly available dataset of this nature. The video lectures have been associated with Wikipedia concepts related to the material of the lecture, thus providing a humanly intuitive taxonomy. We believe that granular learner engagement signals in unison with rich content representations will pave the way to building powerful personalization algorithms that will revolutionise educational and informational recommendation systems. Towards this goal, we 1) construct a novel dataset from a popular video lecture repository, 2) identify a set of benchmark algorithms to model engagement, and 3) run extensive experimentation on the PEEK dataset to demonstrate its value. Our experiments with the dataset show promise in building powerful informational recommender systems. The dataset and the support code is available publicly.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.03154v2-abstract-full').style.display = 'none'; document.getElementById('2109.03154v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 13 September, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 3 September, 2021;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To be published at ORSUM &#39;21: 4th Workshop on Online Recommender Systems and User Modeling at ACM RecSys 2021</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">MSC Class:</span>
+          H.3.3; J.1; I.2.0
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          H.3.3; J.1; I.2.0
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2012.10758">arXiv:2012.10758</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2012.10758">pdf</a>, <a href="https://arxiv.org/format/2012.10758">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Image and Video Processing">eess.IV</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1109/TMM.2021.3076298">10.1109/TMM.2021.3076298 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Consolidated Dataset and Metrics for High-Dynamic-Range Image Quality
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mikhailiuk%2C+A">Aliaksei Mikhailiuk</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yue%2C+D">Dingcheng Yue</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Suen%2C+W">Wilson Suen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mantiuk%2C+R+K">Rafal K. Mantiuk</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2012.10758v2-abstract-short" style="display: inline;">
+        Increasing popularity of high-dynamic-range (HDR) image and video content brings the need for metrics that could predict the severity of image impairments as seen on displays of different brightness levels and dynamic range. Such metrics should be trained and validated on a sufficiently large subjective image quality dataset to ensure robust performance. As the existing HDR quality datasets are li&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.10758v2-abstract-full').style.display = 'inline'; document.getElementById('2012.10758v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2012.10758v2-abstract-full" style="display: none;">
+        Increasing popularity of high-dynamic-range (HDR) image and video content brings the need for metrics that could predict the severity of image impairments as seen on displays of different brightness levels and dynamic range. Such metrics should be trained and validated on a sufficiently large subjective image quality dataset to ensure robust performance. As the existing HDR quality datasets are limited in size, we created a Unified Photometric Image Quality dataset (UPIQ) with over 4,000 images by realigning and merging existing HDR and standard-dynamic-range (SDR) datasets. The realigned quality scores share the same unified quality scale across all datasets. Such realignment was achieved by collecting additional cross-dataset quality comparisons and re-scaling data with a psychometric scaling method. Images in the proposed dataset are represented in absolute photometric and colorimetric units, corresponding to light emitted from a display. We use the new dataset to retrain existing HDR metrics and show that the dataset is sufficiently large for training deep architectures. We show the utility of the dataset on brightness aware image compression.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.10758v2-abstract-full').style.display = 'none'; document.getElementById('2012.10758v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 May, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 19 December, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2012.03780">arXiv:2012.03780</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2012.03780">pdf</a>, <a href="https://arxiv.org/format/2012.03780">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Statistics Theory">math.ST</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A PAC-Bayesian Perspective on Structured Prediction with Implicit Loss Embeddings
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Cantelobre%2C+T">Théophile Cantelobre</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Guedj%2C+B">Benjamin Guedj</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2012.03780v2-abstract-short" style="display: inline;">
+        Many practical machine learning tasks can be framed as Structured prediction problems, where several output variables are predicted and considered interdependent. Recent theoretical advances in structured prediction have focused on obtaining fast rates convergence guarantees, especially in the Implicit Loss Embedding (ILE) framework. PAC-Bayes has gained interest recently for its capacity of produ&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.03780v2-abstract-full').style.display = 'inline'; document.getElementById('2012.03780v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2012.03780v2-abstract-full" style="display: none;">
+        Many practical machine learning tasks can be framed as Structured prediction problems, where several output variables are predicted and considered interdependent. Recent theoretical advances in structured prediction have focused on obtaining fast rates convergence guarantees, especially in the Implicit Loss Embedding (ILE) framework. PAC-Bayes has gained interest recently for its capacity of producing tight risk bounds for predictor distributions. This work proposes a novel PAC-Bayes perspective on the ILE Structured prediction framework. We present two generalization bounds, on the risk and excess risk, which yield insights into the behavior of ILE predictors. Two learning algorithms are derived from these bounds. The algorithms are implemented and their behavior analyzed, with source code available at \url{https://github.com/theophilec/PAC-Bayes-ILE-Structured-Prediction}.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.03780v2-abstract-full').style.display = 'none'; document.getElementById('2012.03780v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 December, 2020; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 7 December, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2020.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">38 pages</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2011.02273">arXiv:2011.02273</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2011.02273">pdf</a>, <a href="https://arxiv.org/format/2011.02273">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        VLEngagement: A Dataset of Scientific Video Lectures for Evaluating Population-based Engagement
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yilmaz%2C+E">Emine Yilmaz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2011.02273v1-abstract-short" style="display: inline;">
+        With the emergence of e-learning and personalised education, the production and distribution of digital educational resources have boomed. Video lectures have now become one of the primary modalities to impart knowledge to masses in the current digital age. The rapid creation of video lecture content challenges the currently established human-centred moderation and quality assurance pipeline, dema&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2011.02273v1-abstract-full').style.display = 'inline'; document.getElementById('2011.02273v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2011.02273v1-abstract-full" style="display: none;">
+        With the emergence of e-learning and personalised education, the production and distribution of digital educational resources have boomed. Video lectures have now become one of the primary modalities to impart knowledge to masses in the current digital age. The rapid creation of video lecture content challenges the currently established human-centred moderation and quality assurance pipeline, demanding for more efficient, scalable and automatic solutions for managing learning resources. Although a few datasets related to engagement with educational videos exist, there is still an important need for data and research aimed at understanding learner engagement with scientific video lectures. This paper introduces VLEngagement, a novel dataset that consists of content-based and video-specific features extracted from publicly available scientific video lectures and several metrics related to user engagement. We introduce several novel tasks related to predicting and understanding context-agnostic engagement in video lectures, providing preliminary baselines. This is the largest and most diverse publicly available dataset to our knowledge that deals with such tasks. The extraction of Wikipedia topic-based features also allows associating more sophisticated Wikipedia based features to the dataset to improve the performance in these tasks. The dataset, helper tools and example code snippets are available publicly at https://github.com/sahanbull/context-agnostic-engagement
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2011.02273v1-abstract-full').style.display = 'none'; document.getElementById('2011.02273v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 November, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2020.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          K.3.1; H.3.1
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2007.12911">arXiv:2007.12911</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2007.12911">pdf</a>, <a href="https://arxiv.org/format/2007.12911">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Tighter risk certificates for neural networks
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rivasplata%2C+O">Omar Rivasplata</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Szepesv%C3%A1ri%2C+C">Csaba Szepesvári</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2007.12911v3-abstract-short" style="display: inline;">
+        This paper presents an empirical study regarding training probabilistic neural networks using training objectives derived from PAC-Bayes bounds. In the context of probabilistic neural networks, the output of training is a probability distribution over network weights. We present two training objectives, used here for the first time in connection with training neural networks. These two training ob&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2007.12911v3-abstract-full').style.display = 'inline'; document.getElementById('2007.12911v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2007.12911v3-abstract-full" style="display: none;">
+        This paper presents an empirical study regarding training probabilistic neural networks using training objectives derived from PAC-Bayes bounds. In the context of probabilistic neural networks, the output of training is a probability distribution over network weights. We present two training objectives, used here for the first time in connection with training neural networks. These two training objectives are derived from tight PAC-Bayes bounds. We also re-implement a previously used training objective based on a classical PAC-Bayes bound, to compare the properties of the predictors learned using the different training objectives. We compute risk certificates for the learnt predictors, based on part of the data used to learn the predictors. We further experiment with different types of priors on the weights (both data-free and data-dependent priors) and neural network architectures. Our experiments on MNIST and CIFAR-10 show that our training methods produce competitive test set errors and non-vacuous risk bounds with much tighter values than previous results in the literature, showing promise not only to guide the learning algorithm through bounding the risk but also for model selection. These observations suggest that the methods studied here might be good candidates for self-certified learning, in the sense of using the whole data set for learning a predictor and certifying its risk on any unseen data (from the same distribution as the training data) potentially without the need for holding out test data.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2007.12911v3-abstract-full').style.display = 'none'; document.getElementById('2007.12911v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 September, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 25 July, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2020.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">New version includes: i) experiment showing the potential of the risk certificate for neural architecture search (Fig. 2); ii) experiments spanning uncertainty quantification and analysis of prior/posterior (Section 7.8); iii) an outline of the strengths of probabilistic neural networks trained by PBB (Section 7.9) and iv) a strengthened discussion on the connection to Bayesian learning</span>
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Journal of Machine Learning Research, 2021
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2006.00592">arXiv:2006.00592</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2006.00592">pdf</a>, <a href="https://arxiv.org/format/2006.00592">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Human-Computer Interaction">cs.HC</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Predicting Engagement in Video Lectures
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=P%C3%A9rez-Ortiz%2C+M">María Pérez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lipani%2C+A">Aldo Lipani</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yilmaz%2C+E">Emine Yilmaz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2006.00592v2-abstract-short" style="display: inline;">
+        The explosion of Open Educational Resources (OERs) in the recent years creates the demand for scalable, automatic approaches to process and evaluate OERs, with the end goal of identifying and recommending the most suitable educational materials for learners. We focus on building models to find the characteristics and features involved in context-agnostic engagement (i.e. population-based), a seldo&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2006.00592v2-abstract-full').style.display = 'inline'; document.getElementById('2006.00592v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2006.00592v2-abstract-full" style="display: none;">
+        The explosion of Open Educational Resources (OERs) in the recent years creates the demand for scalable, automatic approaches to process and evaluate OERs, with the end goal of identifying and recommending the most suitable educational materials for learners. We focus on building models to find the characteristics and features involved in context-agnostic engagement (i.e. population-based), a seldom researched topic compared to other contextualised and personalised approaches that focus more on individual learner engagement. Learner engagement, is arguably a more reliable measure than popularity/number of views, is more abundant than user ratings and has also been shown to be a crucial component in achieving learning outcomes. In this work, we explore the idea of building a predictive model for population-based engagement in education. We introduce a novel, large dataset of video lectures for predicting context-agnostic engagement and propose both cross-modal and modality-specific feature sets to achieve this task. We further test different strategies for quantifying learner engagement signals. We demonstrate the use of our approach in the case of data scarcity. Additionally, we perform a sensitivity analysis of the best performing model, which shows promising performance and can be easily integrated into an educational recommender system for OERs.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2006.00592v2-abstract-full').style.display = 'none'; document.getElementById('2006.00592v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 June, 2020; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 31 May, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2020.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">In Proceedings of International Conference on Educational Data Mining 2020</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          K.3.1; H.3.1
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2004.05691">arXiv:2004.05691</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2004.05691">pdf</a>, <a href="https://arxiv.org/format/2004.05691">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Active Sampling for Pairwise Comparisons via Approximate Message Passing and Information Gain Maximization
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mikhailiuk%2C+A">Aliaksei Mikhailiuk</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wilmot%2C+C">Clifford Wilmot</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yue%2C+D">Dingcheng Yue</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mantiuk%2C+R">Rafal Mantiuk</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2004.05691v1-abstract-short" style="display: inline;">
+        Pairwise comparison data arise in many domains with subjective assessment experiments, for example in image and video quality assessment. In these experiments observers are asked to express a preference between two conditions. However, many pairwise comparison protocols require a large number of comparisons to infer accurate scores, which may be unfeasible when each comparison is time-consuming (e&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2004.05691v1-abstract-full').style.display = 'inline'; document.getElementById('2004.05691v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2004.05691v1-abstract-full" style="display: none;">
+        Pairwise comparison data arise in many domains with subjective assessment experiments, for example in image and video quality assessment. In these experiments observers are asked to express a preference between two conditions. However, many pairwise comparison protocols require a large number of comparisons to infer accurate scores, which may be unfeasible when each comparison is time-consuming (e.g. videos) or expensive (e.g. medical imaging). This motivates the use of an active sampling algorithm that chooses only the most informative pairs for comparison. In this paper we propose ASAP, an active sampling algorithm based on approximate message passing and expected information gain maximization. Unlike most existing methods, which rely on partial updates of the posterior distribution, we are able to perform full updates and therefore much improve the accuracy of the inferred scores. The algorithm relies on three techniques for reducing computational cost: inference based on approximate message passing, selective evaluations of the information gain, and selecting pairs in a batch that forms a minimum spanning tree of the inverse of information gain. We demonstrate, with real and synthetic data, that ASAP offers the highest accuracy of inferred scores compared to the existing methods. We also provide an open-source GPU implementation of ASAP for large-scale experiments.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2004.05691v1-abstract-full').style.display = 'none'; document.getElementById('2004.05691v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 12 April, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1912.01592">arXiv:1912.01592</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1912.01592">pdf</a>, <a href="https://arxiv.org/format/1912.01592">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Towards an Integrative Educational Recommender for Lifelong Learners
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yilmaz%2C+E">Emine Yilmaz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1912.01592v1-abstract-short" style="display: inline;">
+        One of the most ambitious use cases of computer-assisted learning is to build a recommendation system for lifelong learning. Most recommender algorithms exploit similarities between content and users, overseeing the necessity to leverage sensible learning trajectories for the learner. Lifelong learning thus presents unique challenges, requiring scalable and transparent models that can account for&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1912.01592v1-abstract-full').style.display = 'inline'; document.getElementById('1912.01592v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1912.01592v1-abstract-full" style="display: none;">
+        One of the most ambitious use cases of computer-assisted learning is to build a recommendation system for lifelong learning. Most recommender algorithms exploit similarities between content and users, overseeing the necessity to leverage sensible learning trajectories for the learner. Lifelong learning thus presents unique challenges, requiring scalable and transparent models that can account for learner knowledge and content novelty simultaneously, while also retaining accurate learners representations for long periods of time. We attempt to build a novel educational recommender, that relies on an integrative approach combining multiple drivers of learners engagement. Our first step towards this goal is TrueLearn, which models content novelty and background knowledge of learners and achieves promising performance while retaining a human interpretable learner model.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1912.01592v1-abstract-full').style.display = 'none'; document.getElementById('1912.01592v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 December, 2019; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">In Proceedings of AAAI Conference on Artificial Intelligence 2020</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">MSC Class:</span>
+          H.3.3; J.1; I.2.0
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          H.3.3; J.1; I.2.0
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1911.09471">arXiv:1911.09471</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1911.09471">pdf</a>, <a href="https://arxiv.org/format/1911.09471">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Applications">stat.AP</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        TrueLearn: A Family of Bayesian Algorithms to Match Lifelong Learners to Open Educational Resources
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bulathwela%2C+S">Sahan Bulathwela</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yilmaz%2C+E">Emine Yilmaz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shawe-Taylor%2C+J">John Shawe-Taylor</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1911.09471v1-abstract-short" style="display: inline;">
+        The recent advances in computer-assisted learning systems and the availability of open educational resources today promise a pathway to providing cost-efficient, high-quality education to large masses of learners. One of the most ambitious use cases of computer-assisted learning is to build a lifelong learning recommendation system. Unlike short-term courses, lifelong learning presents unique chal&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1911.09471v1-abstract-full').style.display = 'inline'; document.getElementById('1911.09471v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1911.09471v1-abstract-full" style="display: none;">
+        The recent advances in computer-assisted learning systems and the availability of open educational resources today promise a pathway to providing cost-efficient, high-quality education to large masses of learners. One of the most ambitious use cases of computer-assisted learning is to build a lifelong learning recommendation system. Unlike short-term courses, lifelong learning presents unique challenges, requiring sophisticated recommendation models that account for a wide range of factors such as background knowledge of learners or novelty of the material while effectively maintaining knowledge states of masses of learners for significantly longer periods of time (ideally, a lifetime). This work presents the foundations towards building a dynamic, scalable and transparent recommendation system for education, modelling learner&#39;s knowledge from implicit data in the form of engagement with open educational resources. We i) use a text ontology based on Wikipedia to automatically extract knowledge components of educational resources and, ii) propose a set of online Bayesian strategies inspired by the well-known areas of item response theory and knowledge tracing. Our proposal, TrueLearn, focuses on recommendations for which the learner has enough background knowledge (so they are able to understand and learn from the material), and the material has enough novelty that would help the learner improve their knowledge about the subject and keep them engaged. We further construct a large open educational video lectures dataset and test the performance of the proposed algorithms, which show clear promise towards building an effective educational recommendation system.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1911.09471v1-abstract-full').style.display = 'none'; document.getElementById('1911.09471v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 November, 2019; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">In Proceedings of AAAI Conference on Artificial Intelligence 2020</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          H.3.3; J.1; I.2.0
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1903.10022">arXiv:1903.10022</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1903.10022">pdf</a>, <a href="https://arxiv.org/format/1903.10022">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Exploiting Synthetically Generated Data with Semi-Supervised Learning for Small and Imbalanced Datasets
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Tino%2C+P">Peter Tino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mantiuk%2C+R">Rafal Mantiuk</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hervas-Martinez%2C+C">Cesar Hervas-Martinez</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1903.10022v1-abstract-short" style="display: inline;">
+        Data augmentation is rapidly gaining attention in machine learning. Synthetic data can be generated by simple transformations or through the data distribution. In the latter case, the main challenge is to estimate the label associated to new synthetic patterns. This paper studies the effect of generating synthetic data by convex combination of patterns and the use of these as unsupervised informat&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.10022v1-abstract-full').style.display = 'inline'; document.getElementById('1903.10022v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1903.10022v1-abstract-full" style="display: none;">
+        Data augmentation is rapidly gaining attention in machine learning. Synthetic data can be generated by simple transformations or through the data distribution. In the latter case, the main challenge is to estimate the label associated to new synthetic patterns. This paper studies the effect of generating synthetic data by convex combination of patterns and the use of these as unsupervised information in a semi-supervised learning framework with support vector machines, avoiding thus the need to label synthetic examples. We perform experiments on a total of 53 binary classification datasets. Our results show that this type of data over-sampling supports the well-known cluster assumption in semi-supervised learning, showing outstanding results for small high-dimensional datasets and imbalanced learning problems.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.10022v1-abstract-full').style.display = 'none'; document.getElementById('1903.10022v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 March, 2019; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Published in the Thirty-Third AAAI Conference on Artificial Intelligence, 2019</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1903.10012">arXiv:1903.10012</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1903.10012">pdf</a>, <a href="https://arxiv.org/format/1903.10012">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A mixture of experts model for predicting persistent weather patterns
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gutierrez%2C+P+A">Pedro A. Gutierrez</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Tino%2C+P">Peter Tino</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Casanova-Mateo%2C+C">Carlos Casanova-Mateo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Salcedo-Sanz%2C+S">Sancho Salcedo-Sanz</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1903.10012v1-abstract-short" style="display: inline;">
+        Weather and atmospheric patterns are often persistent. The simplest weather forecasting method is the so-called persistence model, which assumes that the future state of a system will be similar (or equal) to the present state. Machine learning (ML) models are widely used in different weather forecasting applications, but they need to be compared to the persistence model to analyse whether they pr&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.10012v1-abstract-full').style.display = 'inline'; document.getElementById('1903.10012v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1903.10012v1-abstract-full" style="display: none;">
+        Weather and atmospheric patterns are often persistent. The simplest weather forecasting method is the so-called persistence model, which assumes that the future state of a system will be similar (or equal) to the present state. Machine learning (ML) models are widely used in different weather forecasting applications, but they need to be compared to the persistence model to analyse whether they provide a competitive solution to the problem at hand. In this paper, we devise a new model for predicting low-visibility in airports using the concepts of mixture of experts. Visibility level is coded as two different ordered categorical variables: cloud height and runway visual height. The underlying system in this application is stagnant approximately in 90% of the cases, and standard ML models fail to improve on the performance of the persistence model. Because of this, instead of trying to simply beat the persistence model using ML, we use this persistence as a baseline and learn an ordinal neural network model that refines its results by focusing on learning weather fluctuations. The results show that the proposal outperforms persistence and other ordinal autoregressive models, especially for longer time horizon predictions and for the runway visual height variable.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.10012v1-abstract-full').style.display = 'none'; document.getElementById('1903.10012v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 March, 2019; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Published in IEEE International Joint Conference on Neural Networks (IJCNN) 2018</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1712.03686">arXiv:1712.03686</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1712.03686">pdf</a>, <a href="https://arxiv.org/format/1712.03686">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Applications">stat.AP</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Vision and Pattern Recognition">cs.CV</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Graphics">cs.GR</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A practical guide and software for analysing pairwise comparison experiments
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Perez-Ortiz%2C+M">Maria Perez-Ortiz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mantiuk%2C+R+K">Rafal K. Mantiuk</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1712.03686v2-abstract-short" style="display: inline;">
+        Most popular strategies to capture subjective judgments from humans involve the construction of a unidimensional relative measurement scale, representing order preferences or judgments about a set of objects or conditions. This information is generally captured by means of direct scoring, either in the form of a Likert or cardinal scale, or by comparative judgments in pairs or sets. In this sense,&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1712.03686v2-abstract-full').style.display = 'inline'; document.getElementById('1712.03686v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1712.03686v2-abstract-full" style="display: none;">
+        Most popular strategies to capture subjective judgments from humans involve the construction of a unidimensional relative measurement scale, representing order preferences or judgments about a set of objects or conditions. This information is generally captured by means of direct scoring, either in the form of a Likert or cardinal scale, or by comparative judgments in pairs or sets. In this sense, the use of pairwise comparisons is becoming increasingly popular because of the simplicity of this experimental procedure. However, this strategy requires non-trivial data analysis to aggregate the comparison ranks into a quality scale and analyse the results, in order to take full advantage of the collected data. This paper explains the process of translating pairwise comparison data into a measurement scale, discusses the benefits and limitations of such scaling methods and introduces a publicly available software in Matlab. We improve on existing scaling methods by introducing outlier analysis, providing methods for computing confidence intervals and statistical testing and introducing a prior, which reduces estimation error when the number of observers is low. Most of our examples focus on image quality assessment.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1712.03686v2-abstract-full').style.display = 'none'; document.getElementById('1712.03686v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 December, 2017; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 11 December, 2017;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2017.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Code available at https://github.com/mantiuk/pwcmp</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

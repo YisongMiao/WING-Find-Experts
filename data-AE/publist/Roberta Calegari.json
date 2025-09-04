@@ -1,0 +1,35 @@
+{
+  "author": "Roberta Calegari",
+  "results": [
+    {
+      "title": "Proceedings 39th International Conference on Logic Programming",
+      "abstract": "This volume contains the Technical Communications presented at the 39th International Conference on Logic Programming (ICLP 2023), held at Imperial College London, UK from July 9 to July 15, 2023. Technical Communications included here concern the Main Track, the Doctoral Consortium, the Application and Systems/Demo track, the Recently Published Research Track, the Birds-of-a-Feather track, the Thematic Tracks on Logic Programming and Machine Learning, and Logic Programming and Explainability, Ethics, and Trustworthiness. △ Less",
+      "url": "https://arxiv.org/abs/2308.14898"
+    },
+    {
+      "title": "Evaluation Metrics for Symbolic Knowledge Extracted from Machine Learning Black Boxes: A Discussion Paper",
+      "abstract": "As opaque decision systems are being increasingly adopted in almost any application field, issues about their lack of transparency and human readability are a concrete concern for end-users. Amongst existing proposals to associate human-interpretable knowledge with accurate predictions provided by opaque models, there are rule extraction techniques, capable of extracting symbolic knowledge out of an opaque model. However, how to assess the level of readability of the extracted knowledge quantitatively is still an open issue. Finding such a metric would be the key, for instance, to enable automatic comparison between a set of different knowledge representations, paving the way for the development of parameter autotuning algorithms for knowledge extractors. In this paper we discuss the need for such a metric as well as the criticalities of readability assessment and evaluation, taking into account the most common knowledge representations while highlighting the most puzzling issues. △ Less",
+      "url": "https://arxiv.org/abs/2211.00238"
+    },
+    {
+      "title": "Clustering-Based Approaches for Symbolic Knowledge Extraction",
+      "abstract": "Opaque models belonging to the machine learning world are ever more exploited in the most different application areas. These models, acting as black boxes (BB) from the human perspective, cannot be entirely trusted if the application is critical unless there exists a method to extract symbolic and human-readable knowledge out of them. In this paper we analyse a recurrent design adopted by symbolic knowledge extractors for BB regressors - that is, the creation of rules associated with hypercubic input space regions. We argue that this kind of partitioning may lead to suboptimal solutions when the data set at hand is high-dimensional or does not satisfy symmetric constraints. We then propose a (deep) clustering-based approach to be performed before symbolic knowledge extraction to achieve better performance with data sets of any kind. △ Less",
+      "url": "https://arxiv.org/abs/2211.00234"
+    },
+    {
+      "title": "Burden of Persuasion in Argumentation",
+      "abstract": "This paper provides a formal model for the burden of persuasion in dialogues, and in particular, in legal proceedings. The model shows how an allocation of the burden of persuasion may induce single outcomes in dialectical contexts in which, without such an allocation, the status of conflicting arguments would remain undecided. Our approach is based on a two-stage labelling. The first-stage labelling determines what arguments are accepted, rejected or undecided, regardless of the allocation of burden. The second-stage labelling revises the dialectical status of first-stage undecided arguments, according to burdens of persuasion. The labelling is finally extended in such a way as to obtain a complete labelling. Our model combines two ideas that have emerged in the debate on the burden of persuasion: the idea that the burden of persuasion determines the solution of conflicts between arguments, and the idea that its satisfaction depends on the dialectical status of the arguments concerned. Our approach also addresses inversions of the burden of persuasion, namely, cases in which the burden of persuasion over an argument does not extend to its subarguments. △ Less",
+      "url": "https://arxiv.org/abs/2009.10244"
+    },
+    {
+      "title": "Modeling Contrary-to-Duty with CP-nets",
+      "abstract": "In a ceteris-paribus semantics for deontic logic, a state of affairs where a larger set of prescriptions is respected is preferable to a state of affairs where some of them are violated. Conditional preference nets (CP-nets) are a compact formalism to express and analyse ceteris paribus preferences, which nice computational properties. This paper shows how deontic concepts can be captured through conditional preference models. A restricted deontic logic will be defined, and mapped into conditional preference nets. We shall also show how to model contrary to duties obligations in CP-nets and how to capture in this formalism the distinction between strong and weak permission. △ Less",
+      "url": "https://arxiv.org/abs/2003.10480"
+    },
+    {
+      "title": "Logic Programming as a Service",
+      "abstract": "New generations of distributed systems are opening novel perspectives for logic programming (LP): on the one hand, service-oriented architectures represent nowadays the standard approach for distributed systems engineering; on the other hand, pervasive systems mandate for situated intelligence. In this paper we introduce the notion of Logic Programming as a Service (LPaaS) as a means to address the needs of pervasive intelligent systems through logic engines exploited as a distributed service. First we define the abstract architectural model by re-interpreting classical LP notions in the new context; then we elaborate on the nature of LP interpreted as a service by describing the basic LPaaS interface. Finally, we show how LPaaS works in practice by discussing its implementation in terms of distributed tuProlog engines, accounting for basic issues such as interoperability and configurability. △ Less",
+      "url": "https://arxiv.org/abs/1806.02577"
+    }
+  ]
+}

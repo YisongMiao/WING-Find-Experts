@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;29 of 29 results for author: <span class="mathjax">Jakob Nordström</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Jakob Nordström">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Jakob+Nordstr%C3%B6m&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Jakob Nordström">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2504.18443">arXiv:2504.18443</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2504.18443">pdf</a>, <a href="https://arxiv.org/format/2504.18443">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Pseudo-Boolean Proof Logging for Optimal Classical Planning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Dold%2C+S">Simon Dold</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Helmert%2C+M">Malte Helmert</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=R%C3%B6ger%2C+G">Gabriele Röger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Schindler%2C+T">Tanja Schindler</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2504.18443v2-abstract-short" style="display: inline;">
+        We introduce lower-bound certificates for classical planning tasks, which can be used to prove the unsolvability of a task or the optimality of a plan in a way that can be verified by an independent third party. We describe a general framework for generating lower-bound certificates based on pseudo-Boolean constraints, which is agnostic to the planning algorithm used.
+  As a case study, we show ho&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.18443v2-abstract-full').style.display = 'inline'; document.getElementById('2504.18443v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2504.18443v2-abstract-full" style="display: none;">
+        We introduce lower-bound certificates for classical planning tasks, which can be used to prove the unsolvability of a task or the optimality of a plan in a way that can be verified by an independent third party. We describe a general framework for generating lower-bound certificates based on pseudo-Boolean constraints, which is agnostic to the planning algorithm used.
+  As a case study, we show how to modify the $A^{*}$ algorithm to produce proofs of optimality with modest overhead, using pattern database heuristics and $h^\textit{max}$ as concrete examples. The same proof logging approach works for any heuristic whose inferences can be efficiently expressed as reasoning over pseudo-Boolean constraints.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.18443v2-abstract-full').style.display = 'none'; document.getElementById('2504.18443v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 May, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 25 April, 2025;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">35th International Conference on Automated Planning and Scheduling (ICAPS&#39;2025)</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2503.17022">arXiv:2503.17022</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2503.17022">pdf</a>, <a href="https://arxiv.org/format/2503.17022">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Graph Colouring Is Hard on Average for Polynomial Calculus and Nullstellensatz
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Conneryd%2C+J">Jonas Conneryd</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=de+Rezende%2C+S+F">Susanna F. de Rezende</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pang%2C+S">Shuo Pang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Risse%2C+K">Kilian Risse</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2503.17022v1-abstract-short" style="display: inline;">
+        We prove that polynomial calculus (and hence also Nullstellensatz) over any field requires linear degree to refute that sparse random regular graphs, as well as sparse Erdős-Rényi random graphs, are $3$-colourable. Using the known relation between size and degree for polynomial calculus proofs, this implies strongly exponential lower bounds on proof size.
+        
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2503.17022v1-abstract-full" style="display: none;">
+        We prove that polynomial calculus (and hence also Nullstellensatz) over any field requires linear degree to refute that sparse random regular graphs, as well as sparse Erdős-Rényi random graphs, are $3$-colourable. Using the known relation between size and degree for polynomial calculus proofs, this implies strongly exponential lower bounds on proof size.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.17022v1-abstract-full').style.display = 'none'; document.getElementById('2503.17022v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 March, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">An extended abstract appeared in FOCS&#39;23</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.2.2; F.1.3; I.2.3; F.4.1
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2411.14267">arXiv:2411.14267</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2411.14267">pdf</a>, <a href="https://arxiv.org/ps/2411.14267">ps</a>, <a href="https://arxiv.org/format/2411.14267">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Truly Supercritical Trade-offs for Resolution, Cutting Planes, Monotone Circuits, and Weisfeiler-Leman
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=de+Rezende%2C+S+F">Susanna F. de Rezende</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Fleming%2C+N">Noah Fleming</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Janett%2C+D+A">Duri Andrea Janett</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pang%2C+S">Shuo Pang</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2411.14267v1-abstract-short" style="display: inline;">
+        We exhibit supercritical trade-off for monotone circuits, showing that there are functions computable by small circuits for which any circuit must have depth super-linear or even super-polynomial in the number of variables, far exceeding the linear worst-case upper bound. We obtain similar trade-offs in proof complexity, where we establish the first size-depth trade-offs for cutting planes and res&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2411.14267v1-abstract-full').style.display = 'inline'; document.getElementById('2411.14267v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2411.14267v1-abstract-full" style="display: none;">
+        We exhibit supercritical trade-off for monotone circuits, showing that there are functions computable by small circuits for which any circuit must have depth super-linear or even super-polynomial in the number of variables, far exceeding the linear worst-case upper bound. We obtain similar trade-offs in proof complexity, where we establish the first size-depth trade-offs for cutting planes and resolution that are truly supercritical, i.e., in terms of formula size rather than number of variables, and we also show supercritical trade-offs between width and size for treelike resolution. Our results build on a new supercritical width-depth trade-off for resolution, obtained by refining and strengthening the compression scheme for the Cop-Robber game in [Grohe, Lichter, Neuen &amp; Schweitzer 2023]. This yields robust supercritical trade-offs for dimension versus iteration number in the Weisfeiler-Leman algorithm, which also translate into trade-offs between number of variables and quantifier depth in first-order logic. Our other results follow from improved lifting theorems that might be of independent interest.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2411.14267v1-abstract-full').style.display = 'none'; document.getElementById('2411.14267v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 November, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">47 pages, 7 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2410.15110">arXiv:2410.15110</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2410.15110">pdf</a>, <a href="https://arxiv.org/ps/2410.15110">ps</a>, <a href="https://arxiv.org/format/2410.15110">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optimization and Control">math.OC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Cut-based Conflict Analysis in Mixed Integer Programming
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mexi%2C+G">Gioni Mexi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Serrano%2C+F">Felipe Serrano</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Berthold%2C+T">Timo Berthold</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gleixner%2C+A">Ambros Gleixner</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2410.15110v1-abstract-short" style="display: inline;">
+        For almost two decades, mixed integer programming (MIP) solvers have used graph-based conflict analysis to learn from local infeasibilities during branch-and-bound search. In this paper, we improve MIP conflict analysis by instead using reasoning based on cuts, inspired by the development of conflict-driven solvers for pseudo-Boolean optimization. Phrased in MIP terminology, this type of conflict&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.15110v1-abstract-full').style.display = 'inline'; document.getElementById('2410.15110v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2410.15110v1-abstract-full" style="display: none;">
+        For almost two decades, mixed integer programming (MIP) solvers have used graph-based conflict analysis to learn from local infeasibilities during branch-and-bound search. In this paper, we improve MIP conflict analysis by instead using reasoning based on cuts, inspired by the development of conflict-driven solvers for pseudo-Boolean optimization. Phrased in MIP terminology, this type of conflict analysis can be understood as a sequence of linear combinations, integer roundings, and cut generation. We leverage this MIP perspective to design a new conflict analysis algorithm based on mixed integer rounding cuts, which theoretically dominates the state-of-the-art method in pseudo-Boolean optimization using Chvátal-Gomory cuts. Furthermore, we extend this cut-based conflict analysis from pure binary programs to mixed binary programs and-in limited form-to general MIP with also integer-valued variables. We perform an empirical evaluation of cut-based conflict analysis as implemented in the open-source MIP solver SCIP, testing it on a large and diverse set of MIP instances from MIPLIB 2017. Our experimental results indicate that the new algorithm improves the default performance of SCIP in terms of running time, number of nodes in the search tree, and the number of instances solved.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.15110v1-abstract-full').style.display = 'none'; document.getElementById('2410.15110v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 October, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2404.17316">arXiv:2404.17316</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2404.17316">pdf</a>, <a href="https://arxiv.org/format/2404.17316">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Certified MaxSAT Preprocessing
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Ihalainen%2C+H">Hannes Ihalainen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oertel%2C+A">Andy Oertel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Tan%2C+Y+K">Yong Kiam Tan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Berg%2C+J">Jeremias Berg</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=J%C3%A4rvisalo%2C+M">Matti Järvisalo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2404.17316v1-abstract-short" style="display: inline;">
+        Building on the progress in Boolean satisfiability (SAT) solving over the last decades, maximum satisfiability (MaxSAT) has become a viable approach for solving NP-hard optimization problems, but ensuring correctness of MaxSAT solvers has remained an important concern. For SAT, this is largely a solved problem thanks to the use of proof logging, meaning that solvers emit machine-verifiable proofs&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.17316v1-abstract-full').style.display = 'inline'; document.getElementById('2404.17316v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2404.17316v1-abstract-full" style="display: none;">
+        Building on the progress in Boolean satisfiability (SAT) solving over the last decades, maximum satisfiability (MaxSAT) has become a viable approach for solving NP-hard optimization problems, but ensuring correctness of MaxSAT solvers has remained an important concern. For SAT, this is largely a solved problem thanks to the use of proof logging, meaning that solvers emit machine-verifiable proofs of (un)satisfiability to certify correctness. However, for MaxSAT, proof logging solvers have started being developed only very recently. Moreover, these nascent efforts have only targeted the core solving process, ignoring the preprocessing phase where input problem instances can be substantially reformulated before being passed on to the solver proper. In this work, we demonstrate how pseudo-Boolean proof logging can be used to certify the correctness of a wide range of modern MaxSAT preprocessing techniques. By combining and extending the VeriPB and CakePB tools, we provide formally verified, end-to-end proof checking that the input and preprocessed output MaxSAT problem instances have the same optimal value. An extensive evaluation on applied MaxSAT benchmarks shows that our approach is feasible in practice.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.17316v1-abstract-full').style.display = 'none'; document.getElementById('2404.17316v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 April, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2401.09277">arXiv:2401.09277</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2401.09277">pdf</a>, <a href="https://arxiv.org/format/2401.09277">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optimization and Control">math.OC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Certifying MIP-based Presolve Reductions for 0-1 Integer Linear Programs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Hoen%2C+A">Alexander Hoen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oertel%2C+A">Andy Oertel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gleixner%2C+A">Ambros Gleixner</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2401.09277v2-abstract-short" style="display: inline;">
+        It is well known that reformulating the original problem can be crucial for the performance of mixed-integer programming (MIP) solvers. To ensure correctness, all transformations must preserve the fea sibility status and optimal value of the problem, but there is currently no established methodology to express and verify the equivalence of two mixed-integer programs. In this work, we take a first&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2401.09277v2-abstract-full').style.display = 'inline'; document.getElementById('2401.09277v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2401.09277v2-abstract-full" style="display: none;">
+        It is well known that reformulating the original problem can be crucial for the performance of mixed-integer programming (MIP) solvers. To ensure correctness, all transformations must preserve the fea sibility status and optimal value of the problem, but there is currently no established methodology to express and verify the equivalence of two mixed-integer programs. In this work, we take a first step in this direction by showing how the correctness of MIP presolve reductions on 0-1 integer linear programs can be certified by using (and suitably extending) the VeriPB tool for pseudo-Boolean proof logging. Our experimental evaluation on both decision and optimization instances demonstrates the computational viability of the approach and leads to suggestions for future revisions of the proof format that will help to reduce the verbosity of the certificates and to accelerate the certification and verification process further.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2401.09277v2-abstract-full').style.display = 'none'; document.getElementById('2401.09277v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 20 March, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 17 January, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2307.14166">arXiv:2307.14166</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2307.14166">pdf</a>, <a href="https://arxiv.org/format/2307.14166">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Optimization and Control">math.OC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Discrete Mathematics">cs.DM</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Improving Conflict Analysis in MIP Solvers by Pseudo-Boolean Reasoning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mexi%2C+G">Gioni Mexi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Berthold%2C+T">Timo Berthold</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gleixner%2C+A">Ambros Gleixner</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2307.14166v1-abstract-short" style="display: inline;">
+        Conflict analysis has been successfully generalized from Boolean satisfiability (SAT) solving to mixed integer programming (MIP) solvers, but although MIP solvers operate with general linear inequalities, the conflict analysis in MIP has been limited to reasoning with the more restricted class of clausal constraint. This is in contrast to how conflict analysis is performed in so-called pseudo-Bool&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2307.14166v1-abstract-full').style.display = 'inline'; document.getElementById('2307.14166v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2307.14166v1-abstract-full" style="display: none;">
+        Conflict analysis has been successfully generalized from Boolean satisfiability (SAT) solving to mixed integer programming (MIP) solvers, but although MIP solvers operate with general linear inequalities, the conflict analysis in MIP has been limited to reasoning with the more restricted class of clausal constraint. This is in contrast to how conflict analysis is performed in so-called pseudo-Boolean solving, where solvers can reason directly with 0-1 integer linear inequalities rather than with clausal constraints extracted from such inequalities. In this work, we investigate how pseudo-Boolean conflict analysis can be integrated in MIP solving, focusing on 0-1 integer linear programs (0-1 ILPs). Phrased in MIP terminology, conflict analysis can be understood as a sequence of linear combinations and cuts. We leverage this perspective to design a new conflict analysis algorithm based on mixed integer rounding (MIR) cuts, which theoretically dominates the state-of-the-art division-based method in pseudo-Boolean solving. We also report results from a first proof-of-concept implementation of different pseudo-Boolean conflict analysis methods in the open-source MIP solver SCIP. When evaluated on a large and diverse set of 0-1 ILP instances from MIPLIB 2017, our new MIR-based conflict analysis outperforms both previous pseudo-Boolean methods and the clause-based method used in MIP. Our conclusion is that pseudo-Boolean conflict analysis in MIP is a promising research direction that merits further study, and that it might also make sense to investigate the use of such conflict analysis to generate stronger no-goods in constraint programming.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2307.14166v1-abstract-full').style.display = 'none'; document.getElementById('2307.14166v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 July, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2306.00125">arXiv:2306.00125</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2306.00125">pdf</a>, <a href="https://arxiv.org/ps/2306.00125">ps</a>, <a href="https://arxiv.org/format/2306.00125">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Graph Colouring is Hard for Algorithms Based on Hilbert&#39;s Nullstellensatz and Gröbner Bases
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lauria%2C+M">Massimo Lauria</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2306.00125v1-abstract-short" style="display: inline;">
+        We consider the graph $k$-colouring problem encoded as a set of polynomial equations in the standard way over $0/1$-valued variables. We prove that there are bounded-degree graphs that do not have legal $k$-colourings but for which the polynomial calculus proof system defined in [Clegg et al &#39;96, Alekhnovich et al &#39;02] requires linear degree, and hence exponential size, to establish this fact. Thi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.00125v1-abstract-full').style.display = 'inline'; document.getElementById('2306.00125v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2306.00125v1-abstract-full" style="display: none;">
+        We consider the graph $k$-colouring problem encoded as a set of polynomial equations in the standard way over $0/1$-valued variables. We prove that there are bounded-degree graphs that do not have legal $k$-colourings but for which the polynomial calculus proof system defined in [Clegg et al &#39;96, Alekhnovich et al &#39;02] requires linear degree, and hence exponential size, to establish this fact. This implies a linear degree lower bound for any algorithms based on Gröbner bases solving graph $k$-colouring using this encoding. The same bound applies also for the algorithm studied in a sequence of papers [De Loera et al &#39;08,&#39;09,&#39;11,&#39;15] based on Hilbert&#39;s Nullstellensatz proofs for a slightly different encoding, thus resolving an open problem mentioned in [De Loera et al &#39;08,&#39;09,&#39;11] and [Li &#39;16]. We obtain our results by combining the polynomial calculus degree lower bound for functional pigeonhole principle (FPHP) formulas over bounded-degree bipartite graphs in [Mikša and Nordström &#39;15] with a reduction from FPHP to $k$-colouring derivable by polynomial calculus in constant degree.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.00125v1-abstract-full').style.display = 'none'; document.getElementById('2306.00125v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 31 May, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2305.19104">arXiv:2305.19104</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2305.19104">pdf</a>, <a href="https://arxiv.org/ps/2305.19104">ps</a>, <a href="https://arxiv.org/format/2305.19104">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Hardness of Approximation in PSPACE and Separation Results for Pebble Games
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Chan%2C+S+M">Siu Man Chan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lauria%2C+M">Massimo Lauria</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vinyals%2C+M">Marc Vinyals</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2305.19104v1-abstract-short" style="display: inline;">
+        We consider the pebble game on DAGs with bounded fan-in introduced in [Paterson and Hewitt &#39;70] and the reversible version of this game in [Bennett &#39;89], and study the question of how hard it is to decide exactly or approximately the number of pebbles needed for a given DAG in these games. We prove that the problem of eciding whether $s$~pebbles suffice to reversibly pebble a DAG $G$ is PSPACE-com&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2305.19104v1-abstract-full').style.display = 'inline'; document.getElementById('2305.19104v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2305.19104v1-abstract-full" style="display: none;">
+        We consider the pebble game on DAGs with bounded fan-in introduced in [Paterson and Hewitt &#39;70] and the reversible version of this game in [Bennett &#39;89], and study the question of how hard it is to decide exactly or approximately the number of pebbles needed for a given DAG in these games. We prove that the problem of eciding whether $s$~pebbles suffice to reversibly pebble a DAG $G$ is PSPACE-complete, as was previously shown for the standard pebble game in [Gilbert, Lengauer and Tarjan &#39;80]. Via two different graph product constructions we then strengthen these results to establish that both standard and reversible pebbling space are PSPACE-hard to approximate to within any additive constant. To the best of our knowledge, these are the first hardness of approximation results for pebble games in an unrestricted setting (even for polynomial time). Also, since [Chan &#39;13] proved that reversible pebbling is equivalent to the games in [Dymond and Tompa &#39;85] and [Raz and McKenzie &#39;99], our results apply to the Dymond--Tompa and Raz--McKenzie games as well, and from the same paper it follows that resolution depth is PSPACE-hard to determine up to any additive constant. We also obtain a multiplicative logarithmic separation between reversible and standard pebbling space. This improves on the additive logarithmic separation previously known and could plausibly be tight, although we are not able to prove this. We leave as an interesting open problem whether our additive hardness of approximation result could be strengthened to a multiplicative bound if the computational resources are decreased from polynomial space to the more common setting of polynomial time.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2305.19104v1-abstract-full').style.display = 'none'; document.getElementById('2305.19104v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 May, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2209.12185">arXiv:2209.12185</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2209.12185">pdf</a>, <a href="https://arxiv.org/format/2209.12185">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Certifying Parity Reasoning Efficiently Using Pseudo-Boolean Proofs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Gocht%2C+S">Stephan Gocht</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2209.12185v1-abstract-short" style="display: inline;">
+        The dramatic improvements in combinatorial optimization algorithms over the last decades have had a major impact in artificial intelligence, operations research, and beyond, but the output of current state-of-the-art solvers is often hard to verify and is sometimes wrong. For Boolean satisfiability (SAT) solvers proof logging has been introduced as a way to certify correctness, but the methods use&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2209.12185v1-abstract-full').style.display = 'inline'; document.getElementById('2209.12185v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2209.12185v1-abstract-full" style="display: none;">
+        The dramatic improvements in combinatorial optimization algorithms over the last decades have had a major impact in artificial intelligence, operations research, and beyond, but the output of current state-of-the-art solvers is often hard to verify and is sometimes wrong. For Boolean satisfiability (SAT) solvers proof logging has been introduced as a way to certify correctness, but the methods used seem hard to generalize to stronger paradigms. What is more, even for enhanced SAT techniques such as parity (XOR) reasoning, cardinality detection, and symmetry handling, it has remained beyond reach to design practically efficient proofs in the standard DRAT format. In this work, we show how to instead use pseudo-Boolean inequalities with extension variables to concisely justify XOR reasoning. Our experimental evaluation of a SAT solver integration shows a dramatic decrease in proof logging and verification time compared to existing DRAT methods. Since our method is a strict generalization of DRAT, and readily lends itself to expressing also 0-1 programming and even constraint programming problems, we hope this work points the way towards a unified approach for efficient machine-verifiable proofs for a rich class of combinatorial optimization paradigms.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2209.12185v1-abstract-full').style.display = 'none'; document.getElementById('2209.12185v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 25 September, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2022.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.3.1; I.2.3; D.2.4
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2203.12275">arXiv:2203.12275</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2203.12275">pdf</a>, <a href="https://arxiv.org/format/2203.12275">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1613/jair.1.14296">10.1613/jair.1.14296 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Certified Symmetry and Dominance Breaking for Combinatorial Optimisation
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bogaerts%2C+B">Bart Bogaerts</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gocht%2C+S">Stephan Gocht</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=McCreesh%2C+C">Ciaran McCreesh</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2203.12275v3-abstract-short" style="display: inline;">
+        Symmetry and dominance breaking can be crucial for solving hard combinatorial search and optimisation problems, but the correctness of these techniques sometimes relies on subtle arguments. For this reason, it is desirable to produce efficient, machine-verifiable certificates that solutions have been computed correctly. Building on the cutting planes proof system, we develop a certification method&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2203.12275v3-abstract-full').style.display = 'inline'; document.getElementById('2203.12275v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2203.12275v3-abstract-full" style="display: none;">
+        Symmetry and dominance breaking can be crucial for solving hard combinatorial search and optimisation problems, but the correctness of these techniques sometimes relies on subtle arguments. For this reason, it is desirable to produce efficient, machine-verifiable certificates that solutions have been computed correctly. Building on the cutting planes proof system, we develop a certification method for optimisation problems in which symmetry and dominance breaking are easily expressible. Our experimental evaluation demonstrates that we can efficiently verify fully general symmetry breaking in Boolean satisfiability (SAT) solving, thus providing, for the first time, a unified method to certify a range of advanced SAT techniques that also includes XOR and cardinality reasoning. In addition, we apply our method to maximum clique solving and constraint programming as a proof of concept that the approach applies to a wider range of combinatorial problems.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2203.12275v3-abstract-full').style.display = 'none'; document.getElementById('2203.12275v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 16 August, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 23 March, 2022;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2022.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">This paper was published in the Journal of Artificial Intelligence Research https://doi.org/10.1613/jair.1.14296 It is an extended version of our (equally-named) paper to appear in the proceedings of AAAI 2022 https://ojs.aaai.org/index.php/AAAI/article/view/20283</span>
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Journal of Artificial Intelligence Research, volume 77: pages 1539-1589, 2023
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2108.00633">arXiv:2108.00633</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2108.00633">pdf</a>, <a href="https://arxiv.org/ps/2108.00633">ps</a>, <a href="https://arxiv.org/format/2108.00633">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Planning with Learned Binarized Neural Networks Benchmarks for MaxSAT Evaluation 2021
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Say%2C+B">Buser Say</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sanner%2C+S">Scott Sanner</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Devriendt%2C+J">Jo Devriendt</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Stuckey%2C+P+J">Peter J. Stuckey</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2108.00633v1-abstract-short" style="display: inline;">
+        This document provides a brief introduction to learned automated planning problem where the state transition function is in the form of a binarized neural network (BNN), presents a general MaxSAT encoding for this problem, and describes the four domains, namely: Navigation, Inventory Control, System Administrator and Cellda, that are submitted as benchmarks for MaxSAT Evaluation 2021.
+        
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2108.00633v1-abstract-full" style="display: none;">
+        This document provides a brief introduction to learned automated planning problem where the state transition function is in the form of a binarized neural network (BNN), presents a general MaxSAT encoding for this problem, and describes the four domains, namely: Navigation, Inventory Control, System Administrator and Cellda, that are submitted as benchmarks for MaxSAT Evaluation 2021.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2108.00633v1-abstract-full').style.display = 'none'; document.getElementById('2108.00633v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 August, 2021; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2021.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2012.09476">arXiv:2012.09476</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2012.09476">pdf</a>, <a href="https://arxiv.org/ps/2012.09476">ps</a>, <a href="https://arxiv.org/format/2012.09476">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Clique Is Hard on Average for Regular Resolution
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Atserias%2C+A">Albert Atserias</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bonacina%2C+I">Ilario Bonacina</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=de+Rezende%2C+S+F">Susanna F. de Rezende</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lauria%2C+M">Massimo Lauria</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Razborov%2C+A">Alexander Razborov</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2012.09476v1-abstract-short" style="display: inline;">
+        We prove that for $k \ll \sqrt[4]{n}$ regular resolution requires length $n^{Ω(k)}$ to establish that an Erdős-Rényi graph with appropriately chosen edge density does not contain a $k$-clique. This lower bound is optimal up to the multiplicative constant in the exponent, and also implies unconditional $n^{Ω(k)}$ lower bounds on running time for several state-of-the-art algorithms for finding maxim&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.09476v1-abstract-full').style.display = 'inline'; document.getElementById('2012.09476v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2012.09476v1-abstract-full" style="display: none;">
+        We prove that for $k \ll \sqrt[4]{n}$ regular resolution requires length $n^{Ω(k)}$ to establish that an Erdős-Rényi graph with appropriately chosen edge density does not contain a $k$-clique. This lower bound is optimal up to the multiplicative constant in the exponent, and also implies unconditional $n^{Ω(k)}$ lower bounds on running time for several state-of-the-art algorithms for finding maximum cliques in graphs.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.09476v1-abstract-full').style.display = 'none'; document.getElementById('2012.09476v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 17 December, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2007.02740">arXiv:2007.02740</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2007.02740">pdf</a>, <a href="https://arxiv.org/ps/2007.02740">ps</a>, <a href="https://arxiv.org/format/2007.02740">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        KRW Composition Theorems via Lifting
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=de+Rezende%2C+S+F">Susanna F. de Rezende</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Meir%2C+O">Or Meir</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pitassi%2C+T">Toniann Pitassi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Robere%2C+R">Robert Robere</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2007.02740v3-abstract-short" style="display: inline;">
+        One of the major open problems in complexity theory is proving super-logarithmic lower bounds on the depth of circuits (i.e., $\mathbf{P}\not\subseteq\mathbf{NC}^1$). Karchmer, Raz, and Wigderson (Computational Complexity 5(3/4), 1995) suggested to approach this problem by proving that depth complexity behaves &#34;as expected&#34; with respect to the composition of functions $f\diamond g$. They showed th&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2007.02740v3-abstract-full').style.display = 'inline'; document.getElementById('2007.02740v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2007.02740v3-abstract-full" style="display: none;">
+        One of the major open problems in complexity theory is proving super-logarithmic lower bounds on the depth of circuits (i.e., $\mathbf{P}\not\subseteq\mathbf{NC}^1$). Karchmer, Raz, and Wigderson (Computational Complexity 5(3/4), 1995) suggested to approach this problem by proving that depth complexity behaves &#34;as expected&#34; with respect to the composition of functions $f\diamond g$. They showed that the validity of this conjecture would imply that $\mathbf{P}\not\subseteq\mathbf{NC}^1$.
+  Several works have made progress toward resolving this conjecture by proving special cases. In particular, these works proved the KRW conjecture for every outer function $f$, but only for few inner functions $g$. Thus, it is an important challenge to prove the KRW conjecture for a wider range of inner functions.
+  In this work, we extend significantly the range of inner functions that can be handled. First, we consider the $\textit{monotone}$ version of the KRW conjecture. We prove it for every monotone inner function $g$ whose depth complexity can be lower bounded via a query-to-communication lifting theorem. This allows us to handle several new and well-studied functions such as the $s\textbf{-}t$-connectivity, clique, and generation functions.
+  In order to carry this progress back to the $\textit{non-monotone}$ setting, we introduce a new notion of $\textit{semi-monotone}$ composition, which combines the non-monotone complexity of the outer function $f$ with the monotone complexity of the inner function $g$. In this setting, we prove the KRW conjecture for a similar selection of inner functions $g$, but only for a specific choice of the outer function $f$.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2007.02740v3-abstract-full').style.display = 'none'; document.getElementById('2007.02740v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 7 May, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 6 July, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2001.02481">arXiv:2001.02481</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2001.02481">pdf</a>, <a href="https://arxiv.org/ps/2001.02481">ps</a>, <a href="https://arxiv.org/format/2001.02481">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Nullstellensatz Size-Degree Trade-offs from Reversible Pebbling
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=de+Rezende%2C+S+F">Susanna F. de Rezende</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Meir%2C+O">Or Meir</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Robere%2C+R">Robert Robere</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2001.02481v1-abstract-short" style="display: inline;">
+        We establish an exactly tight relation between reversible pebblings of graphs and Nullstellensatz refutations of pebbling formulas, showing that a graph $G$ can be reversibly pebbled in time $t$ and space $s$ if and only if there is a Nullstellensatz refutation of the pebbling formula over $G$ in size $t+1$ and degree $s$ (independently of the field in which the Nullstellensatz refutation is made)&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2001.02481v1-abstract-full').style.display = 'inline'; document.getElementById('2001.02481v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2001.02481v1-abstract-full" style="display: none;">
+        We establish an exactly tight relation between reversible pebblings of graphs and Nullstellensatz refutations of pebbling formulas, showing that a graph $G$ can be reversibly pebbled in time $t$ and space $s$ if and only if there is a Nullstellensatz refutation of the pebbling formula over $G$ in size $t+1$ and degree $s$ (independently of the field in which the Nullstellensatz refutation is made). We use this correspondence to prove a number of strong size-degree trade-offs for Nullstellensatz, which to the best of our knowledge are the first such results for this proof system.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2001.02481v1-abstract-full').style.display = 'none'; document.getElementById('2001.02481v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 January, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2001.02144">arXiv:2001.02144</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2001.02144">pdf</a>, <a href="https://arxiv.org/ps/2001.02144">ps</a>, <a href="https://arxiv.org/format/2001.02144">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Discrete Mathematics">cs.DM</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Lifting with Simple Gadgets and Applications to Circuit and Proof Complexity
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=de+Rezende%2C+S+F">Susanna F. de Rezende</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Meir%2C+O">Or Meir</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pitassi%2C+T">Toniann Pitassi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Robere%2C+R">Robert Robere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vinyals%2C+M">Marc Vinyals</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2001.02144v1-abstract-short" style="display: inline;">
+        We significantly strengthen and generalize the theorem lifting Nullstellensatz degree to monotone span program size by Pitassi and Robere (2018) so that it works for any gadget with high enough rank, in particular, for useful gadgets such as equality and greater-than. We apply our generalized theorem to solve two open problems:
+  * We present the first result that demonstrates a separation in proo&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2001.02144v1-abstract-full').style.display = 'inline'; document.getElementById('2001.02144v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2001.02144v1-abstract-full" style="display: none;">
+        We significantly strengthen and generalize the theorem lifting Nullstellensatz degree to monotone span program size by Pitassi and Robere (2018) so that it works for any gadget with high enough rank, in particular, for useful gadgets such as equality and greater-than. We apply our generalized theorem to solve two open problems:
+  * We present the first result that demonstrates a separation in proof power for cutting planes with unbounded versus polynomially bounded coefficients. Specifically, we exhibit CNF formulas that can be refuted in quadratic length and constant line space in cutting planes with unbounded coefficients, but for which there are no refutations in subexponential length and subpolynomial line space if coefficients are restricted to be of polynomial magnitude.
+  * We give the first explicit separation between monotone Boolean formulas and monotone real formulas. Specifically, we give an explicit family of functions that can be computed with monotone real formulas of nearly linear size but require monotone Boolean formulas of exponential size. Previously only a non-explicit separation was known.
+  An important technical ingredient, which may be of independent interest, is that we show that the Nullstellensatz degree of refuting the pebbling formula over a DAG G over any field coincides exactly with the reversible pebbling price of G. In particular, this implies that the standard decision tree complexity and the parity decision tree complexity of the corresponding falsified clause search problem are equal.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2001.02144v1-abstract-full').style.display = 'none'; document.getElementById('2001.02144v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 7 January, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2020.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.2.2; F.2.3; F.4.1
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1912.00534">arXiv:1912.00534</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1912.00534">pdf</a>, <a href="https://arxiv.org/format/1912.00534">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Combinatorics">math.CO</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.46298/theoretics.25.9">10.46298/theoretics.25.9 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Exponential Resolution Lower Bounds for Weak Pigeonhole Principle and Perfect Matching Formulas over Sparse Graphs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=de+Rezende%2C+S+F">Susanna F. de Rezende</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Risse%2C+K">Kilian Risse</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sokolov%2C+D">Dmitry Sokolov</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1912.00534v2-abstract-short" style="display: inline;">
+        We show exponential lower bounds on resolution proof length for pigeonhole principle (PHP) formulas and perfect matching formulas over highly unbalanced, sparse expander graphs, thus answering the challenge to establish strong lower bounds in the regime between balanced constant-degree expanders as in [Ben-Sasson and Wigderson &#39;01] and highly unbalanced, dense graphs as in [Raz &#39;04] and [Razborov&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1912.00534v2-abstract-full').style.display = 'inline'; document.getElementById('1912.00534v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1912.00534v2-abstract-full" style="display: none;">
+        We show exponential lower bounds on resolution proof length for pigeonhole principle (PHP) formulas and perfect matching formulas over highly unbalanced, sparse expander graphs, thus answering the challenge to establish strong lower bounds in the regime between balanced constant-degree expanders as in [Ben-Sasson and Wigderson &#39;01] and highly unbalanced, dense graphs as in [Raz &#39;04] and [Razborov &#39;03, &#39;04]. We obtain our results by revisiting Razborov&#39;s pseudo-width method for PHP formulas over dense graphs and extending it to sparse graphs. This further demonstrates the power of the pseudo-width method, and we believe it could potentially be useful for attacking also other longstanding open problems for resolution and other proof systems.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1912.00534v2-abstract-full').style.display = 'none'; document.getElementById('1912.00534v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 March, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 1 December, 2019;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">46 pages. This is the TheoretiCS journal version</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">MSC Class:</span>
+          F.2.2; F.1.3; I.2.3; F.4.1
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.2.2; F.1.3; I.2.3; F.4.1
+        
+      </p>
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        TheoretiCS, Volume 4 (March 25, 2025) theoretics:13076
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1612.07162">arXiv:1612.07162</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1612.07162">pdf</a>, <a href="https://arxiv.org/ps/1612.07162">ps</a>, <a href="https://arxiv.org/format/1612.07162">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Discrete Mathematics">cs.DM</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Combinatorics">math.CO</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic">math.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Supercritical Space-Width Trade-offs for Resolution
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Berkholz%2C+C">Christoph Berkholz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1612.07162v1-abstract-short" style="display: inline;">
+        We show that there are CNF formulas which can be refuted in resolution in both small space and small width, but for which any small-width proof must have space exceeding by far the linear worst-case upper bound. This significantly strengthens the space-width trade-offs in [Ben-Sasson &#39;09]}, and provides one more example of trade-offs in the &#34;supercritical&#34; regime above worst case recently identifi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1612.07162v1-abstract-full').style.display = 'inline'; document.getElementById('1612.07162v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1612.07162v1-abstract-full" style="display: none;">
+        We show that there are CNF formulas which can be refuted in resolution in both small space and small width, but for which any small-width proof must have space exceeding by far the linear worst-case upper bound. This significantly strengthens the space-width trade-offs in [Ben-Sasson &#39;09]}, and provides one more example of trade-offs in the &#34;supercritical&#34; regime above worst case recently identified by [Razborov &#39;16]. We obtain our results by using Razborov&#39;s new hardness condensation technique and combining it with the space lower bounds in [Ben-Sasson and Nordstrom &#39;08].
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1612.07162v1-abstract-full').style.display = 'none'; document.getElementById('1612.07162v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 December, 2016; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2016.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.2.2; F.1.3; I.2.3; F.4.1
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1608.08704">arXiv:1608.08704</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1608.08704">pdf</a>, <a href="https://arxiv.org/ps/1608.08704">ps</a>, <a href="https://arxiv.org/format/1608.08704">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Near-Optimal Lower Bounds on Quantifier Depth and Weisfeiler-Leman Refinement Steps
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Berkholz%2C+C">Christoph Berkholz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1608.08704v2-abstract-short" style="display: inline;">
+        We prove near-optimal trade-offs for quantifier depth versus number of variables in first-order logic by exhibiting pairs of $n$-element structures that can be distinguished by a $k$-variable first-order sentence but where every such sentence requires quantifier depth at least $n^{Ω(k/\log k)}$. Our trade-offs also apply to first-order counting logic, and by the known connection to the $k$-dimensi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1608.08704v2-abstract-full').style.display = 'inline'; document.getElementById('1608.08704v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1608.08704v2-abstract-full" style="display: none;">
+        We prove near-optimal trade-offs for quantifier depth versus number of variables in first-order logic by exhibiting pairs of $n$-element structures that can be distinguished by a $k$-variable first-order sentence but where every such sentence requires quantifier depth at least $n^{Ω(k/\log k)}$. Our trade-offs also apply to first-order counting logic, and by the known connection to the $k$-dimensional Weisfeiler--Leman algorithm imply near-optimal lower bounds on the number of refinement iterations.
+  A key component in our proof is the hardness condensation technique recently introduced by [Razborov &#39;16] in the context of proof complexity. We apply this method to reduce the domain size of relational structures while maintaining the minimal quantifier depth to distinguish them in finite variable logics.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1608.08704v2-abstract-full').style.display = 'none'; document.getElementById('1608.08704v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 1 September, 2016; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 30 August, 2016;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2016.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">This is the full-length version of a paper with the same title which appeared in Proceedings of the 31st Annual ACM/IEEE Symposium on Logic in Computer Science (LICS &#39;16)</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.4.1; F.2.3
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1505.01358">arXiv:1505.01358</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1505.01358">pdf</a>, <a href="https://arxiv.org/ps/1505.01358">ps</a>, <a href="https://arxiv.org/format/1505.01358">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Discrete Mathematics">cs.DM</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Combinatorics">math.CO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Generalized Method for Proving Polynomial Calculus Degree Lower Bounds
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mik%C5%A1a%2C+M">Mladen Mikša</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1505.01358v1-abstract-short" style="display: inline;">
+        We study the problem of obtaining lower bounds for polynomial calculus (PC) and polynomial calculus resolution (PCR) on proof degree, and hence by [Impagliazzo et al. &#39;99] also on proof size. [Alekhnovich and Razborov &#39;03] established that if the clause-variable incidence graph of a CNF formula F is a good enough expander, then proving that F is unsatisfiable requires high PC/PCR degree. We furthe&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1505.01358v1-abstract-full').style.display = 'inline'; document.getElementById('1505.01358v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1505.01358v1-abstract-full" style="display: none;">
+        We study the problem of obtaining lower bounds for polynomial calculus (PC) and polynomial calculus resolution (PCR) on proof degree, and hence by [Impagliazzo et al. &#39;99] also on proof size. [Alekhnovich and Razborov &#39;03] established that if the clause-variable incidence graph of a CNF formula F is a good enough expander, then proving that F is unsatisfiable requires high PC/PCR degree. We further develop the techniques in [AR03] to show that if one can &#34;cluster&#34; clauses and variables in a way that &#34;respects the structure&#34; of the formula in a certain sense, then it is sufficient that the incidence graph of this clustered version is an expander. As a corollary of this, we prove that the functional pigeonhole principle (FPHP) formulas require high PC/PCR degree when restricted to constant-degree expander graphs. This answers an open question in [Razborov &#39;02], and also implies that the standard CNF encoding of the FPHP formulas require exponential proof size in polynomial calculus resolution. Thus, while Onto-FPHP formulas are easy for polynomial calculus, as shown in [Riis &#39;93], both FPHP and Onto-PHP formulas are hard even when restricted to bounded-degree expanders.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1505.01358v1-abstract-full').style.display = 'none'; document.getElementById('1505.01358v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 6 May, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Full-length version of paper to appear in Proceedings of the 30th Annual Computational Complexity Conference (CCC &#39;15), June 2015</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.2.2; F.1.3; I.2.3; F.4.1
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1504.01656">arXiv:1504.01656</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1504.01656">pdf</a>, <a href="https://arxiv.org/ps/1504.01656">ps</a>, <a href="https://arxiv.org/format/1504.01656">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Tight Size-Degree Bounds for Sums-of-Squares Proofs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lauria%2C+M">Massimo Lauria</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1504.01656v1-abstract-short" style="display: inline;">
+        We exhibit families of $4$-CNF formulas over $n$ variables that have sums-of-squares (SOS) proofs of unsatisfiability of degree (a.k.a. rank) $d$ but require SOS proofs of size $n^{Ω(d)}$ for values of $d = d(n)$ from constant all the way up to $n^δ$ for some universal constant$δ$. This shows that the $n^{O(d)}$ running time obtained by using the Lasserre semidefinite programming relaxations to fi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1504.01656v1-abstract-full').style.display = 'inline'; document.getElementById('1504.01656v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1504.01656v1-abstract-full" style="display: none;">
+        We exhibit families of $4$-CNF formulas over $n$ variables that have sums-of-squares (SOS) proofs of unsatisfiability of degree (a.k.a. rank) $d$ but require SOS proofs of size $n^{Ω(d)}$ for values of $d = d(n)$ from constant all the way up to $n^δ$ for some universal constant$δ$. This shows that the $n^{O(d)}$ running time obtained by using the Lasserre semidefinite programming relaxations to find degree-$d$ SOS proofs is optimal up to constant factors in the exponent. We establish this result by combining $\mathsf{NP}$-reductions expressible as low-degree SOS derivations with the idea of relativizing CNF formulas in [Krajíček &#39;04] and [Dantchev and Riis&#39;03], and then applying a restriction argument as in [Atserias, Müller, and Oliva &#39;13] and [Atserias, Lauria, and Nordström &#39;14]. This yields a generic method of amplifying SOS degree lower bounds to size lower bounds, and also generalizes the approach in [ALN14] to obtain size lower bounds for the proof systems resolution, polynomial calculus, and Sherali-Adams from lower bounds on width, degree, and rank, respectively.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1504.01656v1-abstract-full').style.display = 'none'; document.getElementById('1504.01656v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 7 April, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2015.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.2.3; F.1.3; I.2.3; F.4.1
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1409.2978">arXiv:1409.2978</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1409.2978">pdf</a>, <a href="https://arxiv.org/ps/1409.2978">ps</a>, <a href="https://arxiv.org/format/1409.2978">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Discrete Mathematics">cs.DM</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        From Small Space to Small Width in Resolution
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Filmus%2C+Y">Yuval Filmus</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lauria%2C+M">Massimo Lauria</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Mik%C5%A1a%2C+M">Mladen Mikša</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vinyals%2C+M">Marc Vinyals</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1409.2978v1-abstract-short" style="display: inline;">
+        In 2003, Atserias and Dalmau resolved a major open question about the resolution proof system by establishing that the space complexity of CNF formulas is always an upper bound on the width needed to refute them. Their proof is beautiful but somewhat mysterious in that it relies heavily on tools from finite model theory. We give an alternative, completely elementary proof that works by simple synt&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1409.2978v1-abstract-full').style.display = 'inline'; document.getElementById('1409.2978v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1409.2978v1-abstract-full" style="display: none;">
+        In 2003, Atserias and Dalmau resolved a major open question about the resolution proof system by establishing that the space complexity of CNF formulas is always an upper bound on the width needed to refute them. Their proof is beautiful but somewhat mysterious in that it relies heavily on tools from finite model theory. We give an alternative, completely elementary proof that works by simple syntactic manipulations of resolution refutations. As a by-product, we develop a &#34;black-box&#34; technique for proving space lower bounds via a &#34;static&#34; complexity measure that works against any resolution refutation---previous techniques have been inherently adaptive. We conclude by showing that the related question for polynomial calculus (i.e., whether space is an upper bound on degree) seems unlikely to be resolvable by similar methods.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1409.2978v1-abstract-full').style.display = 'none'; document.getElementById('1409.2978v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 September, 2014; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2014.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.1.3; F.4.1; F.2.2
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1409.2731">arXiv:1409.2731</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1409.2731">pdf</a>, <a href="https://arxiv.org/ps/1409.2731">ps</a>, <a href="https://arxiv.org/format/1409.2731">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Discrete Mathematics">cs.DM</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Narrow Proofs May Be Maximally Long
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Atserias%2C+A">Albert Atserias</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lauria%2C+M">Massimo Lauria</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1409.2731v1-abstract-short" style="display: inline;">
+        We prove that there are 3-CNF formulas over n variables that can be refuted in resolution in width w but require resolution proofs of size n^Omega(w). This shows that the simple counting argument that any formula refutable in width w must have a proof in size n^O(w) is essentially tight. Moreover, our lower bound generalizes to polynomial calculus resolution (PCR) and Sherali-Adams, implying that&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1409.2731v1-abstract-full').style.display = 'inline'; document.getElementById('1409.2731v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1409.2731v1-abstract-full" style="display: none;">
+        We prove that there are 3-CNF formulas over n variables that can be refuted in resolution in width w but require resolution proofs of size n^Omega(w). This shows that the simple counting argument that any formula refutable in width w must have a proof in size n^O(w) is essentially tight. Moreover, our lower bound generalizes to polynomial calculus resolution (PCR) and Sherali-Adams, implying that the corresponding size upper bounds in terms of degree and rank are tight as well. Our results do not extend all the way to Lasserre, however, where the formulas we study have proofs of constant rank and size polynomial in both n and w.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1409.2731v1-abstract-full').style.display = 'none'; document.getElementById('1409.2731v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 9 September, 2014; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2014.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1307.3913">arXiv:1307.3913</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1307.3913">pdf</a>, <a href="https://arxiv.org/ps/1307.3913">ps</a>, <a href="https://arxiv.org/format/1307.3913">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Discrete Mathematics">cs.DM</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Combinatorics">math.CO</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic">math.LO</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.2168/LMCS-9(3:15)2013">10.2168/LMCS-9(3:15)2013 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Pebble Games, Proof Complexity, and Time-Space Trade-offs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstrom%2C+J">Jakob Nordstrom</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1307.3913v3-abstract-short" style="display: inline;">
+        Pebble games were extensively studied in the 1970s and 1980s in a number of different contexts. The last decade has seen a revival of interest in pebble games coming from the field of proof complexity. Pebbling has proven to be a useful tool for studying resolution-based proof systems when comparing the strength of different subsystems, showing bounds on proof space, and establishing size-space t&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1307.3913v3-abstract-full').style.display = 'inline'; document.getElementById('1307.3913v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1307.3913v3-abstract-full" style="display: none;">
+         Pebble games were extensively studied in the 1970s and 1980s in a number of different contexts. The last decade has seen a revival of interest in pebble games coming from the field of proof complexity. Pebbling has proven to be a useful tool for studying resolution-based proof systems when comparing the strength of different subsystems, showing bounds on proof space, and establishing size-space trade-offs. This is a survey of research in proof complexity drawing on results and tools from pebbling, with a focus on proof space lower bounds and trade-offs between proof size and proof space. 
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1307.3913v3-abstract-full').style.display = 'none'; document.getElementById('1307.3913v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 20 September, 2013; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 15 July, 2013;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2013.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Logical Methods in Computer Science, Volume 9, Issue 3 (September 13, 2013) lmcs:1111
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1008.4401">arXiv:1008.4401</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1008.4401">pdf</a>, <a href="https://arxiv.org/ps/1008.4401">ps</a>, <a href="https://arxiv.org/format/1008.4401">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Separations of Matroid Freeness Properties
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bhattacharyya%2C+A">Arnab Bhattacharyya</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Grigorescu%2C+E">Elena Grigorescu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Xie%2C+N">Ning Xie</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1008.4401v2-abstract-short" style="display: inline;">
+        Properties of Boolean functions on the hypercube invariant with respect to linear transformations of the domain are among the most well-studied properties in the context of property testing. In this paper, we study the fundamental class of linear-invariant properties called matroid freeness properties. These properties have been conjectured to essentially coincide with all testable linear-invarian&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1008.4401v2-abstract-full').style.display = 'inline'; document.getElementById('1008.4401v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1008.4401v2-abstract-full" style="display: none;">
+        Properties of Boolean functions on the hypercube invariant with respect to linear transformations of the domain are among the most well-studied properties in the context of property testing. In this paper, we study the fundamental class of linear-invariant properties called matroid freeness properties. These properties have been conjectured to essentially coincide with all testable linear-invariant properties, and a recent sequence of works has established testability for increasingly larger subclasses. One question left open, however, is whether the infinitely many syntactically different properties recently shown testable in fact correspond to new, semantically distinct ones. This is a crucial issue since it has also been shown that there exist subclasses of these properties for which an infinite set of syntactically different representations collapse into one of a small, finite set of properties, all previously known to be testable.
+  An important question is therefore to understand the semantics of matroid freeness properties, and in particular when two syntactically different properties are truly distinct. We shed light on this problem by developing a method for determining the relation between two matroid freeness properties P and Q. Furthermore, we show that there is a natural subclass of matroid freeness properties such that for any two properties P and Q from this subclass, a strong dichotomy must hold: either P is contained in Q or the two properties are &#34;well separated.&#34; As an application of this method, we exhibit new, infinite hierarchies of testable matroid freeness properties such that at each level of the hierarchy, there are functions that are far from all functions lying in lower levels of the hierarchy. Our key technical tool is an apparently new notion of maps between linear matroids, called matroid homomorphisms, that might be of independent interest.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1008.4401v2-abstract-full').style.display = 'none'; document.getElementById('1008.4401v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 27 August, 2010; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 25 August, 2010;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2010.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1008.1789">arXiv:1008.1789</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1008.1789">pdf</a>, <a href="https://arxiv.org/ps/1008.1789">ps</a>, <a href="https://arxiv.org/format/1008.1789">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Understanding Space in Proof Complexity: Separations and Trade-offs via Substitutions
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Ben-Sasson%2C+E">Eli Ben-Sasson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1008.1789v1-abstract-short" style="display: inline;">
+        For current state-of-the-art DPLL SAT-solvers the two main bottlenecks are the amounts of time and memory used. In proof complexity, these resources correspond to the length and space of resolution proofs. There has been a long line of research investigating these proof complexity measures, but while strong results have been established for length, our understanding of space and how it relates to&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1008.1789v1-abstract-full').style.display = 'inline'; document.getElementById('1008.1789v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1008.1789v1-abstract-full" style="display: none;">
+        For current state-of-the-art DPLL SAT-solvers the two main bottlenecks are the amounts of time and memory used. In proof complexity, these resources correspond to the length and space of resolution proofs. There has been a long line of research investigating these proof complexity measures, but while strong results have been established for length, our understanding of space and how it relates to length has remained quite poor. In particular, the question whether resolution proofs can be optimized for length and space simultaneously, or whether there are trade-offs between these two measures, has remained essentially open.
+  In this paper, we remedy this situation by proving a host of length-space trade-off results for resolution. Our collection of trade-offs cover almost the whole range of values for the space complexity of formulas, and most of the trade-offs are superpolynomial or even exponential and essentially tight. Using similar techniques, we show that these trade-offs in fact extend to the exponentially stronger k-DNF resolution proof systems, which operate with formulas in disjunctive normal form with terms of bounded arity k. We also answer the open question whether the k-DNF resolution systems form a strict hierarchy with respect to space in the affirmative.
+  Our key technical contribution is the following, somewhat surprising, theorem: Any CNF formula F can be transformed by simple variable substitution into a new formula F&#39; such that if F has the right properties, F&#39; can be proven in essentially the same length as F, whereas on the other hand the minimal number of lines one needs to keep in memory simultaneously in any proof of F&#39; is lower-bounded by the minimal number of variables needed simultaneously in any proof of F. Applying this theorem to so-called pebbling formulas defined in terms of pebble games on directed acyclic graphs, we obtain our results.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1008.1789v1-abstract-full').style.display = 'none'; document.getElementById('1008.1789v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 August, 2010; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2010.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">This paper is a merged and updated version of the two ECCC technical reports TR09-034 and TR09-047, and it hence subsumes these two reports</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1003.3047">arXiv:1003.3047</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1003.3047">pdf</a>, <a href="https://arxiv.org/ps/1003.3047">ps</a>, <a href="https://arxiv.org/format/1003.3047">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Discrete Mathematics">cs.DM</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Combinatorics">math.CO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        On the Relative Strength of Pebbling and Resolution
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1003.3047v2-abstract-short" style="display: inline;">
+        The last decade has seen a revival of interest in pebble games in the context of proof complexity. Pebbling has proven a useful tool for studying resolution-based proof systems when comparing the strength of different subsystems, showing bounds on proof space, and establishing size-space trade-offs. The typical approach has been to encode the pebble game played on a graph as a CNF formula and then&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1003.3047v2-abstract-full').style.display = 'inline'; document.getElementById('1003.3047v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1003.3047v2-abstract-full" style="display: none;">
+        The last decade has seen a revival of interest in pebble games in the context of proof complexity. Pebbling has proven a useful tool for studying resolution-based proof systems when comparing the strength of different subsystems, showing bounds on proof space, and establishing size-space trade-offs. The typical approach has been to encode the pebble game played on a graph as a CNF formula and then argue that proofs of this formula must inherit (various aspects of) the pebbling properties of the underlying graph. Unfortunately, the reductions used here are not tight. To simulate resolution proofs by pebblings, the full strength of nondeterministic black-white pebbling is needed, whereas resolution is only known to be able to simulate deterministic black pebbling. To obtain strong results, one therefore needs to find specific graph families which either have essentially the same properties for black and black-white pebbling (not at all true in general) or which admit simulations of black-white pebblings in resolution. This paper contributes to both these approaches. First, we design a restricted form of black-white pebbling that can be simulated in resolution and show that there are graph families for which such restricted pebblings can be asymptotically better than black pebblings. This proves that, perhaps somewhat unexpectedly, resolution can strictly beat black-only pebbling, and in particular that the space lower bounds on pebbling formulas in [Ben-Sasson and Nordstrom 2008] are tight. Second, we present a versatile parametrized graph family with essentially the same properties for black and black-white pebbling, which gives sharp simultaneous trade-offs for black and black-white pebbling for various parameter settings. Both of our contributions have been instrumental in obtaining the time-space trade-off results for resolution-based proof systems in [Ben-Sasson and Nordstrom 2009].
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1003.3047v2-abstract-full').style.display = 'none'; document.getElementById('1003.3047v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 April, 2010; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 15 March, 2010;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2010.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Full-length version of paper to appear in Proceedings of the 25th Annual IEEE Conference on Computational Complexity (CCC &#39;10), June 2010</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.1.1; F.1.3; F.2.3; G.2.2
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/0910.3127">arXiv:0910.3127</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/0910.3127">pdf</a>, <a href="https://arxiv.org/ps/0910.3127">ps</a>, <a href="https://arxiv.org/format/0910.3127">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Discrete Mathematics">cs.DM</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Combinatorics">math.CO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        On Minimal Unsatisfiability and Time-Space Trade-offs for k-DNF Resolution
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Razborov%2C+A">Alexander Razborov</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="0910.3127v2-abstract-short" style="display: inline;">
+        In the context of proving lower bounds on proof space in k-DNF resolution, [Ben-Sasson and Nordstrom 2009] introduced the concept of minimally unsatisfiable sets of k-DNF formulas and proved that a minimally unsatisfiable k-DNF set with m formulas can have at most O((mk)^(k+1)) variables. They also gave an example of such sets with Omega(mk^2) variables.
+  In this paper we significantly improve&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0910.3127v2-abstract-full').style.display = 'inline'; document.getElementById('0910.3127v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="0910.3127v2-abstract-full" style="display: none;">
+          In the context of proving lower bounds on proof space in k-DNF resolution, [Ben-Sasson and Nordstrom 2009] introduced the concept of minimally unsatisfiable sets of k-DNF formulas and proved that a minimally unsatisfiable k-DNF set with m formulas can have at most O((mk)^(k+1)) variables. They also gave an example of such sets with Omega(mk^2) variables.
+  In this paper we significantly improve the lower bound to Omega(m)^k, which almost matches the upper bound above. Furthermore, we show that this implies that the analysis of their technique for proving time-space separations and trade-offs for k-DNF resolution is almost tight. This means that although it is possible, or even plausible, that stronger results than in [Ben-Sasson and Nordstrom 2009] should hold, a fundamentally different approach would be needed to obtain such results.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0910.3127v2-abstract-full').style.display = 'none'; document.getElementById('0910.3127v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 16 October, 2009; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 16 October, 2009;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2009.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/0803.0661">arXiv:0803.0661</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/0803.0661">pdf</a>, <a href="https://arxiv.org/ps/0803.0661">ps</a>, <a href="https://arxiv.org/format/0803.0661">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Towards an Optimal Separation of Space and Length in Resolution
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Nordstr%C3%B6m%2C+J">Jakob Nordström</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=H%C3%A5stad%2C+J">Johan Håstad</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="0803.0661v1-abstract-short" style="display: inline;">
+        Most state-of-the-art satisfiability algorithms today are variants of the DPLL procedure augmented with clause learning. The main bottleneck for such algorithms, other than the obvious one of time, is the amount of memory used. In the field of proof complexity, the resources of time and memory correspond to the length and space of resolution proofs. There has been a long line of research trying&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0803.0661v1-abstract-full').style.display = 'inline'; document.getElementById('0803.0661v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="0803.0661v1-abstract-full" style="display: none;">
+          Most state-of-the-art satisfiability algorithms today are variants of the DPLL procedure augmented with clause learning. The main bottleneck for such algorithms, other than the obvious one of time, is the amount of memory used. In the field of proof complexity, the resources of time and memory correspond to the length and space of resolution proofs. There has been a long line of research trying to understand these proof complexity measures, but while strong results have been proven on length our understanding of space is still quite poor. For instance, it remains open whether the fact that a formula is provable in short length implies that it is also provable in small space or whether on the contrary these measures are unrelated in the sense that short proofs can be arbitrarily complex with respect to space.
+  In this paper, we present some evidence that the true answer should be that the latter case holds. We do this by proving a tight bound of Theta(sqrt(n)) on the space needed for so-called pebbling contradictions over pyramid graphs of size n. This yields the first polynomial lower bound on space that is not a consequence of a corresponding lower bound on width, another well-studied measure in resolution, as well as an improvement of the weak separation in (Nordstrom 2006) of space and width from logarithmic to polynomial.
+  Also, continuing the line of research initiated by (Ben-Sasson 2002) into trade-offs between different proof complexity measures, we present a simplified proof of the recent length-space trade-off result in (Hertel and Pitassi 2007), and show how our ideas can be used to prove a couple of other exponential trade-offs in resolution.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0803.0661v1-abstract-full').style.display = 'none'; document.getElementById('0803.0661v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 5 March, 2008; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2008.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          F.4.1; F.1.3; I.2.3
+        
+      </p>
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;16 of 16 results for author: <span class="mathjax">Christian Bessiere</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Christian Bessiere">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Christian+Bessiere&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Christian Bessiere">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2012.02619">arXiv:2012.02619</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2012.02619">pdf</a>, <a href="https://arxiv.org/ps/2012.02619">ps</a>, <a href="https://arxiv.org/format/2012.02619">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Databases">cs.DB</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Computational Complexity of Three Central Problems in Itemset Mining
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Belaid%2C+M">Mohamed-Bachir Belaid</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lazaar%2C+N">Nadjib Lazaar</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2012.02619v3-abstract-short" style="display: inline;">
+        Itemset mining is one of the most studied tasks in knowledge discovery. In this paper we analyze the computational complexity of three central itemset mining problems. We prove that mining confident rules with a given item in the head is NP-hard. We prove that mining high utility itemsets is NP-hard. We finally prove that mining maximal or closed itemsets is coNP-hard as soon as the users can spec&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.02619v3-abstract-full').style.display = 'inline'; document.getElementById('2012.02619v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2012.02619v3-abstract-full" style="display: none;">
+        Itemset mining is one of the most studied tasks in knowledge discovery. In this paper we analyze the computational complexity of three central itemset mining problems. We prove that mining confident rules with a given item in the head is NP-hard. We prove that mining high utility itemsets is NP-hard. We finally prove that mining maximal or closed itemsets is coNP-hard as soon as the users can specify constraints on the kind of itemsets they are interested in.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.02619v3-abstract-full').style.display = 'none'; document.getElementById('2012.02619v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 December, 2020; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 4 December, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2003.06649">arXiv:2003.06649</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2003.06649">pdf</a>, <a href="https://arxiv.org/format/2003.06649">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Partial Queries for Constraint Acquisition
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Carbonnel%2C+C">Clement Carbonnel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Dries%2C+A">Anton Dries</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hebrard%2C+E">Emmanuel Hebrard</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Katsirelos%2C+G">George Katsirelos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lazaar%2C+N">Nadjib Lazaar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Narodytska%2C+N">Nina Narodytska</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Quimper%2C+C">Claude-Guy Quimper</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Stergiou%2C+K">Kostas Stergiou</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Tsouros%2C+D+C">Dimosthenis C. Tsouros</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2003.06649v2-abstract-short" style="display: inline;">
+        Learning constraint networks is known to require a number of membership queries exponential in the number of variables. In this paper, we learn constraint networks by asking the user partial queries. That is, we ask the user to classify assignments to subsets of the variables as positive or negative. We provide an algorithm, called QUACQ, that, given a negative example, focuses onto a constraint o&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2003.06649v2-abstract-full').style.display = 'inline'; document.getElementById('2003.06649v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2003.06649v2-abstract-full" style="display: none;">
+        Learning constraint networks is known to require a number of membership queries exponential in the number of variables. In this paper, we learn constraint networks by asking the user partial queries. That is, we ask the user to classify assignments to subsets of the variables as positive or negative. We provide an algorithm, called QUACQ, that, given a negative example, focuses onto a constraint of the target network in a number of queries logarithmic in the size of the example. The whole constraint network can then be learned with a polynomial number of partial queries. We give information theoretic lower bounds for learning some simple classes of constraint networks and show that our generic algorithm is optimal in some cases.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2003.06649v2-abstract-full').style.display = 'none'; document.getElementById('2003.06649v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 12 October, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 14 March, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1801.00345">arXiv:1801.00345</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1801.00345">pdf</a>, <a href="https://arxiv.org/format/1801.00345">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Databases">cs.DB</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Users Constraints in Itemset Mining
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lazaar%2C+N">Nadjib Lazaar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lebbah%2C+Y">Yahia Lebbah</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Maamar%2C+M">Mehdi Maamar</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1801.00345v2-abstract-short" style="display: inline;">
+        Discovering significant itemsets is one of the fundamental problems in data mining. It has recently been shown that constraint programming is a flexible way to tackle data mining tasks. With a constraint programming approach, we can easily express and efficiently answer queries with users constraints on items. However, in many practical cases it is possible that queries also express users constrai&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1801.00345v2-abstract-full').style.display = 'inline'; document.getElementById('1801.00345v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1801.00345v2-abstract-full" style="display: none;">
+        Discovering significant itemsets is one of the fundamental problems in data mining. It has recently been shown that constraint programming is a flexible way to tackle data mining tasks. With a constraint programming approach, we can easily express and efficiently answer queries with users constraints on items. However, in many practical cases it is possible that queries also express users constraints on the dataset itself. For instance, asking for a particular itemset in a particular part of the dataset. This paper presents a general constraint programming model able to handle any kind of query on the items or the dataset for itemset mining.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1801.00345v2-abstract-full').style.display = 'none'; document.getElementById('1801.00345v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 February, 2018; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 31 December, 2017;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2018.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1705.07429">arXiv:1705.07429</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1705.07429">pdf</a>, <a href="https://arxiv.org/format/1705.07429">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Sketched Answer Set Programming
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Paramonov%2C+S">Sergey Paramonov</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Dries%2C+A">Anton Dries</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=De+Raedt%2C+L">Luc De Raedt</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1705.07429v2-abstract-short" style="display: inline;">
+        Answer Set Programming (ASP) is a powerful modeling formalism for combinatorial problems. However, writing ASP models is not trivial. We propose a novel method, called Sketched Answer Set Programming (SkASP), aiming at supporting the user in resolving this issue. The user writes an ASP program while marking uncertain parts open with question marks. In addition, the user provides a number of positi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1705.07429v2-abstract-full').style.display = 'inline'; document.getElementById('1705.07429v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1705.07429v2-abstract-full" style="display: none;">
+        Answer Set Programming (ASP) is a powerful modeling formalism for combinatorial problems. However, writing ASP models is not trivial. We propose a novel method, called Sketched Answer Set Programming (SkASP), aiming at supporting the user in resolving this issue. The user writes an ASP program while marking uncertain parts open with question marks. In addition, the user provides a number of positive and negative examples of the desired program behaviour. The sketched model is rewritten into another ASP program, which is solved by traditional methods. As a result, the user obtains a functional and reusable ASP program modelling her problem. We evaluate our approach on 21 well known puzzles and combinatorial problems inspired by Karp&#39;s 21 NP-complete problems and demonstrate a use-case for a database application based on ASP.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1705.07429v2-abstract-full').style.display = 'none'; document.getElementById('1705.07429v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 August, 2018; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 21 May, 2017;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2017.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">15 pages, 11 figures; to appear in ICTAI 2018</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1510.03317">arXiv:1510.03317</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1510.03317">pdf</a>, <a href="https://arxiv.org/format/1510.03317">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Inductive Constraint Programming Loop
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=De+Raedt%2C+L">Luc De Raedt</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Guns%2C+T">Tias Guns</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kotthoff%2C+L">Lars Kotthoff</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nanni%2C+M">Mirco Nanni</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Nijssen%2C+S">Siegfried Nijssen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=O%27Sullivan%2C+B">Barry O&#39;Sullivan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Paparrizou%2C+A">Anastasia Paparrizou</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Pedreschi%2C+D">Dino Pedreschi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Simonis%2C+H">Helmut Simonis</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1510.03317v1-abstract-short" style="display: inline;">
+        Constraint programming is used for a variety of real-world optimisation problems, such as planning, scheduling and resource allocation problems. At the same time, one continuously gathers vast amounts of data about these problems. Current constraint programming software does not exploit such data to update schedules, resources and plans. We propose a new framework, that we call the Inductive Const&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1510.03317v1-abstract-full').style.display = 'inline'; document.getElementById('1510.03317v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1510.03317v1-abstract-full" style="display: none;">
+        Constraint programming is used for a variety of real-world optimisation problems, such as planning, scheduling and resource allocation problems. At the same time, one continuously gathers vast amounts of data about these problems. Current constraint programming software does not exploit such data to update schedules, resources and plans. We propose a new framework, that we call the Inductive Constraint Programming loop. In this approach data is gathered and analyzed systematically, in order to dynamically revise and adapt constraints and optimization criteria. Inductive Constraint Programming aims at bridging the gap between the areas of data mining and machine learning on the one hand, and constraint programming on the other hand.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1510.03317v1-abstract-full').style.display = 'none'; document.getElementById('1510.03317v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 12 October, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">17 pages, 9 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1502.02414">arXiv:1502.02414</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1502.02414">pdf</a>, <a href="https://arxiv.org/ps/1502.02414">ps</a>, <a href="https://arxiv.org/format/1502.02414">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1016/j.artint.2016.06.005">10.1016/j.artint.2016.06.005 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Tractability and Decompositions of Global Cost Functions
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Allouche%2C+D">David Allouche</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Boizumault%2C+P">Patrice Boizumault</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=de+Givry%2C+S">Simon de Givry</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Gutierrez%2C+P">Patricia Gutierrez</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lee%2C+J+H+M">Jimmy H. M. Lee</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Leung%2C+K+L">Kam Lun Leung</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Loudni%2C+S">Samir Loudni</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=M%C3%A9tivier%2C+J">Jean-Philippe Métivier</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Schiex%2C+T">Thomas Schiex</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wu%2C+Y">Yi Wu</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1502.02414v3-abstract-short" style="display: inline;">
+        Enforcing local consistencies in cost function networks is performed by applying so-called Equivalent Preserving Transformations (EPTs) to the cost functions. As EPTs transform the cost functions, they may break the property that was making local consistency enforcement tractable on a global cost function. A global cost function is called tractable projection-safe when applying an EPT to it is tra&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1502.02414v3-abstract-full').style.display = 'inline'; document.getElementById('1502.02414v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1502.02414v3-abstract-full" style="display: none;">
+        Enforcing local consistencies in cost function networks is performed by applying so-called Equivalent Preserving Transformations (EPTs) to the cost functions. As EPTs transform the cost functions, they may break the property that was making local consistency enforcement tractable on a global cost function. A global cost function is called tractable projection-safe when applying an EPT to it is tractable and does not break the tractability property. In this paper, we prove that depending on the size r of the smallest scopes used for performing EPTs, the tractability of global cost functions can be preserved (r = 0) or destroyed (r &gt; 1). When r = 1, the answer is indefinite. We show that on a large family of cost functions, EPTs can be computed via dynamic programming-based algorithms, leading to tractable projection-safety. We also show that when a global cost function can be decomposed into a Berge acyclic network of bounded arity cost functions, soft local consistencies such as soft Directed or Virtual Arc Consistency can directly emulate dynamic programming. These different approaches to decomposable cost functions are then embedded in a solver for extensive experiments that confirm the feasibility and efficiency of our proposal.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1502.02414v3-abstract-full').style.display = 'none'; document.getElementById('1502.02414v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 June, 2016; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 9 February, 2015;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">45 pages for the main paper, extra Appendix with examples of DAG-decomposed global cost functions</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">MSC Class:</span>
+          68T20
+        
+
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1103.3745">arXiv:1103.3745</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1103.3745">pdf</a>, <a href="https://arxiv.org/format/1103.3745">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The AllDifferent Constraint with Precedences
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Narodytska%2C+N">Nina Narodytska</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Quimper%2C+C">Claude-Guy Quimper</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1103.3745v1-abstract-short" style="display: inline;">
+        We propose AllDiffPrecedence, a new global constraint that combines together an AllDifferent constraint with precedence constraints that strictly order given pairs of variables. We identify a number of applications for this global constraint including instruction scheduling and symmetry breaking. We give an efficient propagation algorithm that enforces bounds consistency on this global constraint.&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1103.3745v1-abstract-full').style.display = 'inline'; document.getElementById('1103.3745v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1103.3745v1-abstract-full" style="display: none;">
+        We propose AllDiffPrecedence, a new global constraint that combines together an AllDifferent constraint with precedence constraints that strictly order given pairs of variables. We identify a number of applications for this global constraint including instruction scheduling and symmetry breaking. We give an efficient propagation algorithm that enforces bounds consistency on this global constraint. We show how to implement this propagator using a decomposition that extends the bounds consistency enforcing decomposition proposed for the AllDifferent constraint. Finally, we prove that enforcing domain consistency on this global constraint is NP-hard in general.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1103.3745v1-abstract-full').style.display = 'none'; document.getElementById('1103.3745v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 March, 2011; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2011.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1007.0603">arXiv:1007.0603</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1007.0603">pdf</a>, <a href="https://arxiv.org/ps/1007.0603">ps</a>, <a href="https://arxiv.org/format/1007.0603">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Decomposition of the NVALUE constraint
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Katsirelos%2C+G">George Katsirelos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Narodytska%2C+N">Nina Narodytska</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Quimper%2C+C">Claude-Guy Quimper</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1007.0603v1-abstract-short" style="display: inline;">
+        We study decompositions of the global NVALUE constraint. Our main contribution is theoretical: we show that there are propagators for global constraints like NVALUE which decomposition can simulate with the same time complexity but with a much greater space complexity. This suggests that the benefit of a global propagator may often not be in saving time but in saving space. Our other theoretical c&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1007.0603v1-abstract-full').style.display = 'inline'; document.getElementById('1007.0603v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1007.0603v1-abstract-full" style="display: none;">
+        We study decompositions of the global NVALUE constraint. Our main contribution is theoretical: we show that there are propagators for global constraints like NVALUE which decomposition can simulate with the same time complexity but with a much greater space complexity. This suggests that the benefit of a global propagator may often not be in saving time but in saving space. Our other theoretical contribution is to show for the first time that range consistency can be enforced on NVALUE with the same worst-case time complexity as bound consistency. Finally, the decompositions we study are readily encoded as linear inequalities. We are therefore able to use them in integer linear programs.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1007.0603v1-abstract-full').style.display = 'none'; document.getElementById('1007.0603v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 4 July, 2010; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2010.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To appear in the Proceedings of the 16th International Conference on Principles and Practice of Constraint Programming 2010 (CP 2010). An earlier version appeared in the Proceedings of the Eighth International Workshop on Constraint Modelling and Reformulation, held alongside the 15th International Conference on Principles and Practice of Constraint Programming (CP 2009)</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.4
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1004.2626">arXiv:1004.2626</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1004.2626">pdf</a>, <a href="https://arxiv.org/format/1004.2626">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Propagating Conjunctions of AllDifferent Constraints
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Katsirelos%2C+G">George Katsirelos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Narodytska%2C+N">Nina Narodytska</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Quimper%2C+C">Claude-Guy Quimper</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1004.2626v1-abstract-short" style="display: inline;">
+        We study propagation algorithms for the conjunction of two AllDifferent constraints. Solutions of an AllDifferent constraint can be seen as perfect matchings on the variable/value bipartite graph. Therefore, we investigate the problem of finding simultaneous bipartite matchings. We present an extension of the famous Hall theorem which characterizes when simultaneous bipartite matchings exists. Unf&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1004.2626v1-abstract-full').style.display = 'inline'; document.getElementById('1004.2626v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1004.2626v1-abstract-full" style="display: none;">
+        We study propagation algorithms for the conjunction of two AllDifferent constraints. Solutions of an AllDifferent constraint can be seen as perfect matchings on the variable/value bipartite graph. Therefore, we investigate the problem of finding simultaneous bipartite matchings. We present an extension of the famous Hall theorem which characterizes when simultaneous bipartite matchings exists. Unfortunately, finding such matchings is NP-hard in general. However, we prove a surprising result that finding a simultaneous matching on a convex bipartite graph takes just polynomial time. Based on this theoretical result, we provide the first polynomial time bound consistency algorithm for the conjunction of two AllDifferent constraints. We identify a pathological problem on which this propagator is exponentially faster compared to existing propagators. Our experiments show that this new propagator can offer significant benefits over existing methods.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1004.2626v1-abstract-full').style.display = 'none'; document.getElementById('1004.2626v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 April, 2010; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2010.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">AAAI 2010, Proceedings of the Twenty-Fourth AAAI Conference on Artificial Intelligence</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.4
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/0909.3273">arXiv:0909.3273</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/0909.3273">pdf</a>, <a href="https://arxiv.org/ps/0909.3273">ps</a>, <a href="https://arxiv.org/format/0909.3273">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Decomposition of the NVALUE constraint
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Katsirelos%2C+G">George Katsirelos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Narodytska%2C+N">Nina Narodytska</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Quimper%2C+C">Claude-Guy Quimper</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="0909.3273v1-abstract-short" style="display: inline;">
+        We study decompositions of NVALUE, a global constraint that can be used to model a wide range of problems where values need to be counted. Whilst decomposition typically hinders propagation, we identify one decomposition that maintains a global view as enforcing bound consistency on the decomposition achieves bound consistency on the original global NVALUE constraint. Such decompositions offer t&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0909.3273v1-abstract-full').style.display = 'inline'; document.getElementById('0909.3273v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="0909.3273v1-abstract-full" style="display: none;">
+          We study decompositions of NVALUE, a global constraint that can be used to model a wide range of problems where values need to be counted. Whilst decomposition typically hinders propagation, we identify one decomposition that maintains a global view as enforcing bound consistency on the decomposition achieves bound consistency on the original global NVALUE constraint. Such decompositions offer the prospect for advanced solving techniques like nogood learning and impact based branching heuristics. They may also help SAT and IP solvers take advantage of the propagation of global constraints.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0909.3273v1-abstract-full').style.display = 'none'; document.getElementById('0909.3273v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 17 September, 2009; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2009.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To appear in Proceedings of the Eighth International Workshop on Constraint Modelling and Reformulation, held alongside the 15th International Conference on Principles and Practice of Constraint Programming (CP 2009), Lisbon, Portugal</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.4
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/0905.3757">arXiv:0905.3757</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/0905.3757">pdf</a>, <a href="https://arxiv.org/format/0905.3757">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Circuit Complexity and Decompositions of Global Constraints
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Katsirelos%2C+G">George Katsirelos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Narodytska%2C+N">Nina Narodytska</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="0905.3757v1-abstract-short" style="display: inline;">
+        We show that tools from circuit complexity can be used to study decompositions of global constraints. In particular, we study decompositions of global constraints into conjunctive normal form with the property that unit propagation on the decomposition enforces the same level of consistency as a specialized propagation algorithm. We prove that a constraint propagator has a a polynomial size deco&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0905.3757v1-abstract-full').style.display = 'inline'; document.getElementById('0905.3757v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="0905.3757v1-abstract-full" style="display: none;">
+          We show that tools from circuit complexity can be used to study decompositions of global constraints. In particular, we study decompositions of global constraints into conjunctive normal form with the property that unit propagation on the decomposition enforces the same level of consistency as a specialized propagation algorithm. We prove that a constraint propagator has a a polynomial size decomposition if and only if it can be computed by a polynomial size monotone Boolean circuit. Lower bounds on the size of monotone Boolean circuits thus translate to lower bounds on the size of decompositions of global constraints. For instance, we prove that there is no polynomial sized decomposition of the domain consistency propagator for the ALLDIFFERENT constraint.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0905.3757v1-abstract-full').style.display = 'none'; document.getElementById('0905.3757v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 May, 2009; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2009.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Proceedings of the Twenty-first International Joint Conference on Artificial Intelligence (IJCAI-09). Old file included deleted</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.4
+        
+      </p>
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        IJCAI-2009
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/0905.3755">arXiv:0905.3755</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/0905.3755">pdf</a>, <a href="https://arxiv.org/ps/0905.3755">ps</a>, <a href="https://arxiv.org/format/0905.3755">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Decompositions of All Different, Global Cardinality and Related Constraints
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Katsirelos%2C+G">George Katsirelos</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Narodytska%2C+N">Nina Narodytska</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Quimper%2C+C">Claude-Guy Quimper</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="0905.3755v1-abstract-short" style="display: inline;">
+        We show that some common and important global constraints like ALL-DIFFERENT and GCC can be decomposed into simple arithmetic constraints on which we achieve bound or range consistency, and in some cases even greater pruning. These decompositions can be easily added to new solvers. They also provide other constraints with access to the state of the propagator by sharing of variables. Such sharin&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0905.3755v1-abstract-full').style.display = 'inline'; document.getElementById('0905.3755v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="0905.3755v1-abstract-full" style="display: none;">
+          We show that some common and important global constraints like ALL-DIFFERENT and GCC can be decomposed into simple arithmetic constraints on which we achieve bound or range consistency, and in some cases even greater pruning. These decompositions can be easily added to new solvers. They also provide other constraints with access to the state of the propagator by sharing of variables. Such sharing can be used to improve propagation between constraints. We report experiments with our decomposition in a pseudo-Boolean solver.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0905.3755v1-abstract-full').style.display = 'none'; document.getElementById('0905.3755v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 May, 2009; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2009.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Proceedings of the Twenty-first International Joint Conference on Artificial Intelligence (IJCAI-09)</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.4
+        
+      </p>
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        IJCAI-2009
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/0903.1139">arXiv:0903.1139</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/0903.1139">pdf</a>, <a href="https://arxiv.org/ps/0903.1139">ps</a>, <a href="https://arxiv.org/format/0903.1139">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Complexity of Reasoning with Global Constraints
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hebrard%2C+E">Emmanuel Hebrard</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hnich%2C+B">Brahim Hnich</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="0903.1139v1-abstract-short" style="display: inline;">
+        Constraint propagation is one of the techniques central to the success of constraint programming. To reduce search, fast algorithms associated with each constraint prune the domains of variables. With global (or non-binary) constraints, the cost of such propagation may be much greater than the quadratic cost for binary constraints. We therefore study the computational complexity of reasoning wit&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0903.1139v1-abstract-full').style.display = 'inline'; document.getElementById('0903.1139v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="0903.1139v1-abstract-full" style="display: none;">
+          Constraint propagation is one of the techniques central to the success of constraint programming. To reduce search, fast algorithms associated with each constraint prune the domains of variables. With global (or non-binary) constraints, the cost of such propagation may be much greater than the quadratic cost for binary constraints. We therefore study the computational complexity of reasoning with global constraints. We first characterise a number of important questions related to constraint propagation. We show that such questions are intractable in general, and identify dependencies between the tractability and intractability of the different questions. We then demonstrate how the tools of computational complexity can be used in the design and analysis of specific global constraints. In particular, we illustrate how computational complexity can be used to determine when a lesser level of local consistency should be enforced, when constraints can be safely generalized, when decomposing constraints will reduce the amount of pruning, and when combining constraints is tractable.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0903.1139v1-abstract-full').style.display = 'none'; document.getElementById('0903.1139v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 5 March, 2009; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2009.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.4
+        
+      </p>
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Constraints 12(2): 239-259 (2007)
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/0903.0471">arXiv:0903.0471</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/0903.0471">pdf</a>, <a href="https://arxiv.org/ps/0903.0471">ps</a>, <a href="https://arxiv.org/format/0903.0471">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.3233/978-1-58603-891-5-475">10.3233/978-1-58603-891-5-475 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        SLIDE: A Useful Special Case of the CARDPATH Constraint
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hebrard%2C+E">Emmanuel Hebrard</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hnich%2C+B">Brahim Hnich</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kiziltan%2C+Z">Zeynep Kiziltan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="0903.0471v1-abstract-short" style="display: inline;">
+        We study the CardPath constraint. This ensures a given constraint holds a number of times down a sequence of variables. We show that SLIDE, a special case of CardPath where the slid constraint must hold always, can be used to encode a wide range of sliding sequence constraints including CardPath itself. We consider how to propagate SLIDE and provide a complete propagator for CardPath. Since prop&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0903.0471v1-abstract-full').style.display = 'inline'; document.getElementById('0903.0471v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="0903.0471v1-abstract-full" style="display: none;">
+          We study the CardPath constraint. This ensures a given constraint holds a number of times down a sequence of variables. We show that SLIDE, a special case of CardPath where the slid constraint must hold always, can be used to encode a wide range of sliding sequence constraints including CardPath itself. We consider how to propagate SLIDE and provide a complete propagator for CardPath. Since propagation is NP-hard in general, we identify special cases where propagation takes polynomial time. Our experiments demonstrate that using SLIDE to encode global constraints can be as efficient and effective as specialised propagators.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0903.0471v1-abstract-full').style.display = 'none'; document.getElementById('0903.0471v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 March, 2009; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2009.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">18th European Conference on Artificial Intelligence</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.4
+        
+      </p>
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        ECAI 2008: 475-479
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/0903.0467">arXiv:0903.0467</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/0903.0467">pdf</a>, <a href="https://arxiv.org/ps/0903.0467">ps</a>, <a href="https://arxiv.org/format/0903.0467">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computational Complexity">cs.CC</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Parameterized Complexity of Global Constraints
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hebrard%2C+E">Emmanuel Hebrard</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hnich%2C+B">Brahim Hnich</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kiziltan%2C+Z">Zeynep Kiziltan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="0903.0467v1-abstract-short" style="display: inline;">
+        We argue that parameterized complexity is a useful tool with which to study global constraints. In particular, we show that many global constraints which are intractable to propagate completely have natural parameters which make them fixed-parameter tractable and which are easy to compute. This tractability tends either to be the result of a simple dynamic program or of a decomposition which has&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0903.0467v1-abstract-full').style.display = 'inline'; document.getElementById('0903.0467v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="0903.0467v1-abstract-full" style="display: none;">
+          We argue that parameterized complexity is a useful tool with which to study global constraints. In particular, we show that many global constraints which are intractable to propagate completely have natural parameters which make them fixed-parameter tractable and which are easy to compute. This tractability tends either to be the result of a simple dynamic program or of a decomposition which has a strong backdoor of bounded size. This strong backdoor is often a cycle cutset. We also show that parameterized complexity can be used to study other aspects of constraint programming like symmetry breaking. For instance, we prove that value symmetry is fixed-parameter tractable to break in the number of symmetries. Finally, we argue that parameterized complexity can be used to derive results about the approximability of constraint propagation.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0903.0467v1-abstract-full').style.display = 'none'; document.getElementById('0903.0467v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 March, 2009; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2009.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Proceedings of the Twenty-Third AAAI Conference on Artificial Intelligence</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.4
+        
+      </p>
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        AAAI-2008, 235-240, 2008
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/0903.0211">arXiv:0903.0211</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/0903.0211">pdf</a>, <a href="https://arxiv.org/ps/0903.0211">ps</a>, <a href="https://arxiv.org/format/0903.0211">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Range and Roots: Two Common Patterns for Specifying and Propagating Counting and Occurrence Constraints
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bessiere%2C+C">Christian Bessiere</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hebrard%2C+E">Emmanuel Hebrard</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hnich%2C+B">Brahim Hnich</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kiziltan%2C+Z">Zeynep Kiziltan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Walsh%2C+T">Toby Walsh</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="0903.0211v1-abstract-short" style="display: inline;">
+        We propose Range and Roots which are two common patterns useful for specifying a wide range of counting and occurrence constraints. We design specialised propagation algorithms for these two patterns. Counting and occurrence constraints specified using these patterns thus directly inherit a propagation algorithm. To illustrate the capabilities of the Range and Roots constraints, we specify a num&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0903.0211v1-abstract-full').style.display = 'inline'; document.getElementById('0903.0211v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="0903.0211v1-abstract-full" style="display: none;">
+          We propose Range and Roots which are two common patterns useful for specifying a wide range of counting and occurrence constraints. We design specialised propagation algorithms for these two patterns. Counting and occurrence constraints specified using these patterns thus directly inherit a propagation algorithm. To illustrate the capabilities of the Range and Roots constraints, we specify a number of global constraints taken from the literature. Preliminary experiments demonstrate that propagating counting and occurrence constraints using these two patterns leads to a small loss in performance when compared to specialised global constraints and is competitive with alternative decompositions using elementary constraints.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('0903.0211v1-abstract-full').style.display = 'none'; document.getElementById('0903.0211v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 March, 2009; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2009.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">41 pages, 7 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

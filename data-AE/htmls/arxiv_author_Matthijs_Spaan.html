@@ -1,0 +1,2209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;31 of 31 results for author: <span class="mathjax">Matthijs Spaan</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Matthijs Spaan">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Matthijs+Spaan&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Matthijs Spaan">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2508.21488">arXiv:2508.21488</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2508.21488">pdf</a>, <a href="https://arxiv.org/ps/2508.21488">ps</a>, <a href="https://arxiv.org/format/2508.21488">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Priors Matter: Addressing Misspecification in Bayesian Deep Q-Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=van+der+Vaart%2C+P+R">Pascal R. van der Vaart</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yorke-Smith%2C+N">Neil Yorke-Smith</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2508.21488v1-abstract-short" style="display: inline;">
+        Uncertainty quantification in reinforcement learning can greatly improve exploration and robustness. Approximate Bayesian approaches have recently been popularized to quantify uncertainty in model-free algorithms. However, so far the focus has been on improving the accuracy of the posterior approximation, instead of studying the accuracy of the prior and likelihood assumptions underlying the poste&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2508.21488v1-abstract-full').style.display = 'inline'; document.getElementById('2508.21488v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2508.21488v1-abstract-full" style="display: none;">
+        Uncertainty quantification in reinforcement learning can greatly improve exploration and robustness. Approximate Bayesian approaches have recently been popularized to quantify uncertainty in model-free algorithms. However, so far the focus has been on improving the accuracy of the posterior approximation, instead of studying the accuracy of the prior and likelihood assumptions underlying the posterior. In this work, we demonstrate that there is a cold posterior effect in Bayesian deep Q-learning, where contrary to theory, performance increases when reducing the temperature of the posterior. To identify and overcome likely causes, we challenge common assumptions made on the likelihood and priors in Bayesian model-free algorithms. We empirically study prior distributions and show through statistical tests that the common Gaussian likelihood assumption is frequently violated. We argue that developing more suitable likelihoods and priors should be a key focus in future Bayesian reinforcement learning research and we offer simple, implementable solutions for better priors in deep Q-learning that lead to more performant Bayesian algorithms.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2508.21488v1-abstract-full').style.display = 'none'; document.getElementById('2508.21488v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 29 August, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2506.15756">arXiv:2506.15756</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2506.15756">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        RecBayes: Recurrent Bayesian Ad Hoc Teamwork in Large Partially Observable Domains
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Ribeiro%2C+J+G">João G. Ribeiro</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oren%2C+Y">Yaniv Oren</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sardinha%2C+A">Alberto Sardinha</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M">Matthijs Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Melo%2C+F+S">Francisco S. Melo</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2506.15756v1-abstract-short" style="display: inline;">
+        This paper proposes RecBayes, a novel approach for ad hoc teamwork under partial observability, a setting where agents are deployed on-the-fly to environments where pre-existing teams operate, that never requires, at any stage, access to the states of the environment or the actions of its teammates. We show that by relying on a recurrent Bayesian classifier trained using past experiences, an ad ho&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2506.15756v1-abstract-full').style.display = 'inline'; document.getElementById('2506.15756v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2506.15756v1-abstract-full" style="display: none;">
+        This paper proposes RecBayes, a novel approach for ad hoc teamwork under partial observability, a setting where agents are deployed on-the-fly to environments where pre-existing teams operate, that never requires, at any stage, access to the states of the environment or the actions of its teammates. We show that by relying on a recurrent Bayesian classifier trained using past experiences, an ad hoc agent is effectively able to identify known teams and tasks being performed from observations alone. Unlike recent approaches such as PO-GPL (Gu et al., 2021) and FEAT (Rahman et al., 2023), that require at some stage fully observable states of the environment, actions of teammates, or both, or approaches such as ATPO (Ribeiro et al., 2023) that require the environments to be small enough to be tabularly modelled (Ribeiro et al., 2023), in their work up to 4.8K states and 1.7K observations, we show RecBayes is both able to handle arbitrarily large spaces while never relying on either states and teammates&#39; actions. Our results in benchmark domains from the multi-agent systems literature, adapted for partial observability and scaled up to 1M states and 2^125 observations, show that RecBayes is effective at identifying known teams and tasks being performed from partial observations alone, and as a result, is able to assist the teams in solving the tasks effectively.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2506.15756v1-abstract-full').style.display = 'none'; document.getElementById('2506.15756v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 June, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2505.21119">arXiv:2505.21119</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2505.21119">pdf</a>, <a href="https://arxiv.org/ps/2505.21119">ps</a>, <a href="https://arxiv.org/format/2505.21119">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Universal Value-Function Uncertainties
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Zanger%2C+M+A">Moritz A. Zanger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Weltevrede%2C+M">Max Weltevrede</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oren%2C+Y">Yaniv Oren</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Van+der+Vaart%2C+P+R">Pascal R. Van der Vaart</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Horsch%2C+C">Caroline Horsch</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=B%C3%B6hmer%2C+W">Wendelin Böhmer</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2505.21119v2-abstract-short" style="display: inline;">
+        Estimating epistemic uncertainty in value functions is a crucial challenge for many aspects of reinforcement learning (RL), including efficient exploration, safe decision-making, and offline RL. While deep ensembles provide a robust method for quantifying value uncertainty, they come with significant computational overhead. Single-model methods, while computationally favorable, often rely on heuri&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.21119v2-abstract-full').style.display = 'inline'; document.getElementById('2505.21119v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2505.21119v2-abstract-full" style="display: none;">
+        Estimating epistemic uncertainty in value functions is a crucial challenge for many aspects of reinforcement learning (RL), including efficient exploration, safe decision-making, and offline RL. While deep ensembles provide a robust method for quantifying value uncertainty, they come with significant computational overhead. Single-model methods, while computationally favorable, often rely on heuristics and typically require additional propagation mechanisms for myopic uncertainty estimates. In this work we introduce universal value-function uncertainties (UVU), which, similar in spirit to random network distillation (RND), quantify uncertainty as squared prediction errors between an online learner and a fixed, randomly initialized target network. Unlike RND, UVU errors reflect policy-conditional value uncertainty, incorporating the future uncertainties any given policy may encounter. This is due to the training procedure employed in UVU: the online network is trained using temporal difference learning with a synthetic reward derived from the fixed, randomly initialized target network. We provide an extensive theoretical analysis of our approach using neural tangent kernel (NTK) theory and show that in the limit of infinite network width, UVU errors are exactly equivalent to the variance of an ensemble of independent universal value functions. Empirically, we show that UVU achieves equal performance to large ensembles on challenging multi-task offline RL settings, while offering simplicity and substantial computational savings.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.21119v2-abstract-full').style.display = 'none'; document.getElementById('2505.21119v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 June, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 27 May, 2025;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2505.18591">arXiv:2505.18591</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2505.18591">pdf</a>, <a href="https://arxiv.org/ps/2505.18591">ps</a>, <a href="https://arxiv.org/format/2505.18591">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Bayesian Meta-Reinforcement Learning with Laplace Variational Recurrent Networks
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=de+Vries%2C+J+A">Joery A. de Vries</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=He%2C+J">Jinke He</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=de+Weerdt%2C+M+M">Mathijs M. de Weerdt</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2505.18591v1-abstract-short" style="display: inline;">
+        Meta-reinforcement learning trains a single reinforcement learning agent on a distribution of tasks to quickly generalize to new tasks outside of the training set at test time. From a Bayesian perspective, one can interpret this as performing amortized variational inference on the posterior distribution over training tasks. Among the various meta-reinforcement learning approaches, a common method&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.18591v1-abstract-full').style.display = 'inline'; document.getElementById('2505.18591v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2505.18591v1-abstract-full" style="display: none;">
+        Meta-reinforcement learning trains a single reinforcement learning agent on a distribution of tasks to quickly generalize to new tasks outside of the training set at test time. From a Bayesian perspective, one can interpret this as performing amortized variational inference on the posterior distribution over training tasks. Among the various meta-reinforcement learning approaches, a common method is to represent this distribution with a point-estimate using a recurrent neural network. We show how one can augment this point estimate to give full distributions through the Laplace approximation, either at the start of, during, or after learning, without modifying the base model architecture. With our approximation, we are able to estimate distribution statistics (e.g., the entropy) of non-Bayesian agents and observe that point-estimate based methods produce overconfident estimators while not satisfying consistency. Furthermore, when comparing our approach to full-distribution based learning of the task posterior, our method performs on par with variational baselines while having much fewer parameters.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.18591v1-abstract-full').style.display = 'none'; document.getElementById('2505.18591v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 May, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2505.16581">arXiv:2505.16581</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2505.16581">pdf</a>, <a href="https://arxiv.org/ps/2505.16581">ps</a>, <a href="https://arxiv.org/format/2505.16581">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        How Ensembles of Distilled Policies Improve Generalisation in Reinforcement Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Weltevrede%2C+M">Max Weltevrede</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zanger%2C+M+A">Moritz A. Zanger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=B%C3%B6hmer%2C+W">Wendelin Böhmer</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2505.16581v1-abstract-short" style="display: inline;">
+        In the zero-shot policy transfer setting in reinforcement learning, the goal is to train an agent on a fixed set of training environments so that it can generalise to similar, but unseen, testing environments. Previous work has shown that policy distillation after training can sometimes produce a policy that outperforms the original in the testing environments. However, it is not yet entirely clea&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.16581v1-abstract-full').style.display = 'inline'; document.getElementById('2505.16581v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2505.16581v1-abstract-full" style="display: none;">
+        In the zero-shot policy transfer setting in reinforcement learning, the goal is to train an agent on a fixed set of training environments so that it can generalise to similar, but unseen, testing environments. Previous work has shown that policy distillation after training can sometimes produce a policy that outperforms the original in the testing environments. However, it is not yet entirely clear why that is, or what data should be used to distil the policy. In this paper, we prove, under certain assumptions, a generalisation bound for policy distillation after training. The theory provides two practical insights: for improved generalisation, you should 1) train an ensemble of distilled policies, and 2) distil it on as much data from the training environments as possible. We empirically verify that these insights hold in more general settings, when the assumptions required for the theory no longer hold. Finally, we demonstrate that an ensemble of policies distilled on a diverse dataset can generalise significantly better than the original agent.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.16581v1-abstract-full').style.display = 'none'; document.getElementById('2505.16581v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 May, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2505.14001">arXiv:2505.14001</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2505.14001">pdf</a>, <a href="https://arxiv.org/ps/2505.14001">ps</a>, <a href="https://arxiv.org/format/2505.14001">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Systems and Control">eess.SY</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        VeRecycle: Reclaiming Guarantees from Probabilistic Certificates for Stochastic Dynamical Systems after Change
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lutz%2C+S">Sterre Lutz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lukina%2C+A">Anna Lukina</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2505.14001v1-abstract-short" style="display: inline;">
+        Autonomous systems operating in the real world encounter a range of uncertainties. Probabilistic neural Lyapunov certification is a powerful approach to proving safety of nonlinear stochastic dynamical systems. When faced with changes beyond the modeled uncertainties, e.g., unidentified obstacles, probabilistic certificates must be transferred to the new system dynamics. However, even when the cha&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.14001v1-abstract-full').style.display = 'inline'; document.getElementById('2505.14001v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2505.14001v1-abstract-full" style="display: none;">
+        Autonomous systems operating in the real world encounter a range of uncertainties. Probabilistic neural Lyapunov certification is a powerful approach to proving safety of nonlinear stochastic dynamical systems. When faced with changes beyond the modeled uncertainties, e.g., unidentified obstacles, probabilistic certificates must be transferred to the new system dynamics. However, even when the changes are localized in a known part of the state space, state-of-the-art requires complete re-certification, which is particularly costly for neural certificates. We introduce VeRecycle, the first framework to formally reclaim guarantees for discrete-time stochastic dynamical systems. VeRecycle efficiently reuses probabilistic certificates when the system dynamics deviate only in a given subset of states. We present a general theoretical justification and algorithmic implementation. Our experimental evaluation shows scenarios where VeRecycle both saves significant computational effort and achieves competitive probabilistic guarantees in compositional neural control.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2505.14001v1-abstract-full').style.display = 'none'; document.getElementById('2505.14001v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 20 May, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">accepted to IJCAI 2025</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2504.06048">arXiv:2504.06048</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2504.06048">pdf</a>, <a href="https://arxiv.org/ps/2504.06048">ps</a>, <a href="https://arxiv.org/format/2504.06048">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Trust-Region Twisted Policy Improvement
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=de+Vries%2C+J+A">Joery A. de Vries</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=He%2C+J">Jinke He</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oren%2C+Y">Yaniv Oren</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2504.06048v4-abstract-short" style="display: inline;">
+        Monte-Carlo tree search (MCTS) has driven many recent breakthroughs in deep reinforcement learning (RL). However, scaling MCTS to parallel compute has proven challenging in practice which has motivated alternative planners like sequential Monte-Carlo (SMC). Many of these SMC methods adopt particle filters for smoothing through a reformulation of RL as a policy inference problem. Yet, persisting de&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.06048v4-abstract-full').style.display = 'inline'; document.getElementById('2504.06048v4-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2504.06048v4-abstract-full" style="display: none;">
+        Monte-Carlo tree search (MCTS) has driven many recent breakthroughs in deep reinforcement learning (RL). However, scaling MCTS to parallel compute has proven challenging in practice which has motivated alternative planners like sequential Monte-Carlo (SMC). Many of these SMC methods adopt particle filters for smoothing through a reformulation of RL as a policy inference problem. Yet, persisting design choices of these particle filters often conflict with the aim of online planning in RL, which is to obtain a policy improvement at the start of planning. Drawing inspiration from MCTS, we tailor SMC planners specifically for RL by improving data generation within the planner through constrained action sampling and explicit terminal state handling, as well as improving policy and value target estimation. This leads to our Trust-Region Twisted SMC (TRT-SMC), which shows improved runtime and sample-efficiency over baseline MCTS and SMC methods in both discrete and continuous domains.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2504.06048v4-abstract-full').style.display = 'none'; document.getElementById('2504.06048v4-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 8 July, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 8 April, 2025;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Poster at ICML2025</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2503.11339">arXiv:2503.11339</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2503.11339">pdf</a>, <a href="https://arxiv.org/format/2503.11339">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Contextual Similarity Distillation: Ensemble Uncertainties with a Single Model
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Zanger%2C+M+A">Moritz A. Zanger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Van+der+Vaart%2C+P+R">Pascal R. Van der Vaart</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=B%C3%B6hmer%2C+W">Wendelin Böhmer</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2503.11339v2-abstract-short" style="display: inline;">
+        Uncertainty quantification is a critical aspect of reinforcement learning and deep learning, with numerous applications ranging from efficient exploration and stable offline reinforcement learning to outlier detection in medical diagnostics. The scale of modern neural networks, however, complicates the use of many theoretically well-motivated approaches such as full Bayesian inference. Approximate&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.11339v2-abstract-full').style.display = 'inline'; document.getElementById('2503.11339v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2503.11339v2-abstract-full" style="display: none;">
+        Uncertainty quantification is a critical aspect of reinforcement learning and deep learning, with numerous applications ranging from efficient exploration and stable offline reinforcement learning to outlier detection in medical diagnostics. The scale of modern neural networks, however, complicates the use of many theoretically well-motivated approaches such as full Bayesian inference. Approximate methods like deep ensembles can provide reliable uncertainty estimates but still remain computationally expensive. In this work, we propose contextual similarity distillation, a novel approach that explicitly estimates the variance of an ensemble of deep neural networks with a single model, without ever learning or evaluating such an ensemble in the first place. Our method builds on the predictable learning dynamics of wide neural networks, governed by the neural tangent kernel, to derive an efficient approximation of the predictive variance of an infinite ensemble. Specifically, we reinterpret the computation of ensemble variance as a supervised regression problem with kernel similarities as regression targets. The resulting model can estimate predictive variance at inference time with a single forward pass, and can make use of unlabeled target-domain data or data augmentations to refine its uncertainty estimates. We empirically validate our method across a variety of out-of-distribution detection benchmarks and sparse-reward reinforcement learning environments. We find that our single-model method performs competitively and sometimes superior to ensemble-based baselines and serves as a reliable signal for efficient exploration. These results, we believe, position contextual similarity distillation as a principled and scalable alternative for uncertainty quantification in reinforcement learning and general deep learning.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2503.11339v2-abstract-full').style.display = 'none'; document.getElementById('2503.11339v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 March, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 14 March, 2025;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2411.02223">arXiv:2411.02223</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2411.02223">pdf</a>, <a href="https://arxiv.org/format/2411.02223">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Positive Experience Reflection for Agents in Interactive Text Environments
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lippmann%2C+P">Philip Lippmann</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yang%2C+J">Jie Yang</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2411.02223v1-abstract-short" style="display: inline;">
+        Intelligent agents designed for interactive environments face significant challenges in text-based games, a domain that demands complex reasoning and adaptability. While agents based on large language models (LLMs) using self-reflection have shown promise, they struggle when initially successful and exhibit reduced effectiveness when using smaller LLMs. We introduce Sweet&amp;Sour, a novel approach th&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2411.02223v1-abstract-full').style.display = 'inline'; document.getElementById('2411.02223v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2411.02223v1-abstract-full" style="display: none;">
+        Intelligent agents designed for interactive environments face significant challenges in text-based games, a domain that demands complex reasoning and adaptability. While agents based on large language models (LLMs) using self-reflection have shown promise, they struggle when initially successful and exhibit reduced effectiveness when using smaller LLMs. We introduce Sweet&amp;Sour, a novel approach that addresses these limitations in existing reflection methods by incorporating positive experiences and managed memory to enrich the context available to the agent at decision time. Our comprehensive analysis spans both closed- and open-source LLMs and demonstrates the effectiveness of Sweet&amp;Sour in improving agent performance, particularly in scenarios where previous approaches fall short.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2411.02223v1-abstract-full').style.display = 'none'; document.getElementById('2411.02223v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 4 November, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">To appear at NeurIPS 2024 Language Gamification workshop</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2410.03565">arXiv:2410.03565</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2410.03565">pdf</a>, <a href="https://arxiv.org/format/2410.03565">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Exploration Implies Data Augmentation: Reachability and Generalisation in Contextual MDPs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Weltevrede%2C+M">Max Weltevrede</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Horsch%2C+C">Caroline Horsch</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=B%C3%B6hmer%2C+W">Wendelin Böhmer</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2410.03565v3-abstract-short" style="display: inline;">
+        In the zero-shot policy transfer (ZSPT) setting for contextual Markov decision processes (MDP), agents train on a fixed set of contexts and must generalise to new ones. Recent work has argued and demonstrated that increased exploration can improve this generalisation, by training on more states in the training contexts. In this paper, we demonstrate that training on more states can indeed improve&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.03565v3-abstract-full').style.display = 'inline'; document.getElementById('2410.03565v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2410.03565v3-abstract-full" style="display: none;">
+        In the zero-shot policy transfer (ZSPT) setting for contextual Markov decision processes (MDP), agents train on a fixed set of contexts and must generalise to new ones. Recent work has argued and demonstrated that increased exploration can improve this generalisation, by training on more states in the training contexts. In this paper, we demonstrate that training on more states can indeed improve generalisation, but can come at a cost of reducing the accuracy of the learned value function which should not benefit generalisation. We hypothesise and demonstrate that using exploration to increase the agent&#39;s coverage while also increasing the accuracy improves generalisation even more. Inspired by this, we propose a method Explore-Go that implements an exploration phase at the beginning of each episode, which can be combined with existing on- and off-policy RL algorithms and significantly improves generalisation even in partially observable MDPs. We demonstrate the effectiveness of Explore-Go when combined with several popular algorithms and show an increase in generalisation performance across several environments. With this, we hope to provide practitioners with a simple modification that can improve the generalisation of their agents.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2410.03565v3-abstract-full').style.display = 'none'; document.getElementById('2410.03565v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 May, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 4 October, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">arXiv admin note: text overlap with arXiv:2406.08069</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2408.08770">arXiv:2408.08770</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2408.08770">pdf</a>, <a href="https://arxiv.org/ps/2408.08770">ps</a>, <a href="https://arxiv.org/format/2408.08770">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Pessimistic Iterative Planning with RNNs for Robust POMDPs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Galesloot%2C+M+F+L">Maris F. L. Galesloot</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Suilen%2C+M">Marnix Suilen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sim%C3%A3o%2C+T+D">Thiago D. Simão</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Carr%2C+S">Steven Carr</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Topcu%2C+U">Ufuk Topcu</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Jansen%2C+N">Nils Jansen</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2408.08770v4-abstract-short" style="display: inline;">
+        Robust POMDPs extend classical POMDPs to incorporate model uncertainty using so-called uncertainty sets on the transition and observation functions, effectively defining ranges of probabilities. Policies for robust POMDPs must be (1) memory-based to account for partial observability and (2) robust against model uncertainty to account for the worst-case probability instances from the uncertainty se&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2408.08770v4-abstract-full').style.display = 'inline'; document.getElementById('2408.08770v4-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2408.08770v4-abstract-full" style="display: none;">
+        Robust POMDPs extend classical POMDPs to incorporate model uncertainty using so-called uncertainty sets on the transition and observation functions, effectively defining ranges of probabilities. Policies for robust POMDPs must be (1) memory-based to account for partial observability and (2) robust against model uncertainty to account for the worst-case probability instances from the uncertainty sets. To compute such robust memory-based policies, we propose the pessimistic iterative planning (PIP) framework, which alternates between (1) selecting pessimistic POMDPs via worst-case probability instances from the uncertainty sets, and (2) computing finite-state controllers (FSCs) for these pessimistic POMDPs. Within PIP, we propose the rFSCNet algorithm, which optimizes a recurrent neural network to compute the FSCs. The empirical evaluation shows that rFSCNet can compute better-performing robust policies than several baselines and a state-of-the-art robust POMDP solver.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2408.08770v4-abstract-full').style.display = 'none'; document.getElementById('2408.08770v4-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 August, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 16 August, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted for presentation at ECAI 2025</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2406.08069">arXiv:2406.08069</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2406.08069">pdf</a>, <a href="https://arxiv.org/format/2406.08069">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Explore-Go: Leveraging Exploration for Generalisation in Deep Reinforcement Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Weltevrede%2C+M">Max Weltevrede</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Kaubek%2C+F">Felix Kaubek</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=B%C3%B6hmer%2C+W">Wendelin Böhmer</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2406.08069v3-abstract-short" style="display: inline;">
+        One of the remaining challenges in reinforcement learning is to develop agents that can generalise to novel scenarios they might encounter once deployed. This challenge is often framed in a multi-task setting where agents train on a fixed set of tasks and have to generalise to new tasks. Recent work has shown that in this setting increased exploration during training can be leveraged to increase t&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2406.08069v3-abstract-full').style.display = 'inline'; document.getElementById('2406.08069v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2406.08069v3-abstract-full" style="display: none;">
+        One of the remaining challenges in reinforcement learning is to develop agents that can generalise to novel scenarios they might encounter once deployed. This challenge is often framed in a multi-task setting where agents train on a fixed set of tasks and have to generalise to new tasks. Recent work has shown that in this setting increased exploration during training can be leveraged to increase the generalisation performance of the agent. This makes sense when the states encountered during testing can actually be explored during training. In this paper, we provide intuition why exploration can also benefit generalisation to states that cannot be explicitly encountered during training. Additionally, we propose a novel method Explore-Go that exploits this intuition by increasing the number of states on which the agent trains. Explore-Go effectively increases the starting state distribution of the agent and as a result can be used in conjunction with most existing on-policy or off-policy reinforcement learning algorithms. We show empirically that our method can increase generalisation performance in an illustrative environment and on the Procgen benchmark.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2406.08069v3-abstract-full').style.display = 'none'; document.getElementById('2406.08069v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 September, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 12 June, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2406.01423">arXiv:2406.01423</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2406.01423">pdf</a>, <a href="https://arxiv.org/format/2406.01423">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Value Improved Actor Critic Algorithms
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Oren%2C+Y">Yaniv Oren</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zanger%2C+M+A">Moritz A. Zanger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=van+der+Vaart%2C+P+R">Pascal R. van der Vaart</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Celikok%2C+M+M">Mustafa Mert Celikok</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bohmer%2C+W">Wendelin Bohmer</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2406.01423v2-abstract-short" style="display: inline;">
+        To learn approximately optimal acting policies for decision problems, modern Actor Critic algorithms rely on deep Neural Networks (DNNs) to parameterize the acting policy and greedification operators to iteratively improve it. The reliance on DNNs suggests an improvement that is gradient based, which is per step much less greedy than the improvement possible by greedier operators such as the greed&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2406.01423v2-abstract-full').style.display = 'inline'; document.getElementById('2406.01423v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2406.01423v2-abstract-full" style="display: none;">
+        To learn approximately optimal acting policies for decision problems, modern Actor Critic algorithms rely on deep Neural Networks (DNNs) to parameterize the acting policy and greedification operators to iteratively improve it. The reliance on DNNs suggests an improvement that is gradient based, which is per step much less greedy than the improvement possible by greedier operators such as the greedy update used by Q-learning algorithms. On the other hand, slow and steady changes to the policy can also be beneficial for the stability of the learning process, resulting in a tradeoff between greedification and stability. To address this tradeoff, we propose to extend the standard framework of actor critic algorithms with value-improvement: a second greedification operator applied only when updating the policy&#39;s value estimate. In this framework the agent can evaluate non-parameterized policies and perform much greedier updates while maintaining the steady gradient-based improvement to the parameterized acting policy. We prove that this approach converges in the popular analysis scheme of Generalized Policy Iteration in the finite-horizon domain. Empirically, incorporating value-improvement into the popular off-policy actor-critic algorithms TD3 and SAC significantly improves or matches performance over their respective baselines, across different environments from the DeepMind continuous control domain, with negligible compute and implementation cost.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2406.01423v2-abstract-full').style.display = 'none'; document.getElementById('2406.01423v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 11 March, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 3 June, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2403.17860">arXiv:2403.17860</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2403.17860">pdf</a>, <a href="https://arxiv.org/format/2403.17860">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computation and Language">cs.CL</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Illuminating Blind Spots of Language Models with Targeted Agent-in-the-Loop Synthetic Data
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lippmann%2C+P">Philip Lippmann</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Yang%2C+J">Jie Yang</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2403.17860v3-abstract-short" style="display: inline;">
+        Language models (LMs) have achieved impressive accuracy across a variety of tasks but remain vulnerable to high-confidence misclassifications, also referred to as unknown unknowns (UUs). These UUs cluster into blind spots in the feature space, leading to significant risks in high-stakes applications. This is particularly relevant for smaller, lightweight LMs that are more susceptible to such error&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2403.17860v3-abstract-full').style.display = 'inline'; document.getElementById('2403.17860v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2403.17860v3-abstract-full" style="display: none;">
+        Language models (LMs) have achieved impressive accuracy across a variety of tasks but remain vulnerable to high-confidence misclassifications, also referred to as unknown unknowns (UUs). These UUs cluster into blind spots in the feature space, leading to significant risks in high-stakes applications. This is particularly relevant for smaller, lightweight LMs that are more susceptible to such errors. While the identification of UUs has been extensively studied, their mitigation remains an open challenge, including how to use identified UUs to eliminate unseen blind spots. In this work, we propose a novel approach to address blind spot mitigation through the use of intelligent agents -- either humans or large LMs -- as teachers to characterize UU-type errors. By leveraging the generalization capabilities of intelligent agents, we identify patterns in high-confidence misclassifications and use them to generate targeted synthetic samples to improve model robustness and reduce blind spots. We conduct an extensive evaluation of our method on three classification tasks and demonstrate its effectiveness in reducing the number of UUs, all while maintaining a similar level of accuracy. We find that the effectiveness of human computation has a high ceiling but is highly dependent on familiarity with the underlying task. Moreover, the cost gap between humans and LMs surpasses an order of magnitude, as LMs attain human-like generalization and generation performance while being more scalable.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2403.17860v3-abstract-full').style.display = 'none'; document.getElementById('2403.17860v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 4 November, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 26 March, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Preprint. Under review</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2402.12034">arXiv:2402.12034</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2402.12034">pdf</a>, <a href="https://arxiv.org/format/2402.12034">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        When Do Off-Policy and On-Policy Policy Gradient Methods Align?
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mambelli%2C+D">Davide Mambelli</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bongers%2C+S">Stephan Bongers</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zoeter%2C+O">Onno Zoeter</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2402.12034v1-abstract-short" style="display: inline;">
+        Policy gradient methods are widely adopted reinforcement learning algorithms for tasks with continuous action spaces. These methods succeeded in many application domains, however, because of their notorious sample inefficiency their use remains limited to problems where fast and accurate simulations are available. A common way to improve sample efficiency is to modify their objective function to b&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2402.12034v1-abstract-full').style.display = 'inline'; document.getElementById('2402.12034v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2402.12034v1-abstract-full" style="display: none;">
+        Policy gradient methods are widely adopted reinforcement learning algorithms for tasks with continuous action spaces. These methods succeeded in many application domains, however, because of their notorious sample inefficiency their use remains limited to problems where fast and accurate simulations are available. A common way to improve sample efficiency is to modify their objective function to be computable from off-policy samples without importance sampling. A well-established off-policy objective is the excursion objective. This work studies the difference between the excursion objective and the traditional on-policy objective, which we refer to as the on-off gap. We provide the first theoretical analysis showing conditions to reduce the on-off gap while establishing empirical evidence of shortfalls arising when these conditions are not met.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2402.12034v1-abstract-full').style.display = 'none'; document.getElementById('2402.12034v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 February, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2024.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2307.14316">arXiv:2307.14316</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2307.14316">pdf</a>, <a href="https://arxiv.org/format/2307.14316">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.3233/FAIA230598">10.3233/FAIA230598 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Reinforcement Learning by Guided Safe Exploration
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Yang%2C+Q">Qisong Yang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sim%C3%A3o%2C+T+D">Thiago D. Simão</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Jansen%2C+N">Nils Jansen</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Tindemans%2C+S+H">Simon H. Tindemans</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2307.14316v1-abstract-short" style="display: inline;">
+        Safety is critical to broadening the application of reinforcement learning (RL). Often, we train RL agents in a controlled environment, such as a laboratory, before deploying them in the real world. However, the real-world target task might be unknown prior to deployment. Reward-free RL trains an agent without the reward to adapt quickly once the reward is revealed. We consider the constrained rew&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2307.14316v1-abstract-full').style.display = 'inline'; document.getElementById('2307.14316v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2307.14316v1-abstract-full" style="display: none;">
+        Safety is critical to broadening the application of reinforcement learning (RL). Often, we train RL agents in a controlled environment, such as a laboratory, before deploying them in the real world. However, the real-world target task might be unknown prior to deployment. Reward-free RL trains an agent without the reward to adapt quickly once the reward is revealed. We consider the constrained reward-free setting, where an agent (the guide) learns to explore safely without the reward signal. This agent is trained in a controlled environment, which allows unsafe interactions and still provides the safety signal. After the target task is revealed, safety violations are not allowed anymore. Thus, the guide is leveraged to compose a safe behaviour policy. Drawing from transfer learning, we also regularize a target policy (the student) towards the guide while the student is unreliable and gradually eliminate the influence of the guide as training progresses. The empirical analysis shows that this method can achieve safe transfer learning and helps the student solve the target task faster.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2307.14316v1-abstract-full').style.display = 'none'; document.getElementById('2307.14316v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 July, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accecpted at ECAI 2023</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2306.07124">arXiv:2306.07124</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2306.07124">pdf</a>, <a href="https://arxiv.org/format/2306.07124">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Diverse Projection Ensembles for Distributional Reinforcement Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Zanger%2C+M+A">Moritz A. Zanger</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=B%C3%B6hmer%2C+W">Wendelin Böhmer</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2306.07124v2-abstract-short" style="display: inline;">
+        In contrast to classical reinforcement learning (RL), distributional RL algorithms aim to learn the distribution of returns rather than their expected value. Since the nature of the return distribution is generally unknown a priori or arbitrarily complex, a common approach finds approximations within a set of representable, parametric distributions. Typically, this involves a projection of the unc&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.07124v2-abstract-full').style.display = 'inline'; document.getElementById('2306.07124v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2306.07124v2-abstract-full" style="display: none;">
+        In contrast to classical reinforcement learning (RL), distributional RL algorithms aim to learn the distribution of returns rather than their expected value. Since the nature of the return distribution is generally unknown a priori or arbitrarily complex, a common approach finds approximations within a set of representable, parametric distributions. Typically, this involves a projection of the unconstrained distribution onto the set of simplified distributions. We argue that this projection step entails a strong inductive bias when coupled with neural networks and gradient descent, thereby profoundly impacting the generalization behavior of learned models. In order to facilitate reliable uncertainty estimation through diversity, we study the combination of several different projections and representations in a distributional ensemble. We establish theoretical properties of such projection ensembles and derive an algorithm that uses ensemble disagreement, measured by the average 1-Wasserstein distance, as a bonus for deep exploration. We evaluate our algorithm on the behavior suite benchmark and VizDoom and find that diverse projection ensembles lead to significant performance improvements over existing methods on a variety of tasks with the most pronounced gains in directed exploration problems.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.07124v2-abstract-full').style.display = 'none'; document.getElementById('2306.07124v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 March, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 12 June, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">ICLR 2024</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2306.05727">arXiv:2306.05727</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2306.05727">pdf</a>, <a href="https://arxiv.org/format/2306.05727">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Role of Diverse Replay for Generalisation in Reinforcement Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Weltevrede%2C+M">Max Weltevrede</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=B%C3%B6hmer%2C+W">Wendelin Böhmer</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2306.05727v2-abstract-short" style="display: inline;">
+        In reinforcement learning (RL), key components of many algorithms are the exploration strategy and replay buffer. These strategies regulate what environment data is collected and trained on and have been extensively studied in the RL literature. In this paper, we investigate the impact of these components in the context of generalisation in multi-task RL. We investigate the hypothesis that collect&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.05727v2-abstract-full').style.display = 'inline'; document.getElementById('2306.05727v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2306.05727v2-abstract-full" style="display: none;">
+        In reinforcement learning (RL), key components of many algorithms are the exploration strategy and replay buffer. These strategies regulate what environment data is collected and trained on and have been extensively studied in the RL literature. In this paper, we investigate the impact of these components in the context of generalisation in multi-task RL. We investigate the hypothesis that collecting and training on more diverse data from the training environments will improve zero-shot generalisation to new tasks. We motivate mathematically and show empirically that generalisation to tasks that are &#34;reachable&#39;&#39; during training is improved by increasing the diversity of transitions in the replay buffer. Furthermore, we show empirically that this same strategy also shows improvement for generalisation to similar but &#34;unreachable&#39;&#39; tasks which could be due to improved generalisation of the learned latent representations.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.05727v2-abstract-full').style.display = 'none'; document.getElementById('2306.05727v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 31 August, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 9 June, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">15 pages, 8 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2306.02419">arXiv:2306.02419</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2306.02419">pdf</a>, <a href="https://arxiv.org/format/2306.02419">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Bad Habits: Policy Confounding and Out-of-Trajectory Generalization in RL
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Suau%2C+M">Miguel Suau</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2306.02419v2-abstract-short" style="display: inline;">
+        Reinforcement learning agents tend to develop habits that are effective only under specific policies. Following an initial exploration phase where agents try out different actions, they eventually converge onto a particular policy. As this occurs, the distribution over state-action trajectories becomes narrower, leading agents to repeatedly experience the same transitions. This repetitive exposure&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.02419v2-abstract-full').style.display = 'inline'; document.getElementById('2306.02419v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2306.02419v2-abstract-full" style="display: none;">
+        Reinforcement learning agents tend to develop habits that are effective only under specific policies. Following an initial exploration phase where agents try out different actions, they eventually converge onto a particular policy. As this occurs, the distribution over state-action trajectories becomes narrower, leading agents to repeatedly experience the same transitions. This repetitive exposure fosters spurious correlations between certain observations and rewards. Agents may then pick up on these correlations and develop simplistic habits tailored to the specific set of trajectories dictated by their policy. The problem is that these habits may yield incorrect outcomes when agents are forced to deviate from their typical trajectories, prompted by changes in the environment. This paper presents a mathematical characterization of this phenomenon, termed policy confounding, and illustrates, through a series of examples, the circumstances under which it occurs.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.02419v2-abstract-full').style.display = 'none'; document.getElementById('2306.02419v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 June, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 4 June, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2210.13455">arXiv:2210.13455</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2210.13455">pdf</a>, <a href="https://arxiv.org/format/2210.13455">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Epistemic Monte Carlo Tree Search
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Oren%2C+Y">Yaniv Oren</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vadocz%2C+V">Villiam Vadocz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=B%C3%B6hmer%2C+W">Wendelin Böhmer</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2210.13455v5-abstract-short" style="display: inline;">
+        The AlphaZero/MuZero (A/MZ) family of algorithms has achieved remarkable success across various challenging domains by integrating Monte Carlo Tree Search (MCTS) with learned models. Learned models introduce epistemic uncertainty, which is caused by learning from limited data and is useful for exploration in sparse reward environments. MCTS does not account for the propagation of this uncertainty&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2210.13455v5-abstract-full').style.display = 'inline'; document.getElementById('2210.13455v5-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2210.13455v5-abstract-full" style="display: none;">
+        The AlphaZero/MuZero (A/MZ) family of algorithms has achieved remarkable success across various challenging domains by integrating Monte Carlo Tree Search (MCTS) with learned models. Learned models introduce epistemic uncertainty, which is caused by learning from limited data and is useful for exploration in sparse reward environments. MCTS does not account for the propagation of this uncertainty however. To address this, we introduce Epistemic MCTS (EMCTS): a theoretically motivated approach to account for the epistemic uncertainty in search and harness the search for deep exploration. In the challenging sparse-reward task of writing code in the Assembly language {\sc subleq}, AZ paired with our method achieves significantly higher sample efficiency over baseline AZ. Search with EMCTS solves variations of the commonly used hard-exploration benchmark Deep Sea - which baseline A/MZ are practically unable to solve - much faster than an otherwise equivalent method that does not use search for uncertainty estimation, demonstrating significant benefits from search for epistemic uncertainty estimation.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2210.13455v5-abstract-full').style.display = 'none'; document.getElementById('2210.13455v5-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 April, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 21 October, 2022;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2207.00288">arXiv:2207.00288</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2207.00288">pdf</a>, <a href="https://arxiv.org/format/2207.00288">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Distributed Influence-Augmented Local Simulators for Parallel MARL in Large Networked Systems
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Suau%2C+M">Miguel Suau</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=He%2C+J">Jinke He</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=%C3%87elikok%2C+M+M">Mustafa Mert Çelikok</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2207.00288v2-abstract-short" style="display: inline;">
+        Due to its high sample complexity, simulation is, as of today, critical for the successful application of reinforcement learning. Many real-world problems, however, exhibit overly complex dynamics, which makes their full-scale simulation computationally slow. In this paper, we show how to decompose large networked systems of many agents into multiple local components such that we can build separat&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2207.00288v2-abstract-full').style.display = 'inline'; document.getElementById('2207.00288v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2207.00288v2-abstract-full" style="display: none;">
+        Due to its high sample complexity, simulation is, as of today, critical for the successful application of reinforcement learning. Many real-world problems, however, exhibit overly complex dynamics, which makes their full-scale simulation computationally slow. In this paper, we show how to decompose large networked systems of many agents into multiple local components such that we can build separate simulators that run independently and in parallel. To monitor the influence that the different local components exert on one another, each of these simulators is equipped with a learned model that is periodically trained on real trajectories. Our empirical results reveal that distributing the simulation among different processes not only makes it possible to train large multi-agent systems in just a few hours but also helps mitigate the negative effects of simultaneous learning.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2207.00288v2-abstract-full').style.display = 'none'; document.getElementById('2207.00288v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 1 March, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 1 July, 2022;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2206.02653">arXiv:2206.02653</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2206.02653">pdf</a>, <a href="https://arxiv.org/ps/2206.02653">ps</a>, <a href="https://arxiv.org/format/2206.02653">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Logic in Computer Science">cs.LO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Abstraction-Refinement for Hierarchical Probabilistic Models
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Junges%2C+S">Sebastian Junges</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2206.02653v1-abstract-short" style="display: inline;">
+        Markov decision processes are a ubiquitous formalism for modelling systems with non-deterministic and probabilistic behavior. Verification of these models is subject to the famous state space explosion problem. We alleviate this problem by exploiting a hierarchical structure with repetitive parts. This structure not only occurs naturally in robotics, but also in probabilistic programs describing,&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2206.02653v1-abstract-full').style.display = 'inline'; document.getElementById('2206.02653v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2206.02653v1-abstract-full" style="display: none;">
+        Markov decision processes are a ubiquitous formalism for modelling systems with non-deterministic and probabilistic behavior. Verification of these models is subject to the famous state space explosion problem. We alleviate this problem by exploiting a hierarchical structure with repetitive parts. This structure not only occurs naturally in robotics, but also in probabilistic programs describing, e.g., network protocols. Such programs often repeatedly call a subroutine with similar behavior. In this paper, we focus on a local case, in which the subroutines have a limited effect on the overall system state. The key ideas to accelerate analysis of such programs are (1) to treat the behavior of the subroutine as uncertain and only remove this uncertainty by a detailed analysis if needed, and (2) to abstract similar subroutines into a parametric template, and then analyse this template. These two ideas are embedded into an abstraction-refinement loop that analyses hierarchical MDPs. A prototypical implementation shows the efficacy of the approach.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2206.02653v1-abstract-full').style.display = 'none'; document.getElementById('2206.02653v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 6 June, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2022.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Extended submitted version for CAV 2022</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2202.01534">arXiv:2202.01534</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2202.01534">pdf</a>, <a href="https://arxiv.org/format/2202.01534">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Influence-Augmented Local Simulators: A Scalable Solution for Fast Deep RL in Large Networked Systems
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Suau%2C+M">Miguel Suau</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=He%2C+J">Jinke He</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2202.01534v1-abstract-short" style="display: inline;">
+        Learning effective policies for real-world problems is still an open challenge for the field of reinforcement learning (RL). The main limitation being the amount of data needed and the pace at which that data can be obtained. In this paper, we study how to build lightweight simulators of complicated systems that can run sufficiently fast for deep RL to be applicable. We focus on domains where agen&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2202.01534v1-abstract-full').style.display = 'inline'; document.getElementById('2202.01534v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2202.01534v1-abstract-full" style="display: none;">
+        Learning effective policies for real-world problems is still an open challenge for the field of reinforcement learning (RL). The main limitation being the amount of data needed and the pace at which that data can be obtained. In this paper, we study how to build lightweight simulators of complicated systems that can run sufficiently fast for deep RL to be applicable. We focus on domains where agents interact with a reduced portion of a larger environment while still being affected by the global dynamics. Our method combines the use of local simulators with learned models that mimic the influence of the global system. The experiments reveal that incorporating this idea into the deep RL workflow can considerably accelerate the training process and presents several opportunities for the future.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2202.01534v1-abstract-full').style.display = 'none'; document.getElementById('2202.01534v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 February, 2022; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2009.09696">arXiv:2009.09696</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2009.09696">pdf</a>, <a href="https://arxiv.org/format/2009.09696">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1007/s10514-017-9666-5">10.1007/s10514-017-9666-5 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Exploiting Submodular Value Functions For Scaling Up Active Perception
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Satsangi%2C+Y">Yash Satsangi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Whiteson%2C+S">Shimon Whiteson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2009.09696v1-abstract-short" style="display: inline;">
+        In active perception tasks, an agent aims to select sensory actions that reduce its uncertainty about one or more hidden variables. While partially observable Markov decision processes (POMDPs) provide a natural model for such problems, reward functions that directly penalize uncertainty in the agent&#39;s belief can remove the piecewise-linear and convex property of the value function required by mos&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2009.09696v1-abstract-full').style.display = 'inline'; document.getElementById('2009.09696v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2009.09696v1-abstract-full" style="display: none;">
+        In active perception tasks, an agent aims to select sensory actions that reduce its uncertainty about one or more hidden variables. While partially observable Markov decision processes (POMDPs) provide a natural model for such problems, reward functions that directly penalize uncertainty in the agent&#39;s belief can remove the piecewise-linear and convex property of the value function required by most POMDP planners. Furthermore, as the number of sensors available to the agent grows, the computational cost of POMDP planning grows exponentially with it, making POMDP planning infeasible with traditional methods. In this article, we address a twofold challenge of modeling and planning for active perception tasks. We show the mathematical equivalence of $ρ$POMDP and POMDP-IR, two frameworks for modeling active perception tasks, that restore the PWLC property of the value function. To efficiently plan for active perception tasks, we identify and exploit the independence properties of POMDP-IR to reduce the computational cost of solving POMDP-IR (and $ρ$POMDP). We propose greedy point-based value iteration (PBVI), a new POMDP planning method that uses greedy maximization to greatly improve scalability in the action space of an active perception POMDP. Furthermore, we show that, under certain conditions, including submodularity, the value function computed using greedy PBVI is guaranteed to have bounded error with respect to the optimal value function. We establish the conditions under which the value function of an active perception POMDP is guaranteed to be submodular. Finally, we present a detailed empirical analysis on a dataset collected from a multi-camera tracking system employed in a shopping mall. Our method achieves similar performance to existing methods but at a fraction of the computational cost leading to better scalability for solving active perception tasks.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2009.09696v1-abstract-full').style.display = 'none'; document.getElementById('2009.09696v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 September, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2020.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Autonomous Robot 42 2018. Original article available via Springer journal open access: https://link.springer.com/article/10.1007/s10514-017-9666-5
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1511.09047">arXiv:1511.09047</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1511.09047">pdf</a>, <a href="https://arxiv.org/format/1511.09047">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Solving Transition-Independent Multi-agent MDPs with Sparse Interactions (Extended version)
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Scharpff%2C+J">Joris Scharpff</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Roijers%2C+D+M">Diederik M. Roijers</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=de+Weerdt%2C+M+M">Mathijs M. de Weerdt</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1511.09047v2-abstract-short" style="display: inline;">
+        In cooperative multi-agent sequential decision making under uncertainty, agents must coordinate to find an optimal joint policy that maximises joint value. Typical algorithms exploit additive structure in the value function, but in the fully-observable multi-agent MDP setting (MMDP) such structure is not present. We propose a new optimal solver for transition-independent MMDPs, in which agents can&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1511.09047v2-abstract-full').style.display = 'inline'; document.getElementById('1511.09047v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1511.09047v2-abstract-full" style="display: none;">
+        In cooperative multi-agent sequential decision making under uncertainty, agents must coordinate to find an optimal joint policy that maximises joint value. Typical algorithms exploit additive structure in the value function, but in the fully-observable multi-agent MDP setting (MMDP) such structure is not present. We propose a new optimal solver for transition-independent MMDPs, in which agents can only affect their own state but their reward depends on joint transitions. We represent these dependencies compactly in conditional return graphs (CRGs). Using CRGs the value of a joint policy and the bounds on partially specified joint policies can be efficiently computed. We propose CoRe, a novel branch-and-bound policy search algorithm building on CRGs. CoRe typically requires less runtime than the available alternatives and finds solutions to problems previously unsolvable.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1511.09047v2-abstract-full').style.display = 'none'; document.getElementById('1511.09047v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 11 February, 2016; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 29 November, 2015;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">This article is an extended version of the paper that was published under the same title in the Proceedings of the Thirtieth AAAI Conference on Artificial Intelligence (AAAI16), held in Phoenix, Arizona USA on February 12-17, 2016</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1502.05443">arXiv:1502.05443</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1502.05443">pdf</a>, <a href="https://arxiv.org/format/1502.05443">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Systems and Control">eess.SY</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Influence-Optimistic Local Values for Multiagent Planning --- Extended Version
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Witwicki%2C+S">Stefan Witwicki</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1502.05443v2-abstract-short" style="display: inline;">
+        Recent years have seen the development of methods for multiagent planning under uncertainty that scale to tens or even hundreds of agents. However, most of these methods either make restrictive assumptions on the problem domain, or provide approximate solutions without any guarantees on quality. Methods in the former category typically build on heuristic search using upper bounds on the value func&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1502.05443v2-abstract-full').style.display = 'inline'; document.getElementById('1502.05443v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1502.05443v2-abstract-full" style="display: none;">
+        Recent years have seen the development of methods for multiagent planning under uncertainty that scale to tens or even hundreds of agents. However, most of these methods either make restrictive assumptions on the problem domain, or provide approximate solutions without any guarantees on quality. Methods in the former category typically build on heuristic search using upper bounds on the value function. Unfortunately, no techniques exist to compute such upper bounds for problems with non-factored value functions. To allow for meaningful benchmarking through measurable quality guarantees on a very general class of problems, this paper introduces a family of influence-optimistic upper bounds for factored decentralized partially observable Markov decision processes (Dec-POMDPs) that do not have factored value functions. Intuitively, we derive bounds on very large multiagent planning problems by subdividing them in sub-problems, and at each of these sub-problems making optimistic assumptions with respect to the influence that will be exerted by the rest of the system. We numerically compare the different upper bounds and demonstrate how we can achieve a non-trivial guarantee that a heuristic solution for problems with hundreds of agents is close to optimal. Furthermore, we provide evidence that the upper bounds may improve the effectiveness of heuristic influence search, and discuss further potential applications to multiagent planning.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1502.05443v2-abstract-full').style.display = 'none'; document.getElementById('1502.05443v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 20 July, 2015; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 18 February, 2015;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Long version of IJCAI 2015 paper (and extended abstract at AAMAS 2015)</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.11
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1402.0566">arXiv:1402.0566</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1402.0566">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1613/jair.3804">10.1613/jair.3804 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Incremental Clustering and Expansion for Faster Optimal Planning in Dec-POMDPs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans Adriaan Oliehoek</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Amato%2C+C">Christopher Amato</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Whiteson%2C+S">Shimon Whiteson</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1402.0566v1-abstract-short" style="display: inline;">
+        This article presents the state-of-the-art in optimal solution methods for decentralized partially observable Markov decision processes (Dec-POMDPs), which are general models for collaborative multiagent planning under uncertainty. Building off the generalized multiagent A* (GMAA*) algorithm, which reduces the problem to a tree of one-shot collaborative Bayesian games (CBGs), we describe several a&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1402.0566v1-abstract-full').style.display = 'inline'; document.getElementById('1402.0566v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1402.0566v1-abstract-full" style="display: none;">
+        This article presents the state-of-the-art in optimal solution methods for decentralized partially observable Markov decision processes (Dec-POMDPs), which are general models for collaborative multiagent planning under uncertainty. Building off the generalized multiagent A* (GMAA*) algorithm, which reduces the problem to a tree of one-shot collaborative Bayesian games (CBGs), we describe several advances that greatly expand the range of Dec-POMDPs that can be solved optimally.  First, we introduce lossless incremental clustering of the CBGs solved by GMAA*, which achieves exponential speedups without sacrificing optimality.  Second, we introduce incremental expansion of nodes in the GMAA* search tree, which avoids the need to expand all children, the number of which is in the worst case doubly exponential in the nodes depth.  This is particularly beneficial when little clustering is possible.  In addition, we introduce new hybrid heuristic representations that are more compact and thereby enable the solution of larger Dec-POMDPs.  We provide theoretical guarantees that, when a suitable heuristic is used, both incremental clustering and incremental expansion yield algorithms that are both complete and search equivalent.  Finally, we present extensive empirical results demonstrating that GMAA*-ICE, an algorithm that synthesizes these advances, can optimally solve Dec-POMDPs of unprecedented size.
+
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1402.0566v1-abstract-full').style.display = 'none'; document.getElementById('1402.0566v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 February, 2014; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2014.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Journal Of Artificial Intelligence Research, Volume 46, pages 449-509, 2013
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1210.4886">arXiv:1210.4886</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1210.4886">pdf</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Exploiting Structure in Cooperative Bayesian Games
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Whiteson%2C+S">Shimon Whiteson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1210.4886v1-abstract-short" style="display: inline;">
+        Cooperative Bayesian games (BGs) can model decision-making problems for teams of agents under imperfect information, but require space and computation time that is exponential in the number of agents. While agent independence has been used to mitigate these problems in perfect information settings, we propose a novel approach for BGs based on the observation that BGs additionally possess a differe&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1210.4886v1-abstract-full').style.display = 'inline'; document.getElementById('1210.4886v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1210.4886v1-abstract-full" style="display: none;">
+        Cooperative Bayesian games (BGs) can model decision-making problems for teams of agents under imperfect information, but require space and computation time that is exponential in the number of agents. While agent independence has been used to mitigate these problems in perfect information settings, we propose a novel approach for BGs based on the observation that BGs additionally possess a different types of structure, which we call type independence. We propose a factor graph representation that captures both forms of independence and present a theoretical analysis showing that non-serial dynamic programming cannot effectively exploit type independence, while Max-Sum can. Experimental results demonstrate that our approach can tackle cooperative Bayesian games of unprecedented size.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1210.4886v1-abstract-full').style.display = 'none'; document.getElementById('1210.4886v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 16 October, 2012; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2012.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Appears in Proceedings of the Twenty-Eighth Conference on Uncertainty in Artificial Intelligence (UAI2012)</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+          <span class="has-text-black-bis has-text-weight-semibold">Report number:</span>
+          UAI-P-2012-PG-654-665
+        
+
+        
+
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1111.0062">arXiv:1111.0062</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1111.0062">pdf</a>, <a href="https://arxiv.org/ps/1111.0062">ps</a>, <a href="https://arxiv.org/format/1111.0062">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1613/jair.2447">10.1613/jair.2447 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Optimal and Approximate Q-value Functions for Decentralized POMDPs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vlassis%2C+N">Nikos Vlassis</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1111.0062v1-abstract-short" style="display: inline;">
+        Decision-theoretic planning is a popular approach to sequential decision making problems, because it treats uncertainty in sensing and acting in a principled way. In single-agent frameworks like MDPs and POMDPs, planning can be carried out by resorting to Q-value functions: an optimal Q-value function Q* is computed in a recursive manner by dynamic programming, and then an optimal policy is extrac&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1111.0062v1-abstract-full').style.display = 'inline'; document.getElementById('1111.0062v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1111.0062v1-abstract-full" style="display: none;">
+        Decision-theoretic planning is a popular approach to sequential decision making problems, because it treats uncertainty in sensing and acting in a principled way. In single-agent frameworks like MDPs and POMDPs, planning can be carried out by resorting to Q-value functions: an optimal Q-value function Q* is computed in a recursive manner by dynamic programming, and then an optimal policy is extracted from Q*. In this paper we study whether similar Q-value functions can be defined for decentralized POMDP models (Dec-POMDPs), and how policies can be extracted from such value functions. We define two forms of the optimal Q-value function for Dec-POMDPs: one that gives a normative description as the Q-value function of an optimal pure joint policy and another one that is sequentially rational and thus gives a recipe for computation. This computation, however, is infeasible for all but the smallest problems. Therefore, we analyze various approximate Q-value functions that allow for efficient computation. We describe how they relate, and we prove that they all provide an upper bound to the optimal Q-value function Q*. Finally, unifying some previous approaches for solving Dec-POMDPs, we describe a family of algorithms for extracting policies from such Q-value functions, and perform an experimental evaluation on existing test problems, including a new firefighting benchmark problem.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1111.0062v1-abstract-full').style.display = 'none'; document.getElementById('1111.0062v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 31 October, 2011; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2011.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Journal Of Artificial Intelligence Research, Volume 32, pages 289-353, 2008
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1109.2145">arXiv:1109.2145</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1109.2145">pdf</a>, <a href="https://arxiv.org/ps/1109.2145">ps</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1613/jair.1659">10.1613/jair.1659 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Perseus: Randomized Point-based Value Iteration for POMDPs
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">M. T. J. Spaan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Vlassis%2C+N">N. Vlassis</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1109.2145v1-abstract-short" style="display: inline;">
+        Partially observable Markov decision processes (POMDPs) form an attractive and principled framework for agent planning under uncertainty.  Point-based approximate techniques for POMDPs compute a policy based on a finite set of points collected in advance from the agents belief space.  We present a randomized point-based value iteration algorithm called Perseus.  The algorithm performs approximate&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1109.2145v1-abstract-full').style.display = 'inline'; document.getElementById('1109.2145v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1109.2145v1-abstract-full" style="display: none;">
+        Partially observable Markov decision processes (POMDPs) form an attractive and principled framework for agent planning under uncertainty.  Point-based approximate techniques for POMDPs compute a policy based on a finite set of points collected in advance from the agents belief space.  We present a randomized point-based value iteration algorithm called Perseus.  The algorithm performs approximate value backup stages, ensuring that in each backup stage the value of each point in the belief set is improved; the key observation is that a single backup may improve the value of many belief points.  Contrary to other point-based methods, Perseus backs up only a (randomly selected) subset of points in the belief set, sufficient for improving the value of each belief point in the set. We show how the same idea can be extended to dealing with continuous action spaces.  Experimental results show the potential of Perseus in large scale POMDP problems.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1109.2145v1-abstract-full').style.display = 'none'; document.getElementById('1109.2145v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 9 September, 2011; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2011.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        Journal Of Artificial Intelligence Research, Volume 24, pages 195-220, 2005
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1108.0404">arXiv:1108.0404</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1108.0404">pdf</a>, <a href="https://arxiv.org/ps/1108.0404">ps</a>, <a href="https://arxiv.org/format/1108.0404">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Exploiting Agent and Type Independence in Collaborative Graphical Bayesian Games
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Oliehoek%2C+F+A">Frans A. Oliehoek</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Whiteson%2C+S">Shimon Whiteson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Spaan%2C+M+T+J">Matthijs T. J. Spaan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1108.0404v2-abstract-short" style="display: inline;">
+        Efficient collaborative decision making is an important challenge for multiagent systems. Finding optimal joint actions is especially challenging when each agent has only imperfect information about the state of its environment. Such problems can be modeled as collaborative Bayesian games in which each agent receives private information in the form of its type. However, representing and solving su&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1108.0404v2-abstract-full').style.display = 'inline'; document.getElementById('1108.0404v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1108.0404v2-abstract-full" style="display: none;">
+        Efficient collaborative decision making is an important challenge for multiagent systems. Finding optimal joint actions is especially challenging when each agent has only imperfect information about the state of its environment. Such problems can be modeled as collaborative Bayesian games in which each agent receives private information in the form of its type. However, representing and solving such games requires space and computation time exponential in the number of agents. This article introduces collaborative graphical Bayesian games (CGBGs), which facilitate more efficient collaborative decision making by decomposing the global payoff function as the sum of local payoff functions that depend on only a few agents. We propose a framework for the efficient solution of CGBGs based on the insight that they posses two different types of independence, which we call agent independence and type independence. In particular, we present a factor graph representation that captures both forms of independence and thus enables efficient solutions. In addition, we show how this representation can provide leverage in sequential tasks by using it to construct a novel method for decentralized partially observable Markov decision processes. Experimental results in both random and benchmark tasks demonstrate the improved scalability of our methods compared to several existing alternatives.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1108.0404v2-abstract-full').style.display = 'none'; document.getElementById('1108.0404v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 25 April, 2014; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 1 August, 2011;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2011.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

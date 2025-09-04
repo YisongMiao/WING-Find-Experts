@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- new favicon config and versions by realfavicongenerator.net -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-16x16.png">
+<link rel="manifest" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/site.webmanifest">
+<link rel="mask-icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/safari-pinned-tab.svg" color="#b31b1b">
+<link rel="shortcut icon" href="https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#b31b1b">
+<meta name="msapplication-config" content="images/icons/browserconfig.xml">
+<meta name="theme-color" content="#b31b1b">
+<!-- end favicon config -->
+<title>Search | arXiv e-print repository</title>
+<script defer src="https://static.arxiv.org/static/base/1.0.0a5/fontawesome-free-5.11.2-web/js/all.js"></script>
+<link rel="stylesheet" href="https://static.arxiv.org/static/base/1.0.0a5/css/arxivstyle.css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle: "none",
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      ignoreClass: '.*',
+      processClass: 'mathjax.*'
+    },
+    TeX: {
+        extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js"],
+        noErrors: {
+          inlineDelimiters: ["$","$"],
+          multiLine: false,
+          style: {
+            "font-size": "normal",
+            "border": ""
+          }
+        }
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
+<script src='//static.arxiv.org/MathJax-2.7.3/MathJax.js'></script>
+<script src="https://static.arxiv.org/static/base/1.0.0a5/js/notification.js"></script>
+
+    
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/bulma-tooltip.min.css" />
+  <link rel="stylesheet" href="https://static.arxiv.org/static/search/0.5.6/css/search.css" />
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+    crossorigin="anonymous"></script>
+
+  <script src="https://static.arxiv.org/static/search/0.5.6/js/fieldset.js"></script>
+  <style>
+  radio#cf-customfield_11400 {
+    display: none;
+  }
+  </style>
+
+  </head>
+  <body>
+  
+  
+  <header><a href="#main-container" class="is-sr-only">Skip to main content</a>
+    
+    <!-- contains Cornell logo and sponsor statement -->
+<div class="attribution level is-marginless" role="banner">
+  <div class="level-left">
+    <a class="level-item" href="https://cornell.edu/"><img src="https://static.arxiv.org/static/base/1.0.0a5/images/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" aria-label="logo" /></a>
+  </div>
+  <div class="level-right is-marginless"><p class="sponsors level-item is-marginless"><span id="support-ack-url">We gratefully acknowledge support from<br /> the Simons Foundation, <a href="https://info.arxiv.org/about/ourmembers.html">member institutions</a>, and all contributors. <a href="https://info.arxiv.org/about/donate.html">Donate</a></span></p></div>
+</div>
+<!-- contains arXiv identity and search bar -->
+<div class="identity level is-marginless">
+  <div class="level-left">
+    <div class="level-item">
+      <a class="arxiv" href="https://arxiv.org/" aria-label="arxiv-logo">
+        <img src="https://static.arxiv.org/static/base/1.0.0a5/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"/>
+      </a>
+    </div>
+  </div>
+  
+  <div class="search-block level-right">
+    <form class="level-item mini-search" method="GET" action="https://arxiv.org/search">
+      <div class="field has-addons">
+        <div class="control">
+          <input class="input is-small" type="text" name="query" placeholder="Search..." aria-label="Search term or terms" />
+          <p class="help"><a href="https://info.arxiv.org/help">Help</a> | <a href="https://arxiv.org/search/advanced">Advanced Search</a></p>
+        </div>
+        <div class="control">
+          <div class="select is-small">
+            <select name="searchtype" aria-label="Field to search">
+              <option value="all" selected="selected">All fields</option>
+              <option value="title">Title</option>
+              <option value="author">Author</option>
+              <option value="abstract">Abstract</option>
+              <option value="comments">Comments</option>
+              <option value="journal_ref">Journal reference</option>
+              <option value="acm_class">ACM classification</option>
+              <option value="msc_class">MSC classification</option>
+              <option value="report_num">Report number</option>
+              <option value="paper_id">arXiv identifier</option>
+              <option value="doi">DOI</option>
+              <option value="orcid">ORCID</option>
+              <option value="author_id">arXiv author ID</option>
+              <option value="help">Help pages</option>
+              <option value="full_text">Full text</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="source" value="header">
+        <button class="button is-small is-cul-darker">Search</button>
+      </div>
+    </form>
+  </div>
+</div> <!-- closes identity -->
+
+<div class="container">
+    <div class="user-tools is-size-7 has-text-right has-text-weight-bold" role="navigation" aria-label="User menu">
+      <a href="https://arxiv.org/login">Login</a>
+    </div>
+</div>
+    
+  </header>
+  <main class="container" id="main-container">
+    
+
+
+    
+  <div class="level is-marginless">
+    <div class="level-left">
+      <h1 class="title is-clearfix">
+    
+        Showing 1&ndash;36 of 36 results for author: <span class="mathjax">Yair Zick</span>
+    
+</h1>
+    </div>
+    <div class="level-right is-hidden-mobile">
+      <!-- feedback for mobile is moved to footer -->
+      <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+    </div>
+  </div>
+    <div class="content">
+      
+  <form method="GET" action="/search/"  aria-role="search">
+    
+
+    
+    <div class="field has-addons-tablet">
+      <div class="control is-expanded">
+        <label for="query" class="hidden-label">Search term or terms</label>
+        
+          <input class="input is-medium" id="query" name="query" placeholder="Search term..." type="text" value="Yair Zick">
+        
+        
+      </div>
+      <div class="select control is-medium">
+        <label class="is-hidden" for="searchtype">Field</label>
+        <select class="is-medium" id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+      </div>
+      <div class="control">
+          <button class="button is-link is-medium">Search</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="control is-size-7">
+        
+        <label class="radio">
+          <input checked id="abstracts-0" name="abstracts" type="radio" value="show"> Show abstracts
+        </label>
+        
+        <label class="radio">
+          <input id="abstracts-1" name="abstracts" type="radio" value="hide"> Hide abstracts
+        </label>
+        
+      </div>
+    </div>
+    <div class="is-clearfix" style="height: 2.5em"> 
+      <div class="is-pulled-right">
+        
+        <a href="/search/advanced?terms-0-term=Yair+Zick&amp;terms-0-field=author&amp;size=50&amp;order=-announced_date_first">Advanced Search</a>
+        
+      </div>
+    </div>
+    <input type="hidden" name="order" value="-announced_date_first">
+    <input type="hidden" name="size" value="50">
+  </form>
+
+  
+
+  
+      
+<div class="level breathe-horizontal">
+  <div class="level-left">
+    <form method="GET" action="/search/">
+      <div style="display: none;">
+        
+          
+            <select id="searchtype" name="searchtype"><option value="all">All fields</option><option value="title">Title</option><option selected value="author">Author(s)</option><option value="abstract">Abstract</option><option value="comments">Comments</option><option value="journal_ref">Journal reference</option><option value="acm_class">ACM classification</option><option value="msc_class">MSC classification</option><option value="report_num">Report number</option><option value="paper_id">arXiv identifier</option><option value="doi">DOI</option><option value="orcid">ORCID</option><option value="license">License (URI)</option><option value="author_id">arXiv author ID</option><option value="help">Help pages</option><option value="full_text">Full text</option></select>
+          
+        
+          
+            <input id="query" name="query" type="text" value="Yair Zick">
+          
+        
+          
+        
+          
+        
+          
+            <ul id="abstracts"><li><input checked id="abstracts-0" name="abstracts" type="radio" value="show"> <label for="abstracts-0">Show abstracts</label></li><li><input id="abstracts-1" name="abstracts" type="radio" value="hide"> <label for="abstracts-1">Hide abstracts</label></li></ul>
+          
+        
+      </div>
+      <div class="box field is-grouped is-grouped-multiline level-item">
+        <div class="control">
+          <span class="select is-small">
+            <select id="size" name="size"><option value="25">25</option><option selected value="50">50</option><option value="100">100</option><option value="200">200</option></select>
+          </span>
+          <label for="size">results per page</label>.
+        </div>
+        <div class="control">
+          <label for="order">Sort results by</label>
+          <span class="select is-small">
+            <select id="order" name="order"><option selected value="-announced_date_first">Announcement date (newest first)</option><option value="announced_date_first">Announcement date (oldest first)</option><option value="-submitted_date">Submission date (newest first)</option><option value="submitted_date">Submission date (oldest first)</option><option value="">Relevance</option></select>
+          </span>
+        </div>
+        <div class="control">
+          <button class="button is-small is-link">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+      
+
+
+
+
+<ol class="breathe-horizontal" start="1"> 
+
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2502.19744">arXiv:2502.19744</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2502.19744">pdf</a>, <a href="https://arxiv.org/format/2502.19744">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Stable Matching under Matroid Rank Valuations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Eden%2C+A">Alon Eden</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2502.19744v1-abstract-short" style="display: inline;">
+        We study a two-sided matching model where one side of the market (hospitals) has combinatorial preferences over the other side (doctors). Specifically, we consider the setting where hospitals have matroid rank valuations over the doctors, and doctors have either ordinal or cardinal unit-demand valuations over the hospitals. While this setting has been extensively studied in the context of one-side&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.19744v1-abstract-full').style.display = 'inline'; document.getElementById('2502.19744v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2502.19744v1-abstract-full" style="display: none;">
+        We study a two-sided matching model where one side of the market (hospitals) has combinatorial preferences over the other side (doctors). Specifically, we consider the setting where hospitals have matroid rank valuations over the doctors, and doctors have either ordinal or cardinal unit-demand valuations over the hospitals. While this setting has been extensively studied in the context of one-sided markets, it remains unexplored in the context of two-sided markets.
+  When doctors have ordinal preferences over hospitals, we present simple sequential allocation algorithms that guarantee stability, strategyproofness for doctors, and approximate strategyproofness for hospitals. When doctors have cardinal utilities over hospitals, we present an algorithm that finds a stable allocation maximizing doctor welfare; subject to that, we show how one can maximize either the hospital utilitarian or hospital Nash welfare. Moreover, we show that it is NP-hard to compute stable allocations that approximately maximize hospital Nash welfare.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.19744v1-abstract-full').style.display = 'none'; document.getElementById('2502.19744v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 February, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2502.16128">arXiv:2502.16128</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2502.16128">pdf</a>, <a href="https://arxiv.org/format/2502.16128">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Heterogeneous Multi-Agent Bandits with Parsimonious Hints
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Mirfakhar%2C+A">Amirmahdi Mirfakhar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wang%2C+X">Xuchuang Wang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zuo%2C+J">Jinhang Zuo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Hajiesmaili%2C+M">Mohammad Hajiesmaili</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2502.16128v1-abstract-short" style="display: inline;">
+        We study a hinted heterogeneous multi-agent multi-armed bandits problem (HMA2B), where agents can query low-cost observations (hints) in addition to pulling arms. In this framework, each of the $M$ agents has a unique reward distribution over $K$ arms, and in $T$ rounds, they can observe the reward of the arm they pull only if no other agent pulls that arm. The goal is to maximize the total utilit&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.16128v1-abstract-full').style.display = 'inline'; document.getElementById('2502.16128v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2502.16128v1-abstract-full" style="display: none;">
+        We study a hinted heterogeneous multi-agent multi-armed bandits problem (HMA2B), where agents can query low-cost observations (hints) in addition to pulling arms. In this framework, each of the $M$ agents has a unique reward distribution over $K$ arms, and in $T$ rounds, they can observe the reward of the arm they pull only if no other agent pulls that arm. The goal is to maximize the total utility by querying the minimal necessary hints without pulling arms, achieving time-independent regret. We study HMA2B in both centralized and decentralized setups. Our main centralized algorithm, GP-HCLA, which is an extension of HCLA, uses a central decision-maker for arm-pulling and hint queries, achieving $O(M^4K)$ regret with $O(MK\log T)$ adaptive hints. In decentralized setups, we propose two algorithms, HD-ETC and EBHD-ETC, that allow agents to choose actions independently through collision-based communication and query hints uniformly until stopping, yielding $O(M^3K^2)$ regret with $O(M^3K\log T)$ hints, where the former requires knowledge of the minimum gap and the latter does not. Finally, we establish lower bounds to prove the optimality of our results and verify them through numerical simulations.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.16128v1-abstract-full').style.display = 'none'; document.getElementById('2502.16128v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 22 February, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2025.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted at AAAI-2025</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2502.10592">arXiv:2502.10592</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2502.10592">pdf</a>, <a href="https://arxiv.org/format/2502.10592">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Deploying Fair and Efficient Course Allocation Mechanisms
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Bissias%2C+G">George Bissias</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Cousins%2C+C">Cyrus Cousins</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Diaz%2C+P+N">Paula Navarrete Diaz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2502.10592v1-abstract-short" style="display: inline;">
+        Universities regularly face the challenging task of assigning classes to thousands of students while considering their preferences, along with course schedules and capacities. Ensuring the effectiveness and fairness of course allocation mechanisms is crucial to guaranteeing student satisfaction and optimizing resource utilization. We approach this problem from an economic perspective, using formal&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.10592v1-abstract-full').style.display = 'inline'; document.getElementById('2502.10592v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2502.10592v1-abstract-full" style="display: none;">
+        Universities regularly face the challenging task of assigning classes to thousands of students while considering their preferences, along with course schedules and capacities. Ensuring the effectiveness and fairness of course allocation mechanisms is crucial to guaranteeing student satisfaction and optimizing resource utilization. We approach this problem from an economic perspective, using formal justice criteria to evaluate different algorithmic frameworks. To evaluate our frameworks, we conduct a large scale survey of university students at University of Massachusetts Amherst, collecting over 1,000 student preferences. This is, to our knowledge, the largest publicly available dataset of student preferences. We develop software for generating synthetic student preferences over courses, and implement four allocation algorithms: the serial dictatorship algorithm used by University of Massachusetts Amherst; Round Robin; an Integer Linear Program; and the Yankee Swap algorithm. We propose improvements to the Yankee Swap framework to handle scenarios with item multiplicities. Through experimentation with the Fall 2024 Computer Science course schedule at University of Massachusetts Amherst, we evaluate each algorithm&#39;s performance relative to standard justice criteria, providing insights into fair course allocation in large university settings.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2502.10592v1-abstract-full').style.display = 'none'; document.getElementById('2502.10592v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 February, 2025; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2025.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2411.02654">arXiv:2411.02654</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2411.02654">pdf</a>, <a href="https://arxiv.org/format/2411.02654">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Fair and Welfare-Efficient Constrained Multi-matchings under Uncertainty
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lobo%2C+E">Elita Lobo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Payan%2C+J">Justin Payan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Cousins%2C+C">Cyrus Cousins</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2411.02654v1-abstract-short" style="display: inline;">
+        We study fair allocation of constrained resources, where a market designer optimizes overall welfare while maintaining group fairness. In many large-scale settings, utilities are not known in advance, but are instead observed after realizing the allocation. We therefore estimate agent utilities using machine learning. Optimizing over estimates requires trading-off between mean utilities and their&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2411.02654v1-abstract-full').style.display = 'inline'; document.getElementById('2411.02654v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2411.02654v1-abstract-full" style="display: none;">
+        We study fair allocation of constrained resources, where a market designer optimizes overall welfare while maintaining group fairness. In many large-scale settings, utilities are not known in advance, but are instead observed after realizing the allocation. We therefore estimate agent utilities using machine learning. Optimizing over estimates requires trading-off between mean utilities and their predictive variances. We discuss these trade-offs under two paradigms for preference modeling -- in the stochastic optimization regime, the market designer has access to a probability distribution over utilities, and in the robust optimization regime they have access to an uncertainty set containing the true utilities with high probability. We discuss utilitarian and egalitarian welfare objectives, and we explore how to optimize for them under stochastic and robust paradigms. We demonstrate the efficacy of our approaches on three publicly available conference reviewer assignment datasets. The approaches presented enable scalable constrained resource allocation under uncertainty for many combinations of objectives and preference models.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2411.02654v1-abstract-full').style.display = 'none'; document.getElementById('2411.02654v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 4 November, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">37 pages, 3 figures, to appear in NeurIPS 2024</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2405.01848">arXiv:2405.01848</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2405.01848">pdf</a>, <a href="https://arxiv.org/format/2405.01848">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Information Retrieval">cs.IR</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        RankSHAP: Shapley Value Based Feature Attributions for Learning to Rank
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Chowdhury%2C+T">Tanya Chowdhury</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Allan%2C+J">James Allan</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2405.01848v3-abstract-short" style="display: inline;">
+        Numerous works propose post-hoc, model-agnostic explanations for learning to rank, focusing on ordering entities by their relevance to a query through feature attribution methods. However, these attributions often weakly correlate or contradict each other, confusing end users. We adopt an axiomatic game-theoretic approach, popular in the feature attribution community, to identify a set of fundamen&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2405.01848v3-abstract-full').style.display = 'inline'; document.getElementById('2405.01848v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2405.01848v3-abstract-full" style="display: none;">
+        Numerous works propose post-hoc, model-agnostic explanations for learning to rank, focusing on ordering entities by their relevance to a query through feature attribution methods. However, these attributions often weakly correlate or contradict each other, confusing end users. We adopt an axiomatic game-theoretic approach, popular in the feature attribution community, to identify a set of fundamental axioms that every ranking-based feature attribution method should satisfy. We then introduce Rank-SHAP, extending classical Shapley values to ranking. We evaluate the RankSHAP framework through extensive experiments on two datasets, multiple ranking methods and evaluation metrics. Additionally, a user study confirms RankSHAP&#39;s alignment with human intuition. We also perform an axiomatic analysis of existing rank attribution algorithms to determine their compliance with our proposed axioms. Ultimately, our aim is to equip practitioners with a set of axiomatically backed feature attribution methods for studying IR ranking models, that ensure generality as well as consistency.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2405.01848v3-abstract-full').style.display = 'none'; document.getElementById('2405.01848v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 21 February, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 3 May, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">ICLR 2025</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2404.05055">arXiv:2404.05055</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2404.05055">pdf</a>, <a href="https://arxiv.org/format/2404.05055">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Percentile Criterion Optimization in Offline Reinforcement Learning
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Lobo%2C+E+A">Elita A. Lobo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Cousins%2C+C">Cyrus Cousins</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Petrik%2C+M">Marek Petrik</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2404.05055v1-abstract-short" style="display: inline;">
+        In reinforcement learning, robust policies for high-stakes decision-making problems with limited data are usually computed by optimizing the \emph{percentile criterion}. The percentile criterion is approximately solved by constructing an \emph{ambiguity set} that contains the true model with high probability and optimizing the policy for the worst model in the set. Since the percentile criterion i&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.05055v1-abstract-full').style.display = 'inline'; document.getElementById('2404.05055v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2404.05055v1-abstract-full" style="display: none;">
+        In reinforcement learning, robust policies for high-stakes decision-making problems with limited data are usually computed by optimizing the \emph{percentile criterion}. The percentile criterion is approximately solved by constructing an \emph{ambiguity set} that contains the true model with high probability and optimizing the policy for the worst model in the set. Since the percentile criterion is non-convex, constructing ambiguity sets is often challenging. Existing work uses \emph{Bayesian credible regions} as ambiguity sets, but they are often unnecessarily large and result in learning overly conservative policies. To overcome these shortcomings, we propose a novel Value-at-Risk based dynamic programming algorithm to optimize the percentile criterion without explicitly constructing any ambiguity sets. Our theoretical and empirical results show that our algorithm implicitly constructs much smaller ambiguity sets and learns less conservative robust policies.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2404.05055v1-abstract-full').style.display = 'none'; document.getElementById('2404.05055v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 7 April, 2024; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> April 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted at Neurips 2023</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2403.00943">arXiv:2403.00943</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2403.00943">pdf</a>, <a href="https://arxiv.org/ps/2403.00943">ps</a>, <a href="https://arxiv.org/format/2403.00943">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        On the Hardness of Fair Allocation under Ternary Valuations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Fitzsimmons%2C+Z">Zack Fitzsimmons</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2403.00943v2-abstract-short" style="display: inline;">
+        We study the problem of fair allocation of indivisible items when agents have ternary additive valuations -- each agent values each item at some fixed integer values $a$, $b$, or $c$ that are common to all agents. The notions of fairness we consider are max Nash welfare (MNW), when $a$, $b$, and $c$ are non-negative, and max egalitarian welfare (MEW). We show that for any distinct non-negative&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2403.00943v2-abstract-full').style.display = 'inline'; document.getElementById('2403.00943v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2403.00943v2-abstract-full" style="display: none;">
+        We study the problem of fair allocation of indivisible items when agents have ternary additive valuations -- each agent values each item at some fixed integer values $a$, $b$, or $c$ that are common to all agents. The notions of fairness we consider are max Nash welfare (MNW), when $a$, $b$, and $c$ are non-negative, and max egalitarian welfare (MEW). We show that for any distinct non-negative $a$, $b$, and $c$, maximizing Nash welfare is APX-hard -- i.e., the problem does not admit a PTAS unless P = NP. We also show that for any distinct $a$, $b$, and $c$, maximizing egalitarian welfare is APX-hard except for a few cases when $b = 0$ that admit efficient algorithms. These results make significant progress towards completely characterizing the complexity of computing exact MNW allocations and MEW allocations. En route, we resolve open questions left by prior work regarding the complexity of computing MNW allocations under bivalued valuations, and MEW allocations under ternary mixed manna.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2403.00943v2-abstract-full').style.display = 'none'; document.getElementById('2403.00943v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 October, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 1 March, 2024;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2024.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Fixed minor typos</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2310.03131">arXiv:2310.03131</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2310.03131">pdf</a>, <a href="https://arxiv.org/ps/2310.03131">ps</a>, <a href="https://arxiv.org/format/2310.03131">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Axiomatic Aggregations of Abductive Explanations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Biradar%2C+G">Gagan Biradar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Izza%2C+Y">Yacine Izza</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lobo%2C+E">Elita Lobo</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2310.03131v3-abstract-short" style="display: inline;">
+        The recent criticisms of the robustness of post hoc model approximation explanation methods (like LIME and SHAP) have led to the rise of model-precise abductive explanations. For each data point, abductive explanations provide a minimal subset of features that are sufficient to generate the outcome. While theoretically sound and rigorous, abductive explanations suffer from a major issue -- there c&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2310.03131v3-abstract-full').style.display = 'inline'; document.getElementById('2310.03131v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2310.03131v3-abstract-full" style="display: none;">
+        The recent criticisms of the robustness of post hoc model approximation explanation methods (like LIME and SHAP) have led to the rise of model-precise abductive explanations. For each data point, abductive explanations provide a minimal subset of features that are sufficient to generate the outcome. While theoretically sound and rigorous, abductive explanations suffer from a major issue -- there can be several valid abductive explanations for the same data point. In such cases, providing a single abductive explanation can be insufficient; on the other hand, providing all valid abductive explanations can be incomprehensible due to their size. In this work, we solve this issue by aggregating the many possible abductive explanations into feature importance scores. We propose three aggregation methods: two based on power indices from cooperative game theory and a third based on a well-known measure of causal strength. We characterize these three methods axiomatically, showing that each of them uniquely satisfies a set of desirable properties. We also evaluate them on multiple datasets and show that these explanations are robust to the attacks that fool SHAP and LIME.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2310.03131v3-abstract-full').style.display = 'none'; document.getElementById('2310.03131v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 12 October, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 29 September, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> October 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2307.13658">arXiv:2307.13658</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2307.13658">pdf</a>, <a href="https://arxiv.org/format/2307.13658">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computers and Society">cs.CY</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Towards an AI Accountability Policy
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Grabowicz%2C+P">Przemyslaw Grabowicz</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Byrne%2C+A">Adrian Byrne</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Cousins%2C+C">Cyrus Cousins</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perello%2C+N">Nicholas Perello</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2307.13658v2-abstract-short" style="display: inline;">
+        We propose establishing an office to oversee AI systems by introducing a tiered system of explainability and benchmarking requirements for commercial AI systems. We examine how complex high-risk technologies have been successfully regulated at the national level. Specifically, we draw parallels to the existing regulation for the U.S. medical device industry and the pharmaceutical industry (regulat&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2307.13658v2-abstract-full').style.display = 'inline'; document.getElementById('2307.13658v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2307.13658v2-abstract-full" style="display: none;">
+        We propose establishing an office to oversee AI systems by introducing a tiered system of explainability and benchmarking requirements for commercial AI systems. We examine how complex high-risk technologies have been successfully regulated at the national level. Specifically, we draw parallels to the existing regulation for the U.S. medical device industry and the pharmaceutical industry (regulated by the FDA), the proposed legislation for AI in the European Union (the AI Act), and the existing U.S. anti-discrimination legislation. To promote accountability and user trust, AI accountability mechanisms shall introduce standarized measures for each category of intended high-risk use of AI systems to enable structured comparisons among such AI systems. We suggest using explainable AI techniques, such as input influence measures, as well as fairness statistics and other performance measures of high-risk AI systems. We propose to standardize internal benchmarking and automated audits to transparently characterize high-risk AI systems. The results of such audits and benchmarks shall be clearly and transparently communicated and explained to enable meaningful comparisons of competing AI systems via a public AI registry. Such standardized audits, benchmarks, and certificates shall be specific to intended high-risk use of respective AI systems and could constitute conformity assessment for AI systems, e.g., in the European Union&#39;s AI Act.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2307.13658v2-abstract-full').style.display = 'none'; document.getElementById('2307.13658v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 26 February, 2025; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 25 July, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2307.12516">arXiv:2307.12516</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2307.12516">pdf</a>, <a href="https://arxiv.org/ps/2307.12516">ps</a>, <a href="https://arxiv.org/format/2307.12516">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Good, the Bad and the Submodular: Fairly Allocating Mixed Manna Under Order-Neutral Submodular Preferences
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Cousins%2C+C">Cyrus Cousins</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2307.12516v1-abstract-short" style="display: inline;">
+        We study the problem of fairly allocating indivisible goods (positively valued items) and chores (negatively valued items) among agents with decreasing marginal utilities over items. Our focus is on instances where all the agents have simple preferences; specifically, we assume the marginal value of an item can be either $-1$, $0$ or some positive integer $c$. Under this assumption, we present an&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2307.12516v1-abstract-full').style.display = 'inline'; document.getElementById('2307.12516v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2307.12516v1-abstract-full" style="display: none;">
+        We study the problem of fairly allocating indivisible goods (positively valued items) and chores (negatively valued items) among agents with decreasing marginal utilities over items. Our focus is on instances where all the agents have simple preferences; specifically, we assume the marginal value of an item can be either $-1$, $0$ or some positive integer $c$. Under this assumption, we present an efficient algorithm to compute leximin allocations for a broad class of valuation functions we call order-neutral submodular valuations. Order-neutral submodular valuations strictly contain the well-studied class of additive valuations but are a strict subset of the class of submodular valuations. We show that these leximin allocations are Lorenz dominating and approximately proportional. We also show that, under further restriction to additive valuations, these leximin allocations are approximately envy-free and guarantee each agent their maxmin share. We complement this algorithmic result with a lower bound showing that the problem of computing leximin allocations is NP-hard when $c$ is a rational number.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2307.12516v1-abstract-full').style.display = 'none'; document.getElementById('2307.12516v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 24 July, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2306.15557">arXiv:2306.15557</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2306.15557">pdf</a>, <a href="https://arxiv.org/ps/2306.15557">ps</a>, <a href="https://arxiv.org/format/2306.15557">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Simple Steps to Success: A Method for Step-Based Counterfactual Explanations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Hamer%2C+J">Jenny Hamer</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Perello%2C+N">Nicholas Perello</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Valladares%2C+J">Jake Valladares</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2306.15557v3-abstract-short" style="display: inline;">
+        Algorithmic recourse is a process that leverages counterfactual explanations, going beyond understanding why a system produced a given classification, to providing a user with actions they can take to change their predicted outcome. Existing approaches to compute such interventions -- known as recourse -- identify a set of points that satisfy some desiderata -- e.g. an intervention in the underlyi&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.15557v3-abstract-full').style.display = 'inline'; document.getElementById('2306.15557v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2306.15557v3-abstract-full" style="display: none;">
+        Algorithmic recourse is a process that leverages counterfactual explanations, going beyond understanding why a system produced a given classification, to providing a user with actions they can take to change their predicted outcome. Existing approaches to compute such interventions -- known as recourse -- identify a set of points that satisfy some desiderata -- e.g. an intervention in the underlying causal graph, minimizing a cost function, etc. Satisfying these criteria, however, requires extensive knowledge of the underlying model structure, an often unrealistic amount of information in several domains. We propose a data-driven and model-agnostic framework to compute counterfactual explanations. We introduce StEP, a computationally efficient method that offers incremental steps along the data manifold that directs users towards their desired outcome. We show that StEP uniquely satisfies a desirable set of axioms. Furthermore, via a thorough empirical and theoretical investigation, we show that StEP offers provable robustness and privacy guarantees while outperforming popular methods along important metrics.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2306.15557v3-abstract-full').style.display = 'none'; document.getElementById('2306.15557v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 12 November, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 27 June, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Accepted to TMLR Oct 2024</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2303.06212">arXiv:2303.06212</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2303.06212">pdf</a>, <a href="https://arxiv.org/ps/2303.06212">ps</a>, <a href="https://arxiv.org/format/2303.06212">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Weighted Notions of Fairness with Binary Supermodular Chores
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2303.06212v1-abstract-short" style="display: inline;">
+        We study the problem of allocating indivisible chores among agents with binary supermodular cost functions. In other words, each chore has a marginal cost of $0$ or $1$ and chores exhibit increasing marginal costs (or decreasing marginal utilities). In this note, we combine the techniques of Viswanathan and Zick (2022) and Barman et al. (2023) to present a general framework for fair allocation wit&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2303.06212v1-abstract-full').style.display = 'inline'; document.getElementById('2303.06212v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2303.06212v1-abstract-full" style="display: none;">
+        We study the problem of allocating indivisible chores among agents with binary supermodular cost functions. In other words, each chore has a marginal cost of $0$ or $1$ and chores exhibit increasing marginal costs (or decreasing marginal utilities). In this note, we combine the techniques of Viswanathan and Zick (2022) and Barman et al. (2023) to present a general framework for fair allocation with this class of valuation functions. Our framework allows us to generalize the results of Barman et al. (2023) and efficiently compute allocations which satisfy weighted notions of fairness like weighted leximin or min weighted $p$-mean malfare for any $p \ge 1$.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2303.06212v1-abstract-full').style.display = 'none'; document.getElementById('2303.06212v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 March, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2302.06958">arXiv:2302.06958</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2302.06958">pdf</a>, <a href="https://arxiv.org/format/2302.06958">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Theoretical Economics">econ.TH</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        For One and All: Individual and Group Fairness in the Allocation of Indivisible Goods
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Scarlett%2C+J">Jonathan Scarlett</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Teh%2C+N">Nicholas Teh</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2302.06958v1-abstract-short" style="display: inline;">
+        Fair allocation of indivisible goods is a well-explored problem. Traditionally, research focused on individual fairness - are individual agents satisfied with their allotted share? - and group fairness - are groups of agents treated fairly? In this paper, we explore the coexistence of individual envy-freeness (i-EF) and its group counterpart, group weighted envy-freeness (g-WEF), in the allocation&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2302.06958v1-abstract-full').style.display = 'inline'; document.getElementById('2302.06958v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2302.06958v1-abstract-full" style="display: none;">
+        Fair allocation of indivisible goods is a well-explored problem. Traditionally, research focused on individual fairness - are individual agents satisfied with their allotted share? - and group fairness - are groups of agents treated fairly? In this paper, we explore the coexistence of individual envy-freeness (i-EF) and its group counterpart, group weighted envy-freeness (g-WEF), in the allocation of indivisible goods. We propose several polynomial-time algorithms that provably achieve i-EF and g-WEF simultaneously in various degrees of approximation under three different conditions on the agents&#39; (i) when agents have identical additive valuation functions, i-EFX and i-WEF1 can be achieved simultaneously; (ii) when agents within a group share a common valuation function, an allocation satisfying both i-EF1 and g-WEF1 exists; and (iii) when agents&#39; valuations for goods within a group differ, we show that while maintaining i-EF1, we can achieve a 1/3-approximation to ex-ante g-WEF1. Our results thus provide a first step towards connecting individual and group fairness in the allocation of indivisible goods, in hopes of its useful application to domains requiring the reconciliation of diversity with individual demands.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2302.06958v1-abstract-full').style.display = 'none'; document.getElementById('2302.06958v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 February, 2023; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Appears in the 22nd International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2023</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2302.03087">arXiv:2302.03087</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2302.03087">pdf</a>, <a href="https://arxiv.org/ps/2302.03087">ps</a>, <a href="https://arxiv.org/format/2302.03087">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Dividing Good and Better Items Among Agents with Bivalued Submodular Valuations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Cousins%2C+C">Cyrus Cousins</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2302.03087v3-abstract-short" style="display: inline;">
+        We study the problem of fairly allocating a set of indivisible goods among agents with {\em bivalued submodular valuations} -- each good provides a marginal gain of either $a$ or $b$ ($a &lt; b$) and goods have decreasing marginal gains. This is a natural generalization of two well-studied valuation classes -- bivalued additive valuations and binary submodular valuations. We present a simple sequenti&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2302.03087v3-abstract-full').style.display = 'inline'; document.getElementById('2302.03087v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2302.03087v3-abstract-full" style="display: none;">
+        We study the problem of fairly allocating a set of indivisible goods among agents with {\em bivalued submodular valuations} -- each good provides a marginal gain of either $a$ or $b$ ($a &lt; b$) and goods have decreasing marginal gains. This is a natural generalization of two well-studied valuation classes -- bivalued additive valuations and binary submodular valuations. We present a simple sequential algorithmic framework, based on the recently introduced Yankee Swap mechanism, that can be adapted to compute a variety of solution concepts, including max Nash welfare (MNW), leximin and $p$-mean welfare maximizing allocations when $a$ divides $b$. This result is complemented by an existing result on the computational intractability of MNW and leximin allocations when $a$ does not divide $b$. We show that MNW and leximin allocations guarantee each agent at least $\frac25$ and $\frac{a}{b+2a}$ of their maximin share, respectively, when $a$ divides $b$. We also show that neither the leximin nor the MNW allocation is guaranteed to be envy free up to one good (EF1). This is surprising since for the simpler classes of bivalued additive valuations and binary submodular valuations, MNW allocations are known to be envy free up to any good (EFX).
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2302.03087v3-abstract-full').style.display = 'none'; document.getElementById('2302.03087v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 July, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 6 February, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> February 2023.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2301.10816">arXiv:2301.10816</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2301.10816">pdf</a>, <a href="https://arxiv.org/format/2301.10816">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Into the Unknown: Assigning Reviewers to Papers with Uncertain Affinities
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Cousins%2C+C">Cyrus Cousins</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Payan%2C+J">Justin Payan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2301.10816v2-abstract-short" style="display: inline;">
+        A successful peer review process requires that qualified and interested reviewers are assigned to each paper. Most automated reviewer assignment approaches estimate a real-valued affinity score for each paper-reviewer pair that acts as a proxy for the quality of the match, and then assign reviewers to maximize the sum of affinity scores. Most affinity score estimation methods are inherently noisy:&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2301.10816v2-abstract-full').style.display = 'inline'; document.getElementById('2301.10816v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2301.10816v2-abstract-full" style="display: none;">
+        A successful peer review process requires that qualified and interested reviewers are assigned to each paper. Most automated reviewer assignment approaches estimate a real-valued affinity score for each paper-reviewer pair that acts as a proxy for the quality of the match, and then assign reviewers to maximize the sum of affinity scores. Most affinity score estimation methods are inherently noisy: reviewers can only bid on a small number of papers, and textual similarity models and subject-area matching are inherently noisy estimators. Current paper assignment systems are not designed to rigorously handle noise in the peer-review matching market. In this work, we assume paper-reviewer affinity scores are located in or near a high-probability region called an uncertainty set. We maximize the worst-case sum of scores for a reviewer assignment over the uncertainty set. We demonstrate how to robustly maximize the sum of scores across various classes of uncertainty sets, avoiding potentially serious mistakes in assignment. Our general approach can be used to integrate a large variety of paper-reviewer affinity models into reviewer assignment, opening the door to a much more robust peer review process.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2301.10816v2-abstract-full').style.display = 'none'; document.getElementById('2301.10816v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 4 September, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 25 January, 2023;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> January 2023.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">23 pages, 1 figure. In Proceedings of the 16th International Symposium on Algorithmic Game Theory (SAGT). For associated code and data, see https://github.com/justinpayan/RAU</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">MSC Class:</span>
+          91B32 (Primary); 90C27 (Secondary)
+        
+
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2208.07311">arXiv:2208.07311</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2208.07311">pdf</a>, <a href="https://arxiv.org/ps/2208.07311">ps</a>, <a href="https://arxiv.org/format/2208.07311">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A General Framework for Fair Allocation under Matroid Rank Valuations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2208.07311v3-abstract-short" style="display: inline;">
+        We study the problem of fairly allocating a set of indivisible goods among agents with matroid rank valuations -- every good provides a marginal value of $0$ or $1$ when added to a bundle and valuations are submodular. We generalize the Yankee Swap algorithm to create a simple framework, called General Yankee Swap, that can efficiently compute allocations that maximize any justice criterion (or fa&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2208.07311v3-abstract-full').style.display = 'inline'; document.getElementById('2208.07311v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2208.07311v3-abstract-full" style="display: none;">
+        We study the problem of fairly allocating a set of indivisible goods among agents with matroid rank valuations -- every good provides a marginal value of $0$ or $1$ when added to a bundle and valuations are submodular. We generalize the Yankee Swap algorithm to create a simple framework, called General Yankee Swap, that can efficiently compute allocations that maximize any justice criterion (or fairness objective) satisfying some mild assumptions. Along with maximizing a justice criterion, General Yankee Swap is guaranteed to maximize utilitarian social welfare, ensure strategyproofness and use at most a quadratic number of valuation queries. We show how General Yankee Swap can be used to compute allocations for five different well-studied justice criteria: (a) Prioritized Lorenz dominance, (b) Maximin fairness, (c) Weighted leximin, (d) Max weighted Nash welfare, and (e) Max weighted $p$-mean welfare. In particular, our framework provides the first polynomial time algorithms to compute weighted leximin, max weighted Nash welfare and max weighted $p$-mean welfare allocations for agents with matroid rank valuations.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2208.07311v3-abstract-full').style.display = 'none'; document.getElementById('2208.07311v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 19 May, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 15 August, 2022;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2206.08495">arXiv:2206.08495</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2206.08495">pdf</a>, <a href="https://arxiv.org/ps/2206.08495">ps</a>, <a href="https://arxiv.org/format/2206.08495">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Data Structures and Algorithms">cs.DS</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Yankee Swap: a Fast and Simple Fair Allocation Mechanism for Matroid Rank Valuations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2206.08495v5-abstract-short" style="display: inline;">
+        We study fair allocation of indivisible goods when agents have matroid rank valuations. Our main contribution is a simple algorithm based on the colloquial Yankee Swap procedure that computes provably fair and efficient Lorenz dominating allocations. While there exist polynomial time algorithms to compute such allocations, our proposed method improves on them in two ways. (a) Our approach is easy&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2206.08495v5-abstract-full').style.display = 'inline'; document.getElementById('2206.08495v5-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2206.08495v5-abstract-full" style="display: none;">
+        We study fair allocation of indivisible goods when agents have matroid rank valuations. Our main contribution is a simple algorithm based on the colloquial Yankee Swap procedure that computes provably fair and efficient Lorenz dominating allocations. While there exist polynomial time algorithms to compute such allocations, our proposed method improves on them in two ways. (a) Our approach is easy to understand and does not use complex matroid optimization algorithms as subroutines. (b) Our approach is scalable; it is provably faster than all known algorithms to compute Lorenz dominating allocations. These two properties are key to the adoption of algorithms in any real fair allocation setting; our contribution brings us one step closer to this goal.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2206.08495v5-abstract-full').style.display = 'none'; document.getElementById('2206.08495v5-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 April, 2023; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 16 June, 2022;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2022.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2109.03890">arXiv:2109.03890</a>
+        <span>&nbsp;&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Model Explanations via the Axiomatic Causal Lens
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Biradar%2C+G">Gagan Biradar</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2109.03890v7-abstract-short" style="display: inline;">
+        Explaining the decisions of black-box models is a central theme in the study of trustworthy ML. Numerous measures have been proposed in the literature; however, none of them take an axiomatic approach to causal explainability. In this work, we propose three explanation measures which aggregate the set of all but-for causes -- a necessary and sufficient explanation -- into feature importance weight&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.03890v7-abstract-full').style.display = 'inline'; document.getElementById('2109.03890v7-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2109.03890v7-abstract-full" style="display: none;">
+        Explaining the decisions of black-box models is a central theme in the study of trustworthy ML. Numerous measures have been proposed in the literature; however, none of them take an axiomatic approach to causal explainability. In this work, we propose three explanation measures which aggregate the set of all but-for causes -- a necessary and sufficient explanation -- into feature importance weights. Our first measure is a natural adaptation of Chockler and Halpern&#39;s notion of causal responsibility, whereas the other two correspond to existing game-theoretic influence measures. We present an axiomatic treatment for our proposed indices, showing that they can be uniquely characterized by a set of desirable properties. We also extend our approach to derive a new method to compute the Shapley-Shubik and Banzhaf indices for black-box model explanations. Finally, we analyze and compare the necessity and sufficiency of all our proposed explanation measures in practice using the Adult-Income dataset. Thus, our work is the first to formally bridge the gap between model explanations, game-theoretic influence, and causal analysis.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2109.03890v7-abstract-full').style.display = 'none'; document.getElementById('2109.03890v7-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 February, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 8 September, 2021;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">Withdrawing because this paper was re-written and resubmitted at arXiv:2310.03131. Please see arXiv:2310.03131 for the most recent version of this work</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2108.02126">arXiv:2108.02126</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2108.02126">pdf</a>, <a href="https://arxiv.org/format/2108.02126">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        I Will Have Order! Optimizing Orders for Fair Reviewer Assignment
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Payan%2C+J">Justin Payan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2108.02126v2-abstract-short" style="display: inline;">
+        We present fast, fair, flexible, and welfare efficient algorithms for assigning reviewers to submitted conference papers. Our approaches extend picking sequence mechanisms, standard tools from the fair allocation literature to ensure approximate envy-freeness (typically envy-freeness up to one item, or EF1). However, fairness often comes at the cost of decreased efficiency. To overcome this challe&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2108.02126v2-abstract-full').style.display = 'inline'; document.getElementById('2108.02126v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2108.02126v2-abstract-full" style="display: none;">
+        We present fast, fair, flexible, and welfare efficient algorithms for assigning reviewers to submitted conference papers. Our approaches extend picking sequence mechanisms, standard tools from the fair allocation literature to ensure approximate envy-freeness (typically envy-freeness up to one item, or EF1). However, fairness often comes at the cost of decreased efficiency. To overcome this challenge, we carefully select approximately optimal picking sequence orders. Applying a relaxation of submodularity, $γ$-weak submodularity, we show our Greedy Reviewer Round Robin (GRRR) approach is EF1 and yields a ${(1+γ)}$-approximation to the maximum welfare attainable by a round-robin picking sequence mechanism under any order. We present a weighted picking sequence mechanism called FairSequence that targets the Weighted EF1 criterion to offer fairness in a more general setting. Using data from three conferences, we show that FairSequence runs an order of magnitude faster and provides approximate envy-freeness guarantees that are violated by existing approaches. Its simple design also makes it very flexible to new assignment constraints. FairSequence is available in the OpenReview conference management platform, giving conference organizers access to faster reviewer assignment with high welfare and envy-freeness guarantees.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2108.02126v2-abstract-full').style.display = 'none'; document.getElementById('2108.02126v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 14 February, 2024; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 4 August, 2021;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2021.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">41 pages, 8 figures, extends initial version published at IJCAI 2022</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2012.14838">arXiv:2012.14838</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2012.14838">pdf</a>, <a href="https://arxiv.org/format/2012.14838">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.5555/3463952.3464043">10.5555/3463952.3464043 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Price is (Probably) Right: Learning Market Equilibria from Samples
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Viswanathan%2C+V">Vignesh Viswanathan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Lev%2C+O">Omer Lev</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Patel%2C+N">Neel Patel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2012.14838v3-abstract-short" style="display: inline;">
+        Equilibrium computation in markets usually considers settings where player valuation functions are known. We consider the setting where player valuations are unknown; using a PAC learning-theoretic framework, we analyze some classes of common valuation functions, and provide algorithms which output direct PAC equilibrium allocations, not estimates based on attempting to learn valuation functions.&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.14838v3-abstract-full').style.display = 'inline'; document.getElementById('2012.14838v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2012.14838v3-abstract-full" style="display: none;">
+        Equilibrium computation in markets usually considers settings where player valuation functions are known. We consider the setting where player valuations are unknown; using a PAC learning-theoretic framework, we analyze some classes of common valuation functions, and provide algorithms which output direct PAC equilibrium allocations, not estimates based on attempting to learn valuation functions. Since there exist trivial PAC market outcomes with an unbounded worst-case efficiency loss, we lower-bound the efficiency of our algorithms. While the efficiency loss under general distributions is rather high, we show that in some cases (e.g., unit-demand valuations), it is possible to find a PAC market equilibrium with significantly better utility.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2012.14838v3-abstract-full').style.display = 'none'; document.getElementById('2012.14838v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 9 September, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 29 December, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> December 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2006.09129">arXiv:2006.09129</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2006.09129">pdf</a>, <a href="https://arxiv.org/format/2006.09129">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Model Explanations with Differential Privacy
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Patel%2C+N">Neel Patel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Shokri%2C+R">Reza Shokri</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2006.09129v1-abstract-short" style="display: inline;">
+        Black-box machine learning models are used in critical decision-making domains, giving rise to several calls for more algorithmic transparency. The drawback is that model explanations can leak information about the training data and the explanation data used to generate them, thus undermining data privacy. To address this issue, we propose differentially private algorithms to construct feature-bas&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2006.09129v1-abstract-full').style.display = 'inline'; document.getElementById('2006.09129v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2006.09129v1-abstract-full" style="display: none;">
+        Black-box machine learning models are used in critical decision-making domains, giving rise to several calls for more algorithmic transparency. The drawback is that model explanations can leak information about the training data and the explanation data used to generate them, thus undermining data privacy. To address this issue, we propose differentially private algorithms to construct feature-based model explanations. We design an adaptive differentially private gradient descent algorithm, that finds the minimal privacy budget required to produce accurate explanations. It reduces the overall privacy loss on explanation data, by adaptively reusing past differentially private explanations. It also amplifies the privacy guarantees with respect to the training data. We evaluate the implications of differentially private models and our privacy mechanisms on the quality of model explanations.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2006.09129v1-abstract-full').style.display = 'none'; document.getElementById('2006.09129v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 16 June, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2020.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">33 pages, 9 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2006.08969">arXiv:2006.08969</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2006.08969">pdf</a>, <a href="https://arxiv.org/format/2006.08969">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        High Dimensional Model Explanations: an Axiomatic Approach
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Patel%2C+N">Neel Patel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Strobel%2C+M">Martin Strobel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2006.08969v2-abstract-short" style="display: inline;">
+        Complex black-box machine learning models are regularly used in critical decision-making domains. This has given rise to several calls for algorithmic explainability. Many explanation algorithms proposed in literature assign importance to each feature individually. However, such explanations fail to capture the joint effects of sets of features. Indeed, few works so far formally analyze high-dimen&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2006.08969v2-abstract-full').style.display = 'inline'; document.getElementById('2006.08969v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2006.08969v2-abstract-full" style="display: none;">
+        Complex black-box machine learning models are regularly used in critical decision-making domains. This has given rise to several calls for algorithmic explainability. Many explanation algorithms proposed in literature assign importance to each feature individually. However, such explanations fail to capture the joint effects of sets of features. Indeed, few works so far formally analyze high-dimensional model explanations. In this paper, we propose a novel high dimension model explanation method that captures the joint effect of feature subsets.
+  We propose a new axiomatization for a generalization of the Banzhaf index; our method can also be thought of as an approximation of a black-box model by a higher-order polynomial. In other words, this work justifies the use of the generalized Banzhaf index as a model explanation by showing that it uniquely satisfies a set of natural desiderata and that it is the optimal local approximation of a black-box model.
+  Our empirical evaluation of our measure highlights how it manages to capture desirable behavior, whereas other measures that do not satisfy our axioms behave in an unpredictable manner.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2006.08969v2-abstract-full').style.display = 'none'; document.getElementById('2006.08969v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 29 March, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 16 June, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> June 2020.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">31 pages, 10 Figures, 2 Tables</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2005.06326">arXiv:2005.06326</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2005.06326">pdf</a>, <a href="https://arxiv.org/ps/2005.06326">ps</a>, <a href="https://arxiv.org/format/2005.06326">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Combinatorics">math.CO</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Cumulative Games: Who is the current player?
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Larsson%2C+U">Urban Larsson</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Meir%2C+R">Reshef Meir</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2005.06326v1-abstract-short" style="display: inline;">
+        Combinatorial Game Theory (CGT) is a branch of game theory that has developed almost independently from Economic Game Theory (EGT), and is concerned with deep mathematical properties of 2-player 0-sum games that are defined over various combinatorial structures. The aim of this work is to lay foundations to bridging the conceptual and technical gaps between CGT and EGT, here interpreted as so-call&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2005.06326v1-abstract-full').style.display = 'inline'; document.getElementById('2005.06326v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2005.06326v1-abstract-full" style="display: none;">
+        Combinatorial Game Theory (CGT) is a branch of game theory that has developed almost independently from Economic Game Theory (EGT), and is concerned with deep mathematical properties of 2-player 0-sum games that are defined over various combinatorial structures. The aim of this work is to lay foundations to bridging the conceptual and technical gaps between CGT and EGT, here interpreted as so-called Extensive Form Games, so they can be treated within a unified framework. More specifically, we introduce a class of $n$-player, general-sum games, called Cumulative Games, that can be analyzed by both CGT and EGT tools. We show how two of the most fundamental definitions of CGT---the outcome function, and the disjunctive sum operator---naturally extend to the class of Cumulative Games. The outcome function allows for an efficient equilibrium computation under certain restrictions, and the disjunctive sum operator lets us define a partial order over games, according to the advantage that a certain player has. Finally, we show that any Extensive Form Game can be written as a Cumulative Game.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2005.06326v1-abstract-full').style.display = 'none'; document.getElementById('2005.06326v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 13 May, 2020; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2020.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">54 pages, 4 figures</span>
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">MSC Class:</span>
+          91A46; 91A05
+        
+
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2003.07060">arXiv:2003.07060</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2003.07060">pdf</a>, <a href="https://arxiv.org/format/2003.07060">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1007/978-3-030-57980-7_3">10.1007/978-3-030-57980-7_3 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Finding Fair and Efficient Allocations When Valuations Don&#39;t Add Up
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Benabbou%2C+N">Nawal Benabbou</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chakraborty%2C+M">Mithun Chakraborty</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Igarashi%2C+A">Ayumi Igarashi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2003.07060v4-abstract-short" style="display: inline;">
+        In this paper, we present new results on the fair and efficient allocation of indivisible goods to agents whose preferences correspond to {\em matroid rank functions}. This is a versatile valuation class with several desirable properties (such as monotonicity and submodularity), which naturally lends itself to a number of real-world domains. We use these properties to our advantage; first, we show&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2003.07060v4-abstract-full').style.display = 'inline'; document.getElementById('2003.07060v4-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2003.07060v4-abstract-full" style="display: none;">
+        In this paper, we present new results on the fair and efficient allocation of indivisible goods to agents whose preferences correspond to {\em matroid rank functions}. This is a versatile valuation class with several desirable properties (such as monotonicity and submodularity), which naturally lends itself to a number of real-world domains. We use these properties to our advantage; first, we show that when agent valuations are matroid rank functions, a socially optimal (i.e. utilitarian social welfare-maximizing) allocation that achieves envy-freeness up to one item (EF1) exists and is computationally tractable. We also prove that the Nash welfare-maximizing and the leximin allocations both exhibit this fairness/efficiency combination, by showing that they can be achieved by minimizing any symmetric strictly convex function over utilitarian optimal outcomes. To the best of our knowledge, this is the first valuation function class not subsumed by additive valuations for which it has been established that an allocation maximizing Nash welfare is EF1. Moreover, for a subclass of these valuation functions based on maximum (unweighted) bipartite matching, we show that a leximin allocation can be computed in polynomial time. Additionally, we explore possible extensions of our results to fairness criteria other than EF1 as well as to generalizations of the above valuation classes.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2003.07060v4-abstract-full').style.display = 'none'; document.getElementById('2003.07060v4-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 18 June, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 16 March, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2020.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/2003.03558">arXiv:2003.03558</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/2003.03558">pdf</a>, <a href="https://arxiv.org/format/2003.03558">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Multiagent Systems">cs.MA</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Keeping Your Friends Close: Land Allocation with Friends
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Elkind%2C+E">Edith Elkind</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Patel%2C+N">Neel Patel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Tsang%2C+A">Alan Tsang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="2003.03558v2-abstract-short" style="display: inline;">
+        We examine the problem of assigning plots of land to prospective buyers who prefer living next to their friends. They care not only about the plot they receive, but also about their neighbors. This externality results in a highly non-trivial problem structure, as both friendship and land value play a role in determining agent behavior. We examine mechanisms that guarantee truthful reporting of bot&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2003.03558v2-abstract-full').style.display = 'inline'; document.getElementById('2003.03558v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="2003.03558v2-abstract-full" style="display: none;">
+        We examine the problem of assigning plots of land to prospective buyers who prefer living next to their friends. They care not only about the plot they receive, but also about their neighbors. This externality results in a highly non-trivial problem structure, as both friendship and land value play a role in determining agent behavior. We examine mechanisms that guarantee truthful reporting of both land values and friendships. We propose variants of random serial dictatorship (RSD) that can offer both truthfulness and welfare guarantees. Interestingly, our social welfare guarantees are parameterized by the value of friendship: if these values are low, enforcing truthful behavior results in poor welfare guarantees and imposes significant constraints on agents&#39; choices; if they are high, we achieve good approximation to the optimal social welfare.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('2003.03558v2-abstract-full').style.display = 'none'; document.getElementById('2003.03558v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 13 March, 2020; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 7 March, 2020;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2020.
+      
+    </p>
+    
+
+    
+      <p class="comments is-size-7">
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">MSC Class:</span>
+          91A80 Applications of game theory
+        
+
+        
+          <span class="has-text-black-bis has-text-weight-semibold">ACM Class:</span>
+          I.2.11; J.4
+        
+      </p>
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1909.10502">arXiv:1909.10502</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1909.10502">pdf</a>, <a href="https://arxiv.org/ps/1909.10502">ps</a>, <a href="https://arxiv.org/format/1909.10502">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Theoretical Economics">econ.TH</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1145/3457166">10.1145/3457166 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Weighted Envy-Freeness in Indivisible Item Allocation
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Chakraborty%2C+M">Mithun Chakraborty</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Igarashi%2C+A">Ayumi Igarashi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Suksompong%2C+W">Warut Suksompong</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1909.10502v7-abstract-short" style="display: inline;">
+        We introduce and analyze new envy-based fairness concepts for agents with weights that quantify their entitlements in the allocation of indivisible items. We propose two variants of weighted envy-freeness up to one item (WEF1): strong, where envy can be eliminated by removing an item from the envied agent&#39;s bundle, and weak, where envy can be eliminated either by removing an item (as in the strong&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1909.10502v7-abstract-full').style.display = 'inline'; document.getElementById('1909.10502v7-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1909.10502v7-abstract-full" style="display: none;">
+        We introduce and analyze new envy-based fairness concepts for agents with weights that quantify their entitlements in the allocation of indivisible items. We propose two variants of weighted envy-freeness up to one item (WEF1): strong, where envy can be eliminated by removing an item from the envied agent&#39;s bundle, and weak, where envy can be eliminated either by removing an item (as in the strong version) or by replicating an item from the envied agent&#39;s bundle in the envying agent&#39;s bundle. We show that for additive valuations, an allocation that is both Pareto optimal and strongly WEF1 always exists and can be computed in pseudo-polynomial time; moreover, an allocation that maximizes the weighted Nash social welfare may not be strongly WEF1, but always satisfies the weak version of the property. Moreover, we establish that a generalization of the round-robin picking sequence algorithm produces in polynomial time a strongly WEF1 allocation for an arbitrary number of agents; for two agents, we can efficiently achieve both strong WEF1 and Pareto optimality by adapting the adjusted winner procedure. Our work highlights several aspects in which weighted fair division is richer and more challenging than its unweighted counterpart.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1909.10502v7-abstract-full').style.display = 'none'; document.getElementById('1909.10502v7-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 6 March, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 23 September, 2019;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> September 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">A preliminary version appears in Proceedings of the 19th International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2020</span>
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        ACM Transactions on Economics and Computation, 9(3):18 (2021)
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1907.00164">arXiv:1907.00164</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1907.00164">pdf</a>, <a href="https://arxiv.org/format/1907.00164">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Machine Learning">cs.LG</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Machine Learning">stat.ML</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        On the Privacy Risks of Model Explanations
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Shokri%2C+R">Reza Shokri</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Strobel%2C+M">Martin Strobel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1907.00164v6-abstract-short" style="display: inline;">
+        Privacy and transparency are two key foundations of trustworthy machine learning. Model explanations offer insights into a model&#39;s decisions on input data, whereas privacy is primarily concerned with protecting information about the training data. We analyze connections between model explanations and the leakage of sensitive information about the model&#39;s training set. We investigate the privacy ri&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1907.00164v6-abstract-full').style.display = 'inline'; document.getElementById('1907.00164v6-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1907.00164v6-abstract-full" style="display: none;">
+        Privacy and transparency are two key foundations of trustworthy machine learning. Model explanations offer insights into a model&#39;s decisions on input data, whereas privacy is primarily concerned with protecting information about the training data. We analyze connections between model explanations and the leakage of sensitive information about the model&#39;s training set. We investigate the privacy risks of feature-based model explanations using membership inference attacks: quantifying how much model predictions plus their explanations leak information about the presence of a datapoint in the training set of a model. We extensively evaluate membership inference attacks based on feature-based model explanations, over a variety of datasets. We show that backpropagation-based explanations can leak a significant amount of information about individual training datapoints. This is because they reveal statistical information about the decision boundaries of the model about an input, which can reveal its membership. We also empirically investigate the trade-off between privacy and explanation quality, by studying the perturbation-based model explanations.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1907.00164v6-abstract-full').style.display = 'none'; document.getElementById('1907.00164v6-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 5 February, 2021; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 29 June, 2019;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2019.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">19 pages, 13 figures</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1903.08322">arXiv:1903.08322</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1903.08322">pdf</a>, <a href="https://arxiv.org/ps/1903.08322">ps</a>, <a href="https://arxiv.org/format/1903.08322">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+          
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1145/3580374">10.1145/3580374 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        A Learning Framework for Distribution-Based Game-Theoretic Solution Concepts
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Jha%2C+T">Tushant Jha</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1903.08322v2-abstract-short" style="display: inline;">
+        The past few years have seen several works on learning economic solutions from data; these include optimal auction design, function optimization, stable payoffs in cooperative games and more. In this work, we provide a unified learning-theoretic methodology for modeling such problems, and establish tools for determining whether a given economic solution concept can be learned from data. Our learni&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.08322v2-abstract-full').style.display = 'inline'; document.getElementById('1903.08322v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1903.08322v2-abstract-full" style="display: none;">
+        The past few years have seen several works on learning economic solutions from data; these include optimal auction design, function optimization, stable payoffs in cooperative games and more. In this work, we provide a unified learning-theoretic methodology for modeling such problems, and establish tools for determining whether a given economic solution concept can be learned from data. Our learning theoretic framework generalizes a notion of function space dimension -- the graph dimension -- adapting it to the solution concept learning domain. We identify sufficient conditions for the PAC learnability of solution concepts, and show that results in existing works can be immediately derived using our methodology. Finally, we apply our methods in other economic domains, yielding a novel notion of PAC competitive equilibrium and PAC Condorcet winners.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.08322v2-abstract-full').style.display = 'none'; document.getElementById('1903.08322v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 16 June, 2019; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 19 March, 2019;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2019.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1903.00967">arXiv:1903.00967</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1903.00967">pdf</a>, <a href="https://arxiv.org/format/1903.00967">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        
+          
+            <span class="tag is-small is-grey tooltip is-tooltip-top" data-tooltip="Social and Information Networks">cs.SI</span>
+          
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Group-Fairness in Influence Maximization
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Tsang%2C+A">Alan Tsang</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Wilder%2C+B">Bryan Wilder</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Rice%2C+E">Eric Rice</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Tambe%2C+M">Milind Tambe</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1903.00967v2-abstract-short" style="display: inline;">
+        Influence maximization is a widely used model for information dissemination in social networks. Recent work has employed such interventions across a wide range of social problems, spanning public health, substance abuse, and international development (to name a few examples). A critical but understudied question is whether the benefits of such interventions are fairly distributed across different&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.00967v2-abstract-full').style.display = 'inline'; document.getElementById('1903.00967v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1903.00967v2-abstract-full" style="display: none;">
+        Influence maximization is a widely used model for information dissemination in social networks. Recent work has employed such interventions across a wide range of social problems, spanning public health, substance abuse, and international development (to name a few examples). A critical but understudied question is whether the benefits of such interventions are fairly distributed across different groups in the population; e.g., avoiding discrimination with respect to sensitive attributes such as race or gender. Drawing on legal and game-theoretic concepts, we introduce formal definitions of fairness in influence maximization. We provide an algorithmic framework to find solutions which satisfy fairness constraints, and in the process improve the state of the art for general multi-objective submodular maximization problems. Experimental results on real data from an HIV prevention intervention for homeless youth show that standard influence maximization techniques oftentimes neglect smaller groups which contribute less to overall utility, resulting in a disparity which our proposed algorithms substantially reduce.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1903.00967v2-abstract-full').style.display = 'none'; document.getElementById('1903.00967v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 25 March, 2019; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 3 March, 2019;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> March 2019.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1811.04616">arXiv:1811.04616</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1811.04616">pdf</a>, <a href="https://arxiv.org/ps/1811.04616">ps</a>, <a href="https://arxiv.org/format/1811.04616">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Forming Probably Stable Communities with Limited Interactions
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Igarashi%2C+A">Ayumi Igarashi</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sliwinski%2C+J">Jakub Sliwinski</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1811.04616v1-abstract-short" style="display: inline;">
+        A community needs to be partitioned into disjoint groups; each community member has an underlying preference over the groups that they would want to be a member of. We are interested in finding a stable community structure: one where no subset of members $S$ wants to deviate from the current structure. We model this setting as a hedonic game, where players are connected by an underlying interactio&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1811.04616v1-abstract-full').style.display = 'inline'; document.getElementById('1811.04616v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1811.04616v1-abstract-full" style="display: none;">
+        A community needs to be partitioned into disjoint groups; each community member has an underlying preference over the groups that they would want to be a member of. We are interested in finding a stable community structure: one where no subset of members $S$ wants to deviate from the current structure. We model this setting as a hedonic game, where players are connected by an underlying interaction network, and can only consider joining groups that are connected subgraphs of the underlying graph. We analyze the relation between network structure, and one&#39;s capability to infer statistically stable (also known as PAC stable) player partitions from data. We show that when the interaction network is a forest, one can efficiently infer PAC stable coalition structures. Furthermore, when the underlying interaction graph is not a forest, efficient PAC stabilizability is no longer achievable. Thus, our results completely characterize when one can leverage the underlying graph structure in order to compute PAC stable outcomes for hedonic games. Finally, given an unknown underlying interaction network, we show that it is NP-hard to decide whether there exists a forest consistent with data samples from the network.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1811.04616v1-abstract-full').style.display = 'none'; document.getElementById('1811.04616v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 12 November, 2018; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2018.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">11 pages, full version of accepted AAAI-19 paper</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1711.10241">arXiv:1711.10241</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1711.10241">pdf</a>, <a href="https://arxiv.org/format/1711.10241">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+        
+          <div class="is-inline-block" style="margin-left: 0.5rem">
+            <div class="tags has-addons">
+              <span class="tag is-dark is-size-7">doi</span>
+              <span class="tag is-light is-size-7"><a class="" href="https://doi.org/10.1145/3411513">10.1145/3411513 <i class="fa fa-external-link" aria-hidden="true"></i></a></span>
+            </div>
+          </div>
+        
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        The Price of Quota-based Diversity in Assignment Problems
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Benabbou%2C+N">Nawal Benabbou</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chakraborty%2C+M">Mithun Chakraborty</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Xuan%2C+V+H">Vinh Ho Xuan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Sliwinski%2C+J">Jakub Sliwinski</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1711.10241v8-abstract-short" style="display: inline;">
+        We introduce and analyze an extension to the matching problem on a weighted bipartite graph: Assignment with Type Constraints. The two parts of the graph are partitioned into subsets called types and blocks; we seek a matching with the largest sum of weights under the constraint that there is a pre-specified cap on the number of vertices matched in every type-block pair. Our primary motivation ste&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1711.10241v8-abstract-full').style.display = 'inline'; document.getElementById('1711.10241v8-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1711.10241v8-abstract-full" style="display: none;">
+        We introduce and analyze an extension to the matching problem on a weighted bipartite graph: Assignment with Type Constraints. The two parts of the graph are partitioned into subsets called types and blocks; we seek a matching with the largest sum of weights under the constraint that there is a pre-specified cap on the number of vertices matched in every type-block pair. Our primary motivation stems from the public housing program of Singapore, accounting for over 70% of its residential real estate. To promote ethnic diversity within its housing projects, Singapore imposes ethnicity quotas: each new housing development comprises blocks of flats and each ethnicity-based group in the population must not own more than a certain percentage of flats in a block. Other domains using similar hard capacity constraints include matching prospective students to schools or medical residents to hospitals. Limiting agents&#39; choices for ensuring diversity in this manner naturally entails some welfare loss. One of our goals is to study the trade-off between diversity and social welfare in such settings. We first show that, while the classic assignment program is polynomial-time computable, adding diversity constraints makes it computationally intractable; however, we identify a $\tfrac{1}{2}$-approximation algorithm, as well as reasonable assumptions on the weights that permit poly-time algorithms. Next, we provide two upper bounds on the price of diversity -- a measure of the loss in welfare incurred by imposing diversity constraints -- as functions of natural problem parameters. We conclude the paper with simulations based on publicly available data from two diversity-constrained allocation problems -- Singapore Public Housing and Chicago School Choice -- which shed light on how the constrained maximization as well as lottery-based variants perform in practice.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1711.10241v8-abstract-full').style.display = 'none'; document.getElementById('1711.10241v8-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 3 October, 2020; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 28 November, 2017;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> November 2017.
+      
+    </p>
+    
+
+    
+
+    
+      <p class="comments is-size-7">
+        <span class="has-text-black-bis has-text-weight-semibold">Journal ref:</span>
+        TEAC 8.3.14 (2020) 1-32
+      </p>
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1708.02153">arXiv:1708.02153</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1708.02153">pdf</a>, <a href="https://arxiv.org/format/1708.02153">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Artificial Intelligence">cs.AI</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Axiomatic Characterization of Data-Driven Influence Measures for Classification
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Sliwinski%2C+J">Jakub Sliwinski</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Strobel%2C+M">Martin Strobel</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1708.02153v2-abstract-short" style="display: inline;">
+        We study the following problem: given a labeled dataset and a specific datapoint x, how did the i-th feature influence the classification for x? We identify a family of numerical influence measures - functions that, given a datapoint x, assign a numeric value phi_i(x) to every feature i, corresponding to how altering i&#39;s value would influence the outcome for x. This family, which we term monotone&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1708.02153v2-abstract-full').style.display = 'inline'; document.getElementById('1708.02153v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1708.02153v2-abstract-full" style="display: none;">
+        We study the following problem: given a labeled dataset and a specific datapoint x, how did the i-th feature influence the classification for x? We identify a family of numerical influence measures - functions that, given a datapoint x, assign a numeric value phi_i(x) to every feature i, corresponding to how altering i&#39;s value would influence the outcome for x. This family, which we term monotone influence measures (MIM), is uniquely derived from a set of desirable properties, or axioms. The MIM family constitutes a provably sound methodology for measuring feature influence in classification domains; the values generated by MIM are based on the dataset alone, and do not make any queries to the classifier. While this requirement naturally limits the scope of our framework, we demonstrate its effectiveness on data.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1708.02153v2-abstract-full').style.display = 'none'; document.getElementById('1708.02153v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 November, 2018; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 7 August, 2017;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2017.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1505.00039">arXiv:1505.00039</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1505.00039">pdf</a>, <a href="https://arxiv.org/ps/1505.00039">ps</a>, <a href="https://arxiv.org/format/1505.00039">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Learning Cooperative Games
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Balcan%2C+M">Maria-Florina Balcan</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Procaccia%2C+A+D">Ariel D. Procaccia</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1505.00039v2-abstract-short" style="display: inline;">
+        This paper explores a PAC (probably approximately correct) learning model in cooperative games. Specifically, we are given $m$ random samples of coalitions and their values, taken from some unknown cooperative game; can we predict the values of unseen coalitions? We study the PAC learnability of several well-known classes of cooperative games, such as network flow games, threshold task games, and&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1505.00039v2-abstract-full').style.display = 'inline'; document.getElementById('1505.00039v2-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1505.00039v2-abstract-full" style="display: none;">
+        This paper explores a PAC (probably approximately correct) learning model in cooperative games. Specifically, we are given $m$ random samples of coalitions and their values, taken from some unknown cooperative game; can we predict the values of unseen coalitions? We study the PAC learnability of several well-known classes of cooperative games, such as network flow games, threshold task games, and induced subgraph games. We also establish a novel connection between PAC learnability and core stability: for games that are efficiently learnable, it is possible to find payoff divisions that are likely to be stable using a polynomial number of samples.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1505.00039v2-abstract-full').style.display = 'none'; document.getElementById('1505.00039v2-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 10 October, 2016; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 30 April, 2015;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">accepted to IJCAI 2015</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1505.00036">arXiv:1505.00036</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1505.00036">pdf</a>, <a href="https://arxiv.org/ps/1505.00036">ps</a>, <a href="https://arxiv.org/format/1505.00036">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Influence in Classification via Cooperative Game Theory
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Datta%2C+A">Amit Datta</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Datta%2C+A">Anupam Datta</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Procaccia%2C+A+D">Ariel D. Procaccia</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1505.00036v1-abstract-short" style="display: inline;">
+        A dataset has been classified by some unknown classifier into two types of points. What were the most important factors in determining the classification outcome? In this work, we employ an axiomatic approach in order to uniquely characterize an influence measure: a function that, given a set of classified points, outputs a value for each feature corresponding to its influence in determining the c&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1505.00036v1-abstract-full').style.display = 'inline'; document.getElementById('1505.00036v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1505.00036v1-abstract-full" style="display: none;">
+        A dataset has been classified by some unknown classifier into two types of points. What were the most important factors in determining the classification outcome? In this work, we employ an axiomatic approach in order to uniquely characterize an influence measure: a function that, given a set of classified points, outputs a value for each feature corresponding to its influence in determining the classification outcome. We show that our influence measure takes on an intuitive form when the unknown classifier is linear. Finally, we employ our influence measure in order to analyze the effects of user profiling on Google&#39;s online display advertising.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1505.00036v1-abstract-full').style.display = 'none'; document.getElementById('1505.00036v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 30 April, 2015; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> May 2015.
+      
+    </p>
+    
+    <p class="comments is-size-7">
+      <span class="has-text-black-bis has-text-weight-semibold">Comments:</span>
+      <span class="has-text-grey-dark mathjax">accepted to IJCAI 2015</span>
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1408.0442">arXiv:1408.0442</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1408.0442">pdf</a>, <a href="https://arxiv.org/format/1408.0442">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Power Distribution in Randomized Weighted Voting: the Effects of the Quota
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Oren%2C+J">Joel Oren</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Filmus%2C+Y">Yuval Filmus</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Bachrach%2C+Y">Yoram Bachrach</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1408.0442v1-abstract-short" style="display: inline;">
+        We study the Shapley value in weighted voting games. The Shapley value has been used as an index for measuring the power of individual agents in decision-making bodies and political organizations, where decisions are made by a majority vote process. We characterize the impact of changing the quota (i.e., the minimum number of seats in the parliament that are required to form a coalition) on the Sh&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1408.0442v1-abstract-full').style.display = 'inline'; document.getElementById('1408.0442v1-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1408.0442v1-abstract-full" style="display: none;">
+        We study the Shapley value in weighted voting games. The Shapley value has been used as an index for measuring the power of individual agents in decision-making bodies and political organizations, where decisions are made by a majority vote process. We characterize the impact of changing the quota (i.e., the minimum number of seats in the parliament that are required to form a coalition) on the Shapley values of the agents. Contrary to previous studies, which assumed that the agent weights (corresponding to the size of a caucus or a political party) are fixed, we analyze new domains in which the weights are stochastically generated, modelling, for example, elections processes.
+  We examine a natural weight generation process: the Balls and Bins model, with uniform as well as exponentially decaying probabilities. We also analyze weights that admit a super-increasing sequence, answering several open questions pertaining to the Shapley values in such games.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1408.0442v1-abstract-full').style.display = 'none'; document.getElementById('1408.0442v1-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 2 August, 2014; 
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> August 2014.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+  <li class="arxiv-result">
+    <div class="is-marginless">
+      <p class="list-title is-inline-block"><a href="https://arxiv.org/abs/1407.0420">arXiv:1407.0420</a>
+        <span>&nbsp;[<a href="https://arxiv.org/pdf/1407.0420">pdf</a>, <a href="https://arxiv.org/ps/1407.0420">ps</a>, <a href="https://arxiv.org/format/1407.0420">other</a>]&nbsp;</span>
+      </p>
+      <div class="tags is-inline-block">
+        <span class="tag is-small is-link tooltip is-tooltip-top" data-tooltip="Computer Science and Game Theory">cs.GT</span>
+        </div>
+      
+    </div>
+    
+    <p class="title is-5 mathjax">
+      
+        Cooperative Games with Overlapping Coalitions: Charting the Tractability Frontier
+      
+    </p>
+    <p class="authors">
+      <span class="search-hit">Authors:</span>
+      
+      <a href="/search/?searchtype=author&amp;query=Zick%2C+Y">Yair Zick</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Chalkiadakis%2C+G">Georgios Chalkiadakis</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Elkind%2C+E">Edith Elkind</a>, 
+      
+      <a href="/search/?searchtype=author&amp;query=Markakis%2C+E">Evangelos Markakis</a>
+      
+    </p>
+    
+    <p class="abstract mathjax">
+      <span class="has-text-black-bis has-text-weight-semibold">Abstract</span>:
+      <span class="abstract-short has-text-grey-dark mathjax" id="1407.0420v3-abstract-short" style="display: inline;">
+        In many multiagent scenarios, agents distribute resources, such as time or energy, among several tasks. Having completed their tasks and generated profits, task payoffs must be divided among the agents in some reasonable manner. Cooperative games with overlapping coalitions (OCF games) are a recent framework proposed by Chalkiadakis et al. (2010), generalizing classic cooperative games to the case&hellip;
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1407.0420v3-abstract-full').style.display = 'inline'; document.getElementById('1407.0420v3-abstract-short').style.display = 'none';">&#9661; More</a>
+      </span>
+      <span class="abstract-full has-text-grey-dark mathjax" id="1407.0420v3-abstract-full" style="display: none;">
+        In many multiagent scenarios, agents distribute resources, such as time or energy, among several tasks. Having completed their tasks and generated profits, task payoffs must be divided among the agents in some reasonable manner. Cooperative games with overlapping coalitions (OCF games) are a recent framework proposed by Chalkiadakis et al. (2010), generalizing classic cooperative games to the case where agents may belong to more than one coalition. Having formed overlapping coalitions and divided profits, some agents may feel dissatisfied with their share of the profits, and would like to deviate from the given outcome. However, deviation in OCF games is a complicated matter: agents may decide to withdraw only some of their weight from some of the coalitions they belong to; that is, even after deviation, it is possible that agents will still be involved in tasks with non-deviators. This means that the desirability of a deviation, and the stability of formed coalitions, is to a great extent determined by the reaction of non-deviators. In this work, we explore algorithmic aspects of OCF games, focusing on the core in OCF games. We study the problem of deciding if the core of an OCF game is not empty, and whether a core payoff division can be found in polynomial time; moreover, we identify conditions that ensure that the problem admits polynomial time algorithms. Finally, we introduce and study a natural class of OCF games, Linear Bottleneck Games. Interestingly, we show that such games always have a non-empty core, even assuming a highly lenient reaction to deviations.
+        <a class="is-size-7" style="white-space: nowrap;" onclick="document.getElementById('1407.0420v3-abstract-full').style.display = 'none'; document.getElementById('1407.0420v3-abstract-short').style.display = 'inline';">&#9651; Less</a>
+      </span>
+    </p>
+    
+
+    <p class="is-size-7"><span class="has-text-black-bis has-text-weight-semibold">Submitted</span> 15 July, 2014; <span class="has-text-black-bis has-text-weight-semibold">v1</span> submitted 1 July, 2014;
+      <span class="has-text-black-bis has-text-weight-semibold">originally announced</span> July 2014.
+      
+    </p>
+    
+
+    
+
+    
+  </li>
+
+</ol>
+
+
+  
+
+
+      <div class="is-hidden-tablet">
+        <!-- feedback for mobile only -->
+        <span class="help" style="display: inline-block;"><a href="https://github.com/arXiv/arxiv-search/releases">Search v0.5.6 released 2020-02-24</a>&nbsp;&nbsp;</span>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    
+    <div class="columns is-desktop" role="navigation" aria-label="Secondary">
+  <!-- MetaColumn 1 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/about">About</a></li>
+          <li><a href="https://info.arxiv.org/help">Help</a></li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul class="nav-spaced">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>contact arXiv</title><desc>Click here to contact arXiv</desc><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
+            <a href="https://info.arxiv.org/help/contact.html"> Contact</a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><title>subscribe to arXiv mailings</title><desc>Click here to subscribe</desc><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg>
+            <a href="https://info.arxiv.org/help/subscribe"> Subscribe</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 1 -->
+  <!-- MetaColumn 2 -->
+  <div class="column">
+    <div class="columns">
+      <div class="column">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/license/index.html">Copyright</a></li>
+          <li><a href="https://info.arxiv.org/help/policies/privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="column sorry-app-links">
+        <ul class="nav-spaced">
+          <li><a href="https://info.arxiv.org/help/web_accessibility.html">Web Accessibility Assistance</a></li>
+          <li>
+            <p class="help">
+              <a class="a11y-main-link" href="https://status.arxiv.org" target="_blank">arXiv Operational Status <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="icon filter-dark_grey" role="presentation"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a><br>
+              Get status notifications via
+              <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/email/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon filter-black" role="presentation"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>email</a>
+              or <a class="is-link" href="https://subscribe.sorryapp.com/24846f03/slack/new" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon filter-black" role="presentation"><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>slack</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> <!-- end MetaColumn 2 -->
+</div>
+    
+  </footer>
+  <script src="https://static.arxiv.org/static/base/1.0.0a5/js/member_acknowledgement.js"></script>
+  </body>
+</html>

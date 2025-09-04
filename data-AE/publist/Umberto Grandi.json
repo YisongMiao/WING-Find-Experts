@@ -1,0 +1,150 @@
+{
+  "author": "Umberto Grandi",
+  "results": [
+    {
+      "title": "Leveraging LLMs for Privacy-Aware Predictions in Participatory Budgeting",
+      "abstract": "Participatory Budgeting (PB) empowers citizens to propose and vote on public investment projects. Yet, despite its democratic potential, PB initiatives often suffer from low participation rates, limiting their visibility and perceived legitimacy. In this work, we aim to strengthen PB elections in two key ways: by supporting project proposers in crafting better proposals, and by helping PB organizers manage large volumes of submissions in a transparent manner. We propose a privacy-preserving approach to predict which PB proposals are likely to be funded, using only their textual descriptions and anonymous historical voting records -- without relying on voter demographics or personally identifiable information. We evaluate the performance of GPT 4 Turbo in forecasting proposal outcomes across varying contextual scenarios, observing that the LLM's prior knowledge needs to be complemented by past voting data to obtain predictions reflecting real-world PB voting behavior. Our findings highlight the potential of AI-driven tools to support PB processes by improving transparency, planning efficiency, and civic engagement. △ Less",
+      "url": "https://arxiv.org/abs/2508.06577"
+    },
+    {
+      "title": "Prompt Injection Vulnerability of Consensus Generating Applications in Digital Democracy",
+      "abstract": "Large Language Models (LLMs) are gaining traction as a method to generate consensus statements and aggregate preferences in digital democracy experiments. Yet, LLMs may introduce critical vulnerabilities in these systems. Here, we explore the impact of prompt-injection attacks targeting consensus generating systems by introducing a four-dimensional taxonomy of attacks. We test these attacks using LLaMA 3.1 8B and Chat GPT 4.1 Nano finding the LLMs more vulnerable to criticism attacks -- attacks using disagreeable prompts -- and more effective at tilting ambiguous consensus statements. We also find evidence of more effective manipulation when using explicit imperatives and rational-sounding arguments compared to emotional language or fabricated statistics. To mitigate these vulnerabilities, we apply Direct Preference Optimization (DPO), an alignment method that fine-tunes LLMs to prefer unperturbed consensus statements. While DPO significantly improves robustness, it still offers limited protection against attacks targeting ambiguous consensus. These results advance our understanding of the vulnerability and robustness of consensus generating LLMs in digital democracy applications. △ Less",
+      "url": "https://arxiv.org/abs/2508.04281"
+    },
+    {
+      "title": "Responsibility in a Multi-Value Strategic Setting",
+      "abstract": "Responsibility is a key notion in multi-agent systems and in creating safe, reliable and ethical AI. However, most previous work on responsibility has only considered responsibility for single outcomes. In this paper we present a model for responsibility attribution in a multi-agent, multi-value setting. We also expand our model to cover responsibility anticipation, demonstrating how considerations of responsibility can help an agent to select strategies that are in line with its values. In particular we show that non-dominated regret-minimising strategies reliably minimise an agent's expected degree of responsibility. △ Less",
+      "url": "https://arxiv.org/abs/2410.17229"
+    },
+    {
+      "title": "Proportionality for Constrained Public Decisions",
+      "abstract": "We study situations where a group of voters need to take a collective decision over a number of public issues, with the goal of getting a result that reflects the voters' opinions in a proportional manner. Our focus is on interconnected public decisions, where the decision on one or more issues has repercussions on the acceptance or rejection of other public issues in the agenda. We show that the adaptations of classical justified-representation axioms to this enriched setting are always satisfiable only for restricted classes of public agendas. However, the use of suitably adapted well-known decision rules on a class of quite expressive constraints, yields proportionality guarantees that match these justified-representation properties in an approximate sense. We also identify another path to achieving proportionality via an adaptation of the notion of priceability. △ Less",
+      "url": "https://arxiv.org/abs/2409.02609"
+    },
+    {
+      "title": "Abductive and Contrastive Explanations for Scoring Rules in Voting",
+      "abstract": "We view voting rules as classifiers that assign a winner (a class) to a profile of voters' preferences (an instance). We propose to apply techniques from formal explainability, most notably abductive and contrastive explanations, to identify minimal subsets of a preference profile that either imply the current winner or explain why a different candidate was not elected. Formal explanations turn out to have strong connections with classical problems studied in computational social choice such as bribery, possible and necessary winner identification, and preference learning. We design algorithms for computing abductive and contrastive explanations for scoring rules. For the Borda rule, we find a lower bound on the size of the smallest abductive explanations, and we conduct simulations to identify correlations between properties of preference profiles and the size of their smallest abductive explanations. △ Less",
+      "url": "https://arxiv.org/abs/2408.12927"
+    },
+    {
+      "title": "Large Language Models (LLMs) as Agents for Augmented Democracy",
+      "abstract": "We explore an augmented democracy system built on off-the-shelf LLMs fine-tuned to augment data on citizen's preferences elicited over policies extracted from the government programs of the two main candidates of Brazil's 2022 presidential election. We use a train-test cross-validation setup to estimate the accuracy with which the LLMs predict both: a subject's individual political choices and the aggregate preferences of the full sample of participants. At the individual level, we find that LLMs predict out of sample preferences more accurately than a \"bundle rule\", which would assume that citizens always vote for the proposals of the candidate aligned with their self-reported political orientation. At the population level, we show that a probabilistic sample augmented by an LLM provides a more accurate estimate of the aggregate preferences of a population than the non-augmented probabilistic sample alone. Together, these results indicates that policy preference data augmented using LLMs can capture nuances that transcend party lines and represents a promising avenue of research for data augmentation. △ Less",
+      "url": "https://arxiv.org/abs/2405.03452"
+    },
+    {
+      "title": "Enabling the Digital Democratic Revival: A Research Program for Digital Democracy",
+      "abstract": "This white paper outlines a long-term scientific vision for the development of digital-democracy technology. We contend that if digital democracy is to meet the ambition of enabling a participatory renewal in our societies, then a comprehensive multi-methods research effort is required that could, over the years, support its development in a democratically principled, empirically and computationally informed way. The paper is co-authored by an international and interdisciplinary team of researchers and arose from the Lorentz Center Workshop on ``Algorithmic Technology for Democracy'' (Leiden, October 2022). △ Less",
+      "url": "https://arxiv.org/abs/2401.16863"
+    },
+    {
+      "title": "Anticipating Responsibility in Multiagent Planning",
+      "abstract": "Responsibility anticipation is the process of determining if the actions of an individual agent may cause it to be responsible for a particular outcome. This can be used in a multi-agent planning setting to allow agents to anticipate responsibility in the plans they consider. The planning setting in this paper includes partial information regarding the initial state and considers formulas in linear temporal logic as positive or negative outcomes to be attained or avoided. We firstly define attribution for notions of active, passive and contributive responsibility, and consider their agentive variants. We then use these to define the notion of responsibility anticipation. We prove that our notions of anticipated responsibility can be used to coordinate agents in a planning setting and give complexity results for our model, discussing equivalence with classical planning. We also present an outline for solving some of our attribution and anticipation problems using PDDL solvers. △ Less",
+      "url": "https://arxiv.org/abs/2307.16685"
+    },
+    {
+      "title": "Measuring and Controlling Divisiveness in Rank Aggregation",
+      "abstract": "In rank aggregation, members of a population rank issues to decide which are collectively preferred. We focus instead on identifying divisive issues that express disagreements among the preferences of individuals. We analyse the properties of our divisiveness measures and their relation to existing notions of polarisation. We also study their robustness under incomplete preferences and algorithms for control and manipulation of divisiveness. Our results advance our understanding of how to quantify disagreements in collective decision-making. △ Less",
+      "url": "https://arxiv.org/abs/2306.08511"
+    },
+    {
+      "title": "Understanding Political Divisiveness using Online Participation data from the 2022 French and Brazilian Presidential Elections",
+      "abstract": "Digital technologies can augment civic participation by facilitating the expression of detailed political preferences. Yet, digital participation efforts often rely on methods optimized for elections involving a few candidates. Here we present data collected in an online experiment where participants built personalized government programs by combining policies proposed by the candidates of the 2022 French and Brazilian presidential elections. We use this data to explore aggregates complementing those used in social choice theory, finding that a metric of divisiveness, which is uncorrelated with traditional aggregation functions, can identify polarizing proposals. These metrics provide a score for the divisiveness of each proposal that can be estimated in the absence of data on the demographic characteristics of participants and that explains the issues that divide a population. These findings suggest divisiveness metrics can be useful complements to traditional aggregation functions in direct forms of digital participation. △ Less",
+      "url": "https://arxiv.org/abs/2211.04577"
+    },
+    {
+      "title": "Logic-Based Ethical Planning",
+      "abstract": "In this paper we propose a framework for ethical decision making in the context of planning, with intended application to robotics. We put forward a compact but highly expressive language for ethical planning that combines linear temporal logic with lexicographic preference modelling. This original combination allows us to assess plans both with respect to an agent's values and their desires, introducing the novel concept of the morality level of an agent and moving towards multigoal, multivalue planning. We initiate the study of computational complexity of planning tasks in our setting, and we discuss potential applications to robotics. △ Less",
+      "url": "https://arxiv.org/abs/2206.00595"
+    },
+    {
+      "title": "On the Complexity of Majority Illusion in Social Networks",
+      "abstract": "Majority illusion occurs in a social network when the majority of the network nodes belong to a certain type but each node's neighbours mostly belong to a different type, therefore creating the wrong perception, i.e., the illusion, that the majority type is different from the actual one. From a system engineering point of view, we want to devise algorithms to detect and, crucially, correct this undesirable phenomenon. In this paper we initiate the computational study of majority illusion in social networks, providing complexity results for its occurrence and avoidance. Namely, we show that identifying whether a network can be labelled such that majority illusion is present, as well as the problem of removing an illusion by adding or deleting edges of the network, are NP-complete problems. △ Less",
+      "url": "https://arxiv.org/abs/2205.02056"
+    },
+    {
+      "title": "Collective discrete optimisation as judgment aggregation",
+      "abstract": "Many important collective decision-making problems can be seen as multi-agent versions of discrete optimisation problems. Participatory budgeting, for instance, is the collective version of the knapsack problem; other examples include collective scheduling, and collective spanning trees. Rather than developing a specific model, as well as specific algorithmic techniques, for each of these problems, we propose to represent and solve them in the unifying framework of judgment aggregation with weighted issues. We provide a modular definition of collective discrete optimisation (CDO) rules based on coupling a set scoring function with an operator, and we show how they generalise several existing procedures developed for specific CDO problems. We also give an implementation based on integer linear programming (ILP) and test it on the problem of collective spanning trees. △ Less",
+      "url": "https://arxiv.org/abs/2112.00574"
+    },
+    {
+      "title": "Unravelling multi-agent ranked delegations",
+      "abstract": "We introduce a voting model with multi-agent ranked delegations. This model generalises liquid democracy in two aspects: first, an agent's delegation can use the votes of multiple other agents to determine their own -- for instance, an agent's vote may correspond to the majority outcome of the votes of a trusted group of agents; second, agents can submit a ranking over multiple delegations, so that a backup delegation can be used when their preferred delegations are involved in cycles. The main focus of this paper is the study of unravelling procedures that transform the delegation ballots received from the agents into a profile of direct votes, from which a winning alternative can then be determined by using a standard voting rule. We propose and study six such unravelling procedures, two based on optimisation and four using a greedy approach. We study both algorithmic and axiomatic properties, as well as related computational complexity problems of our unravelling procedures for different restrictions on the types of ballots that the agents can submit. △ Less",
+      "url": "https://arxiv.org/abs/2111.13145"
+    },
+    {
+      "title": "Social Choice Methods for Database Aggregation",
+      "abstract": "Knowledge can be represented compactly in multiple ways, from a set of propositional formulas, to a Kripke model, to a database. In this paper we study the aggregation of information coming from multiple sources, each source submitting a database modelled as a first-order relational structure. In the presence of integrity constraints, we identify classes of aggregators that respect them in the aggregated database, provided these are satisfied in all individual databases. We also characterise languages for first-order queries on which the answer to a query on the aggregated database coincides with the aggregation of the answers to the query obtained on each individual database. This contribution is meant to be a first step on the application of techniques from social choice theory to knowledge representation in databases. △ Less",
+      "url": "https://arxiv.org/abs/1907.10492"
+    },
+    {
+      "title": "Aggregation in Value-Based Argumentation Frameworks",
+      "abstract": "Value-based argumentation enhances a classical abstract argumentation graph - in which arguments are modelled as nodes connected by directed arrows called attacks - with labels on arguments, called values, and an ordering on values, called audience, to provide a more fine-grained justification of the attack relation. With more than one agent facing such an argumentation problem, agents may differ in their ranking of values. When needing to reach a collective view, such agents face a dilemma between two equally justifiable approaches: aggregating their views at the level of values, or aggregating their attack relations, remaining therefore at the level of the graphs. We explore the strenghts and limitations of both approaches, employing techniques from preference aggregation and graph aggregation, and propose a third possibility aggregating rankings extracted from given attack relations. △ Less",
+      "url": "https://arxiv.org/abs/1907.09113"
+    },
+    {
+      "title": "Agent-Mediated Social Choice",
+      "abstract": "Direct democracy is often proposed as a possible solution to the 21st-century problems of democracy. However, this suggestion clashes with the size and complexity of 21st-century societies, entailing an excessive cognitive burden on voters, who would have to submit informed opinions on an excessive number of issues. In this paper I argue for the development of voting avatars, autonomous agents debating and voting on behalf of each citizen. Theoretical research from artificial intelligence, and in particular multiagent systems and computational social choice, proposes 21st-century techniques for this purpose, from the compact representation of a voter's preferences and values, to the development of voting procedures for autonomous agents use only. △ Less",
+      "url": "https://arxiv.org/abs/1806.07199"
+    },
+    {
+      "title": "Database Aggregation",
+      "abstract": "Knowledge can be represented compactly in a multitude ways, from a set of propositional formulas, to a Kripke model, to a database. In this paper we study the aggregation of information coming from multiple sources, each source submitting a database modelled as a first-order relational structure. In the presence of an integrity constraint, we identify classes of aggregators that respect it in the aggregated database, provided all individual databases satisfy it. We also characterise languages for first-order queries on which the answer to queries on the aggregated database coincides with the aggregation of the answers to the query obtained on each individual database. This contribution is meant to be a first step on the application of techniques from rational choice theory to knowledge representation in databases. △ Less",
+      "url": "https://arxiv.org/abs/1802.08586"
+    },
+    {
+      "title": "A Roadmap for HEP Software and Computing R&D for the 2020s",
+      "abstract": "Particle physics has an ambitious and broad experimental programme for the coming decades. This programme requires large investments in detector hardware, either to build new facilities and experiments, or to upgrade existing ones. Similarly, it requires commensurate investment in the R&D of software to acquire, manage, process, and analyse the shear amounts of data to be recorded. In planning for the HL-LHC in particular, it is critical that all of the collaborating stakeholders agree on the software goals and priorities, and that the efforts complement each other. In this spirit, this white paper describes the R&D activities required to prepare for this software upgrade. △ Less",
+      "url": "https://arxiv.org/abs/1712.06982"
+    },
+    {
+      "title": "Relaxing Exclusive Control in Boolean Games",
+      "abstract": "In the typical framework for boolean games (BG) each player can change the truth value of some propositional atoms, while attempting to make her goal true. In standard BG goals are propositional formulas, whereas in iterated BG goals are formulas of Linear Temporal Logic. Both notions of BG are characterised by the fact that agents have exclusive control over their set of atoms, meaning that no two agents can control the same atom. In the present contribution we drop the exclusivity assumption and explore structures where an atom can be controlled by multiple agents. We introduce Concurrent Game Structures with Shared Propositional Control (CGS-SPC) and show that they ac- count for several classes of repeated games, including iterated boolean games, influence games, and aggregation games. Our main result shows that, as far as verification is concerned, CGS-SPC can be reduced to concurrent game structures with exclusive control. This result provides a polynomial reduction for the model checking problem of specifications in Alternating-time Temporal Logic on CGS-SPC. △ Less",
+      "url": "https://arxiv.org/abs/1707.08736"
+    },
+    {
+      "title": "Cognitive Hierarchy and Voting Manipulation",
+      "abstract": "By the Gibbard--Satterthwaite theorem, every reasonable voting rule for three or more alternatives is susceptible to manipulation: there exist elections where one or more voters can change the election outcome in their favour by unilaterally modifying their vote. When a given election admits several such voters, strategic voting becomes a game among potential manipulators: a manipulative vote that leads to a better outcome when other voters are truthful may lead to disastrous results when other voters choose to manipulate as well. We consider this situation from the perspective of a boundedly rational voter, and use the cognitive hierarchy framework to identify good strategies. We then investigate the associated algorithmic questions under the k-approval voting rule. We obtain positive algorithmic results for k=1 and 2, and NP- and coNP-hardness results for k>3. △ Less",
+      "url": "https://arxiv.org/abs/1707.08598"
+    },
+    {
+      "title": "Gibbard-Satterthwaite Games for k-Approval Voting Rules",
+      "abstract": "The Gibbard-Satterthwaite theorem implies the existence of voters, called manipulators, who can change the election outcome in their favour by voting strategically. When a given preference profile admits several such manipulators, voting becomes a game played by these voters, who have to reason strategically about each others' actions. To complicate the game even further, counter-manipulators may then try to counteract the actions of manipulators. Our voters are boundedly rational and do not think beyond manipulating or countermanipulating. We call these games Gibbard--Satterthwaite Games. In this paper we look for conditions that guarantee the existence of a Nash equilibria in pure strategies. △ Less",
+      "url": "https://arxiv.org/abs/1707.05619"
+    },
+    {
+      "title": "Graph Aggregation",
+      "abstract": "Graph aggregation is the process of computing a single output graph that constitutes a good compromise between several input graphs, each provided by a different source. One needs to perform graph aggregation in a wide variety of situations, e.g., when applying a voting rule (graphs as preference orders), when consolidating conflicting views regarding the relationships between arguments in a debate (graphs as abstract argumentation frameworks), or when computing a consensus between several alternative clusterings of a given dataset (graphs as equivalence relations). In this paper, we introduce a formal framework for graph aggregation grounded in social choice theory. Our focus is on understanding which properties shared by the individual input graphs will transfer to the output graph returned by a given aggregation rule. We consider both common properties of graphs, such as transitivity and reflexivity, and arbitrary properties expressible in certain fragments of modal logic. Our results establish several connections between the types of properties preserved under aggregation and the choice-theoretic axioms satisfied by the rules used. The most important of these results is a powerful impossibility theorem that generalises Arrow's seminal result for the aggregation of preference orders to a large collection of different types of graphs. △ Less",
+      "url": "https://arxiv.org/abs/1609.03765"
+    },
+    {
+      "title": "Strategic disclosure of opinions on a social network",
+      "abstract": "We study the strategic aspects of social influence in a society of agents linked by a trust network, introducing a new class of games called games of influence. A game of influence is an infinite repeated game with incomplete information in which, at each stage of interaction, an agent can make her opinions visible (public) or invisible (private) in order to influence other agents' opinions. The influence process is mediated by a trust network, as we assume that the opinion of a given agent is only affected by the opinions of those agents that she considers trustworthy (i.e., the agents in the trust network that are directly linked to her). Each agent is endowed with a goal, expressed in a suitable temporal language inspired from linear temporal logic (LTL). We show that games of influence provide a simple abstraction to explore the effects of the trust network structure on the agents' behaviour, by considering solution concepts from game-theory such as Nash equilibrium, weak dominance and winning strategies. △ Less",
+      "url": "https://arxiv.org/abs/1602.02710"
+    },
+    {
+      "title": "A network-based rating system and its resistance to bribery",
+      "abstract": "We study a rating system in which a set of individuals (e.g., the customers of a restaurant) evaluate a given service (e.g, the restaurant), with their aggregated opinion determining the probability of all individuals to use the service and thus its generated revenue. We explicitly model the influence relation by a social network, with individuals being influenced by the evaluation of their trusted peers. On top of that we allow a malicious service provider (e.g., the restaurant owner) to bribe some individuals, i.e., to invest a part of his or her expected income to modify their opinion, therefore influencing his or her final gain. We analyse the effect of bribing strategies under various constraints, and we show under what conditions the system is bribery-proof, i.e., no bribing strategy yields a strictly positive expected gain to the service provider. △ Less",
+      "url": "https://arxiv.org/abs/1602.01258"
+    },
+    {
+      "title": "The Common Structure of Paradoxes in Aggregation Theory",
+      "abstract": "In this paper we analyse some of the classical paradoxes in Social Choice Theory (namely, the Condorcet paradox, the discursive dilemma, the Ostrogorski paradox and the multiple election paradox) using a general framework for the study of aggregation problems called binary aggregation with integrity constraints. We provide a definition of paradox that is general enough to account for the four cases mentioned, and identify a common structure in the syntactic properties of the rationality assumptions that lie behind such paradoxes. We generalise this observation by providing a full characterisation of the set of rationality assumptions on which the majority rule does not generate a paradox. △ Less",
+      "url": "https://arxiv.org/abs/1406.2855"
+    },
+    {
+      "title": "Equilibrium Refinement through Negotiation in Binary Voting",
+      "abstract": "We study voting games on binary issues, where voters hold an objective over the outcome of the collective decision and are allowed, before the vote takes place, to negotiate their voting strategy with the other participants. We analyse the voters' rational behaviour in the resulting two-phase game, showing under what conditions undesirable equilibria can be removed and desirable ones sustained as a consequence of the pre-vote phase. △ Less",
+      "url": "https://arxiv.org/abs/1404.5433"
+    },
+    {
+      "title": "Complexity of Judgment Aggregation",
+      "abstract": "We analyse the computational complexity of three problems in judgment aggregation: (1) computing a collective judgment from a profile of individual judgments (the winner determination problem); (2) deciding whether a given agent can influence the outcome of a judgment aggregation procedure in her favour by reporting insincere judgments (the strategic manipulation problem); and (3) deciding whether a given judgment aggregation scenario is guaranteed to result in a logically consistent outcome, independently from what the judgments supplied by the individuals are (the problem of the safety of the agenda). We provide results both for specific aggregation procedures (the quota rules, the premise-based procedure, and a distance-based procedure) and for classes of aggregation procedures characterised in terms of fundamental axioms. △ Less",
+      "url": "https://arxiv.org/abs/1401.5863"
+    },
+    {
+      "title": "Restricted Manipulation in Iterative Voting: Convergence and Condorcet Efficiency",
+      "abstract": "In collective decision making, where a voting rule is used to take a collective decision among a group of agents, manipulation by one or more agents is usually considered negative behavior to be avoided, or at least to be made computationally difficult for the agents to perform. However, there are scenarios in which a restricted form of manipulation can instead be beneficial. In this paper we consider the iterative version of several voting rules, where at each step one agent is allowed to manipulate by modifying his ballot according to a set of restricted manipulation moves which are computationally easy and require little information to be performed. We prove convergence of iterative voting rules when restricted manipulation is allowed, and we present experiments showing that most iterative voting rules have a higher Condorcet efficiency than their non-iterative version. △ Less",
+      "url": "https://arxiv.org/abs/1303.0787"
+    }
+  ]
+}
