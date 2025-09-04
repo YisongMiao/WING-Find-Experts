@@ -3,6 +3,7 @@ import json
 import argparse
 import numpy as np
 import torch
+import csv
 
 from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
@@ -10,6 +11,9 @@ from sentence_transformers.util import semantic_search
 
 from process_data import build_author_profile
 from generate_justification import generate_justification
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+
 
 def get_args():
     """
@@ -24,7 +28,7 @@ def get_args():
     parser.add_argument("--output_path", type=str, default="./log/", help="Path to the output file")
     parser.add_argument("--llm", type=str, default="qwen2.5-72b-instruct", help="LLM to generate justification of fitness score.")
     parser.add_argument("--embedding_model_name_or_path", type=str, default="all-MiniLM-L6-v2", help="Embedding model name or path.")
-    parser.add_argument("--author_embedding", type=str, choices=["aggregate", "summarize"], default="summarize", help="Method to aggregate multiple publications for one author.")
+    parser.add_argument("--author_embedding", type=str, choices=["aggregate", "summarize"], default="aggregate", help="Method to aggregate multiple publications for one author.")
     parser.add_argument("--device", type=str, default="cpu", help="Computation device to store the embedding model and compute embeddings.")
     args = parser.parse_args()
     return args
@@ -132,21 +136,49 @@ def main():
     list_of_authors = [item[key] for item in database]
     sorted_id_and_scores = compute_fitness(model, query, list_of_authors, args)
     
-    # Generate justification for each reviewer
+    # Save fitness scores to CSV in descending order
+    csv_file = os.path.join(args.output_path, f"fitness_scores_{args.author_embedding}.csv")
+    with open(csv_file, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(['Rank', 'Author Name', 'Fitness Score', 'Author ID'])
+        
+        for i, item in enumerate(sorted_id_and_scores):
+            author_id = item["corpus_id"]
+            score = item["score"]
+            author_name = database[author_id]["name"]
+            writer.writerow([i+1, author_name, f"{score:.4f}", author_id])
+    
+    print(f"Fitness scores saved to {csv_file}")
+    
+    # Prepare output file path
+    output_file = os.path.join(args.output_path, f"output_{args.author_embedding}.txt")
+    
+    # Generate justification for each reviewer and save incrementally
     results = []
-    for item in tqdm(sorted_id_and_scores, desc="Generating Explanation"):
+    for i, item in enumerate(tqdm(sorted_id_and_scores, desc="Generating Explanation")):
         author_id, score = item["corpus_id"], item["score"]
         author_name = database[author_id]["name"]
+        
+        print(f"Generating explanation for {author_name} ({i+1}/{len(sorted_id_and_scores)})")
+        
         reason = generate_justification(query_dict, database[author_id]["summary"], round(score * 100), args)
-        results.append({
+        
+        result_item = {
             "name": author_name,
             "fitness": score,
             "explanation": reason
-        })
+        }
+        
+        results.append(result_item)
+        
+        # Save incrementally after each explanation is generated
+        with open(output_file, "w") as f:
+            for result in results:
+                f.write(json.dumps(result) + "\n")
+        
+        print(f"✓ Saved explanation for {author_name} to {output_file}")
     
-    with open(os.path.join(args.output_path, f"output_{args.author_embedding}.txt"), "w") as f:
-        for item in results:
-            f.write(json.dumps(item) + "\n")
+    print(f"All explanations completed and saved to {output_file}")
             
 if __name__ == "__main__":
     main()
