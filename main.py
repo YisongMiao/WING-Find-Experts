@@ -25,11 +25,13 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--data_path", type=str, default="./data/test_database.jsonl", help="Path to the database file")
     parser.add_argument("--query_path", type=str, default="./data/test_query.json", help="Path to the query file")
+    parser.add_argument("--query_index", type=int, default=1, help="Index of the query file to use (0, 1, 2, 3, etc.)")
     parser.add_argument("--output_path", type=str, default="./log/", help="Path to the output file")
     parser.add_argument("--llm", type=str, default="qwen2.5-72b-instruct", help="LLM to generate justification of fitness score.")
     parser.add_argument("--embedding_model_name_or_path", type=str, default="all-MiniLM-L6-v2", help="Embedding model name or path.")
     parser.add_argument("--author_embedding", type=str, choices=["aggregate", "summarize"], default="aggregate", help="Method to aggregate multiple publications for one author.")
     parser.add_argument("--device", type=str, default="cpu", help="Computation device to store the embedding model and compute embeddings.")
+    parser.add_argument("--top_k", type=int, default=10, help="Number of top experts to generate explanations for.")
     args = parser.parse_args()
     return args
 
@@ -110,7 +112,15 @@ def main():
     model = init_model(args.embedding_model_name_or_path, args.device)
     
     # Input query and build database
-    with open(args.query_path, "r") as f:
+    # Determine the actual query file path based on query_index
+    if args.query_index > 0:
+        query_file = f"./data/test_query_{args.query_index}.json"
+    else:
+        query_file = args.query_path
+    
+    print(f"Using query file: {query_file}")
+    
+    with open(query_file, "r") as f:
         query_dict = json.load(f)
     
     os.makedirs("log", exist_ok=True)
@@ -137,7 +147,7 @@ def main():
     sorted_id_and_scores = compute_fitness(model, query, list_of_authors, args)
     
     # Save fitness scores to CSV in descending order
-    csv_file = os.path.join(args.output_path, f"fitness_scores_{args.author_embedding}.csv")
+    csv_file = os.path.join(args.output_path, f"fitness_scores_{args.author_embedding}_query_{args.query_index}.csv")
     with open(csv_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(['Rank', 'Author Name', 'Fitness Score', 'Author ID'])
@@ -151,21 +161,27 @@ def main():
     print(f"Fitness scores saved to {csv_file}")
     
     # Prepare output file path
-    output_file = os.path.join(args.output_path, f"output_{args.author_embedding}.txt")
+    output_file = os.path.join(args.output_path, f"output_{args.author_embedding}_query_{args.query_index}.txt")
     
-    # Generate justification for each reviewer and save incrementally
+    # Generate justification for top K reviewers only and save incrementally
     results = []
-    for i, item in enumerate(tqdm(sorted_id_and_scores, desc="Generating Explanation")):
+    top_k_experts = sorted_id_and_scores[:args.top_k]
+    
+    print(f"Generating explanations for top {args.top_k} experts only...")
+    
+    for i, item in enumerate(tqdm(top_k_experts, desc="Generating Explanation")):
         author_id, score = item["corpus_id"], item["score"]
         author_name = database[author_id]["name"]
         
-        print(f"Generating explanation for {author_name} ({i+1}/{len(sorted_id_and_scores)})")
+        print(f"Generating explanation for {author_name} (Rank {i+1}/{args.top_k})")
         
         reason = generate_justification(query_dict, database[author_id]["summary"], round(score * 100), args)
         
         result_item = {
+            "rank": i + 1,
             "name": author_name,
             "fitness": score,
+            "author_id": author_id,
             "explanation": reason
         }
         
@@ -176,9 +192,9 @@ def main():
             for result in results:
                 f.write(json.dumps(result) + "\n")
         
-        print(f"✓ Saved explanation for {author_name} to {output_file}")
+        print(f"✓ Saved explanation for {author_name} (Rank {i+1}) to {output_file}")
     
-    print(f"All explanations completed and saved to {output_file}")
+    print(f"All explanations for top {args.top_k} experts completed and saved to {output_file}")
             
 if __name__ == "__main__":
     main()
