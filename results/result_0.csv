@@ -1,0 +1,5 @@
+system,AEs
+aggregate,["Julia Hockenmaier", "Hwee Tou Ng", "Xuanjing Huang", "Eneko Agirre", "Kai-Wei Chang", "Sriraam Natarajan", "Fei Liu", "Scott Sanner", "Saif Mohammad", "Bo Li"]
+gpt,["Julia Hockenmaier", "Eneko Agirre", "Fei Liu", "Saif Mohammad", "Kai-Wei Chang", "Desmond Elliott", "Xuanjing Huang", "Hwee Tou Ng", "Bo Li", "Valerio Basile"]
+gemini,["Julia Hockenmaier", "Saif Mohammad", "Alessandro Moschitti", "Hwee Tou Ng", "Valerio Basile", "Eneko Agirre", "Sebastian Ruder", "Laura Giordano", "Roni Stern", "Stefan Szeider"]
+summarize,["Julia Hockenmaier", "Hwee Tou Ng", "Alessandro Moschitti", "Patrik Haslum", "Quanquan Gu", "Sasha Rubin", "Kuldeep Meel", "Bo Li", "Scott Sanner", "Jianwen Xie"]
