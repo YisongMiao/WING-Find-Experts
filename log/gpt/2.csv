@@ -1,0 +1,11 @@
+index, name, rationale
+1, Virginia Dignum, Leading researcher in responsible and trustworthy AI; extensive work on governance, ethics, fairness, and transparency in AI systems — directly aligned with explainability and regulatory concerns in insurance
+2, Bo Li, Recognized for contributions to trustworthy machine learning, adversarial robustness, and privacy; work connects interpretability and security — relevant to regulated industries like insurance
+3, Ferdinando Fioretto, Researches fairness, optimization, and explainability in AI with applications in decision-making systems; strong fit for responsible AI in socio-technical contexts like insurance
+4, Michela Milano, Known for work on AI in optimization and decision support, particularly in industry applications; has worked on interpretable AI in constrained optimization, relevant for pricing, risk, and fraud detection
+5, Maria Perez-Ortiz, Focuses on AI interpretability, fairness, and real-world decision-making systems; overlaps with societal trust in AI, a key theme in the paper
+6, Valerio Basile, Works on NLP, semantics, and explainability; relevant as the paper touches on newer LLM-based explainability methods and stakeholder-centric approaches
+7, Marija Slavkovik, Expert on AI ethics, decision-making, and responsibility attribution; strong background in socio-technical implications of AI, complementing trust/regulatory aspects of insurance-focused XAI
+8, Scott Sanner, Published on explainable decision-making, planning, and recommendation systems; experience with practical XAI techniques (e.g., feature importance, PDPs) connects well to benchmarking
+9, Sanmay Das, Researches AI in economics and computational social science, including fairness and trust in algorithmic decision-making — a strong match for insurance pricing and underwriting contexts
+10, Ofra Amir, Focuses on human-AI interaction and decision support, including how explanations affect trust and adoption; directly relevant for stakeholder-centric explainability recommendations

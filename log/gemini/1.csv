@@ -1,0 +1,11 @@
+index,name,rationale
+1,Ivor Tsang,Leading expert in federated and distributed learning, with a strong focus on optimization and large-scale systems. His work is highly relevant to the paper's core concepts and practical contributions.
+2,Bo Li,Specializes in trustworthy machine learning, particularly security and privacy in federated learning. Her expertise is crucial for reviewing the paper's sections on these key modular components.
+3,Quanquan Gu,Prominent researcher in machine learning theory and optimization. His deep knowledge of distributed optimization makes him ideal for assessing the paper's claims about bottlenecks and aggregation methods.
+4,Tongliang Liu,Known for research on robust machine learning and dealing with data heterogeneity. His expertise directly relates to the paper's proposed "Alignment" operator, which addresses similar challenges.
+5,Ferdinando Fioretto,Expertise in privacy-preserving machine learning and optimization. His background in differential privacy and distributed systems is a perfect match for reviewing the paper's security and privacy components.
+6,Siddharth Srivastava,Focuses on multi-agent systems and decentralized AI. His perspective would be valuable for evaluating the paper's "meta-framework" and its foundations in distributed problem-solving.
+7,Toby Walsh,A broad AI expert with significant contributions to distributed systems and social choice. His high-level perspective can provide valuable insights into the paper's theoretical framing and broader implications.
+8,Nisarg Shah,Researches computational social choice and AI collaboration. His expertise is relevant to the "Aggregation" and "Alignment" components, particularly how collective decision-making works in FL.
+9,Daniel Harabor,Expert in multi-agent planning and systems. He can provide a strong, systems-oriented critique of the paper's discussion on practical deployment and system-level constraints.
+10,Christian Bessiere,A leader in constraint programming and satisfaction. His background can be used to assess the formal rigor and logical coherence of the paper's proposed taxonomy and framework.

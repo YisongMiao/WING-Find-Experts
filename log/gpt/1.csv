@@ -1,0 +1,11 @@
+index, name, rationale
+1, Bo Li, Leading researcher in trustworthy and robust machine learning with direct contributions to federated learning security and privacy; aligns well with modularity, aggregation, and alignment.
+2, Ferdinando Fioretto, Known for work at the intersection of optimization, privacy, and federated learning; has published surveys and systematizations, ideal for a meta-framework paper.
+3, Ivor Tsang, Authority on transfer learning, domain adaptation, and federated optimization; focuses on large-scale, privacy-preserving ML, matching system-level and algorithmic aspects.
+4, Akshat Kumar, Expert in multi-agent systems, distributed decision making, and optimization; bridges theory with real-world system design, echoing the dual focus on theory and frameworks.
+5, Scott Sanner, Strong background in optimization, planning, and applied ML systems; experienced with survey-style works and conceptual frameworks.
+6, Michela Milano, Recognized for constraint programming and optimization in distributed AI systems; provides a formal methods/system structuring perspective for modular taxonomies.
+7, Virginia Dignum, Specialist in responsible and trustworthy AI with strong governance and system-level perspective; ensures coverage of privacy, alignment, and societal impact.
+8, Sanmay Das, Works on multi-agent learning, distributed decision-making, and algorithmic economics; adds interdisciplinary systems perspective relevant to federated frameworks.
+9, Kai-Wei Chang, Researcher in distributed NLP systems and scalable ML; strengthens the survey’s application-driven section, especially for open-source FL frameworks.
+10, Meng Fang, Focused on federated learning, meta-learning, and optimization; directly contributes to FL algorithms and modular perspectives as an emerging leader.
