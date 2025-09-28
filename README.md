@@ -23,6 +23,7 @@ pip install torch sentence_transformers # Embedding model support
 pip install openai                      # LLM API support
 pip install requests bs4                # Required for URL parsing
 pip install numpy tqdm
+pip install pandas
 ```
 
 **💽 Set up API key:**
@@ -39,29 +40,83 @@ where `sk-yourrealkeyhere` should be your own API key for OpenAI.
 
 **⚠️ And also make sure that never commit your API key to the repo.**
 
-## Getting Started
 
-The entry to this program is `main.py` --- you can use the default setting by simply running:
+Here’s a more user-friendly, polished version of your instructions with emojis and a clearer structure:
+
+````md
+## 🚀 Running the Program
+
+First, create the required folders:  
 ```bash
-python main.py
+mkdir data-AE
+mkdir data-query
+````
+
+### 📂 Data Setup
+
+* **`data-AE`** → Contact our team to receive the **confidential data**.
+  (Note: While action editor publications are public, their IDs remain private 🔒)
+
+* **`data-query`** → You can create your own query file (e.g., [`test_query_barid.json`](data-query/test_query_barid.json)).
+  Here’s the format:
+
+  ```json
+  {
+      "title": "Title of the query",
+      "abstract": "Abstract of the query"
+  }
+  ```
+
+### ▶️ Running the Program
+
+To run the program, use:
+
+```bash
+python main.py --query_index <query_index>
 ```
 
-I provide several parameters for `main.py`:
-* `--data_path` specifies the path to the database file, whose format can be referred to [`data/test_database.jsonl`](data/test_database.jsonl).
-* `--query_path` specifies the path to the input query, whose format can be referred to [`data/test_query.json`](data/test_query.json).
-* `--output_path` specifies the path for output.
+Example for **Barid’s query**:
+
+```bash
+python main.py --query_index barid
+```
+
+### ⚙️ Key Parameters for `main.py`
+
+* `--data_path` → Path to the database file (📩 contact us for access).
+* `--query_path` → Path to your query file (e.g., `test_query_barid.json`).
+  Query file format:
+
+  ```json
+  {
+      "title": "Title of the query",
+      "abstract": "Abstract of the query"
+  }
+  ```
+
+### 📑 Output
+
+After execution, the program will generate a `.txt` file in the `--output_path` directory.
+
+🔍 Example outputs:
+
+* [results/aggregate/fitness_scores_query_barid.csv](results/aggregate/fitness_scores_query_barid.csv)
+* [results/summarize/output_query_barid.txt](results/summarize/output_query_barid.txt)
+
+✅ That’s it—you’re ready to go! 🎉
+
+```
+
+Would you like me to make it **even shorter and more “quick start” style** (just the essentials with step numbers), or keep this detailed but polished version?
+```
+
+
+
+## Other arguments
+* `--output_path` specifies the path for output (default: `results`).
 * `--llm` specifies the name of LLM to use (currently only OpenAI models are supported).
 * `--embedding_model_name_or_path` specifies the path or name of `sentence_transformers` embedding model.
 * `--author_embedding` specifies the method used to compute author embedding from multiple publications:
     + `summarize` means using an LLM to summarize all publications from one author. The embedding will be computed based on the summary.
     + `aggregate` means computing embeddings for each publication from one author and taking the average.
 * `--device` specifies the device to store and run the embedding model.
-
-You will obtain a `.txt` output file in the `--output_path` directory when code execution is complete. Sample outputs are shown as [`log/output_aggregate.txt`](log/output_aggregate.txt) and [`log/output_summarize.txt`](log/output_summarize.txt)
-
-## TODO (Extensions)
-
-* Parse timestamp of publications to support decaying weights for older publications in embedding aggregation.
-* Support error handling in publication parsing.
-* Dynamic adaptation to new publications for authors.
-* Curve the score to distinguish fitness better.
