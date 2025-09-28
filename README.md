@@ -58,6 +58,8 @@ mkdir data-query
   (Note: While action editor publications are public, their IDs remain private 🔒)
 
 * **`data-query`** → You can create your own query file (e.g., [`test_query_barid.json`](data-query/test_query_barid.json)).
+  The query_index here inserted into the filename as `test_query<query_index>.json`.
+  
   Here’s the format:
 
   ```json
