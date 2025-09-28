@@ -1,6 +1,8 @@
 # WING's Tool for Expert Finding
 
-This repo contains the code from Ruiwen Zhou's trial task for the expert finding task. We credit a lot to his efforts.
+This repo contains the code from Ruiwen Zhou's trial task for the expert finding task. We credit a lot to his efforts. \
+Ruiwen's source: https://github.com/SkyRiver-2000/WING-Trial-Task
+
 
 ## Environment Setup
 
