@@ -24,13 +24,13 @@ def get_args():
     """
     parser = argparse.ArgumentParser()
     parser.add_argument("--profile_path", type=str, default="author_profile_updated.json", help="Path to the database file")
-    parser.add_argument("--query_index", type=int, default=1, help="Index of the query file to use (0, 1, 2, 3, etc.)")
-    parser.add_argument("--output_path", type=str, default="./results", help="Path to the output file")
+    parser.add_argument("--query_index", type=str, default="barid", help="Index of the query file to use (0, 1, 2, 3, etc.)")
+    parser.add_argument("--output_path", type=str, default="results", help="Path to the output file")
     parser.add_argument("--embedding_model_name_or_path", type=str, default="all-MiniLM-L6-v2", help="Embedding model name or path.")
     parser.add_argument("--author_embedding", type=str, choices=["aggregate", "summarize"], default="aggregate", help="Method to aggregate multiple publications for one author.")
     parser.add_argument("--device", type=str, default="cpu", help="Computation device to store the embedding model and compute embeddings.")
     parser.add_argument("--top_k", type=int, default=3, help="Number of top experts to generate explanations for.")
-    parser.add_argument("--llm", type=str, default="qwen", help="LLM model to use for generating explanations.")
+    parser.add_argument("--llm", type=str, default="gpt-4o-mini", help="LLM model to use for generating explanations.")
     args = parser.parse_args()
     return args
 
@@ -184,7 +184,18 @@ def main():
         
         print(f"✓ Saved explanation for {author_name} (Rank {i+1}) to {output_file}")
     
+    # Print top 3 experts and their explanations
+    print("\nTop 3 Expert Reviewers:")
+    print("-" * 80)
+    for i, result in enumerate(results[:3]):
+        print(f"\n{i+1}. {result['name']} (Fitness Score: {result['fitness']:.4f})")
+        print("Explanation:")
+        print(result['explanation'])
+        print("-" * 80)
+    
+    print(f"Fitness scores saved to {csv_file}")
     print(f"All explanations for top {args.top_k} experts completed and saved to {output_file}")
+
             
 if __name__ == "__main__":
     main()
