@@ -9,7 +9,6 @@ from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 from sentence_transformers.util import semantic_search
 
-from process_data import build_author_profile
 from generate_justification import generate_justification
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "2"
