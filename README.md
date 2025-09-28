@@ -43,7 +43,7 @@ where `sk-yourrealkeyhere` should be your own API key for OpenAI.
 
 Here’s a more user-friendly, polished version of your instructions with emojis and a clearer structure:
 
-````md
+
 ## 🚀 Running the Program
 
 First, create the required folders:  
@@ -102,13 +102,6 @@ After execution, the program will generate a `.txt` file in the `--output_path` 
 
 * [results/aggregate/fitness_scores_query_barid.csv](results/aggregate/fitness_scores_query_barid.csv)
 * [results/summarize/output_query_barid.txt](results/summarize/output_query_barid.txt)
-
-✅ That’s it—you’re ready to go! 🎉
-
-```
-
-Would you like me to make it **even shorter and more “quick start” style** (just the essentials with step numbers), or keep this detailed but polished version?
-```
 
 
 
