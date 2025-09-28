@@ -30,12 +30,12 @@ Current implementation uses OpenAI API, so an API key is required. You will need
 
 where `sk-yourrealkeyhere` should be your own API key for OpenAI.
 
-```bash
-vim ~/.bashrc # open the bashrc file
-export OPENAI_API_KEY="sk-yourrealkeyhere" # your own API key
-source ~/.bashrc # reload the bashrc file
-echo $OPENAI_API_KEY # check if the API key is set
-```
+
+- `vim ~/.bashrc` # open the bashrc file
+- Write `export OPENAI_API_KEY="sk-yourrealkeyhere"` into the bashrc file.  # your own API key
+- `source ~/.bashrc` # reload the bashrc file
+- `echo $OPENAI_API_KEY` # check if the API key is set
+
 
 **⚠️ And also make sure that never commit your API key to the repo.**
 
