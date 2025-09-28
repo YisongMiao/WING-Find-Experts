@@ -6,15 +6,18 @@ Ruiwen's source: https://github.com/SkyRiver-2000/WING-Trial-Task
 
 ## Environment Setup
 
-Run the following to install critical dependencies:
+
+Run the following to install critical dependencies: `
 First setup a new environment:
 
+**💽 Create a new environment and activate it:**
 ```bash
 python --version
 conda create --name findexpert python=3.10
 conda activate findexpert
 ```
 
+**💽 Install dependencies:**
 ```bash
 pip install torch sentence_transformers # Embedding model support
 pip install openai                      # LLM API support
@@ -22,13 +25,19 @@ pip install requests bs4                # Required for URL parsing
 pip install numpy tqdm
 ```
 
+**💽 Set up API key:**
 Current implementation uses OpenAI API, so an API key is required. You will need to run the following before running the program:
 
-where `$YOUR_API_KEY` should be your own API key for OpenAI.
+where `sk-yourrealkeyhere` should be your own API key for OpenAI.
 
 ```bash
-export OPENAI_API_KEY="$YOUR_API_KEY"
+vim ~/.bashrc # open the bashrc file
+export OPENAI_API_KEY="sk-yourrealkeyhere" # your own API key
+source ~/.bashrc # reload the bashrc file
+echo $OPENAI_API_KEY # check if the API key is set
 ```
+
+**⚠️ And also make sure that never commit your API key to the repo.**
 
 ## Getting Started
 
