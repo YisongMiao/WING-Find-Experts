@@ -2,6 +2,22 @@ import os
 import time
 import openai
 
+def qwen(llm: str, system_prompt: str, user_prompt: str, max_retry: int = 10):
+    """
+    This function wraps the OpenAI API for Qwen models.
+    
+    Args:
+        llm (str): The name of LLM to use.
+        system_prompt (str): The system prompt to the LLM.
+        user_prompt (str): The user prompt to the LLM.
+    
+    Returns:
+        output (str): The textual response from the LLM.
+    """
+    # For now, use the same GPT function since Qwen might be accessed through OpenAI API
+    # or you might need to implement a different API call for Qwen
+    return call_gpt(llm, system_prompt, user_prompt, max_retry)
+
 def call_gpt(llm: str, system_prompt: str, user_prompt: str, max_retry: int = 10):
     """
     This function wraps the OpenAI API.
