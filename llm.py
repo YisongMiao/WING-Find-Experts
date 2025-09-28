@@ -2,7 +2,7 @@ import os
 import time
 import openai
 
-def qwen(llm: str, system_prompt: str, user_prompt: str, max_retry: int = 10):
+def call_gpt(llm: str, system_prompt: str, user_prompt: str, max_retry: int = 10):
     """
     This function wraps the OpenAI API.
     
